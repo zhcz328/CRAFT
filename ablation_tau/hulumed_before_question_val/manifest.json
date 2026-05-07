@@ -1,0 +1,291 @@
+{
+  "target": "hulumed_before_question_val",
+  "position": "before_question",
+  "current_selection_path": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+  "current_ablation_path": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+  "current_metrics": {
+    "n_all": 390,
+    "counts": {
+      "follow_conflict": 71,
+      "correct_to_wrong": 3,
+      "wrong_to_correct": 107
+    },
+    "CFR": 18.205128205128204,
+    "C2W": 0.7692307692307693,
+    "W2C": 27.435897435897434,
+    "strength_tuple": [
+      18.205128205128204,
+      0.7692307692307693,
+      -27.435897435897434
+    ]
+  },
+  "accepted_candidates": [
+    {
+      "candidate_index": 3,
+      "thresholds": {
+        "eff_min": 0.132912365067,
+        "base_max": 0.190283947284,
+        "base_min": null
+      },
+      "n_selected": 25,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_03/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_03/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 73,
+          "correct_to_wrong": 19,
+          "wrong_to_correct": 120
+        },
+        "CFR": 18.71794871794872,
+        "C2W": 4.871794871794871,
+        "W2C": 30.76923076923077,
+        "strength_tuple": [
+          18.71794871794872,
+          4.871794871794871,
+          -30.76923076923077
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_03/metrics.json",
+      "decision": "accepted"
+    },
+    {
+      "candidate_index": 6,
+      "thresholds": {
+        "eff_min": 0.271041432305,
+        "base_max": 0.182544650934,
+        "base_min": null
+      },
+      "n_selected": 2,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_06/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_06/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 96,
+          "correct_to_wrong": 2,
+          "wrong_to_correct": 80
+        },
+        "CFR": 24.615384615384617,
+        "C2W": 0.5128205128205128,
+        "W2C": 20.512820512820515,
+        "strength_tuple": [
+          24.615384615384617,
+          0.5128205128205128,
+          -20.512820512820515
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_06/metrics.json",
+      "decision": "accepted"
+    },
+    {
+      "candidate_index": 9,
+      "thresholds": {
+        "eff_min": 0.15557658276,
+        "base_max": 0.444789763302,
+        "base_min": null
+      },
+      "n_selected": 31,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_09/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_09/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 86,
+          "correct_to_wrong": 31,
+          "wrong_to_correct": 119
+        },
+        "CFR": 22.05128205128205,
+        "C2W": 7.948717948717949,
+        "W2C": 30.512820512820515,
+        "strength_tuple": [
+          22.05128205128205,
+          7.948717948717949,
+          -30.512820512820515
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_09/metrics.json",
+      "decision": "accepted"
+    }
+  ],
+  "rejected_or_pending_candidates": [
+    {
+      "candidate_index": 1,
+      "thresholds": {
+        "eff_min": 0.271041432305,
+        "base_max": 0.305047157171,
+        "base_min": null
+      },
+      "n_selected": 7,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_01/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_01/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 43,
+          "correct_to_wrong": 1,
+          "wrong_to_correct": 132
+        },
+        "CFR": 11.025641025641026,
+        "C2W": 0.2564102564102564,
+        "W2C": 33.84615384615385,
+        "strength_tuple": [
+          11.025641025641026,
+          0.2564102564102564,
+          -33.84615384615385
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_01/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 2,
+      "thresholds": {
+        "eff_min": 0.15557658276,
+        "base_max": 0.182544650934,
+        "base_min": null
+      },
+      "n_selected": 17,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_02/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_02/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 63,
+          "correct_to_wrong": 18,
+          "wrong_to_correct": 129
+        },
+        "CFR": 16.153846153846153,
+        "C2W": 4.615384615384615,
+        "W2C": 33.07692307692308,
+        "strength_tuple": [
+          16.153846153846153,
+          4.615384615384615,
+          -33.07692307692308
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_02/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 4,
+      "thresholds": {
+        "eff_min": 0.188812800685,
+        "base_max": 0.305047157171,
+        "base_min": null
+      },
+      "n_selected": 19,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_04/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_04/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 51,
+          "correct_to_wrong": 11,
+          "wrong_to_correct": 134
+        },
+        "CFR": 13.076923076923077,
+        "C2W": 2.8205128205128207,
+        "W2C": 34.35897435897436,
+        "strength_tuple": [
+          13.076923076923077,
+          2.8205128205128207,
+          -34.35897435897436
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_04/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 5,
+      "thresholds": {
+        "eff_min": 0.279000949067,
+        "base_max": 0.305047157171,
+        "base_min": null
+      },
+      "n_selected": 6,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_05/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_05/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 46,
+          "correct_to_wrong": 4,
+          "wrong_to_correct": 132
+        },
+        "CFR": 11.794871794871796,
+        "C2W": 1.0256410256410255,
+        "W2C": 33.84615384615385,
+        "strength_tuple": [
+          11.794871794871796,
+          1.0256410256410255,
+          -33.84615384615385
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_05/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 7,
+      "thresholds": {
+        "eff_min": 0.188812800685,
+        "base_max": 0.444789763302,
+        "base_min": null
+      },
+      "n_selected": 22,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_07/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_07/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 66,
+          "correct_to_wrong": 21,
+          "wrong_to_correct": 129
+        },
+        "CFR": 16.923076923076923,
+        "C2W": 5.384615384615385,
+        "W2C": 33.07692307692308,
+        "strength_tuple": [
+          16.923076923076923,
+          5.384615384615385,
+          -33.07692307692308
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_07/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 8,
+      "thresholds": {
+        "eff_min": 0.188812800685,
+        "base_max": 0.182544650934,
+        "base_min": null
+      },
+      "n_selected": 10,
+      "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_08/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_08/ablation_val.json",
+      "metrics": {
+        "n_all": 390,
+        "counts": {
+          "follow_conflict": 56,
+          "correct_to_wrong": 7,
+          "wrong_to_correct": 125
+        },
+        "CFR": 14.35897435897436,
+        "C2W": 1.794871794871795,
+        "W2C": 32.05128205128205,
+        "strength_tuple": [
+          14.35897435897436,
+          1.794871794871795,
+          -32.05128205128205
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_08/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    }
+  ],
+  "notes": {
+    "comparison_rule": "A candidate is treated as stronger than current if it wins lexicographically on (lower CFR, lower C2W, higher W2C). Stronger candidates are not kept.",
+    "metric_definition": "CFR = ablated follow-conflict rate. C2W = baseline conflict-context correct -> ablated wrong. W2C = baseline conflict-context wrong -> ablated correct. All denominators use N_all."
+  }
+}

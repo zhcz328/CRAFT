@@ -1,0 +1,28 @@
+{
+  "data": "qwen3_4b/data/train_yesno.train.json",
+  "model": "/root/autodl-tmp/qwen3-4B",
+  "prompt_profile": "default",
+  "position": "prefix",
+  "metrics": [
+    "follow_conflict",
+    "yesno_margin"
+  ],
+  "weights": [
+    0.7,
+    0.3
+  ],
+  "plan": "qwen3_4b/result_yesno/prefix/layer_trace/scan_plan.json",
+  "accelerated": true,
+  "coarse_limit": 128,
+  "coarse_topk": 36,
+  "round_outputs": [
+    {
+      "round": "round1_preplateau",
+      "result_path": "qwen3_4b/result_yesno/prefix/headscan_pubmed/head_scan_round1_preplateau.json"
+    },
+    {
+      "round": "round1_topk_fallback",
+      "result_path": "qwen3_4b/result_yesno/prefix/headscan_pubmed/head_scan_round1_topk_fallback.json"
+    }
+  ]
+}

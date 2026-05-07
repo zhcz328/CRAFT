@@ -1,0 +1,64 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.087863262357,
+    "base_max": 0.202586208952,
+    "base_min": null
+  },
+  "input_json": "/root/logit_lens/Slake_vqa/image_conflict/internvl35_4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "core_layers",
+    "scan_layers": [
+      25,
+      31,
+      35
+    ],
+    "n_samples": 58,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B"
+  },
+  "n_candidates": 50,
+  "n_selected": 2,
+  "selected": [
+    {
+      "layer": 31,
+      "head": 6,
+      "mean_abs_effect_reduction": 0.08786326235738294,
+      "mean_abs_base_change": 0.16594827997273412,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.25381154233011705
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.16594827997273412
+      },
+      "conflict_specific_score": 0.5294585331844711,
+      "backbone_score": 0.014580757261000775
+    },
+    {
+      "layer": 25,
+      "head": 9,
+      "mean_abs_effect_reduction": 0.09444664059014156,
+      "mean_abs_base_change": 0.19694992797128086,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.29139656856142243
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.19694992797128086
+      },
+      "conflict_specific_score": 0.4795440243059614,
+      "backbone_score": 0.01860125906135783
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "data": "llama32_3b/data/train_yesno.train.json",
+  "model": "/root/autodl-tmp/Llama-3.2-3B-Instruct",
+  "prompt_profile": "llama",
+  "position": "before_question",
+  "metrics": [
+    "follow_conflict",
+    "yesno_margin"
+  ],
+  "weights": [
+    0.7,
+    0.3
+  ],
+  "plan": "llama32_3b/result_yesno/before_question/layer_trace/scan_plan.json",
+  "accelerated": true,
+  "coarse_limit": 128,
+  "coarse_topk": 36,
+  "round_outputs": [
+    {
+      "round": "round1_preplateau",
+      "result_path": "llama32_3b/result_yesno/before_question/headscan_pubmed/head_scan_round1_preplateau.json"
+    },
+    {
+      "round": "round1_topk_fallback",
+      "result_path": "llama32_3b/result_yesno/before_question/headscan_pubmed/head_scan_round1_topk_fallback.json"
+    }
+  ]
+}

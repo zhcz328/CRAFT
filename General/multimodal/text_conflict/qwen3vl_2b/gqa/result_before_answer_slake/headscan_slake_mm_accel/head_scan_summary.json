@@ -1,0 +1,48 @@
+{
+  "data_csv": "./data/qwen3vl_2b/gqa/gqa_nc_cc_both_correct_train.csv",
+  "image_root": ".",
+  "model": "/root/autodl-tmp/qwen3vl-2B",
+  "trace_mode": "conflict",
+  "position": "before_answer",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_conflict"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 600,
+  "coarse_limit": 128,
+  "coarse_topk": 36,
+  "coarse_with_nc": false,
+  "coarse_seed": 42,
+  "plan": "qwen3vl_2b/gqa/result_before_answer_slake/trace_conflict_scan_plan.json",
+  "rounds_ran": [
+    "merged_unique_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "merged_unique_layers",
+      "result_path": "qwen3vl_2b/gqa/result_before_answer_slake/headscan_slake_mm_accel/head_scan_merged_unique_layers.json",
+      "scan_layers": [
+        0,
+        1,
+        6,
+        11,
+        12,
+        14,
+        15,
+        17,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  ],
+  "n_samples": 322,
+  "skipped": 0,
+  "parallel_mode": "global_topk_parallel",
+  "num_shards": 2,
+  "saved": "qwen3vl_2b/gqa/result_before_answer_slake/headscan_slake_mm_accel/head_scan_summary.json"
+}

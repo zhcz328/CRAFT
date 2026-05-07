@@ -1,0 +1,41 @@
+{
+  "n_records": 1,
+  "nc_correct": 1,
+  "ic_unknown": 0,
+  "ic_gold": 1,
+  "ic_wrong": 0,
+  "ic_other": 0,
+  "changed_vs_nc": 0,
+  "by_category": {
+    "organ": {
+      "n": 1,
+      "nc_correct": 1,
+      "ic_unknown": 0,
+      "ic_gold": 1,
+      "ic_wrong": 0,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 1.0,
+  "ic_unknown_rate": 0.0,
+  "ic_gold_rate": 1.0,
+  "ic_wrong_rate": 0.0,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.0,
+  "ic_top_predictions": [
+    [
+      "yes",
+      1
+    ]
+  ],
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "model_name": "hulumed-4b",
+  "data_csv": "/root/logit_lens/Slake_vqa/image_conflict/data/hulumed4b/slake_nc_correct_ic_ready.csv",
+  "image_root": "/root/autodl-tmp/data/SLAKE/imgs",
+  "out_dir": "/root/logit_lens/exp/ablation_on_mask_scale/smoke_test/mask_scale_0_0",
+  "preds_jsonl": "/root/logit_lens/exp/ablation_on_mask_scale/smoke_test/mask_scale_0_0/preds.jsonl",
+  "summary_json": "/root/logit_lens/exp/ablation_on_mask_scale/smoke_test/mask_scale_0_0/summary.json",
+  "mask_scale": 0.0,
+  "runtime_mask_scale": 1e-06,
+  "skipped": 0
+}

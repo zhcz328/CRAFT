@@ -1,0 +1,86 @@
+{
+  "output_root": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional",
+  "position": "before_question",
+  "models": {
+    "internvl35-4b": {
+      "display_name": "InternVL3.5-4B",
+      "task": "vqa_rad",
+      "observational": {
+        "scan_path": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/observational_scan.json",
+        "head_file": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/selected_heads/observational/observational_selected_heads.json",
+        "selection_meta": {
+          "criterion": "observational",
+          "selection_rule": "sort by absolute Pearson correlation descending",
+          "metric_key": "observational_score",
+          "direction": "descending",
+          "threshold_at_last_selected": 0.09357635978142004,
+          "target_count_from_dual": 10,
+          "selected_count": 10,
+          "n_candidates": 48,
+          "model_key": "internvl35-4b",
+          "task": "vqa_rad",
+          "position": "before_question",
+          "feature": "final-query attention mass to inserted evidence block",
+          "target": "follow_conflict label on conflict prompt (1 if prediction equals conflict answer)",
+          "score": "absolute Pearson correlation",
+          "data_csv": "/root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_train.csv",
+          "n_labels": 698,
+          "positive_rate": 0.2994269340974212,
+          "candidate_head_count": 48,
+          "skipped_span": 0,
+          "skipped_attn": 0
+        },
+        "run": {
+          "command": [
+            "/root/miniconda3/envs/latentmas/bin/python",
+            "ablate_head.py",
+            "--data_csv",
+            "/root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv",
+            "--image_root",
+            ".",
+            "--model",
+            "/root/autodl-tmp/InternVL3_5-4B",
+            "--selected_heads",
+            "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/selected_heads/observational/observational_selected_heads.json",
+            "--out_json",
+            "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/observational/observational_val.json",
+            "--device",
+            "auto",
+            "--dtype",
+            "bf16",
+            "--trace_mode",
+            "conflict",
+            "--position",
+            "before_question",
+            "--metrics",
+            "follow_conflict",
+            "--mask_scope",
+            "all",
+            "--keep_mode",
+            "self",
+            "--seed",
+            "0",
+            "--max_image_side",
+            "672",
+            "--model_name",
+            "InternVL3_5-4B"
+          ],
+          "command_text": "/root/miniconda3/envs/latentmas/bin/python ablate_head.py --data_csv /root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv --image_root . --model /root/autodl-tmp/InternVL3_5-4B --selected_heads /root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/selected_heads/observational/observational_selected_heads.json --out_json /root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/observational/observational_val.json --device auto --dtype bf16 --trace_mode conflict --position before_question --metrics follow_conflict --mask_scope all --keep_mode self --seed 0 --max_image_side 672 --model_name InternVL3_5-4B",
+          "cwd": "/root/logit_lens/VQA_RAD/text_conflict",
+          "result": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/observational/observational_val.json",
+          "summary": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/observational/observational_val.json",
+          "log": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/logs/observational_val.log",
+          "status": "finished",
+          "returncode": 0
+        },
+        "reduction_points": 18.285714285714295
+      },
+      "interventional": {
+        "head_file": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json",
+        "summary": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/ablate/ablate_selected_heads_all_val.json",
+        "reduction_points": 14.28571428571429
+      }
+    }
+  },
+  "dry_run": false
+}

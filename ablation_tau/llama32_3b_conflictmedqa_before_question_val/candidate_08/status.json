@@ -1,0 +1,28 @@
+{
+  "candidate_index": 8,
+  "thresholds": {
+    "effect_reduction_gt": 0.51484375,
+    "base_delta_change_lt": 1.32421875
+  },
+  "n_selected": 8,
+  "selection_path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_08/selected_heads.json",
+  "ablation_path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_08/ablate_heads_val.jsonl",
+  "metrics": {
+    "n_all": 104,
+    "counts": {
+      "follow_conflict": 54,
+      "correct_to_wrong": 1,
+      "wrong_to_correct": 26
+    },
+    "CFR": 51.92307692307692,
+    "C2W": 0.9615384615384616,
+    "W2C": 25.0,
+    "strength_tuple": [
+      51.92307692307692,
+      0.9615384615384616,
+      -25.0
+    ]
+  },
+  "metrics_path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_08/metrics.json",
+  "decision": "rejected_stronger_than_current"
+}

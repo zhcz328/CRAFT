@@ -1,0 +1,38 @@
+{
+  "data_csv": "/root/logit_lens/Slake_vqa/image_conflict/data/internvl35_4b/slake_nc_correct_ic_ready_train.csv",
+  "image_root": "/root/logit_lens/Slake_vqa/image_conflict",
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "trace_mode": "conflict",
+  "position": "image_conflict",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_context"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 0,
+  "coarse_limit": 128,
+  "coarse_topk": 36,
+  "coarse_with_nc": false,
+  "coarse_seed": 42,
+  "plan": "/root/logit_lens/exp/multi_layer_scale/outputs/layer_scale_sweep/layer_scale_0p0/trace_train/trace_train_layerscale_0p0_scan_plan.json",
+  "plan_layer_key": "core_layers",
+  "rounds_ran": [
+    "core_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "core_layers",
+      "result_path": "/root/logit_lens/exp/multi_layer_scale/outputs/layer_scale_sweep/layer_scale_0p0/headscan_train/head_scan_core_layers.json",
+      "scan_layers": [
+        25,
+        31,
+        35
+      ]
+    }
+  ],
+  "n_samples": 57,
+  "skipped": 16,
+  "saved": "/root/logit_lens/exp/multi_layer_scale/outputs/layer_scale_sweep/layer_scale_0p0/headscan_train/head_scan_summary.json"
+}

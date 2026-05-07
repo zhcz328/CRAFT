@@ -1,0 +1,81 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.015,
+    "base_max": 0.3,
+    "base_min": null
+  },
+  "input_json": "internvl35_4b/gqa/result_image_conflict_slake/headscan_slake_mm/head_scan_merged_unique_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "merged_unique_layers",
+    "scan_layers": [
+      21,
+      22,
+      23,
+      28,
+      29,
+      30
+    ],
+    "n_samples": 67,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B"
+  },
+  "n_candidates": 50,
+  "n_selected": 3,
+  "selected": [
+    {
+      "layer": 30,
+      "head": 19,
+      "mean_abs_effect_reduction": 0.027985074626865673,
+      "mean_abs_base_change": 0.22574626865671643,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.2537313432835821
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.22574626865671643
+      },
+      "conflict_specific_score": 0.12396639300837477,
+      "backbone_score": 0.006317526175094676
+    },
+    {
+      "layer": 28,
+      "head": 10,
+      "mean_abs_effect_reduction": 0.022388059701492536,
+      "mean_abs_base_change": 0.22014925373134328,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.24253731343283583
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.22014925373134328
+      },
+      "conflict_specific_score": 0.10169445332011033,
+      "backbone_score": 0.004928714635776342
+    },
+    {
+      "layer": 22,
+      "head": 24,
+      "mean_abs_effect_reduction": 0.016791044776119403,
+      "mean_abs_base_change": 0.24067164179104478,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.2574626865671642
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.24067164179104478
+      },
+      "conflict_specific_score": 0.06976715197524451,
+      "backbone_score": 0.004041128313655603
+    }
+  ]
+}

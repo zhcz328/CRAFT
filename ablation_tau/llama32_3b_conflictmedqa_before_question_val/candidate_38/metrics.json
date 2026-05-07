@@ -1,0 +1,22 @@
+{
+  "format": "qwen_ablation_jsonl",
+  "path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_38/ablate_heads_val.jsonl",
+  "n_rows": 104,
+  "baseline_rows_path": null,
+  "metrics": {
+    "n_all": 104,
+    "counts": {
+      "follow_conflict": 68,
+      "correct_to_wrong": 10,
+      "wrong_to_correct": 21
+    },
+    "CFR": 65.38461538461539,
+    "C2W": 9.615384615384615,
+    "W2C": 20.192307692307693,
+    "strength_tuple": [
+      65.38461538461539,
+      9.615384615384615,
+      -20.192307692307693
+    ]
+  }
+}

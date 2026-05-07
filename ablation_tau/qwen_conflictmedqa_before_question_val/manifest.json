@@ -1,0 +1,254 @@
+{
+  "target": "qwen_conflictmedqa_before_question_val",
+  "position": "before_question",
+  "current_selection_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_groups.json",
+  "current_ablation_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/ablate_heads_val.jsonl",
+  "current_metrics": {
+    "n_all": 174,
+    "counts": {
+      "follow_conflict": 119,
+      "correct_to_wrong": 2,
+      "wrong_to_correct": 48
+    },
+    "CFR": 68.39080459770115,
+    "C2W": 1.1494252873563218,
+    "W2C": 27.586206896551722,
+    "strength_tuple": [
+      68.39080459770115,
+      1.1494252873563218,
+      -27.586206896551722
+    ]
+  },
+  "accepted_candidates": [
+    {
+      "candidate_index": 3,
+      "thresholds": {
+        "effect_reduction_gt": 0.795400943396,
+        "base_delta_change_lt": 0.935731132075
+      },
+      "n_selected": 2,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_03/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_03/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 159,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 2
+        },
+        "CFR": 91.37931034482759,
+        "C2W": 0.0,
+        "W2C": 1.1494252873563218,
+        "strength_tuple": [
+          91.37931034482759,
+          0.0,
+          -1.1494252873563218
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_03/metrics.json",
+      "decision": "accepted"
+    },
+    {
+      "candidate_index": 4,
+      "thresholds": {
+        "effect_reduction_gt": 0.795400943396,
+        "base_delta_change_lt": 0.958726415094
+      },
+      "n_selected": 4,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_04/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_04/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 157,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 4
+        },
+        "CFR": 90.22988505747126,
+        "C2W": 0.0,
+        "W2C": 2.2988505747126435,
+        "strength_tuple": [
+          90.22988505747126,
+          0.0,
+          -2.2988505747126435
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_04/metrics.json",
+      "decision": "accepted"
+    },
+    {
+      "candidate_index": 8,
+      "thresholds": {
+        "effect_reduction_gt": 0.99233490566,
+        "base_delta_change_lt": 1.422759433962
+      },
+      "n_selected": 9,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_08/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_08/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 121,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 40
+        },
+        "CFR": 69.54022988505747,
+        "C2W": 0.0,
+        "W2C": 22.988505747126435,
+        "strength_tuple": [
+          69.54022988505747,
+          0.0,
+          -22.988505747126435
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_08/metrics.json",
+      "decision": "accepted"
+    }
+  ],
+  "rejected_or_pending_candidates": [
+    {
+      "candidate_index": 1,
+      "thresholds": {
+        "effect_reduction_gt": 2.298349056604,
+        "base_delta_change_lt": 2.340212264151
+      },
+      "n_selected": 10,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 97,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 64
+        },
+        "CFR": 55.747126436781606,
+        "C2W": 0.0,
+        "W2C": 36.7816091954023,
+        "strength_tuple": [
+          55.747126436781606,
+          0.0,
+          -36.7816091954023
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 2,
+      "thresholds": {
+        "effect_reduction_gt": 1.721108490566,
+        "base_delta_change_lt": 2.260023584906
+      },
+      "n_selected": 11,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_02/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_02/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 95,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 66
+        },
+        "CFR": 54.59770114942529,
+        "C2W": 0.0,
+        "W2C": 37.93103448275862,
+        "strength_tuple": [
+          54.59770114942529,
+          0.0,
+          -37.93103448275862
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_02/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 5,
+      "thresholds": {
+        "effect_reduction_gt": 0.99233490566,
+        "base_delta_change_lt": 4.058962264151
+      },
+      "n_selected": 24,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_05/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_05/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 87,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 74
+        },
+        "CFR": 50.0,
+        "C2W": 0.0,
+        "W2C": 42.52873563218391,
+        "strength_tuple": [
+          50.0,
+          0.0,
+          -42.52873563218391
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_05/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 6,
+      "thresholds": {
+        "effect_reduction_gt": 2.298349056604,
+        "base_delta_change_lt": 2.260023584906
+      },
+      "n_selected": 9,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_06/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_06/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 94,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 67
+        },
+        "CFR": 54.02298850574713,
+        "C2W": 0.0,
+        "W2C": 38.50574712643678,
+        "strength_tuple": [
+          54.02298850574713,
+          0.0,
+          -38.50574712643678
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_06/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    },
+    {
+      "candidate_index": 7,
+      "thresholds": {
+        "effect_reduction_gt": 2.653891509434,
+        "base_delta_change_lt": 2.340212264151
+      },
+      "n_selected": 4,
+      "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_07/selected_heads.json",
+      "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_07/ablate_heads_val.jsonl",
+      "metrics": {
+        "n_all": 174,
+        "counts": {
+          "follow_conflict": 114,
+          "correct_to_wrong": 1,
+          "wrong_to_correct": 48
+        },
+        "CFR": 65.51724137931035,
+        "C2W": 0.5747126436781609,
+        "W2C": 27.586206896551722,
+        "strength_tuple": [
+          65.51724137931035,
+          0.5747126436781609,
+          -27.586206896551722
+        ]
+      },
+      "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_07/metrics.json",
+      "decision": "rejected_stronger_than_current"
+    }
+  ],
+  "notes": {
+    "comparison_rule": "A candidate is treated as stronger than current if it wins lexicographically on (lower CFR, lower C2W, higher W2C). Stronger candidates are not kept.",
+    "metric_definition": "CFR = ablated follow-conflict rate. C2W = baseline conflict-context correct -> ablated wrong. W2C = baseline conflict-context wrong -> ablated correct. All denominators use N_all."
+  }
+}

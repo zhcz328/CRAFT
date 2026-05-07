@@ -1,0 +1,60 @@
+{
+  "title": "ConflictMedQA Qwen3-4B before_question",
+  "model_name": "/root/autodl-tmp/qwen3-4B",
+  "sample_title": "pair=266 | side=wrong | gold=no | wrong=yes | pred=no | Dr. Patel discusses pneumococcal vaccination with Mr. Johnson, a 58...",
+  "answer": "no",
+  "answer_token_ids": [
+    902
+  ],
+  "answer_token_labels": [
+    " no"
+  ],
+  "selected_heads": [
+    {
+      "layer": 18,
+      "head": 22
+    },
+    {
+      "layer": 18,
+      "head": 31
+    },
+    {
+      "layer": 35,
+      "head": 8
+    }
+  ],
+  "visual_span": null,
+  "conflict_span": [
+    231,
+    258
+  ],
+  "matrix_shape": [
+    1,
+    274
+  ],
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/fig6_conflictmedqa_qwen3_4b_before_question_attention.png",
+    "pdf": "/root/logit_lens/PIC/fig6/fig6_conflictmedqa_qwen3_4b_before_question_attention.pdf"
+  },
+  "meta": {
+    "summary_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/analyze_probe_lens/ablation_flip_before_question_follow/summary.json",
+    "pairs_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result/kept_pairs_a12_b12.jsonl",
+    "selected_sample": {
+      "pair_id": 266,
+      "side": "wrong",
+      "gold_answer": "no",
+      "wrong_answer": "yes",
+      "baseline_conflict_pred": "yes",
+      "ablated_conflict_pred": "no"
+    },
+    "pair_prompt_source": "wrong",
+    "base_prompt": "Dr. Patel discusses pneumococcal vaccination with Mr. Johnson, a 58-year-old man with type 2 diabetes. Mr. Johnson previously received PCV13 two years ago. Dr. Patel reviews the latest guidelines and notes that adults with diabetes who previously received PCV13 MAY consider completing the recommended PPSV23 series. During the visit, Dr. Patel recalls several recent journal articles and patient cases where completing the PPSV23 series seemed to provide additional protection, especially in diabetic patients. Although the guideline uses the word \"may,\" Dr. Patel emphasizes these positive outcomes to Mr. Johnson, highlighting only the studies that support further vaccination and not mentioning those that found minimal benefit. As a result, Dr. Patel recommends that Mr. Johnson proceed with the PPSV23 series, focusing on the evidence that aligns with his belief that additional vaccination is beneficial for adults with diabetes who have already received PCV13.\n\nQuestion: Does the recommendation align with current clinical guidelines?\nAnswer:",
+    "conflict_span": [
+      231,
+      258
+    ],
+    "gold": "no",
+    "wrong": "yes",
+    "position": "before_question"
+  }
+}

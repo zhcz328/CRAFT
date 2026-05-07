@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "data": "qwen3_4b/data/train_yesno.train.json",
+    "model": "/root/autodl-tmp/qwen3-4B",
+    "selected_heads": "qwen3_4b/result_yesno/before_answer/headscan_pubmed/selected_conflict_heads.json",
+    "position": "before_answer",
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "layer2heads": {
+      "35": [
+        27
+      ],
+      "30": [
+        23,
+        27
+      ],
+      "32": [
+        26,
+        28
+      ],
+      "31": [
+        7
+      ]
+    }
+  },
+  "baseline": {
+    "N": 500,
+    "Acc_base": 94.4,
+    "Acc_conflict": 38.2,
+    "resist_rate": 38.2,
+    "follow_conflict_rate": 61.8,
+    "resist_rate_given_base_correct": 39.40677966101695,
+    "follow_conflict_rate_given_base_correct": 60.59322033898305,
+    "base_correct_total": 472
+  },
+  "masked": {
+    "N": 500,
+    "Acc_base": 98.6,
+    "Acc_conflict": 49.0,
+    "resist_rate": 49.0,
+    "follow_conflict_rate": 51.0,
+    "resist_rate_given_base_correct": 49.49290060851927,
+    "follow_conflict_rate_given_base_correct": 50.50709939148073,
+    "base_correct_total": 493
+  },
+  "delta(masked-baseline)": {
+    "N": 0,
+    "Acc_base": 4.199999999999989,
+    "Acc_conflict": 10.799999999999997,
+    "resist_rate": 10.799999999999997,
+    "follow_conflict_rate": -10.799999999999997,
+    "resist_rate_given_base_correct": 10.086120947502323,
+    "follow_conflict_rate_given_base_correct": -10.086120947502323,
+    "base_correct_total": 21
+  }
+}

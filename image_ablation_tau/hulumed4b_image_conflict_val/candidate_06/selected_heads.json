@@ -1,0 +1,78 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": -0.004330852452,
+    "base_max": 0.060048257603,
+    "base_min": null
+  },
+  "input_json": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "core_layers",
+    "scan_layers": [
+      16,
+      17,
+      35
+    ],
+    "n_samples": 204,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/Hulu-Med-4B"
+  },
+  "n_candidates": 36,
+  "n_selected": 3,
+  "selected": [
+    {
+      "layer": 35,
+      "head": 13,
+      "mean_abs_effect_reduction": -0.002475560880174824,
+      "mean_abs_base_change": 0.056862616071514056,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.05438705519133923
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.056862616071514056
+      },
+      "conflict_specific_score": -0.043535058992053115,
+      "backbone_score": -0.00014076686789104043
+    },
+    {
+      "layer": 35,
+      "head": 14,
+      "mean_abs_effect_reduction": -0.0034018825082217947,
+      "mean_abs_base_change": 0.041068656771790744,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.03766677426356895
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.041068656771790744
+      },
+      "conflict_specific_score": -0.08283201700771028,
+      "backbone_score": -0.0001397107451081195
+    },
+    {
+      "layer": 35,
+      "head": 0,
+      "mean_abs_effect_reduction": -0.004089285345638499,
+      "mean_abs_base_change": 0.00476988156636556,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.0006805962207270603
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.00476988156636556
+      },
+      "conflict_specific_score": -0.8571341142625978,
+      "backbone_score": -1.9505406789769896e-05
+    }
+  ]
+}

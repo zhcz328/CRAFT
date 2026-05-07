@@ -1,0 +1,56 @@
+{
+  "data_csv": "./data/internvl35_4b/gqa/gqa_nc_cc_both_correct_train.csv",
+  "image_root": ".",
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "trace_mode": "conflict",
+  "position": "prefix",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_conflict"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 0,
+  "coarse_limit": 128,
+  "coarse_topk": 36,
+  "coarse_with_nc": false,
+  "coarse_seed": 42,
+  "plan": "internvl35_4b/gqa/result_prefix_slake/trace_conflict_scan_plan.json",
+  "parallel_mode": "single_process_accel",
+  "num_shards": 1,
+  "shard_idx": 0,
+  "rounds_ran": [
+    "merged_unique_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "merged_unique_layers",
+      "result_path": "internvl35_4b/gqa/result_prefix_slake/headscan_slake_mm_accel/head_scan_merged_unique_layers.json",
+      "scan_layers": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "n_samples": 293,
+  "skipped": 0,
+  "saved": "internvl35_4b/gqa/result_prefix_slake/headscan_slake_mm_accel/head_scan_summary.json"
+}

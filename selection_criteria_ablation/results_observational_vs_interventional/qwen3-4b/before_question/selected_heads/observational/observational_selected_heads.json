@@ -1,0 +1,79 @@
+{
+  "mode": "observational",
+  "criterion": "observational",
+  "selected_heads": [
+    {
+      "layer": 29,
+      "head": 16,
+      "observational_score": 0.26911256333099254,
+      "mean_feature": 0.026810281119256648,
+      "positive_rate": 0.8867924528301887,
+      "n_samples": 212
+    },
+    {
+      "layer": 21,
+      "head": 29,
+      "observational_score": 0.26279380496742094,
+      "mean_feature": 0.21078364747875142,
+      "positive_rate": 0.8867924528301887,
+      "n_samples": 212
+    },
+    {
+      "layer": 34,
+      "head": 12,
+      "observational_score": 0.26230627299024245,
+      "mean_feature": 0.009215755805478624,
+      "positive_rate": 0.8867924528301887,
+      "n_samples": 212
+    }
+  ],
+  "selected": [
+    {
+      "layer": 29,
+      "head": 16,
+      "observational_score": 0.26911256333099254,
+      "mean_feature": 0.026810281119256648,
+      "positive_rate": 0.8867924528301887,
+      "n_samples": 212
+    },
+    {
+      "layer": 21,
+      "head": 29,
+      "observational_score": 0.26279380496742094,
+      "mean_feature": 0.21078364747875142,
+      "positive_rate": 0.8867924528301887,
+      "n_samples": 212
+    },
+    {
+      "layer": 34,
+      "head": 12,
+      "observational_score": 0.26230627299024245,
+      "mean_feature": 0.009215755805478624,
+      "positive_rate": 0.8867924528301887,
+      "n_samples": 212
+    }
+  ],
+  "n_selected": 3,
+  "meta": {
+    "criterion": "observational",
+    "selection_rule": "sort by absolute Pearson correlation descending",
+    "metric_key": "observational_score",
+    "direction": "descending",
+    "threshold_at_last_selected": 0.26230627299024245,
+    "target_count_from_dual": 3,
+    "selected_count": 3,
+    "n_candidates": 40,
+    "model_key": "qwen3-4b",
+    "task": "conflictmedqa",
+    "position": "before_question",
+    "feature": "final-query attention mass to inserted evidence block",
+    "target": "follow_conflict label on conflict prompt (1 if prediction equals conflict answer)",
+    "score": "absolute Pearson correlation",
+    "pairs_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/data/kept_pairs_a12_b10_all_train.jsonl",
+    "n_labels": 212,
+    "positive_rate": 0.8867924528301887,
+    "candidate_head_count": 40,
+    "skipped_span": 0,
+    "skipped_attn": 0
+  }
+}

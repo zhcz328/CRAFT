@@ -1,0 +1,327 @@
+{
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "position": "before_question",
+  "sample": {
+    "row_idx": 53,
+    "img_id": "synpic32727.jpg",
+    "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic32727.jpg",
+    "question": "did this patient receive iv contrast",
+    "gold": "yes",
+    "wrong": "no"
+  },
+  "selection": {
+    "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+    "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+    "recovered_record": {
+      "row_idx": 53,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "wrong",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -0.73046875,
+        "wrong_lp": -3.671875,
+        "ctx_target": "no",
+        "ctx_lp": -3.671875,
+        "other_lp": -0.73046875
+      },
+      "base_ctx_scores": {
+        "gold_lp": -2.25,
+        "wrong_lp": -0.3671875,
+        "ctx_target": "no",
+        "ctx_lp": -0.3671875,
+        "other_lp": -2.25
+      },
+      "ab_nc_scores": {
+        "gold_lp": -0.73046875,
+        "wrong_lp": -3.671875,
+        "ctx_target": "no",
+        "ctx_lp": -3.671875,
+        "other_lp": -0.73046875
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -0.64453125,
+        "wrong_lp": -1.890625,
+        "ctx_target": "no",
+        "ctx_lp": -1.890625,
+        "other_lp": -0.64453125
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 2.94140625,
+        "follow_conflict": -2.94140625,
+        "follow_context": -2.94140625,
+        "context_flip": 2.94140625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -1.8828125,
+        "follow_conflict": 1.8828125,
+        "follow_context": 1.8828125,
+        "context_flip": -1.8828125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 2.94140625,
+        "follow_conflict": -2.94140625,
+        "follow_context": -2.94140625,
+        "context_flip": 2.94140625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 1.24609375,
+        "follow_conflict": -1.24609375,
+        "follow_context": -1.24609375,
+        "context_flip": 1.24609375
+      },
+      "metric_effect_reduction_fixed_nc": {
+        "follow_conflict": 3.12890625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_conflict": 3.12890625
+      },
+      "metric_abs_base_change": {
+        "follow_conflict": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_conflict": 3.12890625
+      }
+    },
+    "ablated_conflict_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "downstream_candidate_layers": [
+      22,
+      32,
+      33,
+      34,
+      35
+    ],
+    "selected_downstream_heads": [
+      {
+        "layer": 22,
+        "head": 10,
+        "mean_abs_delta": 0.011856545694172382,
+        "before_mean_lower_triangle": 0.03658968210220337,
+        "after_mean_lower_triangle": 0.03297579288482666,
+        "delta_mean_lower_triangle": -0.003613889217376709
+      },
+      {
+        "layer": 35,
+        "head": 25,
+        "mean_abs_delta": 0.007870630361139774,
+        "before_mean_lower_triangle": 0.039656780660152435,
+        "after_mean_lower_triangle": 0.040311429649591446,
+        "delta_mean_lower_triangle": 0.0006546489894390106
+      },
+      {
+        "layer": 34,
+        "head": 8,
+        "mean_abs_delta": 0.00669268611818552,
+        "before_mean_lower_triangle": 0.03474771976470947,
+        "after_mean_lower_triangle": 0.03541131317615509,
+        "delta_mean_lower_triangle": 0.0006635934114456177
+      }
+    ],
+    "top_ranked_candidates": [
+      {
+        "layer": 22,
+        "head": 10,
+        "mean_abs_delta": 0.011856545694172382
+      },
+      {
+        "layer": 22,
+        "head": 4,
+        "mean_abs_delta": 0.011217784136533737
+      },
+      {
+        "layer": 22,
+        "head": 7,
+        "mean_abs_delta": 0.010617419146001339
+      },
+      {
+        "layer": 22,
+        "head": 11,
+        "mean_abs_delta": 0.010343755595386028
+      },
+      {
+        "layer": 22,
+        "head": 2,
+        "mean_abs_delta": 0.010058803483843803
+      },
+      {
+        "layer": 22,
+        "head": 9,
+        "mean_abs_delta": 0.009007318876683712
+      },
+      {
+        "layer": 22,
+        "head": 15,
+        "mean_abs_delta": 0.008928343653678894
+      },
+      {
+        "layer": 22,
+        "head": 0,
+        "mean_abs_delta": 0.008639824576675892
+      },
+      {
+        "layer": 22,
+        "head": 19,
+        "mean_abs_delta": 0.00852025393396616
+      },
+      {
+        "layer": 22,
+        "head": 5,
+        "mean_abs_delta": 0.00801615510135889
+      },
+      {
+        "layer": 35,
+        "head": 25,
+        "mean_abs_delta": 0.007870630361139774
+      },
+      {
+        "layer": 22,
+        "head": 17,
+        "mean_abs_delta": 0.00784329790621996
+      },
+      {
+        "layer": 22,
+        "head": 6,
+        "mean_abs_delta": 0.0076136537827551365
+      },
+      {
+        "layer": 22,
+        "head": 16,
+        "mean_abs_delta": 0.006823419127613306
+      },
+      {
+        "layer": 34,
+        "head": 8,
+        "mean_abs_delta": 0.00669268611818552
+      },
+      {
+        "layer": 34,
+        "head": 28,
+        "mean_abs_delta": 0.006656530313193798
+      },
+      {
+        "layer": 35,
+        "head": 23,
+        "mean_abs_delta": 0.00661775516346097
+      },
+      {
+        "layer": 32,
+        "head": 22,
+        "mean_abs_delta": 0.006526256445795298
+      },
+      {
+        "layer": 22,
+        "head": 8,
+        "mean_abs_delta": 0.006509580183774233
+      },
+      {
+        "layer": 22,
+        "head": 14,
+        "mean_abs_delta": 0.006485704332590103
+      }
+    ]
+  },
+  "plot_window": {
+    "start": 1431,
+    "end": 1459,
+    "length": 28,
+    "token_ids": [
+      279,
+      4396,
+      4226,
+      374,
+      25,
+      902,
+      624,
+      4689,
+      468,
+      7483,
+      10150,
+      271,
+      14582,
+      25,
+      1521,
+      419,
+      8720,
+      5258,
+      17509,
+      12872,
+      198,
+      16141,
+      25,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "token_pieces": [
+      " the",
+      " correct",
+      " answer",
+      " is",
+      ":",
+      " no",
+      ".\\n",
+      "END",
+      " E",
+      "VID",
+      "ENCE",
+      "\\n\\n",
+      "Question",
+      ":",
+      " did",
+      " this",
+      " patient",
+      " receive",
+      " iv",
+      " contrast",
+      "\\n",
+      "Answer",
+      ":",
+      "<|im_end|>",
+      "\\n",
+      "<|im_start|>",
+      "assistant",
+      "\\n"
+    ],
+    "evidence_span": [
+      1420,
+      1443
+    ],
+    "image_span": [
+      16,
+      1386
+    ]
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/attention_heatmap/row0053_downstream_attention_before_after_diff.png",
+    "pdf": "/root/logit_lens/PIC/attention_heatmap/row0053_downstream_attention_before_after_diff.pdf"
+  }
+}

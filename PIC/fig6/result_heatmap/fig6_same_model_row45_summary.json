@@ -1,0 +1,154 @@
+{
+  "conflict": {
+    "title": "VQA-RAD Hulu-med-4B text-only before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=45 | is this a t1 weighted t2 weighted or flair image | gold=flair | wrong=t1 weighted or t2 weighted",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      63,
+      92
+    ],
+    "matrix_shape": [
+      101,
+      101
+    ],
+    "meta": {
+      "selection_reason": "same_model_text_only",
+      "sample_kind": "pred_correct",
+      "row_idx": 45,
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "question": "is this a t1 weighted t2 weighted or flair image",
+      "gold": "flair",
+      "wrong": "t1 weighted or t2 weighted",
+      "chosen_record": {
+        "csv_row_idx": 45,
+        "row_idx": 45,
+        "id": 776,
+        "img_id": "synpic9872.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic9872.jpg",
+        "category": "modality",
+        "question": "is this a t1 weighted t2 weighted or flair image",
+        "gold": "flair",
+        "wrong": "t1 weighted or t2 weighted"
+      },
+      "query_span": [
+        81,
+        93
+      ],
+      "conflict_span": [
+        63,
+        92
+      ],
+      "same_model_text_only": true
+    }
+  },
+  "vqa": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=45 | is this a t1 weighted t2 weighted or flair image | gold=flair | wrong=t1 weighted or t2 weighted",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      901,
+      930
+    ],
+    "matrix_shape": [
+      952,
+      952
+    ],
+    "meta": {
+      "selection_reason": "pred_correct_batch",
+      "sample_kind": "pred_correct",
+      "row_idx": 45,
+      "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+      "preds_jsonl": "/root/logit_lens/VQA_RAD/Hulu-med/eval-results_vqarad_hulumed4b_all/_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B/before_question/preds.jsonl",
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic9872.jpg",
+      "question": "is this a t1 weighted t2 weighted or flair image",
+      "gold": "flair",
+      "wrong": "t1 weighted or t2 weighted",
+      "chosen_record": {
+        "csv_row_idx": 45,
+        "row_idx": 45,
+        "id": 776,
+        "img_id": "synpic9872.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic9872.jpg",
+        "category": "modality",
+        "question": "is this a t1 weighted t2 weighted or flair image",
+        "gold": "flair",
+        "wrong": "t1 weighted or t2 weighted"
+      },
+      "question_span": [
+        932,
+        944
+      ],
+      "visual_span": [
+        16,
+        867
+      ],
+      "ic_evidence_span": [
+        901,
+        930
+      ]
+    }
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_same_model_row45.png",
+    "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_same_model_row45.pdf",
+    "vmin": 4.2451675946317456e-06,
+    "vcenter": 0.0007763067881266279,
+    "vmax": 0.02301395416259765
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6"
+}

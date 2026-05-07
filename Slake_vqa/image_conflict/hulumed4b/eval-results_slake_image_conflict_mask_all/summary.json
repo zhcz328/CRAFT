@@ -1,0 +1,107 @@
+{
+  "n_records": 445,
+  "nc_correct": 438,
+  "ic_unknown": 427,
+  "ic_gold": 15,
+  "ic_wrong": 3,
+  "ic_other": 0,
+  "changed_vs_nc": 423,
+  "by_category": {
+    "organ": {
+      "n": 174,
+      "nc_correct": 174,
+      "ic_unknown": 174,
+      "ic_gold": 0,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "size": {
+      "n": 93,
+      "nc_correct": 93,
+      "ic_unknown": 78,
+      "ic_gold": 14,
+      "ic_wrong": 1,
+      "ic_other": 0
+    },
+    "position": {
+      "n": 37,
+      "nc_correct": 30,
+      "ic_unknown": 37,
+      "ic_gold": 0,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "abnormality": {
+      "n": 35,
+      "nc_correct": 35,
+      "ic_unknown": 35,
+      "ic_gold": 0,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "color": {
+      "n": 99,
+      "nc_correct": 99,
+      "ic_unknown": 96,
+      "ic_gold": 1,
+      "ic_wrong": 2,
+      "ic_other": 0
+    },
+    "shape": {
+      "n": 7,
+      "nc_correct": 7,
+      "ic_unknown": 7,
+      "ic_gold": 0,
+      "ic_wrong": 0,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 0.9842696629213483,
+  "ic_unknown_rate": 0.9595505617977528,
+  "ic_gold_rate": 0.033707865168539325,
+  "ic_wrong_rate": 0.006741573033707865,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.950561797752809,
+  "ic_top_predictions": [
+    [
+      "unknown",
+      427
+    ],
+    [
+      "colon",
+      7
+    ],
+    [
+      "gray",
+      3
+    ],
+    [
+      "kidney",
+      2
+    ],
+    [
+      "spinal cord",
+      2
+    ],
+    [
+      "bladder",
+      2
+    ],
+    [
+      "spleen",
+      1
+    ],
+    [
+      "stomach",
+      1
+    ]
+  ],
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "model_name": "hulumed-4b",
+  "data_csv": "./data/hulumed4b/slake_nc_correct_ic_ready.csv",
+  "out_dir": "hulumed4b/eval-results_slake_image_conflict_mask_all",
+  "preds_jsonl": "hulumed4b/eval-results_slake_image_conflict_mask_all/preds.jsonl",
+  "summary_json": "hulumed4b/eval-results_slake_image_conflict_mask_all/summary.json",
+  "unknown_target": "unknown",
+  "mask_all": true
+}

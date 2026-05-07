@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 0.4234375,
+    "bc_max": 0.69453125,
+    "total_candidates": 40,
+    "selected": 4
+  },
+  "selected_heads": [
+    {
+      "layer": 9,
+      "head": 8,
+      "er": 0.7080729166666667,
+      "bc": 0.65078125,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.0880335421973582
+    },
+    {
+      "layer": 9,
+      "head": 20,
+      "er": 0.5627604166666667,
+      "bc": 0.69296875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.8120995421036296
+    },
+    {
+      "layer": 12,
+      "head": 18,
+      "er": 0.49661458333333336,
+      "bc": 0.6526041666666667,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.760972497153077
+    },
+    {
+      "layer": 7,
+      "head": 1,
+      "er": 0.4234375,
+      "bc": 0.69453125,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6096729129568857
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_03/selected_heads.json"
+}

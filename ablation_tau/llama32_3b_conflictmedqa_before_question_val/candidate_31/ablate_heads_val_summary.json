@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "head_file_path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_31/selected_heads.json",
+    "masked_conflict_specific": [
+      {
+        "layer": 7,
+        "heads": [
+          1,
+          14
+        ]
+      },
+      {
+        "layer": 9,
+        "heads": [
+          6,
+          8,
+          20
+        ]
+      },
+      {
+        "layer": 12,
+        "heads": [
+          4,
+          18
+        ]
+      },
+      {
+        "layer": 13,
+        "heads": [
+          20
+        ]
+      },
+      {
+        "layer": 22,
+        "heads": [
+          12,
+          20
+        ]
+      },
+      {
+        "layer": 23,
+        "heads": [
+          0,
+          1
+        ]
+      },
+      {
+        "layer": 25,
+        "heads": [
+          19,
+          20
+        ]
+      },
+      {
+        "layer": 26,
+        "heads": [
+          0
+        ]
+      },
+      {
+        "layer": 27,
+        "heads": [
+          6,
+          20
+        ]
+      }
+    ],
+    "selection_meta": {
+      "mode": "B_fixed",
+      "er_min": 0.08828125,
+      "bc_max": 1.02890625,
+      "total_candidates": 40,
+      "selected": 17
+    },
+    "fixed_thresholds": null,
+    "mask_scope": "all",
+    "positions": [
+      "before_question"
+    ]
+  },
+  "summary_by_position": {
+    "before_question": {
+      "n_samples": 104,
+      "base_acc_before": 1.0,
+      "base_acc_before_recomputed": 1.0,
+      "base_acc_after": 0.6634615384615384,
+      "base_acc_delta": -0.33653846153846156,
+      "support_acc_before": 1.0,
+      "support_acc_after": 0.9326923076923077,
+      "support_acc_delta": -0.06730769230769229,
+      "follow_conflict_rate_before": 0.7596153846153846,
+      "follow_conflict_rate_after": 0.7980769230769231,
+      "follow_conflict_rate_delta": 0.03846153846153855,
+      "resist_rate_after(pred_same_as_base_after)": 0.46153846153846156,
+      "flip_rate_after": 0.5384615384615384,
+      "mean_shift_support_before": 0.2323015286372258,
+      "mean_shift_support_after": -0.27013221153846156,
+      "mean_shift_support_delta": -0.5024337401756873,
+      "mean_shift_conflict_before": -1.1745855258061335,
+      "mean_shift_conflict_after": -0.32970252403846156,
+      "mean_shift_conflict_delta": 0.8448830017676721
+    }
+  }
+}

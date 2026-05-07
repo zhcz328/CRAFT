@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "data": "qwen3_4b/data/train_yesno.train.json",
+    "model": "/root/autodl-tmp/qwen3-4B",
+    "selected_heads": "qwen3_4b/result_yesno/prefix/headscan_pubmed/selected_conflict_heads.json",
+    "position": "prefix",
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "layer2heads": {
+      "7": [
+        4
+      ],
+      "1": [
+        19
+      ],
+      "17": [
+        19
+      ],
+      "15": [
+        21
+      ],
+      "14": [
+        9
+      ],
+      "8": [
+        29
+      ]
+    }
+  },
+  "baseline": {
+    "N": 500,
+    "Acc_base": 94.4,
+    "Acc_conflict": 51.6,
+    "resist_rate": 51.6,
+    "follow_conflict_rate": 48.4,
+    "resist_rate_given_base_correct": 52.96610169491525,
+    "follow_conflict_rate_given_base_correct": 47.03389830508475,
+    "base_correct_total": 472
+  },
+  "masked": {
+    "N": 500,
+    "Acc_base": 77.4,
+    "Acc_conflict": 77.6,
+    "resist_rate": 77.6,
+    "follow_conflict_rate": 22.4,
+    "resist_rate_given_base_correct": 78.03617571059432,
+    "follow_conflict_rate_given_base_correct": 21.963824289405686,
+    "base_correct_total": 387
+  },
+  "delta(masked-baseline)": {
+    "N": 0,
+    "Acc_base": -17.0,
+    "Acc_conflict": 25.999999999999993,
+    "resist_rate": 25.999999999999993,
+    "follow_conflict_rate": -26.0,
+    "resist_rate_given_base_correct": 25.07007401567907,
+    "follow_conflict_rate_given_base_correct": -25.07007401567906,
+    "base_correct_total": -85
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.36,
+    "base_max": 0.34,
+    "base_min": null
+  },
+  "combine": "union",
+  "topk_per_round": 20,
+  "rounds": [
+    "round1_preplateau",
+    "round1_topk_fallback"
+  ],
+  "round_meta": {
+    "round1_preplateau": {
+      "scan_layers": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "n_samples": 1000,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "before_question",
+      "keep_mode": "self"
+    },
+    "round1_topk_fallback": {
+      "scan_layers": [
+        24
+      ],
+      "n_samples": 1000,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "before_question",
+      "keep_mode": "self"
+    }
+  },
+  "n_selected": 5,
+  "selected": [
+    {
+      "layer": 24,
+      "head": 21,
+      "best_effect_reduction": 0.4666184070825578,
+      "best_base_change": 0.16925726802349111,
+      "selected_in_rounds": [
+        "round1_topk_fallback"
+      ],
+      "conflict_specific_score": 2.7568426200473497,
+      "backbone_score": 0.07897855679226697
+    },
+    {
+      "layer": 35,
+      "head": 27,
+      "best_effect_reduction": 0.3663766274929039,
+      "best_base_change": 0.1543916672229767,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ],
+      "conflict_specific_score": 2.373018318051181,
+      "backbone_score": 0.05656549835016091
+    },
+    {
+      "layer": 24,
+      "head": 31,
+      "best_effect_reduction": 0.4444118585824971,
+      "best_base_change": 0.27927651774883283,
+      "selected_in_rounds": [
+        "round1_topk_fallback"
+      ],
+      "conflict_specific_score": 1.5912912079882393,
+      "backbone_score": 0.12411379631120653
+    },
+    {
+      "layer": 24,
+      "head": 1,
+      "best_effect_reduction": 0.38206272852420864,
+      "best_base_change": 0.24346922237873087,
+      "selected_in_rounds": [
+        "round1_topk_fallback"
+      ],
+      "conflict_specific_score": 1.5692380151930438,
+      "backbone_score": 0.09302051541368524
+    },
+    {
+      "layer": 29,
+      "head": 6,
+      "best_effect_reduction": 0.3776716152429579,
+      "best_base_change": 0.27234118330478696,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ],
+      "conflict_specific_score": 1.386754011662943,
+      "backbone_score": 0.10285553459589737
+    }
+  ]
+}

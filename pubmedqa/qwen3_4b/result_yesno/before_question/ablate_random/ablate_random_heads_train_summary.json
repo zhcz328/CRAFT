@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "data": "qwen3_4b/data/train_yesno.train.json",
+    "model": "/root/autodl-tmp/qwen3-4B",
+    "selected_heads": "qwen3_4b/result_yesno/before_question/headscan_pubmed/selected_conflict_heads.json",
+    "position": "before_question",
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "layer2heads": {
+      "7": [
+        4
+      ],
+      "1": [
+        19
+      ],
+      "17": [
+        19
+      ],
+      "15": [
+        21
+      ],
+      "14": [
+        9
+      ],
+      "8": [
+        29
+      ],
+      "6": [
+        17
+      ]
+    }
+  },
+  "baseline": {
+    "N": 500,
+    "Acc_base": 94.4,
+    "Acc_conflict": 46.4,
+    "resist_rate": 46.4,
+    "follow_conflict_rate": 53.6,
+    "resist_rate_given_base_correct": 47.03389830508475,
+    "follow_conflict_rate_given_base_correct": 52.96610169491525,
+    "base_correct_total": 472
+  },
+  "masked": {
+    "N": 500,
+    "Acc_base": 71.6,
+    "Acc_conflict": 80.2,
+    "resist_rate": 80.2,
+    "follow_conflict_rate": 19.8,
+    "resist_rate_given_base_correct": 79.60893854748603,
+    "follow_conflict_rate_given_base_correct": 20.391061452513966,
+    "base_correct_total": 358
+  },
+  "delta(masked-baseline)": {
+    "N": 0,
+    "Acc_base": -22.80000000000001,
+    "Acc_conflict": 33.800000000000004,
+    "resist_rate": 33.800000000000004,
+    "follow_conflict_rate": -33.8,
+    "resist_rate_given_base_correct": 32.575040242401286,
+    "follow_conflict_rate_given_base_correct": -32.575040242401286,
+    "base_correct_total": -114
+  }
+}

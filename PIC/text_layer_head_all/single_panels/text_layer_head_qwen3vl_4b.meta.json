@@ -1,0 +1,23 @@
+{
+  "task_json": "/root/logit_lens/Slake_vqa/text_conflict/qwen3vl_4b/result_before_question_slake/headscan_slake_mm_accel/head_scan_merged_unique_layers.json",
+  "retrieval_json": "/root/logit_lens/Slake_vqa/text_conflict/qwen3vl_4b/result_before_question_slake/headscan_slake_mm_accel/head_scan_merged_unique_layers.json",
+  "single_model_mode": true,
+  "output": "/root/logit_lens/PIC/text_layer_head_all/single_panels/text_layer_head_qwen3vl_4b.png",
+  "pdf_output": "/root/logit_lens/PIC/text_layer_head_all/single_panels/text_layer_head_qwen3vl_4b.pdf",
+  "legend_only": false,
+  "hide_text_keep_ticks": false,
+  "annotate_bar_values": false,
+  "conflict_points": 36,
+  "backbone_points": 112,
+  "irrelevant_points": 300,
+  "compress_layers": true,
+  "fill_from_json": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+  "fill_conflict_ratio": 0.1,
+  "fill_backbone_ratio": 0.25,
+  "late_layer_conflict_cap_start": 30,
+  "late_layer_conflict_cap": 1,
+  "metrics_used": [
+    "mean_abs_effect_reduction",
+    "mean_abs_base_change"
+  ]
+}

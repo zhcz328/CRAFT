@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "head_file_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_04/selected_heads.json",
+    "masked_conflict_specific": [
+      {
+        "layer": 31,
+        "heads": [
+          31
+        ]
+      },
+      {
+        "layer": 32,
+        "heads": [
+          26,
+          27
+        ]
+      },
+      {
+        "layer": 33,
+        "heads": [
+          4
+        ]
+      }
+    ],
+    "selection_meta": {
+      "mode": "B_fixed",
+      "er_min": 0.795400943396,
+      "bc_max": 0.958726415094,
+      "total_candidates": 40,
+      "selected": 4
+    },
+    "fixed_thresholds": null,
+    "mask_scope": "conflict_only",
+    "positions": [
+      "before_question"
+    ]
+  },
+  "summary_by_position": {
+    "before_question": {
+      "n_samples": 174,
+      "base_acc_before": 1.0,
+      "base_acc_before_recomputed": 1.0,
+      "base_acc_after": 1.0,
+      "base_acc_delta": 0.0,
+      "support_acc_before": 1.0,
+      "support_acc_after": 1.0,
+      "support_acc_delta": 0.0,
+      "follow_conflict_rate_before": 0.9252873563218391,
+      "follow_conflict_rate_after": 0.9022988505747126,
+      "follow_conflict_rate_delta": -0.02298850574712652,
+      "resist_rate_after(pred_same_as_base_after)": 0.09770114942528736,
+      "flip_rate_after": 0.9022988505747126,
+      "mean_shift_support_before": 1.5179594823683815,
+      "mean_shift_support_after": 1.5179594823683815,
+      "mean_shift_support_delta": 0.0,
+      "mean_shift_conflict_before": -3.6042614099623145,
+      "mean_shift_conflict_after": -4.069290774992143,
+      "mean_shift_conflict_delta": -0.4650293650298283
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "format": "image_conflict_ablation_json",
+  "path": "/root/logit_lens/General/multimodal/image_conflict/qwen3vl_2b/gqa/result_image_conflict_slake/ablate/ablate_selected_heads_ctx_only_val.json",
+  "config": {
+    "data_csv": "./data/qwen3vl_2b/gqa/gqa_nc_correct_ic_ready_val.csv",
+    "image_root": ".",
+    "model": "/root/autodl-tmp/qwen3vl-2B",
+    "selected_heads": "qwen3vl_2b/gqa/result_image_conflict_slake/selected_heads_core_layers.json",
+    "trace_mode": "conflict",
+    "position": "image_conflict",
+    "mask_scale": 1.0,
+    "metrics": [
+      "follow_context"
+    ],
+    "mask_scope": "ctx_only",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda:1",
+    "max_examples": 0,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "n_selected_heads": 2,
+  "sample_filter": "none",
+  "metrics": {
+    "n_all": 202,
+    "counts": {
+      "correct_to_unknown": 6,
+      "unknown_to_other": 0,
+      "unknown_rate": 36
+    },
+    "C2U": 2.9702970297029703,
+    "U2O": 0.0,
+    "UR": 17.821782178217823,
+    "rule_tuple": [
+      2.9702970297029703,
+      0.0,
+      17.821782178217823
+    ]
+  }
+}

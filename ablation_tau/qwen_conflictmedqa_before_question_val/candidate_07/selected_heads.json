@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 2.653891509434,
+    "bc_max": 2.340212264151,
+    "total_candidates": 40,
+    "selected": 4
+  },
+  "selected_heads": [
+    {
+      "layer": 18,
+      "head": 31,
+      "er": 3.3520047169811322,
+      "bc": 1.377948113207547,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.432604139624895
+    },
+    {
+      "layer": 18,
+      "head": 22,
+      "er": 3.5754716981132075,
+      "bc": 1.6037735849056605,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.229410374602943
+    },
+    {
+      "layer": 16,
+      "head": 6,
+      "er": 2.9345518867924527,
+      "bc": 1.4221698113207548,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.063431384917235
+    },
+    {
+      "layer": 35,
+      "head": 8,
+      "er": 3.2320165094339623,
+      "bc": 2.2600235849056602,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 1.4300802438256996
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_07/selected_heads.json"
+}

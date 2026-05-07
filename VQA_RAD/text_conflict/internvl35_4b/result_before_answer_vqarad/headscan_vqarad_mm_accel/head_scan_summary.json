@@ -1,0 +1,48 @@
+{
+  "data_csv": "./data/internvl35_4b/vqa_rad_nc_cc_both_correct_train.csv",
+  "image_root": ".",
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "trace_mode": "conflict",
+  "position": "before_answer",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_conflict"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 0,
+  "coarse_limit": 256,
+  "coarse_topk": 48,
+  "coarse_with_nc": false,
+  "coarse_seed": 42,
+  "plan": "internvl35_4b/result_before_answer_vqarad/trace_conflict_scan_plan.json",
+  "parallel_mode": "single_process_accel",
+  "num_shards": 1,
+  "shard_idx": 0,
+  "rounds_ran": [
+    "merged_unique_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "merged_unique_layers",
+      "result_path": "internvl35_4b/result_before_answer_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+      "scan_layers": [
+        0,
+        1,
+        13,
+        15,
+        18,
+        19,
+        20,
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "n_samples": 698,
+  "skipped": 0,
+  "saved": "internvl35_4b/result_before_answer_vqarad/headscan_vqarad_mm_accel/head_scan_summary.json"
+}

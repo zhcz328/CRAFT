@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "head_file_path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_02/selected_heads.json",
+    "masked_conflict_specific": [
+      {
+        "layer": 7,
+        "heads": [
+          1,
+          14
+        ]
+      },
+      {
+        "layer": 9,
+        "heads": [
+          6,
+          8,
+          20
+        ]
+      },
+      {
+        "layer": 12,
+        "heads": [
+          4,
+          18
+        ]
+      },
+      {
+        "layer": 13,
+        "heads": [
+          20
+        ]
+      },
+      {
+        "layer": 22,
+        "heads": [
+          6,
+          12,
+          20
+        ]
+      },
+      {
+        "layer": 23,
+        "heads": [
+          0,
+          1,
+          10,
+          21
+        ]
+      },
+      {
+        "layer": 24,
+        "heads": [
+          7,
+          9,
+          10
+        ]
+      },
+      {
+        "layer": 25,
+        "heads": [
+          19,
+          20
+        ]
+      },
+      {
+        "layer": 26,
+        "heads": [
+          0,
+          18
+        ]
+      },
+      {
+        "layer": 27,
+        "heads": [
+          6,
+          20
+        ]
+      }
+    ],
+    "selection_meta": {
+      "mode": "B_fixed",
+      "er_min": 0.053385416667,
+      "bc_max": 1.02890625,
+      "total_candidates": 40,
+      "selected": 24
+    },
+    "fixed_thresholds": null,
+    "mask_scope": "all",
+    "positions": [
+      "before_question"
+    ]
+  },
+  "summary_by_position": {
+    "before_question": {
+      "n_samples": 104,
+      "base_acc_before": 1.0,
+      "base_acc_before_recomputed": 1.0,
+      "base_acc_after": 0.5096153846153846,
+      "base_acc_delta": -0.4903846153846154,
+      "support_acc_before": 1.0,
+      "support_acc_after": 0.7403846153846154,
+      "support_acc_delta": -0.2596153846153846,
+      "follow_conflict_rate_before": 0.7596153846153846,
+      "follow_conflict_rate_after": 0.6923076923076923,
+      "follow_conflict_rate_delta": -0.06730769230769229,
+      "resist_rate_after(pred_same_as_base_after)": 0.7211538461538461,
+      "flip_rate_after": 0.27884615384615385,
+      "mean_shift_support_before": 0.22650483938363883,
+      "mean_shift_support_after": -0.34750600961538464,
+      "mean_shift_support_delta": -0.5740108489990234,
+      "mean_shift_conflict_before": -1.1603883596567006,
+      "mean_shift_conflict_after": -0.4015925480769231,
+      "mean_shift_conflict_delta": 0.7587958115797776
+    }
+  }
+}

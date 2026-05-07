@@ -1,0 +1,146 @@
+{
+  "title": "VQA-RAD Hulu-med-4B before_question",
+  "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+  "sample_title": "row=53 | did this patient receive iv contrast | gold=yes | wrong=no | pred=no",
+  "answer": "no",
+  "answer_token_ids": [
+    902
+  ],
+  "answer_token_labels": [
+    " no"
+  ],
+  "selected_heads": [
+    {
+      "layer": 12,
+      "head": 8
+    },
+    {
+      "layer": 13,
+      "head": 3
+    },
+    {
+      "layer": 19,
+      "head": 21
+    },
+    {
+      "layer": 20,
+      "head": 10
+    },
+    {
+      "layer": 20,
+      "head": 11
+    },
+    {
+      "layer": 21,
+      "head": 19
+    }
+  ],
+  "visual_span": [
+    16,
+    1386
+  ],
+  "conflict_span": [
+    1420,
+    1443
+  ],
+  "matrix_shape": [
+    1,
+    1459
+  ],
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/fig6_vqa_rad_hulumed4b_before_question_attention.png",
+    "pdf": "/root/logit_lens/PIC/fig6/fig6_vqa_rad_hulumed4b_before_question_attention.pdf"
+  },
+  "meta": {
+    "selection_reason": "recovered_flip",
+    "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+    "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+    "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+    "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic32727.jpg",
+    "row_idx": 53,
+    "question": "did this patient receive iv contrast",
+    "gold": "yes",
+    "wrong": "no",
+    "chosen_record": {
+      "row_idx": 53,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "wrong",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -0.73046875,
+        "wrong_lp": -3.671875,
+        "ctx_target": "no",
+        "ctx_lp": -3.671875,
+        "other_lp": -0.73046875
+      },
+      "base_ctx_scores": {
+        "gold_lp": -2.25,
+        "wrong_lp": -0.3671875,
+        "ctx_target": "no",
+        "ctx_lp": -0.3671875,
+        "other_lp": -2.25
+      },
+      "ab_nc_scores": {
+        "gold_lp": -0.73046875,
+        "wrong_lp": -3.671875,
+        "ctx_target": "no",
+        "ctx_lp": -3.671875,
+        "other_lp": -0.73046875
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -0.64453125,
+        "wrong_lp": -1.890625,
+        "ctx_target": "no",
+        "ctx_lp": -1.890625,
+        "other_lp": -0.64453125
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 2.94140625,
+        "follow_conflict": -2.94140625,
+        "follow_context": -2.94140625,
+        "context_flip": 2.94140625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -1.8828125,
+        "follow_conflict": 1.8828125,
+        "follow_context": 1.8828125,
+        "context_flip": -1.8828125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 2.94140625,
+        "follow_conflict": -2.94140625,
+        "follow_context": -2.94140625,
+        "context_flip": 2.94140625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 1.24609375,
+        "follow_conflict": -1.24609375,
+        "follow_context": -1.24609375,
+        "context_flip": 1.24609375
+      },
+      "metric_effect_reduction_fixed_nc": {
+        "follow_conflict": 3.12890625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_conflict": 3.12890625
+      },
+      "metric_abs_base_change": {
+        "follow_conflict": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_conflict": 3.12890625
+      }
+    },
+    "ic_image_span": [
+      16,
+      1386
+    ],
+    "ic_evidence_span": [
+      1420,
+      1443
+    ]
+  }
+}

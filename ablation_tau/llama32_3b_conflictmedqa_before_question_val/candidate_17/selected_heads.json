@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 0.053385416667,
+    "bc_max": 1.5984375,
+    "total_candidates": 40,
+    "selected": 32
+  },
+  "selected_heads": [
+    {
+      "layer": 9,
+      "head": 8,
+      "er": 0.7080729166666667,
+      "bc": 0.65078125,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.0880335421973582
+    },
+    {
+      "layer": 9,
+      "head": 20,
+      "er": 0.5627604166666667,
+      "bc": 0.69296875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.8120995421036296
+    },
+    {
+      "layer": 12,
+      "head": 18,
+      "er": 0.49661458333333336,
+      "bc": 0.6526041666666667,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.760972497153077
+    },
+    {
+      "layer": 9,
+      "head": 6,
+      "er": 0.5588541666666667,
+      "bc": 0.7919270833333333,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.705688027016763
+    },
+    {
+      "layer": 7,
+      "head": 4,
+      "er": 0.8138020833333334,
+      "bc": 1.2690104166666667,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6412882284943983
+    },
+    {
+      "layer": 8,
+      "head": 6,
+      "er": 0.8432291666666667,
+      "bc": 1.32421875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6367743470573269
+    },
+    {
+      "layer": 7,
+      "head": 1,
+      "er": 0.4234375,
+      "bc": 0.69453125,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6096729129568857
+    },
+    {
+      "layer": 12,
+      "head": 4,
+      "er": 0.55390625,
+      "bc": 0.91875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6028905002552378
+    },
+    {
+      "layer": 24,
+      "head": 9,
+      "er": 0.071875,
+      "bc": 0.12005208333333334,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.5986934946138409
+    },
+    {
+      "layer": 27,
+      "head": 20,
+      "er": 0.09322916666666667,
+      "bc": 0.15859375,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.5878452260662265
+    },
+    {
+      "layer": 12,
+      "head": 15,
+      "er": 0.625,
+      "bc": 1.0684895833333334,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.5849373029102503
+    },
+    {
+      "layer": 7,
+      "head": 14,
+      "er": 0.44088541666666664,
+      "bc": 0.7880208333333333,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.5594837579584829
+    },
+    {
+      "layer": 25,
+      "head": 19,
+      "er": 0.1015625,
+      "bc": 0.18255208333333334,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.5563450265835919
+    },
+    {
+      "layer": 7,
+      "head": 0,
+      "er": 0.7153645833333333,
+      "bc": 1.2888020833333333,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.5550611979319054
+    },
+    {
+      "layer": 23,
+      "head": 1,
+      "er": 0.22213541666666667,
+      "bc": 0.40078125,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.5542546274608386
+    },
+    {
+      "layer": 23,
+      "head": 10,
+      "er": 0.08645833333333333,
+      "bc": 0.16614583333333333,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.5203730435227475
+    },
+    {
+      "layer": 22,
+      "head": 20,
+      "er": 0.1203125,
+      "bc": 0.234375,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.513331143120456
+    },
+    {
+      "layer": 22,
+      "head": 12,
+      "er": 0.17552083333333332,
+      "bc": 0.3455729166666667,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.5079111150122971
+    },
+    {
+      "layer": 23,
+      "head": 0,
+      "er": 0.165625,
+      "bc": 0.328125,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.5047603664445975
+    },
+    {
+      "layer": 11,
+      "head": 17,
+      "er": 0.7955729166666666,
+      "bc": 1.5984375,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.4977188153730448
+    },
+    {
+      "layer": 13,
+      "head": 20,
+      "er": 0.4825520833333333,
+      "bc": 1.02890625,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.4689947352721379
+    },
+    {
+      "layer": 23,
+      "head": 21,
+      "er": 0.05755208333333333,
+      "bc": 0.1265625,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.4547289173682249
+    },
+    {
+      "layer": 24,
+      "head": 7,
+      "er": 0.06953125,
+      "bc": 0.16067708333333333,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.43273636676232036
+    },
+    {
+      "layer": 25,
+      "head": 20,
+      "er": 0.3140625,
+      "bc": 0.8421875,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.3729123586940454
+    },
+    {
+      "layer": 26,
+      "head": 18,
+      "er": 0.06432291666666666,
+      "bc": 0.17708333333333334,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.36323324291815756
+    },
+    {
+      "layer": 12,
+      "head": 8,
+      "er": 0.46953125,
+      "bc": 1.2979166666666666,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.36175734567652346
+    },
+    {
+      "layer": 9,
+      "head": 15,
+      "er": 0.48489583333333336,
+      "bc": 1.4916666666666667,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.32506961447847077
+    },
+    {
+      "layer": 22,
+      "head": 6,
+      "er": 0.07916666666666666,
+      "bc": 0.2643229166666667,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.2995062560551495
+    },
+    {
+      "layer": 27,
+      "head": 6,
+      "er": 0.26328125,
+      "bc": 0.8973958333333333,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.2933833062704887
+    },
+    {
+      "layer": 24,
+      "head": 20,
+      "er": 0.315625,
+      "bc": 1.1736979166666666,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.2689147919607719
+    },
+    {
+      "layer": 26,
+      "head": 0,
+      "er": 0.08828125,
+      "bc": 0.4921875,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.17936471494153156
+    },
+    {
+      "layer": 24,
+      "head": 10,
+      "er": 0.07682291666666667,
+      "bc": 0.4591145833333333,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.16732805301206832
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_17/selected_heads.json"
+}

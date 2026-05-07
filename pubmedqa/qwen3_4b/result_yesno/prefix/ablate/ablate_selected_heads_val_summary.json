@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "data": "qwen3_4b/data/train_yesno.val.json",
+    "model": "/root/autodl-tmp/qwen3-4B",
+    "selected_heads": "qwen3_4b/result_yesno/prefix/headscan_pubmed/selected_conflict_heads.json",
+    "position": "prefix",
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "layer2heads": {
+      "30": [
+        27
+      ],
+      "28": [
+        8
+      ],
+      "31": [
+        7
+      ],
+      "32": [
+        14
+      ],
+      "34": [
+        15
+      ],
+      "27": [
+        22
+      ]
+    }
+  },
+  "baseline": {
+    "N": 920,
+    "Acc_base": 95.97826086956522,
+    "Acc_conflict": 50.32608695652174,
+    "resist_rate": 50.32608695652174,
+    "follow_conflict_rate": 49.67391304347826,
+    "resist_rate_given_base_correct": 50.84937712344281,
+    "follow_conflict_rate_given_base_correct": 49.15062287655719,
+    "base_correct_total": 883
+  },
+  "masked": {
+    "N": 920,
+    "Acc_base": 96.84782608695652,
+    "Acc_conflict": 76.41304347826087,
+    "resist_rate": 76.41304347826087,
+    "follow_conflict_rate": 23.58695652173913,
+    "resist_rate_given_base_correct": 76.31874298540966,
+    "follow_conflict_rate_given_base_correct": 23.681257014590347,
+    "base_correct_total": 891
+  },
+  "delta(masked-baseline)": {
+    "N": 0,
+    "Acc_base": 0.8695652173912976,
+    "Acc_conflict": 26.086956521739133,
+    "resist_rate": 26.086956521739133,
+    "follow_conflict_rate": -26.08695652173913,
+    "resist_rate_given_base_correct": 25.46936586196685,
+    "follow_conflict_rate_given_base_correct": -25.469365861966846,
+    "base_correct_total": 8
+  }
+}

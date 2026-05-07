@@ -1,0 +1,76 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.0,
+    "base_max": 0.05,
+    "base_min": null
+  },
+  "selection_note": "Selected heads with mean_abs_base_change <= 0.05 and positive mean_abs_effect_reduction.",
+  "combine": "union",
+  "rounds": [
+    "round1_preplateau",
+    "round1_topk_fallback"
+  ],
+  "round_meta": {
+    "round1_preplateau": {
+      "scan_layers": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "n_samples": 483,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "before_question",
+      "keep_mode": "self"
+    },
+    "round1_topk_fallback": {
+      "scan_layers": [
+        18
+      ],
+      "n_samples": 483,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "before_question",
+      "keep_mode": "self"
+    }
+  },
+  "n_selected": 2,
+  "selected": [
+    {
+      "layer": 18,
+      "head": 4,
+      "best_effect_reduction": 0.11137988483436854,
+      "best_base_change": 0.04629684669384061,
+      "selected_in_rounds": [
+        "round1_topk_fallback"
+      ]
+    },
+    {
+      "layer": 20,
+      "head": 23,
+      "best_effect_reduction": 0.09541197593167704,
+      "best_base_change": 0.03577949097437892,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "n_records": 419,
+  "nc_correct": 412,
+  "ic_unknown": 341,
+  "ic_gold": 78,
+  "ic_wrong": 0,
+  "ic_other": 0,
+  "changed_vs_nc": 334,
+  "by_category": {
+    "attr": {
+      "n": 110,
+      "nc_correct": 108,
+      "ic_unknown": 103,
+      "ic_gold": 7,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "obj": {
+      "n": 267,
+      "nc_correct": 264,
+      "ic_unknown": 196,
+      "ic_gold": 71,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "rel": {
+      "n": 42,
+      "nc_correct": 40,
+      "ic_unknown": 42,
+      "ic_gold": 0,
+      "ic_wrong": 0,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 0.9832935560859188,
+  "ic_unknown_rate": 0.8138424821002387,
+  "ic_gold_rate": 0.18615751789976134,
+  "ic_wrong_rate": 0.0,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.7971360381861575,
+  "ic_top_predictions": [
+    [
+      "unknown",
+      341
+    ],
+    [
+      "yes",
+      78
+    ]
+  ],
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "model_name": "InternVL3_5-4B",
+  "data_csv": "./data/internvl35_4b/gqa/gqa_nc_correct_ic_ready.csv",
+  "out_dir": "internvl35_4b/gqa/eval-results_slake_image_conflict",
+  "preds_jsonl": "internvl35_4b/gqa/eval-results_slake_image_conflict/preds.jsonl",
+  "summary_json": "internvl35_4b/gqa/eval-results_slake_image_conflict/summary.json",
+  "unknown_target": "unknown",
+  "save_processed_images": false,
+  "processed_image_dir": "",
+  "mask_all": false,
+  "add_noise": false,
+  "add_noise_all": false,
+  "mask_scale": 1.0,
+  "noise_scale": 1.0,
+  "noise_std": 0.0
+}

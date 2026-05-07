@@ -1,0 +1,71 @@
+{
+  "layer_quotas": [
+    {
+      "layer": 22,
+      "n": 2
+    },
+    {
+      "layer": 23,
+      "n": 1
+    },
+    {
+      "layer": 25,
+      "n": 1
+    }
+  ],
+  "high_layers": [
+    30,
+    31,
+    32
+  ],
+  "selection_rule": "maximize conflict-text visual gap while penalizing outside-region gap",
+  "selected_heads": [
+    {
+      "layer": 22,
+      "head": 9,
+      "display_conflict_before": 0.06929395877971099,
+      "display_conflict_after": 0.03649197938816192,
+      "display_conflict_gap": 0.03280197939154907,
+      "display_outside_gap": 0.03066619166638702,
+      "display_score": 0.01593557397503621
+    },
+    {
+      "layer": 22,
+      "head": 21,
+      "display_conflict_before": 0.018373574591420878,
+      "display_conflict_after": 0.0035167538486138464,
+      "display_conflict_gap": 0.014856820742807031,
+      "display_outside_gap": 0.010201446556311566,
+      "display_score": 0.00924602513683567
+    },
+    {
+      "layer": 23,
+      "head": 3,
+      "display_conflict_before": 0.10697708207254226,
+      "display_conflict_after": 0.05688347594919973,
+      "display_conflict_gap": 0.050093606123342536,
+      "display_outside_gap": 0.022535047522978857,
+      "display_score": 0.03769932998570416
+    },
+    {
+      "layer": 25,
+      "head": 14,
+      "display_conflict_before": 0.08757529902057005,
+      "display_conflict_after": 0.046133571610950566,
+      "display_conflict_gap": 0.04144172740961949,
+      "display_outside_gap": 0.022831269259586406,
+      "display_score": 0.028884529316846964
+    },
+    {
+      "layer": 30,
+      "head": 5,
+      "display_conflict_before": 0.1003915251505812,
+      "display_conflict_after": 0.04716477906801559,
+      "display_conflict_gap": 0.053226746082565606,
+      "display_outside_gap": 0.03723976441760897,
+      "display_score": 0.03274487565288067
+    }
+  ],
+  "output_png": "/root/logit_lens/PIC/attention_heatmap/val_row0330_downstream_attention_mock_textfocused_top5_no_difference.png",
+  "output_pdf": "/root/logit_lens/PIC/attention_heatmap/val_row0330_downstream_attention_mock_textfocused_top5_no_difference.pdf"
+}

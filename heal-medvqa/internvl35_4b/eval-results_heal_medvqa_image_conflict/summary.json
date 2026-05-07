@@ -1,0 +1,47 @@
+{
+  "n_records": 445,
+  "nc_correct": 0,
+  "ic_unknown": 445,
+  "ic_gold": 0,
+  "ic_wrong": 0,
+  "ic_other": 0,
+  "changed_vs_nc": 0,
+  "by_category": {
+    "abnormality_yesno": {
+      "n": 445,
+      "nc_correct": 0,
+      "ic_unknown": 445,
+      "ic_gold": 0,
+      "ic_wrong": 0,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 0.0,
+  "ic_unknown_rate": 1.0,
+  "ic_gold_rate": 0.0,
+  "ic_wrong_rate": 0.0,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.0,
+  "ic_top_predictions": [
+    [
+      "unknown",
+      445
+    ]
+  ],
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "model_name": "InternVL3_5-4B",
+  "dataset": "heal-medvqa",
+  "data_csv": "/root/logit_lens/heal-medvqa/data/internvl35_4b/heal_medvqa_nc_correct_ic_ready.csv",
+  "out_dir": "/root/logit_lens/heal-medvqa/internvl35_4b/eval-results_heal_medvqa_image_conflict",
+  "preds_jsonl": "/root/logit_lens/heal-medvqa/internvl35_4b/eval-results_heal_medvqa_image_conflict/preds.jsonl",
+  "summary_json": "/root/logit_lens/heal-medvqa/internvl35_4b/eval-results_heal_medvqa_image_conflict/summary.json",
+  "unknown_target": "unknown",
+  "save_processed_images": false,
+  "processed_image_dir": "",
+  "mask_all": false,
+  "add_noise": false,
+  "add_noise_all": false,
+  "mask_scale": 1.0,
+  "noise_scale": 1.0,
+  "noise_std": 0.0
+}

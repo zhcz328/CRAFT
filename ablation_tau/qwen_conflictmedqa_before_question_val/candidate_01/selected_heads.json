@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 2.298349056604,
+    "bc_max": 2.340212264151,
+    "total_candidates": 40,
+    "selected": 10
+  },
+  "selected_heads": [
+    {
+      "layer": 18,
+      "head": 31,
+      "er": 3.3520047169811322,
+      "bc": 1.377948113207547,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.432604139624895
+    },
+    {
+      "layer": 18,
+      "head": 22,
+      "er": 3.5754716981132075,
+      "bc": 1.6037735849056605,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.229410374602943
+    },
+    {
+      "layer": 16,
+      "head": 6,
+      "er": 2.9345518867924527,
+      "bc": 1.4221698113207548,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.063431384917235
+    },
+    {
+      "layer": 19,
+      "head": 27,
+      "er": 2.478183962264151,
+      "bc": 1.2588443396226414,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.9686167031503852
+    },
+    {
+      "layer": 16,
+      "head": 11,
+      "er": 2.535377358490566,
+      "bc": 1.4227594339622642,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.7820128378392985
+    },
+    {
+      "layer": 35,
+      "head": 8,
+      "er": 3.2320165094339623,
+      "bc": 2.2600235849056602,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 1.4300802438256996
+    },
+    {
+      "layer": 21,
+      "head": 29,
+      "er": 2.342570754716981,
+      "bc": 1.6627358490566038,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.4088644009099207
+    },
+    {
+      "layer": 22,
+      "head": 2,
+      "er": 2.4994103773584904,
+      "bc": 1.8349056603773586,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.362145787211036
+    },
+    {
+      "layer": 20,
+      "head": 28,
+      "er": 2.6538915094339623,
+      "bc": 2.0029481132075473,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.324991979044334
+    },
+    {
+      "layer": 16,
+      "head": 19,
+      "er": 2.365566037735849,
+      "bc": 2.2983490566037736,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.0292453192406203
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/selected_heads.json"
+}

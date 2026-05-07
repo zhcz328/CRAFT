@@ -1,0 +1,122 @@
+{
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "position": "before_answer",
+  "sample": {
+    "row_idx": 1,
+    "image_path": "/root/logit_lens/VQA_RAD/text_conflict/data/VQA_RAD_Image_Folder/synpic55245.jpg",
+    "question": "is the left and right mca present",
+    "gold": "yes",
+    "wrong": "no"
+  },
+  "selected_conflict_heads": [
+    {
+      "layer": 13,
+      "head": 21
+    },
+    {
+      "layer": 13,
+      "head": 28
+    },
+    {
+      "layer": 19,
+      "head": 15
+    },
+    {
+      "layer": 19,
+      "head": 16
+    },
+    {
+      "layer": 19,
+      "head": 21
+    },
+    {
+      "layer": 19,
+      "head": 27
+    },
+    {
+      "layer": 20,
+      "head": 4
+    }
+  ],
+  "selected_downstream_heads": [
+    {
+      "layer": 21,
+      "head": 14,
+      "display_conflict_before": 0.11594958107918502,
+      "display_conflict_after": 0.030457357997074722,
+      "display_conflict_gap": 0.0854922230821103,
+      "display_outside_gap": 0.03811407544546657,
+      "display_score": 0.06452948158710368
+    },
+    {
+      "layer": 28,
+      "head": 7,
+      "display_conflict_before": 0.08786411630921066,
+      "display_conflict_after": 0.01808869482949376,
+      "display_conflict_gap": 0.06977542147971691,
+      "display_outside_gap": 0.028263562117434856,
+      "display_score": 0.054230462315127737
+    },
+    {
+      "layer": 25,
+      "head": 28,
+      "display_conflict_before": 0.08381144348531962,
+      "display_conflict_after": 0.01618158881610725,
+      "display_conflict_gap": 0.06762985466921237,
+      "display_outside_gap": 0.028656306878676534,
+      "display_score": 0.051868885885940276
+    },
+    {
+      "layer": 23,
+      "head": 9,
+      "display_conflict_before": 0.09562007788568735,
+      "display_conflict_after": 0.02769565735012293,
+      "display_conflict_gap": 0.06792442053556443,
+      "display_outside_gap": 0.030417270836510902,
+      "display_score": 0.05119492157548343
+    },
+    {
+      "layer": 22,
+      "head": 16,
+      "display_conflict_before": 0.10142802834976465,
+      "display_conflict_after": 0.06016368705779314,
+      "display_conflict_gap": 0.04126434129197151,
+      "display_outside_gap": 0.011469195924938605,
+      "display_score": 0.03495628353325528
+    }
+  ],
+  "downstream_layers_considered": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "outputs": {
+    "png": "/root/logit_lens/PIC/attention_heatmap/internvl35_vqarad_textfocused_top5_no_difference.png",
+    "pdf": "/root/logit_lens/PIC/attention_heatmap/internvl35_vqarad_textfocused_top5_no_difference.pdf"
+  },
+  "scan_layers_meta": [
+    0,
+    1,
+    13,
+    15,
+    18,
+    19,
+    20,
+    32,
+    33,
+    34,
+    35
+  ]
+}

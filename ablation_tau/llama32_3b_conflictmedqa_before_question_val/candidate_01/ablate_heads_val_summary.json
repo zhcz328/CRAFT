@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "head_file_path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_01/selected_heads.json",
+    "masked_conflict_specific": [
+      {
+        "layer": 7,
+        "heads": [
+          0,
+          1,
+          4,
+          14
+        ]
+      },
+      {
+        "layer": 9,
+        "heads": [
+          6,
+          8,
+          20
+        ]
+      },
+      {
+        "layer": 12,
+        "heads": [
+          4,
+          8,
+          15,
+          18
+        ]
+      },
+      {
+        "layer": 13,
+        "heads": [
+          20
+        ]
+      },
+      {
+        "layer": 22,
+        "heads": [
+          12,
+          20
+        ]
+      },
+      {
+        "layer": 23,
+        "heads": [
+          0,
+          1
+        ]
+      },
+      {
+        "layer": 24,
+        "heads": [
+          20
+        ]
+      },
+      {
+        "layer": 25,
+        "heads": [
+          19,
+          20
+        ]
+      },
+      {
+        "layer": 26,
+        "heads": [
+          0
+        ]
+      },
+      {
+        "layer": 27,
+        "heads": [
+          6,
+          20
+        ]
+      }
+    ],
+    "selection_meta": {
+      "mode": "B_fixed",
+      "er_min": 0.08828125,
+      "bc_max": 1.297916666667,
+      "total_candidates": 40,
+      "selected": 22
+    },
+    "fixed_thresholds": null,
+    "mask_scope": "all",
+    "positions": [
+      "before_question"
+    ]
+  },
+  "summary_by_position": {
+    "before_question": {
+      "n_samples": 104,
+      "base_acc_before": 1.0,
+      "base_acc_before_recomputed": 1.0,
+      "base_acc_after": 0.5,
+      "base_acc_delta": -0.5,
+      "support_acc_before": 1.0,
+      "support_acc_after": 0.5,
+      "support_acc_delta": -0.5,
+      "follow_conflict_rate_before": 0.7596153846153846,
+      "follow_conflict_rate_after": 0.5,
+      "follow_conflict_rate_delta": -0.2596153846153846,
+      "resist_rate_after(pred_same_as_base_after)": 1.0,
+      "flip_rate_after": 0.0,
+      "mean_shift_support_before": 0.22650483938363883,
+      "mean_shift_support_after": -0.051382211538461536,
+      "mean_shift_support_delta": -0.27788705092210036,
+      "mean_shift_conflict_before": -1.1603883596567006,
+      "mean_shift_conflict_after": -0.040865384615384616,
+      "mean_shift_conflict_delta": 1.119522975041316
+    }
+  }
+}

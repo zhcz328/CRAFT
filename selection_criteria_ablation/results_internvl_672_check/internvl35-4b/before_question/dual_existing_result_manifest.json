@@ -1,0 +1,56 @@
+{
+  "criterion": "dual",
+  "note": "Dual is not re-evaluated by this runner; these paths point to the existing results.",
+  "head_file": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json",
+  "n_selected_heads": 10,
+  "selected_heads": [
+    {
+      "layer": 34,
+      "head": 5
+    },
+    {
+      "layer": 24,
+      "head": 30
+    },
+    {
+      "layer": 21,
+      "head": 11
+    },
+    {
+      "layer": 19,
+      "head": 21
+    },
+    {
+      "layer": 20,
+      "head": 29
+    },
+    {
+      "layer": 20,
+      "head": 14
+    },
+    {
+      "layer": 20,
+      "head": 30
+    },
+    {
+      "layer": 18,
+      "head": 23
+    },
+    {
+      "layer": 14,
+      "head": 26
+    },
+    {
+      "layer": 21,
+      "head": 27
+    }
+  ],
+  "result_files": {
+    "train": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/ablate/ablate_selected_heads_all_train.json",
+    "val": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/ablate/ablate_selected_heads_all_val.json"
+  },
+  "existing_results_found": {
+    "train": true,
+    "val": true
+  }
+}

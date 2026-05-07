@@ -1,0 +1,13 @@
+python ablate_head.py \
+  --data_csv ./data/nc_cc_both_correct_rerun.csv \
+  --image_root . \
+  --model /archive/zengjiaqi/Medical_LLM/Qwen3-VL-8B-Instruct \
+  --selected_heads result/selected_heads_stable.json \
+  --trace_mode conflict \
+  --position before_question \
+  --metrics follow_conflict \
+  --mask_scope ctx_only \
+  --keep_mode self \
+  --dtype bf16 \
+  --out_json result/ablate_selected_heads_ctx_only.json \
+  --max_examples 3

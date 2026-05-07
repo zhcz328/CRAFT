@@ -1,0 +1,36 @@
+{
+  "position": "prefix",
+  "preds_jsonl": "C:\\Users\\29818\\Desktop\\logit_lens\\cross_modal\\Hulu-med\\eval-results_vqarad_hulumed4b_all\\_root_autodl-tmp_hulumed-4B_Hulu-Med-4B\\prefix\\preds.jsonl",
+  "train": {
+    "n_records": 1173,
+    "prompt_type_counts": {
+      "base": 391,
+      "support": 391,
+      "conflict": 391
+    },
+    "matched_outcome_samples": 391,
+    "total_samples": 391,
+    "follow_counts_conflict_only": {
+      "resist": 252,
+      "follow_conflict": 139,
+      "unknown": 0
+    }
+  },
+  "val": {
+    "n_records": 1170,
+    "prompt_type_counts": {
+      "base": 390,
+      "support": 390,
+      "conflict": 390
+    },
+    "matched_outcome_samples": 390,
+    "total_samples": 390,
+    "follow_counts_conflict_only": {
+      "resist": 262,
+      "follow_conflict": 128,
+      "unknown": 0
+    }
+  },
+  "train_path": "C:\\Users\\29818\\Desktop\\logit_lens\\cross_modal\\Hulu-med\\tuned_lens\\data_test_prefix\\train_prefix.jsonl",
+  "val_path": "C:\\Users\\29818\\Desktop\\logit_lens\\cross_modal\\Hulu-med\\tuned_lens\\data_test_prefix\\val_prefix.jsonl"
+}

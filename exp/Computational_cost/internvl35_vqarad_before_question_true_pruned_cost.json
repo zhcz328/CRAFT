@@ -1,0 +1,407 @@
+{
+  "config": {
+    "ablate_head_path": "/root/logit_lens/VQA_RAD/text_conflict/ablate_head.py",
+    "model": "/root/autodl-tmp/InternVL3_5-4B",
+    "data_csv": "/root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_train.csv",
+    "image_root": "/root/logit_lens/VQA_RAD/text_conflict",
+    "selected_heads_json": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json",
+    "sample_index": 0,
+    "position": "before_question",
+    "dtype": "bf16",
+    "device": "cuda",
+    "warmup": 1,
+    "repeats": 3,
+    "max_image_side": 672
+  },
+  "sample": {
+    "row_idx": 0,
+    "question": "are regions of the brain infarcted",
+    "gold": "yes",
+    "wrong": "no",
+    "img_path": "/root/logit_lens/VQA_RAD/text_conflict/data/VQA_RAD_Image_Folder/synpic54610.jpg"
+  },
+  "sample_inputs": {
+    "image_size": [
+      566,
+      555
+    ],
+    "ctx_prompt_token_count": 351,
+    "nc_prompt_token_count": 328
+  },
+  "selected_heads": [
+    {
+      "layer": 14,
+      "head": 26
+    },
+    {
+      "layer": 18,
+      "head": 23
+    },
+    {
+      "layer": 19,
+      "head": 21
+    },
+    {
+      "layer": 20,
+      "head": 14
+    },
+    {
+      "layer": 20,
+      "head": 29
+    },
+    {
+      "layer": 20,
+      "head": 30
+    },
+    {
+      "layer": 21,
+      "head": 11
+    },
+    {
+      "layer": 21,
+      "head": 27
+    },
+    {
+      "layer": 24,
+      "head": 30
+    },
+    {
+      "layer": 34,
+      "head": 5
+    }
+  ],
+  "patched_layers": [
+    {
+      "layer_idx": 14,
+      "removed_q_heads": [
+        26
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 18,
+      "removed_q_heads": [
+        23
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 19,
+      "removed_q_heads": [
+        21
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 20,
+      "removed_q_heads": [
+        14,
+        29,
+        30
+      ],
+      "kept_q_head_count": 29,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 21,
+      "removed_q_heads": [
+        11,
+        27
+      ],
+      "kept_q_head_count": 30,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 24,
+      "removed_q_heads": [
+        30
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 34,
+      "removed_q_heads": [
+        5
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "normal_ctx": {
+    "timing": {
+      "warmup": 1,
+      "repeats": 3,
+      "elapsed_ms": [
+        44.56901364028454,
+        43.36240328848362,
+        43.79180260002613
+      ],
+      "elapsed_ms_mean": 43.90773984293143,
+      "elapsed_ms_min": 43.36240328848362,
+      "elapsed_ms_max": 44.56901364028454,
+      "peak_memory_mb": [
+        9249.61572265625,
+        9249.61572265625,
+        9249.61572265625
+      ],
+      "peak_memory_mb_mean": 9249.61572265625,
+      "result": {
+        "scores": {
+          "gold_lp": -15.375,
+          "wrong_lp": -23.375,
+          "ctx_target": "no",
+          "ctx_lp": -23.375,
+          "other_lp": -15.375
+        },
+        "metrics": {
+          "gold_wrong_margin": 8.0,
+          "follow_conflict": -8.0,
+          "follow_context": -8.0,
+          "context_flip": 8.0
+        },
+        "pred": "gold"
+      }
+    },
+    "profile": {
+      "reported_total_flops": 3629544067575,
+      "reported_total_flops_giga": 3629.544067575,
+      "self_cpu_time_total_ms": 53.698,
+      "self_cuda_time_total_ms": 0.0,
+      "event_count": 160,
+      "top_flop_ops": [
+        {
+          "key": "aten::mm",
+          "flops": 2823634944000,
+          "self_cpu_time_total_us": 3537,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::addmm",
+          "flops": 627803422720,
+          "self_cpu_time_total_us": 1416,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::bmm",
+          "flops": 175947591552,
+          "self_cpu_time_total_us": 1699,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::conv2d",
+          "flops": 1233125376,
+          "self_cpu_time_total_us": 14,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::mul",
+          "flops": 601046912,
+          "self_cpu_time_total_us": 3518,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::add",
+          "flops": 323937015,
+          "self_cpu_time_total_us": 2167,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::to",
+          "flops": 0,
+          "self_cpu_time_total_us": 728,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::_to_copy",
+          "flops": 0,
+          "self_cpu_time_total_us": 1200,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::empty_strided",
+          "flops": 0,
+          "self_cpu_time_total_us": 1219,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::copy_",
+          "flops": 0,
+          "self_cpu_time_total_us": 2125,
+          "self_cuda_time_total_us": 0
+        }
+      ]
+    }
+  },
+  "pruned_ctx": {
+    "timing": {
+      "warmup": 1,
+      "repeats": 3,
+      "elapsed_ms": [
+        47.155458480119705,
+        46.987639740109444,
+        46.94919474422932
+      ],
+      "elapsed_ms_mean": 47.03076432148615,
+      "elapsed_ms_min": 46.94919474422932,
+      "elapsed_ms_max": 47.155458480119705,
+      "peak_memory_mb": [
+        9250.04443359375,
+        9250.04443359375,
+        9250.04443359375
+      ],
+      "peak_memory_mb_mean": 9250.04443359375,
+      "result": {
+        "scores": {
+          "gold_lp": -16.875,
+          "wrong_lp": -28.25,
+          "ctx_target": "no",
+          "ctx_lp": -28.25,
+          "other_lp": -16.875
+        },
+        "metrics": {
+          "gold_wrong_margin": 11.375,
+          "follow_conflict": -11.375,
+          "follow_context": -11.375,
+          "context_flip": 11.375
+        },
+        "pred": "gold"
+      }
+    },
+    "profile": {
+      "reported_total_flops": 3625879090896,
+      "reported_total_flops_giga": 3625.879090896,
+      "self_cpu_time_total_ms": 53.674,
+      "self_cuda_time_total_ms": 0.0,
+      "event_count": 159,
+      "top_flop_ops": [
+        {
+          "key": "aten::mm",
+          "flops": 2820414504960,
+          "self_cpu_time_total_us": 3514,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::addmm",
+          "flops": 627803422720,
+          "self_cpu_time_total_us": 1403,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::bmm",
+          "flops": 175506039168,
+          "self_cpu_time_total_us": 1667,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::conv2d",
+          "flops": 1233125376,
+          "self_cpu_time_total_us": 4,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::mul",
+          "flops": 599241017,
+          "self_cpu_time_total_us": 3522,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::add",
+          "flops": 322757655,
+          "self_cpu_time_total_us": 2178,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::to",
+          "flops": 0,
+          "self_cpu_time_total_us": 853,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::_to_copy",
+          "flops": 0,
+          "self_cpu_time_total_us": 1277,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::empty_strided",
+          "flops": 0,
+          "self_cpu_time_total_us": 1222,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::copy_",
+          "flops": 0,
+          "self_cpu_time_total_us": 2032,
+          "self_cuda_time_total_us": 0
+        }
+      ]
+    }
+  }
+}

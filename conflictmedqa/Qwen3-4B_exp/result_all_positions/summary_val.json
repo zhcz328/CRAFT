@@ -1,0 +1,37 @@
+{
+  "saved": "result_all_positions/conflict_positions_val.jsonl",
+  "positions": [
+    "prefix",
+    "before_question",
+    "before_answer"
+  ],
+  "summary_by_position": {
+    "prefix": {
+      "n_samples": 174,
+      "support_acc": 1.0,
+      "follow_conflict_rate": 0.8333333333333334,
+      "resist_rate(pred_same_as_base)": 0.16666666666666666,
+      "flip_rate": 0.8333333333333334,
+      "mean_shift_support": 1.2586206896551724,
+      "mean_shift_conflict": -0.29238505747126436
+    },
+    "before_question": {
+      "n_samples": 174,
+      "support_acc": 1.0,
+      "follow_conflict_rate": 0.9482758620689655,
+      "resist_rate(pred_same_as_base)": 0.05172413793103448,
+      "flip_rate": 0.9482758620689655,
+      "mean_shift_support": 1.3477011494252873,
+      "mean_shift_conflict": -3.5179597701149423
+    },
+    "before_answer": {
+      "n_samples": 174,
+      "support_acc": 1.0,
+      "follow_conflict_rate": 0.8045977011494253,
+      "resist_rate(pred_same_as_base)": 0.19540229885057472,
+      "flip_rate": 0.8045977011494253,
+      "mean_shift_support": 1.9252873563218391,
+      "mean_shift_conflict": -5.252873563218391
+    }
+  }
+}

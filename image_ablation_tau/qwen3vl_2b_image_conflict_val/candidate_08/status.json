@@ -1,0 +1,13 @@
+{
+  "candidate_index": 8,
+  "mode": "pareto",
+  "thresholds": {
+    "eff_min": -0.992154255319,
+    "base_max": 0.169813829787,
+    "base_min": null
+  },
+  "n_selected": 5,
+  "selection_path": "/root/logit_lens/image_ablation_tau/qwen3vl_2b_image_conflict_val/candidate_08/selected_heads.json",
+  "ablation_path": "/root/logit_lens/image_ablation_tau/qwen3vl_2b_image_conflict_val/candidate_08/ablation_val.json",
+  "decision": "pending_ablation"
+}

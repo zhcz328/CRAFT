@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 0.99233490566,
+    "bc_max": 1.422759433962,
+    "total_candidates": 40,
+    "selected": 9
+  },
+  "selected_heads": [
+    {
+      "layer": 18,
+      "head": 31,
+      "er": 3.3520047169811322,
+      "bc": 1.377948113207547,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.432604139624895
+    },
+    {
+      "layer": 16,
+      "head": 6,
+      "er": 2.9345518867924527,
+      "bc": 1.4221698113207548,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 2.063431384917235
+    },
+    {
+      "layer": 19,
+      "head": 27,
+      "er": 2.478183962264151,
+      "bc": 1.2588443396226414,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.9686167031503852
+    },
+    {
+      "layer": 16,
+      "head": 5,
+      "er": 2.0807783018867925,
+      "bc": 1.1232311320754718,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.8524917890676775
+    },
+    {
+      "layer": 32,
+      "head": 27,
+      "er": 1.0011792452830188,
+      "bc": 0.9398584905660378,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 1.0652435340947088
+    },
+    {
+      "layer": 29,
+      "head": 9,
+      "er": 1.116745283018868,
+      "bc": 1.099056603773585,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 1.0160934960866046
+    },
+    {
+      "layer": 32,
+      "head": 28,
+      "er": 1.15625,
+      "bc": 1.2570754716981132,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.9197928893204784
+    },
+    {
+      "layer": 29,
+      "head": 16,
+      "er": 1.0330188679245282,
+      "bc": 1.3060141509433962,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.790970048990879
+    },
+    {
+      "layer": 32,
+      "head": 30,
+      "er": 0.9923349056603774,
+      "bc": 1.3938679245283019,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.7119284232527049
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_08/selected_heads.json"
+}

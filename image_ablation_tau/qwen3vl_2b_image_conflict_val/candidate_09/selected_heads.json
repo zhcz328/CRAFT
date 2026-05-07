@@ -1,0 +1,48 @@
+{
+  "mode": "pareto",
+  "thresholds": {
+    "eff_min": -0.992154255319,
+    "base_max": 0.001329787234,
+    "base_min": null
+  },
+  "input_json": "/root/logit_lens/General/multimodal/image_conflict/qwen3vl_2b/gqa/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "core_layers",
+    "scan_layers": [
+      22
+    ],
+    "n_samples": 470,
+    "n_layers": 28,
+    "n_heads": 16,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/qwen3vl-2B"
+  },
+  "n_candidates": 16,
+  "n_selected": 1,
+  "selected": [
+    {
+      "layer": 22,
+      "head": 10,
+      "mean_abs_effect_reduction": -0.5272606382978723,
+      "mean_abs_base_change": 0.0,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": -0.5272606382978723
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.0
+      },
+      "conflict_specific_score": -527260.6382978723,
+      "backbone_score": -0.0
+    }
+  ]
+}

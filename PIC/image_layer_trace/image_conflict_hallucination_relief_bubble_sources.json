@@ -1,0 +1,47 @@
+{
+  "metric": "hallucination_relief",
+  "panels": [
+    {
+      "title": "Hulu-med-4B",
+      "source": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/trace_image_conflict.json",
+      "used": 205,
+      "skipped": 103,
+      "n_layers": 36,
+      "value_min": -1.9862131275781771,
+      "value_max": 0.26783442846158656,
+      "value_mean": -0.3418608386503649
+    },
+    {
+      "title": "InternVL3.5-4B",
+      "source": "/root/logit_lens/Slake_vqa/image_conflict/internvl35_4b/result_image_conflict_slake/trace_image_conflict.json",
+      "used": 58,
+      "skipped": 15,
+      "n_layers": 36,
+      "value_min": -12.028005922662802,
+      "value_max": 0.7444458706625576,
+      "value_mean": -1.4077665436998636
+    }
+  ],
+  "outputs": {
+    "png": "/root/logit_lens/PIC/image_layer_trace/image_conflict_hallucination_relief_bubble.png",
+    "pdf": "/root/logit_lens/PIC/image_layer_trace/image_conflict_hallucination_relief_bubble.pdf",
+    "sources": "/root/logit_lens/PIC/image_layer_trace/image_conflict_hallucination_relief_bubble_sources.json",
+    "legend_png": "/root/logit_lens/PIC/image_layer_trace/image_conflict_hallucination_relief_bubble_legend_only.png",
+    "legend_pdf": "/root/logit_lens/PIC/image_layer_trace/image_conflict_hallucination_relief_bubble_legend_only.pdf"
+  },
+  "color_scale": {
+    "vmin": -12.028005922662802,
+    "vcenter": 0.0,
+    "vmax": 0.29974576522564067,
+    "display_tick_mode": "separate_signed_normalized",
+    "display_ticks": [
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0
+    ],
+    "positive_cap_rule": "60th_percentile_of_positive_values_with_lower_bound_0.18_times_positive_max",
+    "cmap": "teal_white_coral"
+  }
+}

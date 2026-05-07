@@ -1,0 +1,15 @@
+{
+  "task": "re_filter",
+  "model": "/root/autodl-tmp/Qwen3_5-4B",
+  "model_name": "Qwen3.5-4B",
+  "in_csv": "./data/slake_closed_all.csv",
+  "out_csv": "data/qwen35_4b/slake_nc_cc_both_correct.csv",
+  "total_rows": 2526,
+  "status": "completed",
+  "completed_count": 2526,
+  "updated_at": "2026-03-27T22:36:19.495574+00:00",
+  "seen": 2526,
+  "used": 2526,
+  "miss": 0,
+  "kept": 1295
+}

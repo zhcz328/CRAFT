@@ -1,0 +1,126 @@
+{
+  "n_records": 104,
+  "nc_correct": 102,
+  "ic_unknown": 22,
+  "ic_gold": 61,
+  "ic_wrong": 21,
+  "ic_other": 0,
+  "changed_vs_nc": 41,
+  "by_category": {
+    "organ": {
+      "n": 15,
+      "nc_correct": 14,
+      "ic_unknown": 14,
+      "ic_gold": 1,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "size": {
+      "n": 78,
+      "nc_correct": 78,
+      "ic_unknown": 0,
+      "ic_gold": 57,
+      "ic_wrong": 21,
+      "ic_other": 0
+    },
+    "color": {
+      "n": 6,
+      "nc_correct": 5,
+      "ic_unknown": 5,
+      "ic_gold": 1,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "shape": {
+      "n": 4,
+      "nc_correct": 4,
+      "ic_unknown": 2,
+      "ic_gold": 2,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "abnormality": {
+      "n": 1,
+      "nc_correct": 1,
+      "ic_unknown": 1,
+      "ic_gold": 0,
+      "ic_wrong": 0,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 0.9807692307692307,
+  "ic_unknown_rate": 0.21153846153846154,
+  "ic_gold_rate": 0.5865384615384616,
+  "ic_wrong_rate": 0.20192307692307693,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.3942307692307692,
+  "ic_top_predictions": [
+    [
+      "liver",
+      25
+    ],
+    [
+      "unknown",
+      22
+    ],
+    [
+      "lung",
+      18
+    ],
+    [
+      "spleen",
+      14
+    ],
+    [
+      "kidney",
+      12
+    ],
+    [
+      "bladder",
+      4
+    ],
+    [
+      "spinal cord",
+      2
+    ],
+    [
+      "oval",
+      2
+    ],
+    [
+      "stomach",
+      1
+    ],
+    [
+      "heart",
+      1
+    ],
+    [
+      "yes",
+      1
+    ],
+    [
+      "hyperdense",
+      1
+    ],
+    [
+      "colon",
+      1
+    ]
+  ],
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "model_name": "InternVL3_5-4B",
+  "data_csv": "./data/internvl35_4b/slake_nc_correct_ic_ready.csv",
+  "out_dir": "internvl35_4b/eval-results_slake_image_conflict",
+  "preds_jsonl": "internvl35_4b/eval-results_slake_image_conflict/preds.jsonl",
+  "summary_json": "internvl35_4b/eval-results_slake_image_conflict/summary.json",
+  "unknown_target": "unknown",
+  "save_processed_images": false,
+  "processed_image_dir": "",
+  "mask_all": false,
+  "add_noise": false,
+  "add_noise_all": false,
+  "mask_scale": 2.0,
+  "noise_scale": 1.0,
+  "noise_std": 0.0
+}

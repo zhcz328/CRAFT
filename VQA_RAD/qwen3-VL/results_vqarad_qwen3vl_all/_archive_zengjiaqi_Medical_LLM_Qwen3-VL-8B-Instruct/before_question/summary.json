@@ -1,0 +1,31 @@
+{
+  "model": "/archive/zengjiaqi/Medical_LLM/Qwen3-VL-8B-Instruct",
+  "data_csv": "./data/vqa_rad_closed_all.csv",
+  "image_root": "./data/VQA_RAD_Image_Folder",
+  "position": "before_question",
+  "N": 1299,
+  "skipped_missing_img": 0,
+  "support_correct_rate": 82.67898383371825,
+  "conflict_still_gold_rate": 64.51116243264049,
+  "conflict_follow_evidence_rate": 35.48883756735951,
+  "resist_rate": 81.67821401077752,
+  "changed_rate": 18.32178598922248,
+  "resist_rate_given_sup_correct": 77.93296089385476,
+  "changed_rate_given_sup_correct": 22.067039106145252,
+  "follow_conflict_rate_given_sup_correct": 22.067039106145252,
+  "avg_support_margin": 9.992053583459363,
+  "avg_conflict_margin": 7.387810100584052,
+  "files": {
+    "preds_jsonl": "results_vqarad_qwen3vl_all/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/preds.jsonl",
+    "summary_json": "results_vqarad_qwen3vl_all/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/summary.json",
+    "nc_cc_both_correct_csv": "results_vqarad_qwen3vl_all/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/nc_cc_both_correct.csv"
+  },
+  "nc_correct_rate": 74.13394919168591,
+  "avg_nc_margin": 9.068939470345466,
+  "resist_rate_given_nc_correct": 82.24299065420561,
+  "changed_rate_given_nc_correct": 17.757009345794394,
+  "follow_conflict_rate_given_nc_correct": 17.757009345794394,
+  "nc_correct_cnt": 963,
+  "nc_cc_both_correct_cnt": 792,
+  "nc_cc_both_correct_rate_overall": 60.969976905311775
+}

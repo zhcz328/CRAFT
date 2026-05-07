@@ -1,0 +1,35 @@
+{
+  "model": "/archive/zengjiaqi/Medical_LLM/Qwen3_model/Qwen/Qwen3-4B",
+  "position": "before_question",
+  "N": 202,
+  "skipped_maybe": 0,
+  "thresholds": {
+    "nc_yn_tau": 2.0,
+    "nc_unk_tau": 0.0,
+    "cc_tau": 3.0,
+    "cc_unk_tau": 0.0,
+    "ic_tau": 2.0,
+    "ic_unk_tau": 0.0
+  },
+  "Acc_NC_overall": 100.0,
+  "NC_unknown_rate": 0.0,
+  "NC_coverage": 100.0,
+  "NC_conditional_accuracy": 100.0,
+  "Acc_CC_overall": 100.0,
+  "Acc_IC_overall": 27.22772277227723,
+  "resist_rate": 27.22772277227723,
+  "changed_rate": 72.77227722772277,
+  "abstain_rate": 26.73267326732673,
+  "flip_rate": 46.039603960396036,
+  "eligible_attack": 202,
+  "NC_not_binary_rate_over_N": 0.0,
+  "resist_rate_given_NC_correct": 27.22772277227723,
+  "changed_rate_given_NC_correct": 72.77227722772277,
+  "abstain_rate_given_NC_correct": 26.73267326732673,
+  "flip_rate_given_NC_correct": 46.039603960396036,
+  "NC_correct_binary_cnt": 202,
+  "files": {
+    "preds": "result_all_positions/qwen3-4b_follow_conflict/_archive_zengjiaqi_Medical_LLM_Qwen3_model_Qwen_Qwen3-4B/before_question/preds.jsonl",
+    "summary": "result_all_positions/qwen3-4b_follow_conflict/_archive_zengjiaqi_Medical_LLM_Qwen3_model_Qwen_Qwen3-4B/before_question/summary.json"
+  }
+}

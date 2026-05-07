@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{Ablation of head selection criteria on the validation split at the \texttt{before\_question} position. \textit{CER-only}: selecting heads with highest CER regardless of BCP. \textit{BCP-only}: selecting heads with lowest BCP regardless of CER. \textit{Dual}: our CER$>$\,$\tau_{\text{cer}}$ \& BCP$<$\,$\tau_{\text{bcp}}$ criterion.}
+\label{tab:ablation_criteria}
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Model} & \textbf{Criterion} & \textbf{CFR$\downarrow$} & \textbf{$\left|\Delta\mathrm{CFR}\right|$} & \textbf{C2W$\downarrow$} & \textbf{\#Heads} \\
+\midrule
+\multirow{3}{*}{Qwen3-4B} & CER-only & 71.8\% & 23.0 & 0.6\% & 3 \\
+& BCP-only & 91.4\% & 3.4 & \textbf{0.0\%} & 3 \\
+& Dual (Ours) & \textbf{68.4\%} & \textbf{26.4} & 1.1\% & 3 \\
+\midrule
+\multirow{3}{*}{Llama-3.2-3B} & CER-only & 75.0\% & 1.9 & 12.5\% & 3 \\
+& BCP-only & 82.7\% & 5.8 & 6.7\% & 3 \\
+& Dual (Ours) & \textbf{57.7\%} & \textbf{19.2} & \textbf{0.0\%} & 3 \\
+\midrule
+\multirow{3}{*}{Hulu-med-4B} & CER-only & \textbf{6.7\%} & \textbf{37.9} & 1.8\% & 6 \\
+& BCP-only & 44.4\% & 0.3 & 1.3\% & 6 \\
+& Dual (Ours) & 14.4\% & 30.3 & \textbf{0.5\%} & 6 \\
+\midrule
+\multirow{3}{*}{InternVL3.5-4B} & CER-only & 9.7\% & 12.0 & 4.0\% & 10 \\
+& BCP-only & \textbf{7.4\%} & \textbf{14.3} & \textbf{0.0\%} & 10 \\
+& Dual (Ours) & \textbf{7.4\%} & \textbf{14.3} & 2.3\% & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}

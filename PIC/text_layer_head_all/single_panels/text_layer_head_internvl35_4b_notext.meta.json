@@ -1,0 +1,23 @@
+{
+  "task_json": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+  "retrieval_json": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+  "single_model_mode": true,
+  "output": "/root/logit_lens/PIC/text_layer_head_all/single_panels/text_layer_head_internvl35_4b_notext.png",
+  "pdf_output": "/root/logit_lens/PIC/text_layer_head_all/single_panels/text_layer_head_internvl35_4b_notext.pdf",
+  "legend_only": false,
+  "hide_text_keep_ticks": true,
+  "annotate_bar_values": false,
+  "conflict_points": 45,
+  "backbone_points": 114,
+  "irrelevant_points": 289,
+  "compress_layers": true,
+  "fill_from_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/head_scan_merged_unique_layers.json",
+  "fill_conflict_ratio": null,
+  "fill_backbone_ratio": null,
+  "late_layer_conflict_cap_start": null,
+  "late_layer_conflict_cap": null,
+  "metrics_used": [
+    "mean_abs_effect_reduction",
+    "mean_abs_base_change"
+  ]
+}

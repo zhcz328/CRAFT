@@ -1,0 +1,42 @@
+{
+  "data_csv": "./data/nc_cc_both_correct_rerun_tmp_train.csv",
+  "image_root": ".",
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "trace_mode": "conflict",
+  "position": "before_answer",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_conflict"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 0,
+  "plan": "./result_train_hulumed4b_before_answer/trace_conflict_scan_plan.json",
+  "rounds_ran": [
+    "merged_unique_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "merged_unique_layers",
+      "result_path": "result_train_hulumed4b_before_answer/headscan_vqarad_mm_hulumed4b_before_answer/head_scan_merged_unique_layers.json",
+      "scan_layers": [
+        0,
+        1,
+        6,
+        8,
+        15,
+        18,
+        19,
+        21,
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "n_samples": 391,
+  "skipped": 0,
+  "saved": "result_train_hulumed4b_before_answer/headscan_vqarad_mm_hulumed4b_before_answer/head_scan_summary.json"
+}

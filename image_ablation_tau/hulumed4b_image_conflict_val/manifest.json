@@ -1,0 +1,1146 @@
+{
+  "target": "hulumed4b_image_conflict_val",
+  "position": "image_conflict",
+  "current_selection_path": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/selected_heads_core_layers.json",
+  "current_ablation_path": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/ablate/ablate_selected_heads_ctx_only_val.json",
+  "current_metrics": {
+    "n_all": 132,
+    "counts": {
+      "correct_to_unknown": 36,
+      "unknown_to_other": 0,
+      "unknown_rate": 86
+    },
+    "C2U": 27.272727272727273,
+    "U2O": 0.0,
+    "UR": 65.15151515151516,
+    "rule_tuple": [
+      27.272727272727273,
+      0.0,
+      65.15151515151516
+    ]
+  },
+  "accepted_candidates": [],
+  "rejected_or_pending_candidates": [
+    {
+      "candidate_index": 1,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.022518994761,
+        "base_max": 0.495060471927,
+        "base_min": null
+      },
+      "n_selected": 24,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_01/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_01/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 67,
+          "unknown_to_other": 0,
+          "unknown_rate": 118
+        },
+        "C2U": 50.75757575757576,
+        "U2O": 0.0,
+        "UR": 89.39393939393939,
+        "rule_tuple": [
+          50.75757575757576,
+          0.0,
+          89.39393939393939
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_01/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": false,
+        "U2O_higher": false,
+        "UR_higher": true
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 2,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.022518994761,
+        "base_max": 0.224102412953,
+        "base_min": null
+      },
+      "n_selected": 15,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_02/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_02/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 18,
+          "unknown_to_other": 0,
+          "unknown_rate": 68
+        },
+        "C2U": 13.636363636363637,
+        "U2O": 0.0,
+        "UR": 51.515151515151516,
+        "rule_tuple": [
+          13.636363636363637,
+          0.0,
+          51.515151515151516
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_02/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 3,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.028979593632,
+        "base_max": 0.10661595008,
+        "base_min": null
+      },
+      "n_selected": 16,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_03/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_03/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 15,
+          "unknown_to_other": 0,
+          "unknown_rate": 65
+        },
+        "C2U": 11.363636363636363,
+        "U2O": 0.0,
+        "UR": 49.24242424242424,
+        "rule_tuple": [
+          11.363636363636363,
+          0.0,
+          49.24242424242424
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_03/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 4,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.012865917355,
+        "base_max": 0.10661595008,
+        "base_min": null
+      },
+      "n_selected": 8,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_04/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_04/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 9,
+          "unknown_to_other": 0,
+          "unknown_rate": 59
+        },
+        "C2U": 6.818181818181818,
+        "U2O": 0.0,
+        "UR": 44.696969696969695,
+        "rule_tuple": [
+          6.818181818181818,
+          0.0,
+          44.696969696969695
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_04/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 5,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.004330852452,
+        "base_max": 0.495060471927,
+        "base_min": null
+      },
+      "n_selected": 12,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_05/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_05/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 48,
+          "unknown_to_other": 0,
+          "unknown_rate": 98
+        },
+        "C2U": 36.36363636363637,
+        "U2O": 0.0,
+        "UR": 74.24242424242425,
+        "rule_tuple": [
+          36.36363636363637,
+          0.0,
+          74.24242424242425
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_05/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": false,
+        "U2O_higher": false,
+        "UR_higher": true
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 6,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.004330852452,
+        "base_max": 0.060048257603,
+        "base_min": null
+      },
+      "n_selected": 3,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_06/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_06/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 2,
+          "unknown_to_other": 0,
+          "unknown_rate": 52
+        },
+        "C2U": 1.5151515151515151,
+        "U2O": 0.0,
+        "UR": 39.39393939393939,
+        "rule_tuple": [
+          1.5151515151515151,
+          0.0,
+          39.39393939393939
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_06/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 7,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.028979593632,
+        "base_max": 0.495060471927,
+        "base_min": null
+      },
+      "n_selected": 29,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_07/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_07/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 72,
+          "unknown_to_other": 0,
+          "unknown_rate": 123
+        },
+        "C2U": 54.54545454545455,
+        "U2O": 0.0,
+        "UR": 93.18181818181819,
+        "rule_tuple": [
+          54.54545454545455,
+          0.0,
+          93.18181818181819
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_07/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": false,
+        "U2O_higher": false,
+        "UR_higher": true
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 8,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.012865917355,
+        "base_max": 0.021132240108,
+        "base_min": null
+      },
+      "n_selected": 3,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_08/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_08/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 1,
+          "unknown_to_other": 0,
+          "unknown_rate": 51
+        },
+        "C2U": 0.7575757575757576,
+        "U2O": 0.0,
+        "UR": 38.63636363636363,
+        "rule_tuple": [
+          0.7575757575757576,
+          0.0,
+          38.63636363636363
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_08/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 9,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.022518994761,
+        "base_max": 0.10661595008,
+        "base_min": null
+      },
+      "n_selected": 13,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_09/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_09/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 12,
+          "unknown_to_other": 0,
+          "unknown_rate": 62
+        },
+        "C2U": 9.090909090909092,
+        "U2O": 0.0,
+        "UR": 46.96969696969697,
+        "rule_tuple": [
+          9.090909090909092,
+          0.0,
+          46.96969696969697
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_09/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 10,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": 3.1045839e-05,
+        "base_max": 0.495060471927,
+        "base_min": null
+      },
+      "n_selected": 4,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_10/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_10/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 20,
+          "unknown_to_other": 0,
+          "unknown_rate": 70
+        },
+        "C2U": 15.151515151515152,
+        "U2O": 0.0,
+        "UR": 53.03030303030303,
+        "rule_tuple": [
+          15.151515151515152,
+          0.0,
+          53.03030303030303
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_10/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 11,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.02666960978,
+        "base_max": 0.060048257603,
+        "base_min": null
+      },
+      "n_selected": 10,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_11/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_11/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 4,
+          "unknown_to_other": 0,
+          "unknown_rate": 53
+        },
+        "C2U": 3.0303030303030303,
+        "U2O": 0.0,
+        "UR": 40.15151515151515,
+        "rule_tuple": [
+          3.0303030303030303,
+          0.0,
+          40.15151515151515
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_11/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 12,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.004330852452,
+        "base_max": 0.021132240108,
+        "base_min": null
+      },
+      "n_selected": 1,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_12/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_12/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 0,
+          "unknown_to_other": 0,
+          "unknown_rate": 50
+        },
+        "C2U": 0.0,
+        "U2O": 0.0,
+        "UR": 37.878787878787875,
+        "rule_tuple": [
+          0.0,
+          0.0,
+          37.878787878787875
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_12/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 13,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.012865917355,
+        "base_max": 0.060048257603,
+        "base_min": null
+      },
+      "n_selected": 5,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_13/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_13/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 3,
+          "unknown_to_other": 0,
+          "unknown_rate": 52
+        },
+        "C2U": 2.272727272727273,
+        "U2O": 0.0,
+        "UR": 39.39393939393939,
+        "rule_tuple": [
+          2.272727272727273,
+          0.0,
+          39.39393939393939
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_13/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 14,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.022518994761,
+        "base_max": 0.060048257603,
+        "base_min": null
+      },
+      "n_selected": 9,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_14/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_14/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 4,
+          "unknown_to_other": 0,
+          "unknown_rate": 53
+        },
+        "C2U": 3.0303030303030303,
+        "U2O": 0.0,
+        "UR": 40.15151515151515,
+        "rule_tuple": [
+          3.0303030303030303,
+          0.0,
+          40.15151515151515
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_14/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 15,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.028979593632,
+        "base_max": 0.082570992264,
+        "base_min": null
+      },
+      "n_selected": 13,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_15/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_15/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 11,
+          "unknown_to_other": 0,
+          "unknown_rate": 60
+        },
+        "C2U": 8.333333333333334,
+        "U2O": 0.0,
+        "UR": 45.45454545454545,
+        "rule_tuple": [
+          8.333333333333334,
+          0.0,
+          45.45454545454545
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_15/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 16,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.004330852452,
+        "base_max": 0.224102412953,
+        "base_min": null
+      },
+      "n_selected": 7,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_16/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_16/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 13,
+          "unknown_to_other": 0,
+          "unknown_rate": 63
+        },
+        "C2U": 9.848484848484848,
+        "U2O": 0.0,
+        "UR": 47.72727272727273,
+        "rule_tuple": [
+          9.848484848484848,
+          0.0,
+          47.72727272727273
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_16/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 17,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.004330852452,
+        "base_max": 0.10661595008,
+        "base_min": null
+      },
+      "n_selected": 5,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_17/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_17/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 7,
+          "unknown_to_other": 0,
+          "unknown_rate": 57
+        },
+        "C2U": 5.303030303030303,
+        "U2O": 0.0,
+        "UR": 43.18181818181818,
+        "rule_tuple": [
+          5.303030303030303,
+          0.0,
+          43.18181818181818
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_17/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 18,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.028979593632,
+        "base_max": 0.060048257603,
+        "base_min": null
+      },
+      "n_selected": 11,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_18/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_18/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 6,
+          "unknown_to_other": 0,
+          "unknown_rate": 55
+        },
+        "C2U": 4.545454545454546,
+        "U2O": 0.0,
+        "UR": 41.666666666666664,
+        "rule_tuple": [
+          4.545454545454546,
+          0.0,
+          41.666666666666664
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_18/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 19,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.022518994761,
+        "base_max": 0.082570992264,
+        "base_min": null
+      },
+      "n_selected": 11,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_19/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_19/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 9,
+          "unknown_to_other": 0,
+          "unknown_rate": 59
+        },
+        "C2U": 6.818181818181818,
+        "U2O": 0.0,
+        "UR": 44.696969696969695,
+        "rule_tuple": [
+          6.818181818181818,
+          0.0,
+          44.696969696969695
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_19/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 20,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.012865917355,
+        "base_max": 0.082570992264,
+        "base_min": null
+      },
+      "n_selected": 7,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_20/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_20/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 6,
+          "unknown_to_other": 0,
+          "unknown_rate": 56
+        },
+        "C2U": 4.545454545454546,
+        "U2O": 0.0,
+        "UR": 42.42424242424242,
+        "rule_tuple": [
+          4.545454545454546,
+          0.0,
+          42.42424242424242
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_20/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 21,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.022518994761,
+        "base_max": 0.021132240108,
+        "base_min": null
+      },
+      "n_selected": 4,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_21/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_21/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 1,
+          "unknown_to_other": 0,
+          "unknown_rate": 51
+        },
+        "C2U": 0.7575757575757576,
+        "U2O": 0.0,
+        "UR": 38.63636363636363,
+        "rule_tuple": [
+          0.7575757575757576,
+          0.0,
+          38.63636363636363
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_21/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 22,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.010545641768,
+        "base_max": 0.495060471927,
+        "base_min": null
+      },
+      "n_selected": 17,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_22/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_22/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 64,
+          "unknown_to_other": 0,
+          "unknown_rate": 114
+        },
+        "C2U": 48.484848484848484,
+        "U2O": 0.0,
+        "UR": 86.36363636363636,
+        "rule_tuple": [
+          48.484848484848484,
+          0.0,
+          86.36363636363636
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_22/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": false,
+        "U2O_higher": false,
+        "UR_higher": true
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 23,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.028979593632,
+        "base_max": 0.224102412953,
+        "base_min": null
+      },
+      "n_selected": 19,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_23/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_23/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 25,
+          "unknown_to_other": 0,
+          "unknown_rate": 75
+        },
+        "C2U": 18.939393939393938,
+        "U2O": 0.0,
+        "UR": 56.81818181818182,
+        "rule_tuple": [
+          18.939393939393938,
+          0.0,
+          56.81818181818182
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_23/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 24,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.012865917355,
+        "base_max": 0.495060471927,
+        "base_min": null
+      },
+      "n_selected": 18,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_24/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_24/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 68,
+          "unknown_to_other": 0,
+          "unknown_rate": 118
+        },
+        "C2U": 51.515151515151516,
+        "U2O": 0.0,
+        "UR": 89.39393939393939,
+        "rule_tuple": [
+          51.515151515151516,
+          0.0,
+          89.39393939393939
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_24/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": false,
+        "U2O_higher": false,
+        "UR_higher": true
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 25,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.02666960978,
+        "base_max": 0.224102412953,
+        "base_min": null
+      },
+      "n_selected": 16,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_25/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_25/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 18,
+          "unknown_to_other": 0,
+          "unknown_rate": 68
+        },
+        "C2U": 13.636363636363637,
+        "U2O": 0.0,
+        "UR": 51.515151515151516,
+        "rule_tuple": [
+          13.636363636363637,
+          0.0,
+          51.515151515151516
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_25/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 26,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.02666960978,
+        "base_max": 0.082570992264,
+        "base_min": null
+      },
+      "n_selected": 12,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_26/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_26/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 11,
+          "unknown_to_other": 0,
+          "unknown_rate": 60
+        },
+        "C2U": 8.333333333333334,
+        "U2O": 0.0,
+        "UR": 45.45454545454545,
+        "rule_tuple": [
+          8.333333333333334,
+          0.0,
+          45.45454545454545
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_26/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 27,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.012865917355,
+        "base_max": 0.224102412953,
+        "base_min": null
+      },
+      "n_selected": 10,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_27/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_27/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 14,
+          "unknown_to_other": 0,
+          "unknown_rate": 64
+        },
+        "C2U": 10.606060606060606,
+        "U2O": 0.0,
+        "UR": 48.484848484848484,
+        "rule_tuple": [
+          10.606060606060606,
+          0.0,
+          48.484848484848484
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_27/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 28,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.02666960978,
+        "base_max": 0.495060471927,
+        "base_min": null
+      },
+      "n_selected": 26,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_28/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_28/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 69,
+          "unknown_to_other": 0,
+          "unknown_rate": 120
+        },
+        "C2U": 52.27272727272727,
+        "U2O": 0.0,
+        "UR": 90.9090909090909,
+        "rule_tuple": [
+          52.27272727272727,
+          0.0,
+          90.9090909090909
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_28/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": false,
+        "U2O_higher": false,
+        "UR_higher": true
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 29,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.02666960978,
+        "base_max": 0.10661595008,
+        "base_min": null
+      },
+      "n_selected": 14,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_29/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_29/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 13,
+          "unknown_to_other": 0,
+          "unknown_rate": 63
+        },
+        "C2U": 9.848484848484848,
+        "U2O": 0.0,
+        "UR": 47.72727272727273,
+        "rule_tuple": [
+          9.848484848484848,
+          0.0,
+          47.72727272727273
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_29/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 30,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": 3.1045839e-05,
+        "base_max": 0.10661595008,
+        "base_min": null
+      },
+      "n_selected": 1,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_30/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_30/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 2,
+          "unknown_to_other": 0,
+          "unknown_rate": 52
+        },
+        "C2U": 1.5151515151515151,
+        "U2O": 0.0,
+        "UR": 39.39393939393939,
+        "rule_tuple": [
+          1.5151515151515151,
+          0.0,
+          39.39393939393939
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_30/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    },
+    {
+      "candidate_index": 31,
+      "mode": "conflict_specific",
+      "thresholds": {
+        "eff_min": -0.004330852452,
+        "base_max": 0.082570992264,
+        "base_min": null
+      },
+      "n_selected": 4,
+      "selection_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_31/selected_heads.json",
+      "ablation_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_31/ablation_val.json",
+      "metrics": {
+        "n_all": 132,
+        "counts": {
+          "correct_to_unknown": 5,
+          "unknown_to_other": 0,
+          "unknown_rate": 54
+        },
+        "C2U": 3.787878787878788,
+        "U2O": 0.0,
+        "UR": 40.90909090909091,
+        "rule_tuple": [
+          3.787878787878788,
+          0.0,
+          40.90909090909091
+        ]
+      },
+      "metrics_path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_31/metrics.json",
+      "comparison_flags": {
+        "C2U_lower": true,
+        "U2O_higher": false,
+        "UR_higher": false
+      },
+      "matched_rule_count": 1,
+      "decision": "rejected_rule_not_met"
+    }
+  ],
+  "notes": {
+    "comparison_rule": "A candidate is accepted if at least two of these are true relative to current: lower C2U, higher U2O, higher UR.",
+    "metric_definition": "C2U = base_ctx_pred gold -> ab_ctx_pred unknown. U2O = base_ctx_pred unknown -> ab_ctx_pred other. UR = ab_ctx_pred unknown rate. All denominators use N_all.",
+    "selection_source": "Candidates are generated from head_scan_core_layers.json and written in selected_heads_core_layers-compatible JSON format."
+  }
+}

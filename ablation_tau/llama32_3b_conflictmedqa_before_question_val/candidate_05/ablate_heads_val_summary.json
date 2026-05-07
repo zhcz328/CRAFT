@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "head_file_path": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_05/selected_heads.json",
+    "masked_conflict_specific": [
+      {
+        "layer": 7,
+        "heads": [
+          0,
+          1,
+          4,
+          14
+        ]
+      },
+      {
+        "layer": 8,
+        "heads": [
+          6
+        ]
+      },
+      {
+        "layer": 9,
+        "heads": [
+          6,
+          8,
+          15,
+          20
+        ]
+      },
+      {
+        "layer": 11,
+        "heads": [
+          17
+        ]
+      },
+      {
+        "layer": 12,
+        "heads": [
+          4,
+          8,
+          15,
+          18
+        ]
+      },
+      {
+        "layer": 13,
+        "heads": [
+          20
+        ]
+      }
+    ],
+    "selection_meta": {
+      "mode": "B_fixed",
+      "er_min": 0.4234375,
+      "bc_max": 1.5984375,
+      "total_candidates": 40,
+      "selected": 15
+    },
+    "fixed_thresholds": null,
+    "mask_scope": "all",
+    "positions": [
+      "before_question"
+    ]
+  },
+  "summary_by_position": {
+    "before_question": {
+      "n_samples": 104,
+      "base_acc_before": 1.0,
+      "base_acc_before_recomputed": 1.0,
+      "base_acc_after": 0.4807692307692308,
+      "base_acc_delta": -0.5192307692307692,
+      "support_acc_before": 1.0,
+      "support_acc_after": 0.5192307692307693,
+      "support_acc_delta": -0.4807692307692307,
+      "follow_conflict_rate_before": 0.7596153846153846,
+      "follow_conflict_rate_after": 0.49038461538461536,
+      "follow_conflict_rate_delta": -0.2692307692307692,
+      "resist_rate_after(pred_same_as_base_after)": 0.41346153846153844,
+      "flip_rate_after": 0.5865384615384616,
+      "mean_shift_support_before": 0.22650483938363883,
+      "mean_shift_support_after": -1.1353665865384615,
+      "mean_shift_support_delta": -1.3618714259221003,
+      "mean_shift_conflict_before": -1.1603883596567006,
+      "mean_shift_conflict_after": -1.1265024038461537,
+      "mean_shift_conflict_delta": 0.033885955810546875
+    }
+  }
+}

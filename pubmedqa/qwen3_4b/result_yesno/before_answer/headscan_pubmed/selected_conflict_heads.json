@@ -1,0 +1,111 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.2168,
+    "base_max": 0.1666,
+    "base_min": null
+  },
+  "combine": "union",
+  "rounds": [
+    "round1_preplateau",
+    "round1_topk_fallback"
+  ],
+  "round_meta": {
+    "round1_preplateau": {
+      "scan_layers": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "n_samples": 500,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "before_answer",
+      "keep_mode": "self"
+    },
+    "round1_topk_fallback": {
+      "scan_layers": [
+        26
+      ],
+      "n_samples": 500,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "before_answer",
+      "keep_mode": "self"
+    }
+  },
+  "n_selected": 6,
+  "selected": [
+    {
+      "layer": 35,
+      "head": 27,
+      "best_effect_reduction": 0.40128407244682307,
+      "best_base_change": 0.16658162231445311,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 30,
+      "head": 27,
+      "best_effect_reduction": 0.2660846057415011,
+      "best_base_change": 0.14735801658630374,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 32,
+      "head": 28,
+      "best_effect_reduction": 0.2499366519927979,
+      "best_base_change": 0.16045443391799924,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 32,
+      "head": 26,
+      "best_effect_reduction": 0.2443434673786164,
+      "best_base_change": 0.1475602318286896,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 30,
+      "head": 23,
+      "best_effect_reduction": 0.24027936120033297,
+      "best_base_change": 0.1551211403846739,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 7,
+      "best_effect_reduction": 0.21681926031112703,
+      "best_base_change": 0.12053398294448862,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "atomic_bundle": "/root/autodl-tmp/CHDP/VQA_RAD/hulumed4b/features_before_question/val_atomic.pt",
+  "single_sample_id": "351",
+  "single_sample_label": "hijack",
+  "single_sample_plot": "CHDP/plots_before_question/single_sample_trajectory.png",
+  "group_mean_plot": "CHDP/plots_before_question/class_mean_trajectory.png"
+}

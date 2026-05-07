@@ -1,0 +1,460 @@
+{
+  "config": {
+    "data_csv": "./data/nc_cc_both_correct_rerun.csv",
+    "image_root": ".",
+    "model": "/archive/zengjiaqi/Medical_LLM/Qwen3-VL-8B-Instruct",
+    "device": "auto",
+    "dtype": "fp16",
+    "trace_mode": "conflict",
+    "position": "before_question",
+    "patch_k": 256,
+    "limit": 2,
+    "metrics": "follow_conflict",
+    "out": "result_v2/trace_conflict.json",
+    "plot_prefix": "result_tmp/trace_conflict",
+    "scan_plan_out": "",
+    "patch_all_tokens": false
+  },
+  "used": 2,
+  "skipped": 0,
+  "layer_scores": {
+    "follow_conflict": [
+      NaN,
+      -3.953125,
+      -3.5625,
+      -3.43359375,
+      -3.40234375,
+      -3.37890625,
+      2.064453125,
+      2.236328125,
+      2.201171875,
+      2.341796875,
+      2.2890625,
+      2.259765625,
+      2.19140625,
+      2.46484375,
+      1.8828125,
+      1.455078125,
+      1.2421875,
+      0.76953125,
+      0.1435546875,
+      0.017578125,
+      -0.251953125,
+      -0.5126953125,
+      -0.888671875,
+      -0.974609375,
+      0.271484375,
+      0.357421875,
+      -0.724609375,
+      0.361328125,
+      -0.6337890625,
+      -0.244140625,
+      -1.884765625,
+      -1.8203125,
+      -1.82421875,
+      -3.140625,
+      -4.8046875,
+      4.25
+    ]
+  },
+  "records": [
+    {
+      "question": "are regions of the brain infarcted",
+      "gold": "yes",
+      "wrong": "no",
+      "image_path": "data/VQA_RAD_Image_Folder/synpic54610.jpg",
+      "trace_mode": "conflict",
+      "nc": {
+        "gold_lp": -18.578125,
+        "wrong_lp": -31.5625,
+        "pred": "yes"
+      },
+      "ctx": {
+        "gold_lp": -17.734375,
+        "wrong_lp": -24.375,
+        "pred": "yes"
+      },
+      "layers": {
+        "0": {
+          "gold_lp": NaN,
+          "wrong_lp": NaN,
+          "pred": "no"
+        },
+        "1": {
+          "gold_lp": -16.453125,
+          "wrong_lp": -15.96875,
+          "pred": "no"
+        },
+        "2": {
+          "gold_lp": -14.109375,
+          "wrong_lp": -13.5078125,
+          "pred": "no"
+        },
+        "3": {
+          "gold_lp": -14.1015625,
+          "wrong_lp": -13.546875,
+          "pred": "no"
+        },
+        "4": {
+          "gold_lp": -14.4375,
+          "wrong_lp": -13.90625,
+          "pred": "no"
+        },
+        "5": {
+          "gold_lp": -14.46875,
+          "wrong_lp": -14.0,
+          "pred": "no"
+        },
+        "6": {
+          "gold_lp": -5.83984375,
+          "wrong_lp": -15.7734375,
+          "pred": "yes"
+        },
+        "7": {
+          "gold_lp": -5.77734375,
+          "wrong_lp": -16.0625,
+          "pred": "yes"
+        },
+        "8": {
+          "gold_lp": -5.64453125,
+          "wrong_lp": -16.0625,
+          "pred": "yes"
+        },
+        "9": {
+          "gold_lp": -5.36328125,
+          "wrong_lp": -16.203125,
+          "pred": "yes"
+        },
+        "10": {
+          "gold_lp": -4.546875,
+          "wrong_lp": -15.8203125,
+          "pred": "yes"
+        },
+        "11": {
+          "gold_lp": -4.42578125,
+          "wrong_lp": -15.578125,
+          "pred": "yes"
+        },
+        "12": {
+          "gold_lp": -4.1796875,
+          "wrong_lp": -14.9453125,
+          "pred": "yes"
+        },
+        "13": {
+          "gold_lp": -3.765625,
+          "wrong_lp": -15.375,
+          "pred": "yes"
+        },
+        "14": {
+          "gold_lp": -3.0625,
+          "wrong_lp": -14.5859375,
+          "pred": "yes"
+        },
+        "15": {
+          "gold_lp": -2.69921875,
+          "wrong_lp": -14.984375,
+          "pred": "yes"
+        },
+        "16": {
+          "gold_lp": -2.25390625,
+          "wrong_lp": -13.90625,
+          "pred": "yes"
+        },
+        "17": {
+          "gold_lp": -2.0234375,
+          "wrong_lp": -13.4140625,
+          "pred": "yes"
+        },
+        "18": {
+          "gold_lp": -3.060546875,
+          "wrong_lp": -14.0,
+          "pred": "yes"
+        },
+        "19": {
+          "gold_lp": -3.796875,
+          "wrong_lp": -14.5,
+          "pred": "yes"
+        },
+        "20": {
+          "gold_lp": -4.1171875,
+          "wrong_lp": -14.6640625,
+          "pred": "yes"
+        },
+        "21": {
+          "gold_lp": -3.962890625,
+          "wrong_lp": -14.421875,
+          "pred": "yes"
+        },
+        "22": {
+          "gold_lp": -4.89453125,
+          "wrong_lp": -14.765625,
+          "pred": "yes"
+        },
+        "23": {
+          "gold_lp": -6.69140625,
+          "wrong_lp": -16.03125,
+          "pred": "yes"
+        },
+        "24": {
+          "gold_lp": -6.02734375,
+          "wrong_lp": -14.5859375,
+          "pred": "yes"
+        },
+        "25": {
+          "gold_lp": -7.49609375,
+          "wrong_lp": -15.703125,
+          "pred": "yes"
+        },
+        "26": {
+          "gold_lp": -7.19140625,
+          "wrong_lp": -12.71875,
+          "pred": "yes"
+        },
+        "27": {
+          "gold_lp": -5.16015625,
+          "wrong_lp": -12.4609375,
+          "pred": "yes"
+        },
+        "28": {
+          "gold_lp": -3.767578125,
+          "wrong_lp": -12.25,
+          "pred": "yes"
+        },
+        "29": {
+          "gold_lp": -3.25,
+          "wrong_lp": -10.34375,
+          "pred": "yes"
+        },
+        "30": {
+          "gold_lp": -4.9921875,
+          "wrong_lp": -7.140625,
+          "pred": "yes"
+        },
+        "31": {
+          "gold_lp": -4.7578125,
+          "wrong_lp": -7.1796875,
+          "pred": "yes"
+        },
+        "32": {
+          "gold_lp": -8.4765625,
+          "wrong_lp": -13.03125,
+          "pred": "yes"
+        },
+        "33": {
+          "gold_lp": -12.640625,
+          "wrong_lp": -11.3125,
+          "pred": "no"
+        },
+        "34": {
+          "gold_lp": -9.625,
+          "wrong_lp": -12.2109375,
+          "pred": "yes"
+        },
+        "35": {
+          "gold_lp": -18.578125,
+          "wrong_lp": -31.5625,
+          "pred": "yes"
+        }
+      }
+    },
+    {
+      "question": "are the lungs normal appearing",
+      "gold": "no",
+      "wrong": "yes",
+      "image_path": "data/VQA_RAD_Image_Folder/synpic29265.jpg",
+      "trace_mode": "conflict",
+      "nc": {
+        "gold_lp": -22.109375,
+        "wrong_lp": -22.96875,
+        "pred": "no"
+      },
+      "ctx": {
+        "gold_lp": -18.078125,
+        "wrong_lp": -21.09375,
+        "pred": "no"
+      },
+      "layers": {
+        "0": {
+          "gold_lp": NaN,
+          "wrong_lp": NaN,
+          "pred": "yes"
+        },
+        "1": {
+          "gold_lp": -13.140625,
+          "wrong_lp": -16.9375,
+          "pred": "no"
+        },
+        "2": {
+          "gold_lp": -12.640625,
+          "wrong_lp": -15.5390625,
+          "pred": "no"
+        },
+        "3": {
+          "gold_lp": -12.8671875,
+          "wrong_lp": -15.5546875,
+          "pred": "no"
+        },
+        "4": {
+          "gold_lp": -13.25,
+          "wrong_lp": -15.8984375,
+          "pred": "no"
+        },
+        "5": {
+          "gold_lp": -13.0390625,
+          "wrong_lp": -15.703125,
+          "pred": "no"
+        },
+        "6": {
+          "gold_lp": -10.953125,
+          "wrong_lp": -10.4921875,
+          "pred": "yes"
+        },
+        "7": {
+          "gold_lp": -10.9140625,
+          "wrong_lp": -10.4453125,
+          "pred": "yes"
+        },
+        "8": {
+          "gold_lp": -11.0390625,
+          "wrong_lp": -10.3671875,
+          "pred": "yes"
+        },
+        "9": {
+          "gold_lp": -10.7109375,
+          "wrong_lp": -9.8984375,
+          "pred": "yes"
+        },
+        "10": {
+          "gold_lp": -10.65625,
+          "wrong_lp": -9.3046875,
+          "pred": "yes"
+        },
+        "11": {
+          "gold_lp": -10.625,
+          "wrong_lp": -9.3359375,
+          "pred": "yes"
+        },
+        "12": {
+          "gold_lp": -10.140625,
+          "wrong_lp": -9.1015625,
+          "pred": "yes"
+        },
+        "13": {
+          "gold_lp": -9.7421875,
+          "wrong_lp": -8.40625,
+          "pred": "yes"
+        },
+        "14": {
+          "gold_lp": -9.40625,
+          "wrong_lp": -6.9921875,
+          "pred": "yes"
+        },
+        "15": {
+          "gold_lp": -10.578125,
+          "wrong_lp": -6.546875,
+          "pred": "yes"
+        },
+        "16": {
+          "gold_lp": -10.7109375,
+          "wrong_lp": -6.88671875,
+          "pred": "yes"
+        },
+        "17": {
+          "gold_lp": -10.875,
+          "wrong_lp": -6.3671875,
+          "pred": "yes"
+        },
+        "18": {
+          "gold_lp": -11.953125,
+          "wrong_lp": -6.64453125,
+          "pred": "yes"
+        },
+        "19": {
+          "gold_lp": -12.765625,
+          "wrong_lp": -7.44140625,
+          "pred": "yes"
+        },
+        "20": {
+          "gold_lp": -13.515625,
+          "wrong_lp": -7.80859375,
+          "pred": "yes"
+        },
+        "21": {
+          "gold_lp": -15.3984375,
+          "wrong_lp": -9.2578125,
+          "pred": "yes"
+        },
+        "22": {
+          "gold_lp": -16.453125,
+          "wrong_lp": -10.1484375,
+          "pred": "yes"
+        },
+        "23": {
+          "gold_lp": -15.5078125,
+          "wrong_lp": -9.5625,
+          "pred": "yes"
+        },
+        "24": {
+          "gold_lp": -13.4765625,
+          "wrong_lp": -10.8046875,
+          "pred": "yes"
+        },
+        "25": {
+          "gold_lp": -13.4375,
+          "wrong_lp": -11.2890625,
+          "pred": "yes"
+        },
+        "26": {
+          "gold_lp": -13.4453125,
+          "wrong_lp": -11.8125,
+          "pred": "yes"
+        },
+        "27": {
+          "gold_lp": -12.078125,
+          "wrong_lp": -10.84375,
+          "pred": "yes"
+        },
+        "28": {
+          "gold_lp": -12.5546875,
+          "wrong_lp": -8.1484375,
+          "pred": "yes"
+        },
+        "29": {
+          "gold_lp": -9.21875,
+          "wrong_lp": -6.98046875,
+          "pred": "yes"
+        },
+        "30": {
+          "gold_lp": -4.65625,
+          "wrong_lp": -6.94921875,
+          "pred": "no"
+        },
+        "31": {
+          "gold_lp": -9.2421875,
+          "wrong_lp": -8.5234375,
+          "pred": "yes"
+        },
+        "32": {
+          "gold_lp": -12.1640625,
+          "wrong_lp": -9.3046875,
+          "pred": "yes"
+        },
+        "33": {
+          "gold_lp": -12.4765625,
+          "wrong_lp": -13.8046875,
+          "pred": "no"
+        },
+        "34": {
+          "gold_lp": -15.4375,
+          "wrong_lp": -8.5859375,
+          "pred": "yes"
+        },
+        "35": {
+          "gold_lp": -22.109375,
+          "wrong_lp": -22.96875,
+          "pred": "no"
+        }
+      }
+    }
+  ]
+}

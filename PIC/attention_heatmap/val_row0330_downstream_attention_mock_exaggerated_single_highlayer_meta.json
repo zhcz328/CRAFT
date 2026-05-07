@@ -1,0 +1,9 @@
+{
+  "selected_head": {
+    "layer": 35,
+    "head": 22,
+    "mean_abs_delta": 0.009765381924808025
+  },
+  "output_png": "/root/logit_lens/PIC/attention_heatmap/val_row0330_downstream_attention_mock_exaggerated_single_highlayer.png",
+  "output_pdf": "/root/logit_lens/PIC/attention_heatmap/val_row0330_downstream_attention_mock_exaggerated_single_highlayer.pdf"
+}

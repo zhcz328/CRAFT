@@ -1,0 +1,162 @@
+{
+  "n_records": 445,
+  "nc_correct": 438,
+  "ic_unknown": 137,
+  "ic_gold": 304,
+  "ic_wrong": 4,
+  "ic_other": 0,
+  "changed_vs_nc": 134,
+  "by_category": {
+    "organ": {
+      "n": 174,
+      "nc_correct": 174,
+      "ic_unknown": 63,
+      "ic_gold": 111,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "size": {
+      "n": 93,
+      "nc_correct": 93,
+      "ic_unknown": 2,
+      "ic_gold": 88,
+      "ic_wrong": 3,
+      "ic_other": 0
+    },
+    "position": {
+      "n": 37,
+      "nc_correct": 30,
+      "ic_unknown": 15,
+      "ic_gold": 22,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "abnormality": {
+      "n": 35,
+      "nc_correct": 35,
+      "ic_unknown": 30,
+      "ic_gold": 5,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "color": {
+      "n": 99,
+      "nc_correct": 99,
+      "ic_unknown": 26,
+      "ic_gold": 72,
+      "ic_wrong": 1,
+      "ic_other": 0
+    },
+    "shape": {
+      "n": 7,
+      "nc_correct": 7,
+      "ic_unknown": 1,
+      "ic_gold": 6,
+      "ic_wrong": 0,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 0.9842696629213483,
+  "ic_unknown_rate": 0.30786516853932583,
+  "ic_gold_rate": 0.6831460674157304,
+  "ic_wrong_rate": 0.008988764044943821,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.30112359550561796,
+  "ic_top_predictions": [
+    [
+      "unknown",
+      137
+    ],
+    [
+      "yes",
+      116
+    ],
+    [
+      "liver",
+      45
+    ],
+    [
+      "black",
+      40
+    ],
+    [
+      "gray",
+      21
+    ],
+    [
+      "lung",
+      17
+    ],
+    [
+      "left",
+      10
+    ],
+    [
+      "center",
+      9
+    ],
+    [
+      "kidney",
+      8
+    ],
+    [
+      "white",
+      8
+    ],
+    [
+      "colon",
+      8
+    ],
+    [
+      "oval",
+      5
+    ],
+    [
+      "bladder",
+      4
+    ],
+    [
+      "hyperdense",
+      3
+    ],
+    [
+      "rectum",
+      3
+    ],
+    [
+      "spinal cord",
+      2
+    ],
+    [
+      "lower right",
+      2
+    ],
+    [
+      "upper left",
+      1
+    ],
+    [
+      "circular",
+      1
+    ],
+    [
+      "hypodense",
+      1
+    ]
+  ],
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "model_name": "hulumed-4b",
+  "data_csv": "./data/hulumed4b/slake_nc_correct_ic_ready.csv",
+  "out_dir": "hulumed4b/eval-results_slake_image_conflict_noise_all",
+  "preds_jsonl": "hulumed4b/eval-results_slake_image_conflict_noise_all/preds.jsonl",
+  "summary_json": "hulumed4b/eval-results_slake_image_conflict_noise_all/summary.json",
+  "unknown_target": "unknown",
+  "save_processed_images": false,
+  "processed_image_dir": "",
+  "mask_all": false,
+  "add_noise": false,
+  "add_noise_all": true,
+  "mask_scale": 1.0,
+  "noise_scale": 1.0,
+  "noise_std": 64.0
+}

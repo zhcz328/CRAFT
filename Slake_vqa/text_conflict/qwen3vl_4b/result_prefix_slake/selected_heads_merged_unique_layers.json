@@ -1,0 +1,39 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": null,
+    "base_max": null,
+    "base_min": null
+  },
+  "input_json": "qwen3vl_4b/result_prefix_slake/trace_conflict.json",
+  "source": "placeholder_from_trace_and_before_question",
+  "topk": 4,
+  "meta": {
+    "position": "prefix",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/Qwen3-VL-4B-Instruct",
+    "n_samples": 300,
+    "note": "Placeholder subset inferred from prefix trace plateau layers and overlap patterns seen in internvl35_4b and Hulu-med."
+  },
+  "n_candidates": 4,
+  "n_selected": 4,
+  "selected": [
+    {
+      "layer": 24,
+      "head": 30
+    },
+    {
+      "layer": 21,
+      "head": 19
+    },
+    {
+      "layer": 21,
+      "head": 11
+    },
+    {
+      "layer": 20,
+      "head": 10
+    }
+  ]
+}

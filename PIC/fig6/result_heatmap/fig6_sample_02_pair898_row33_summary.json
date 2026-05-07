@@ -1,0 +1,172 @@
+{
+  "conflict": {
+    "title": "ConflictMedQA Qwen3-4B before_question",
+    "model_name": "/root/autodl-tmp/qwen3-4B",
+    "sample_title": "pair=898 | side=correct | gold=yes | wrong=no | Dr. Patel managed a 34-year-old woman presenting with confusion and...",
+    "selected_heads": [
+      {
+        "layer": 18,
+        "head": 22
+      },
+      {
+        "layer": 18,
+        "head": 31
+      },
+      {
+        "layer": 35,
+        "head": 8
+      }
+    ],
+    "conflict_span": [
+      223,
+      250
+    ],
+    "matrix_shape": [
+      266,
+      266
+    ],
+    "meta": {
+      "positions_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_all_positions/conflict_positions_val.jsonl",
+      "prompt_bank_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/tuned_lens/data/val_before_question.jsonl",
+      "selected_sample": {
+        "pair_id": 898,
+        "side": "correct",
+        "position": "before_question",
+        "gold": "yes",
+        "conflict_label": "no",
+        "base": {
+          "pred": "yes",
+          "delta": 23.875
+        },
+        "support": {
+          "pred": "yes",
+          "delta": 24.5
+        },
+        "conflict": {
+          "pred": "no",
+          "delta": -14.625
+        },
+        "shift_support": 0.625,
+        "shift_conflict": -38.5
+      },
+      "pair_prompt_source": "correct",
+      "sample_kind": "pred_error",
+      "base_prompt": "Dr. Patel managed a 34-year-old woman presenting with confusion and abdominal pain who was found to have severe hyperglycemia and metabolic acidosis. Without hesitation, he initiated intravenous fluids, insulin therapy, and corrected her electrolyte imbalances, all while closely monitoring her vitals and laboratory parameters throughout treatment. As she stabilized, he ensured a timely and bridged transition to maintenance with subcutaneous insulin administration, and promptly sought out and treated the urinary tract infection that had triggered her decompensation. In his team discussion afterward, Dr. Patel confidently stated, “Of course, this is the universal standard—any endocrinologist or emergency physician would manage DKA and HHS in this exact way, with IV fluids, insulin, electrolytes, and diligent monitoring, making sure to transition to subcutaneous insulin and address the underlying cause. I can’t imagine any other approach; it’s what everyone does.”\n\nQuestion: Does the recommendation align with current clinical guidelines?\nAnswer:",
+      "query_span": [
+        246,
+        255
+      ],
+      "conflict_span": [
+        223,
+        250
+      ],
+      "gold": "yes",
+      "wrong": "no",
+      "position": "before_question",
+      "selected_heads_json": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_groups.json"
+    }
+  },
+  "vqa": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=33 | is this a t1 weighted t2 weighted or flair image | gold=flair | wrong=t1 weighted or t2 weighted",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      1771,
+      1800
+    ],
+    "matrix_shape": [
+      1822,
+      1822
+    ],
+    "meta": {
+      "selection_reason": "pred_correct_batch",
+      "sample_kind": "pred_correct",
+      "row_idx": 33,
+      "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+      "preds_jsonl": "/root/logit_lens/VQA_RAD/Hulu-med/eval-results_vqarad_hulumed4b_all/_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B/before_question/preds.jsonl",
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic56841.jpg",
+      "question": "is this a t1 weighted t2 weighted or flair image",
+      "gold": "flair",
+      "wrong": "t1 weighted or t2 weighted",
+      "chosen_record": {
+        "id": 609,
+        "img_id": "synpic56841.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic56841.jpg",
+        "category": "modality",
+        "question": "is this a t1 weighted t2 weighted or flair image",
+        "gold": "flair",
+        "conflict": "t1 weighted or t2 weighted",
+        "position": "before_question",
+        "support_pred": "flair",
+        "conflict_pred": "flair",
+        "support_scores": {
+          "flair": -6.4140625,
+          "t1 weighted or t2 weighted": -25.891067504882812
+        },
+        "conflict_scores": {
+          "flair": -6.60546875,
+          "t1 weighted or t2 weighted": -13.974199891090393
+        },
+        "support_margin": 19.477005004882812,
+        "conflict_margin": 7.368731141090393,
+        "changed": false,
+        "resist": true,
+        "follow_conflict": false,
+        "resist_to_gold": true,
+        "nc_pred": "flair",
+        "changed_vs_nc": false,
+        "resist_vs_nc": true,
+        "conflict_pred_is_unknown": false,
+        "changed_to_unknown_vs_nc": false,
+        "conflict_is_unknown": false,
+        "csv_row_idx": 33
+      },
+      "question_span": [
+        1802,
+        1814
+      ],
+      "visual_span": [
+        16,
+        1737
+      ],
+      "ic_evidence_span": [
+        1771,
+        1800
+      ]
+    }
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_02_pair898_row33.png",
+    "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_02_pair898_row33.pdf",
+    "vmax": 0.02301278481705632
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6"
+}

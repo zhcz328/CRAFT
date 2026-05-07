@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "data": "llama32_3b/data/train_yesno.val.json",
+    "model": "/root/autodl-tmp/Llama-3.2-3B-Instruct",
+    "selected_heads": "llama32_3b/result_yesno/before_question/headscan_pubmed/selected_conflict_heads.json",
+    "position": "before_question",
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "layer2heads": {
+      "18": [
+        4
+      ],
+      "20": [
+        23
+      ]
+    }
+  },
+  "baseline": {
+    "N": 50,
+    "Acc_base": 100.0,
+    "Acc_conflict": 52.0,
+    "resist_rate": 52.0,
+    "follow_conflict_rate": 48.0,
+    "resist_rate_given_base_correct": 52.0,
+    "follow_conflict_rate_given_base_correct": 48.0,
+    "base_correct_total": 50
+  },
+  "masked": {
+    "N": 50,
+    "Acc_base": 98.0,
+    "Acc_conflict": 54.0,
+    "resist_rate": 54.0,
+    "follow_conflict_rate": 46.0,
+    "resist_rate_given_base_correct": 55.10204081632653,
+    "follow_conflict_rate_given_base_correct": 44.89795918367347,
+    "base_correct_total": 49
+  },
+  "delta(masked-baseline)": {
+    "N": 0,
+    "Acc_base": -2.0,
+    "Acc_conflict": 2.0,
+    "resist_rate": 2.0,
+    "follow_conflict_rate": -2.0,
+    "resist_rate_given_base_correct": 3.1020408163265287,
+    "follow_conflict_rate_given_base_correct": -3.1020408163265287,
+    "base_correct_total": -1
+  }
+}

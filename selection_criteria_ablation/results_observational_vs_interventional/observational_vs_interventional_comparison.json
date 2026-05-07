@@ -1,0 +1,15 @@
+[
+  {
+    "model_key": "internvl35-4b",
+    "display_name": "InternVL3.5-4B",
+    "task": "vqa_rad",
+    "position": "before_question",
+    "n_selected_heads": 10,
+    "observational_reduction_points": 18.285714285714295,
+    "interventional_reduction_points": 14.28571428571429,
+    "observational_summary": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/observational/observational_val.json",
+    "interventional_summary": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/ablate/ablate_selected_heads_all_val.json",
+    "observational_head_file": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/internvl35-4b/before_question/selected_heads/observational/observational_selected_heads.json",
+    "interventional_head_file": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json"
+  }
+]

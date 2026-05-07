@@ -1,0 +1,51 @@
+{
+  "n_records": 558,
+  "nc_correct": 556,
+  "ic_unknown": 436,
+  "ic_gold": 122,
+  "ic_wrong": 0,
+  "ic_other": 0,
+  "changed_vs_nc": 434,
+  "by_category": {
+    "abnormality_yesno": {
+      "n": 558,
+      "nc_correct": 556,
+      "ic_unknown": 436,
+      "ic_gold": 122,
+      "ic_wrong": 0,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 0.996415770609319,
+  "ic_unknown_rate": 0.7813620071684588,
+  "ic_gold_rate": 0.21863799283154123,
+  "ic_wrong_rate": 0.0,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.7777777777777778,
+  "ic_top_predictions": [
+    [
+      "unknown",
+      436
+    ],
+    [
+      "yes",
+      122
+    ]
+  ],
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "model_name": "hulumed-4b",
+  "dataset": "heal-medvqa",
+  "data_csv": "/root/logit_lens/heal-medvqa/data/hulumed4b/heal_medvqa_nc_correct_ic_ready.csv",
+  "out_dir": "/root/logit_lens/heal-medvqa/hulumed4b/eval-results_heal_medvqa_image_conflict",
+  "preds_jsonl": "/root/logit_lens/heal-medvqa/hulumed4b/eval-results_heal_medvqa_image_conflict/preds.jsonl",
+  "summary_json": "/root/logit_lens/heal-medvqa/hulumed4b/eval-results_heal_medvqa_image_conflict/summary.json",
+  "unknown_target": "unknown",
+  "save_processed_images": false,
+  "processed_image_dir": "",
+  "mask_all": false,
+  "add_noise": false,
+  "add_noise_all": false,
+  "mask_scale": 1.0,
+  "noise_scale": 1.0,
+  "noise_std": 0.0
+}

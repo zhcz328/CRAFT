@@ -1,0 +1,185 @@
+{
+  "conflict": {
+    "title": "ConflictMedQA Qwen3-4B before_question",
+    "model_name": "/root/autodl-tmp/qwen3-4B",
+    "sample_title": "pair=124 | side=correct | gold=yes | wrong=no | Dr. Lopez initiates management for Mr. Jenkins, a 54-year-old man w...",
+    "selected_heads": [
+      {
+        "layer": 18,
+        "head": 22
+      },
+      {
+        "layer": 18,
+        "head": 31
+      },
+      {
+        "layer": 35,
+        "head": 8
+      }
+    ],
+    "conflict_span": [
+      300,
+      326
+    ],
+    "matrix_shape": [
+      342,
+      342
+    ],
+    "meta": {
+      "summary_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/analyze_probe_lens/ablation_flip_before_question_follow/summary.json",
+      "pairs_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result/kept_pairs_a12_b12.jsonl",
+      "selected_sample": {
+        "pair_id": 124,
+        "side": "correct",
+        "gold_answer": "yes",
+        "wrong_answer": "no",
+        "baseline_conflict_pred": "no",
+        "ablated_conflict_pred": "yes"
+      },
+      "pair_prompt_source": "correct",
+      "sample_kind": "resist",
+      "base_prompt": "Dr. Lopez initiates management for Mr. Jenkins, a 54-year-old man with poorly controlled type 2 diabetes who arrives at the emergency department with confusion and dehydration. Mr. Jenkins arrives accompanied by his spouse, clutching a notebook detailing his recent blood glucose trends, urine ketone results, and a printout of his own online research suggesting he is experiencing diabetic ketoacidosis (DKA). He insists his symptoms—persistent hyperglycemia, nausea, and deep, rapid breathing—match DKA exactly, and requests urgent intervention “before it gets worse.” Giving significant weight to the patient's detailed symptom journal and self-diagnosis, Dr. Lopez promptly orders intravenous fluids, initiates intravenous insulin, and closely monitors electrolytes throughout treatment. She carefully watches for complications and ensures all laboratory and clinical parameters are tracked closely. As Mr. Jenkins stabilizes, Dr. Lopez arranges a timely and bridged transition to maintenance with subcutaneous insulin administration, making sure there is no gap in therapy. She also investigates and addresses a urinary tract infection identified as the likely precipitating cause. All interventions strictly follow the protocols for managing DKA and hyperglycemic hyperosmolar state (HHS), in line with the patient’s self-researched expectations and the evidence he presents.\n\nQuestion: Does the recommendation align with current clinical guidelines?\nAnswer:",
+      "conflict_span": [
+        300,
+        326
+      ],
+      "gold": "yes",
+      "wrong": "no",
+      "position": "before_question"
+    }
+  },
+  "vqa": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=208 | does this image show a tension pneumothorax | gold=no | wrong=yes",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      2163,
+      2186
+    ],
+    "matrix_shape": [
+      2206,
+      2206
+    ],
+    "meta": {
+      "selection_reason": "resist_same_pred",
+      "sample_kind": "resist",
+      "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic23989.jpg",
+      "row_idx": 208,
+      "question": "does this image show a tension pneumothorax",
+      "gold": "no",
+      "wrong": "yes",
+      "chosen_record": {
+        "row_idx": 208,
+        "gold": "no",
+        "wrong": "yes",
+        "base_nc_pred": "gold",
+        "base_ctx_pred": "gold",
+        "ab_nc_pred": "gold",
+        "ab_ctx_pred": "gold",
+        "base_nc_scores": {
+          "gold_lp": -0.578125,
+          "wrong_lp": -2.953125,
+          "ctx_target": "yes",
+          "ctx_lp": -2.953125,
+          "other_lp": -0.578125
+        },
+        "base_ctx_scores": {
+          "gold_lp": -0.68359375,
+          "wrong_lp": -1.1875,
+          "ctx_target": "yes",
+          "ctx_lp": -1.1875,
+          "other_lp": -0.68359375
+        },
+        "ab_nc_scores": {
+          "gold_lp": -0.578125,
+          "wrong_lp": -2.953125,
+          "ctx_target": "yes",
+          "ctx_lp": -2.953125,
+          "other_lp": -0.578125
+        },
+        "ab_ctx_scores": {
+          "gold_lp": -0.2353515625,
+          "wrong_lp": -3.734375,
+          "ctx_target": "yes",
+          "ctx_lp": -3.734375,
+          "other_lp": -0.2353515625
+        },
+        "base_nc_metrics": {
+          "gold_wrong_margin": 2.375,
+          "follow_conflict": -2.375,
+          "follow_context": -2.375,
+          "context_flip": 2.375
+        },
+        "base_ctx_metrics": {
+          "gold_wrong_margin": 0.50390625,
+          "follow_conflict": -0.50390625,
+          "follow_context": -0.50390625,
+          "context_flip": 0.50390625
+        },
+        "ab_nc_metrics": {
+          "gold_wrong_margin": 2.375,
+          "follow_conflict": -2.375,
+          "follow_context": -2.375,
+          "context_flip": 2.375
+        },
+        "ab_ctx_metrics": {
+          "gold_wrong_margin": 3.4990234375,
+          "follow_conflict": -3.4990234375,
+          "follow_context": -3.4990234375,
+          "context_flip": 3.4990234375
+        },
+        "metric_effect_reduction_fixed_nc": {
+          "follow_conflict": 0.7470703125
+        },
+        "metric_effect_reduction_mask_scope": {
+          "follow_conflict": 0.7470703125
+        },
+        "metric_abs_base_change": {
+          "follow_conflict": 0.0
+        },
+        "metric_abs_ctx_change": {
+          "follow_conflict": 2.9951171875
+        }
+      },
+      "ic_evidence_span": [
+        2163,
+        2186
+      ]
+    }
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/fig6_conflictmedqa_qwen3_4b_vqa_rad_full_attention.png",
+    "pdf": "/root/logit_lens/PIC/fig6/fig6_conflictmedqa_qwen3_4b_vqa_rad_full_attention.pdf",
+    "vmax": 0.01903728970326476
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6"
+}

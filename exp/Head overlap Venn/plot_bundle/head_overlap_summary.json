@@ -1,0 +1,168 @@
+[
+  {
+    "model": "hulumed4b",
+    "left_label": "Image conflict",
+    "right_label": "Text conflict",
+    "left_path": "/root/logit_lens/exp/Head overlap Venn/plot_bundle/data/hulumed4b_image_selected_heads.json",
+    "right_path": "/root/logit_lens/exp/Head overlap Venn/plot_bundle/data/hulumed4b_text_selected_heads.json",
+    "venn_png": "/root/logit_lens/exp/Head overlap Venn/plot_bundle/hulumed4b_head_overlap_venn.png",
+    "summary": {
+      "left_count": 6,
+      "right_count": 10,
+      "overlap_count": 0,
+      "union_count": 16,
+      "jaccard_index": 0.0,
+      "overlap_coefficient": 0.0,
+      "left_only": [
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          16,
+          25
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          35,
+          16
+        ]
+      ],
+      "right_only": [
+        [
+          11,
+          16
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          20,
+          14
+        ],
+        [
+          20,
+          29
+        ],
+        [
+          21,
+          0
+        ],
+        [
+          21,
+          27
+        ],
+        [
+          22,
+          0
+        ],
+        [
+          24,
+          30
+        ]
+      ],
+      "overlap": []
+    }
+  },
+  {
+    "model": "internvl35_4b",
+    "left_label": "Image conflict",
+    "right_label": "Text conflict",
+    "left_path": "/root/logit_lens/exp/Head overlap Venn/plot_bundle/data/internvl35_4b_image_selected_heads.json",
+    "right_path": "/root/logit_lens/exp/Head overlap Venn/plot_bundle/data/internvl35_4b_text_selected_heads.json",
+    "venn_png": "/root/logit_lens/exp/Head overlap Venn/plot_bundle/internvl35_4b_head_overlap_venn.png",
+    "summary": {
+      "left_count": 7,
+      "right_count": 8,
+      "overlap_count": 0,
+      "union_count": 15,
+      "jaccard_index": 0.0,
+      "overlap_coefficient": 0.0,
+      "left_only": [
+        [
+          25,
+          9
+        ],
+        [
+          25,
+          17
+        ],
+        [
+          31,
+          2
+        ],
+        [
+          31,
+          6
+        ],
+        [
+          31,
+          7
+        ],
+        [
+          31,
+          9
+        ],
+        [
+          35,
+          22
+        ]
+      ],
+      "right_only": [
+        [
+          20,
+          14
+        ],
+        [
+          21,
+          11
+        ],
+        [
+          22,
+          8
+        ],
+        [
+          24,
+          9
+        ],
+        [
+          24,
+          30
+        ],
+        [
+          24,
+          31
+        ],
+        [
+          32,
+          5
+        ],
+        [
+          34,
+          5
+        ]
+      ],
+      "overlap": []
+    }
+  }
+]

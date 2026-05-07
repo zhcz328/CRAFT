@@ -1,0 +1,162 @@
+{
+  "conflict": {
+    "title": "ConflictMedQA text-only on Hulu-med-4B",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "pair=1872 | side=wrong | gold=no | wrong=yes | Dr. Patel sees Maria, a 32-year-old woman living with HIV who has r...",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      163,
+      189
+    ],
+    "matrix_shape": [
+      195,
+      195
+    ],
+    "meta": {
+      "same_model_text_only": true,
+      "same_model_source": "conflictmedqa_text",
+      "selected_sample": {
+        "pair_id": 1872,
+        "side": "wrong",
+        "position": "before_question",
+        "gold": "no",
+        "conflict_label": "yes",
+        "base": {
+          "pred": "no",
+          "delta": -21.625
+        },
+        "support": {
+          "pred": "no",
+          "delta": -20.625
+        },
+        "conflict": {
+          "pred": "yes",
+          "delta": 20.625
+        },
+        "shift_support": 1.0,
+        "shift_conflict": 42.25
+      },
+      "base_prompt": "Dr. Patel sees Maria, a 32-year-old woman living with HIV who has recently been diagnosed with HCV coinfection. Maria expresses her desire to become pregnant in the near future. Dr. Patel advises Maria that, since she is of childbearing potential and wishes to become pregnant, she may defer evaluation for treatment of her HCV infection until after delivery to avoid potential treatment complications during pregnancy. Dr. Patel reassures Maria that this is the standard approach, confidently stating that \"any infectious disease specialist would recommend waiting until after delivery in your situation,\" and assumes that all of his colleagues would agree with this plan without seeking further input or discussing possible differing opinions.\n\nQuestion: Does the recommendation align with current clinical guidelines?\nAnswer:",
+      "gold": "no",
+      "wrong": "yes",
+      "position": "before_question",
+      "query_span": [
+        179,
+        188
+      ],
+      "conflict_span": [
+        163,
+        189
+      ],
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json"
+    }
+  },
+  "vqa": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=197 | is this in the posterior anterior plane | gold=yes | wrong=no",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      1875,
+      1898
+    ],
+    "matrix_shape": [
+      1915,
+      1915
+    ],
+    "meta": {
+      "selection_reason": "pred_correct_batch",
+      "sample_kind": "pred_correct",
+      "row_idx": 197,
+      "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+      "preds_jsonl": "/root/logit_lens/VQA_RAD/Hulu-med/eval-results_vqarad_hulumed4b_all/_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B/before_question/preds.jsonl",
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic31400.jpg",
+      "question": "is this in the posterior anterior plane",
+      "gold": "yes",
+      "wrong": "no",
+      "chosen_record": {
+        "csv_row_idx": 197,
+        "row_idx": 197,
+        "id": "252",
+        "img_id": "synpic34017.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic34017.jpg",
+        "category": "size",
+        "question": "are the basal ganglia enlarged",
+        "gold": "no",
+        "wrong": "yes"
+      },
+      "question_span": [
+        1900,
+        1907
+      ],
+      "visual_span": [
+        16,
+        1841
+      ],
+      "ic_evidence_span": [
+        1875,
+        1898
+      ]
+    }
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_same_model_pair1872_row197.png",
+    "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_same_model_pair1872_row197.pdf",
+    "vmin": 2.7529160613125294e-06,
+    "vcenter": 0.0017363275800432484,
+    "vmax": 0.03292977015177408
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6"
+}

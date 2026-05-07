@@ -1,0 +1,213 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.7,
+    "base_max": 0.5,
+    "base_min": null
+  },
+  "input_json": "qwen3vl_4b/result_before_answer_slake/headscan_slake_mm_accel/head_scan_merged_unique_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "merged_unique_layers",
+    "scan_layers": [
+      0,
+      1,
+      5,
+      7,
+      13,
+      15,
+      19,
+      20,
+      32,
+      33,
+      34,
+      35
+    ],
+    "n_samples": 300,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_conflict"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "before_answer",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/Qwen3-VL-4B-Instruct"
+  },
+  "n_candidates": 50,
+  "n_selected": 12,
+  "selected": [
+    {
+      "layer": 5,
+      "head": 13,
+      "mean_abs_effect_reduction": 1.3216669376691181,
+      "mean_abs_base_change": 0.4100005328655243,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 1.3216669376691181
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.4100005328655243
+      },
+      "conflict_specific_score": 3.2235658448199254,
+      "backbone_score": 0.5418841487150842
+    },
+    {
+      "layer": 1,
+      "head": 22,
+      "mean_abs_effect_reduction": 0.7246875365575155,
+      "mean_abs_base_change": 0.23041698257128398,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.7246875365575155
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.23041698257128398
+      },
+      "conflict_specific_score": 3.145099737748638,
+      "backbone_score": 0.16698031548059977
+    },
+    {
+      "layer": 7,
+      "head": 13,
+      "mean_abs_effect_reduction": 1.363439329067866,
+      "mean_abs_base_change": 0.48083696683247884,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 1.363439329067866
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.48083696683247884
+      },
+      "conflict_specific_score": 2.8355484032376346,
+      "backbone_score": 0.6555920314491026
+    },
+    {
+      "layer": 13,
+      "head": 30,
+      "mean_abs_effect_reduction": 1.0512504700819651,
+      "mean_abs_base_change": 0.3751037895679474,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 1.0512504700819651
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.3751037895679474
+      },
+      "conflict_specific_score": 2.8025514451383438,
+      "backbone_score": 0.3943280351128312
+    },
+    {
+      "layer": 1,
+      "head": 14,
+      "mean_abs_effect_reduction": 0.8583332542578379,
+      "mean_abs_base_change": 0.3540622838338216,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.8583332542578379
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.3540622838338216
+      },
+      "conflict_specific_score": 2.4242368340590033,
+      "backbone_score": 0.3039034322930464
+    },
+    {
+      "layer": 1,
+      "head": 18,
+      "mean_abs_effect_reduction": 0.9822403224309285,
+      "mean_abs_base_change": 0.42729148030281067,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.9822403224309285
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.42729148030281067
+      },
+      "conflict_specific_score": 2.2987540565535842,
+      "backbone_score": 0.4197029213846215
+    },
+    {
+      "layer": 5,
+      "head": 14,
+      "mean_abs_effect_reduction": 1.0523966439565022,
+      "mean_abs_base_change": 0.49531333287556967,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 1.0523966439565022
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.49531333287556967
+      },
+      "conflict_specific_score": 2.1247046049460474,
+      "backbone_score": 0.5212660892251594
+    },
+    {
+      "layer": 5,
+      "head": 15,
+      "mean_abs_effect_reduction": 0.9229217076301575,
+      "mean_abs_base_change": 0.4692175491650899,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.9229217076301575
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.4692175491650899
+      },
+      "conflict_specific_score": 1.9669335521205848,
+      "backbone_score": 0.43305106172548213
+    },
+    {
+      "layer": 5,
+      "head": 23,
+      "mean_abs_effect_reduction": 0.8143750552336375,
+      "mean_abs_base_change": 0.42161623438199364,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.8143750552336375
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.42161623438199364
+      },
+      "conflict_specific_score": 1.9315506787272303,
+      "backbone_score": 0.34335374416223435
+    },
+    {
+      "layer": 20,
+      "head": 29,
+      "mean_abs_effect_reduction": 0.9092710590362549,
+      "mean_abs_base_change": 0.49468736092249554,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.9092710590362549
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.49468736092249554
+      },
+      "conflict_specific_score": 1.8380684302752648,
+      "backbone_score": 0.4498049005578476
+    },
+    {
+      "layer": 20,
+      "head": 16,
+      "mean_abs_effect_reduction": 0.8141147740681967,
+      "mean_abs_base_change": 0.4506251335144043,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.8141147740681967
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.4506251335144043
+      },
+      "conflict_specific_score": 1.806630183027708,
+      "backbone_score": 0.36686057876053024
+    },
+    {
+      "layer": 7,
+      "head": 27,
+      "mean_abs_effect_reduction": 0.8131252698103587,
+      "mean_abs_base_change": 0.46187427401542663,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.8131252698103587
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.46187427401542663
+      },
+      "conflict_specific_score": 1.7604866845138811,
+      "backbone_score": 0.3755616436772573
+    }
+  ]
+}

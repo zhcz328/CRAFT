@@ -1,0 +1,30 @@
+{
+  "position": "before_question",
+  "preds_jsonl": "C:\\Users\\29818\\Desktop\\logit_lens\\VQA_RAD\\Hulu-med\\eval-results_vqarad_hulumed4b_all\\_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B\\before_question\\preds.jsonl",
+  "written_files": {
+    "train": "C:\\Users\\29818\\Desktop\\logit_lens\\VQA_RAD\\Hulu-med\\CHDP\\data_smoke\\train.jsonl",
+    "val": "C:\\Users\\29818\\Desktop\\logit_lens\\VQA_RAD\\Hulu-med\\CHDP\\data_smoke\\val.jsonl"
+  },
+  "splits": {
+    "train": {
+      "total_rows": 391,
+      "matched_outcome_rows": 391,
+      "kept_rows": 391,
+      "kept_resist": 204,
+      "kept_hijack": 187,
+      "dropped_no_outcome": 0,
+      "dropped_nc_not_gold": 0,
+      "dropped_ic_other": 0
+    },
+    "val": {
+      "total_rows": 390,
+      "matched_outcome_rows": 390,
+      "kept_rows": 390,
+      "kept_resist": 217,
+      "kept_hijack": 173,
+      "dropped_no_outcome": 0,
+      "dropped_nc_not_gold": 0,
+      "dropped_ic_other": 0
+    }
+  }
+}

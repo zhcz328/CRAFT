@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "head_file_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/selected_heads.json",
+    "masked_conflict_specific": [
+      {
+        "layer": 16,
+        "heads": [
+          6,
+          11,
+          19
+        ]
+      },
+      {
+        "layer": 18,
+        "heads": [
+          22,
+          31
+        ]
+      },
+      {
+        "layer": 19,
+        "heads": [
+          27
+        ]
+      },
+      {
+        "layer": 20,
+        "heads": [
+          28
+        ]
+      },
+      {
+        "layer": 21,
+        "heads": [
+          29
+        ]
+      },
+      {
+        "layer": 22,
+        "heads": [
+          2
+        ]
+      },
+      {
+        "layer": 35,
+        "heads": [
+          8
+        ]
+      }
+    ],
+    "selection_meta": {
+      "mode": "B_fixed",
+      "er_min": 2.298349056604,
+      "bc_max": 2.340212264151,
+      "total_candidates": 40,
+      "selected": 10
+    },
+    "fixed_thresholds": null,
+    "mask_scope": "conflict_only",
+    "positions": [
+      "before_question"
+    ]
+  },
+  "summary_by_position": {
+    "before_question": {
+      "n_samples": 174,
+      "base_acc_before": 1.0,
+      "base_acc_before_recomputed": 1.0,
+      "base_acc_after": 1.0,
+      "base_acc_delta": 0.0,
+      "support_acc_before": 1.0,
+      "support_acc_after": 1.0,
+      "support_acc_delta": 0.0,
+      "follow_conflict_rate_before": 0.9252873563218391,
+      "follow_conflict_rate_after": 0.5574712643678161,
+      "follow_conflict_rate_delta": -0.367816091954023,
+      "resist_rate_after(pred_same_as_base_after)": 0.4425287356321839,
+      "flip_rate_after": 0.5574712643678161,
+      "mean_shift_support_before": 1.5179594823683815,
+      "mean_shift_support_after": 1.5179594823683815,
+      "mean_shift_support_delta": 0.0,
+      "mean_shift_conflict_before": -3.6042614099623145,
+      "mean_shift_conflict_after": -4.8006520785134414,
+      "mean_shift_conflict_delta": -1.1963906685511272
+    }
+  }
+}

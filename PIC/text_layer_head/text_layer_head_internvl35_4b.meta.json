@@ -1,0 +1,14 @@
+{
+  "task_json": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+  "retrieval_json": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+  "single_model_mode": true,
+  "output": "/root/logit_lens/PIC/text_layer_head/text_layer_head_internvl35_4b.pdf",
+  "conflict_points": 5,
+  "backbone_points": 12,
+  "irrelevant_points": 31,
+  "compress_layers": true,
+  "metrics_used": [
+    "mean_abs_effect_reduction",
+    "mean_abs_base_change"
+  ]
+}

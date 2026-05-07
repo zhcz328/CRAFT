@@ -1,0 +1,19 @@
+{
+  "conflict_summary": "/root/autodl-tmp/Hulumed/probe_vqa_rad/results/conflict_linear_before_question_ok/summary.json",
+  "follow_summary": "/root/autodl-tmp/Hulumed/probe_vqa_rad/results/follow_linear_before_question_ok/summary.json",
+  "aligned_by": "stage_index",
+  "stage_count": 3,
+  "conflict_stage_epochs": [
+    3,
+    10,
+    80
+  ],
+  "follow_stage_epochs": [
+    3,
+    10,
+    80
+  ],
+  "outputs": [
+    "/root/logit_lens/VQA_RAD/Hulu-med/pic/probe_stage/probe_stage_overlay_1x2.png"
+  ]
+}

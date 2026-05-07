@@ -1,0 +1,920 @@
+import argparse
+import copy
+import csv
+import importlib.util
+import json
+import sys
+from argparse import Namespace
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import torch
+from torch import nn
+from tqdm import tqdm
+
+from model_utils import (
+    load_mm_model as shared_load_mm_model,
+    load_processor_with_compat,
+    prefix_model_relative_path,
+    resolve_model_selection,
+)
+from resume_utils import ResumeTracker, atomic_write_json, build_resume_dir, build_resume_scope, load_json
+
+
+ROOT_DIR = Path(__file__).resolve().parent
+
+
+def load_module(alias, path):
+    spec = importlib.util.spec_from_file_location(alias, path)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+probe_extract = load_module("hulumed_probe_extract", ROOT_DIR / "probe" / "extract_features.py")
+lens_common = load_module("hulumed_lens_common", ROOT_DIR / "tuned_lens" / "common.py")
+lens_modeling = load_module("hulumed_lens_modeling", ROOT_DIR / "tuned_lens" / "modeling.py")
+ablate_mod = load_module("hulumed_ablate_head", ROOT_DIR / "ablate_head.py")
+
+
+class LinearProbe(nn.Module):
+    def __init__(self, input_dim):
+        super().__init__()
+        self.linear = nn.Linear(input_dim, 1)
+
+    def forward(self, x):
+        return self.linear(x).squeeze(-1)
+
+
+class MLPProbe(nn.Module):
+    def __init__(self, input_dim, hidden_dim):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, 1),
+        )
+
+    def forward(self, x):
+        return self.net(x).squeeze(-1)
+
+
+def chunked(items, batch_size):
+    for start in range(0, len(items), batch_size):
+        yield items[start : start + batch_size]
+
+
+def read_csv_rows(path):
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def make_model(probe_type, input_dim, state_dict):
+    if probe_type == "linear":
+        return LinearProbe(input_dim)
+    if probe_type == "mlp":
+        hidden_dim = state_dict["net.0.weight"].shape[0]
+        return MLPProbe(input_dim, hidden_dim)
+    raise ValueError(f"Unknown probe_type: {probe_type}")
+
+
+def load_probe_specs(probe_dir):
+    probe_specs = {}
+    for layer_path in sorted(Path(probe_dir).glob("layer_*.pt")):
+        ckpt = torch.load(layer_path, map_location="cpu")
+        model = make_model(
+            probe_type=ckpt["probe_type"],
+            input_dim=ckpt["mean"].shape[-1],
+            state_dict=ckpt["state_dict"],
+        )
+        model.load_state_dict(ckpt["state_dict"], strict=True)
+        model.eval()
+        probe_specs[int(ckpt["layer_idx"])] = {
+            "model": model,
+            "mean": ckpt["mean"].float(),
+            "std": ckpt["std"].float().clamp_min(1e-6),
+        }
+    if not probe_specs:
+        raise RuntimeError(f"No probe checkpoints found in {probe_dir}")
+    return probe_specs
+
+
+def apply_probe_batch(hidden_batch, probe_spec, score_type):
+    x = (hidden_batch.float() - probe_spec["mean"]) / probe_spec["std"]
+    with torch.no_grad():
+        logits = probe_spec["model"](x).cpu()
+    if score_type == "logit":
+        return logits
+    return torch.sigmoid(logits)
+
+
+def resolve_ablation_meta(ablation_json, data_csv, selected_heads, position):
+    payload = json.loads(Path(ablation_json).read_text(encoding="utf-8"))
+    config = payload.get("config", {})
+    data_csv = data_csv or config.get("data_csv", "")
+    selected_heads = selected_heads or config.get("selected_heads", "")
+    position = position or config.get("position", "image_conflict")
+    if not data_csv or not selected_heads:
+        raise RuntimeError("Need data_csv and selected_heads, either from args or ablation json config.")
+    image_root = str(config.get("image_root", "."))
+    trace_mode = str(config.get("trace_mode", "conflict"))
+    keep_mode = str(config.get("keep_mode", "self"))
+    max_image_side = int(config.get("max_image_side", 672))
+    return payload, str(data_csv), str(selected_heads), str(position), image_root, trace_mode, keep_mode, max_image_side, config
+
+
+def _norm_pred(value):
+    return str(value or "").strip().lower()
+
+
+def _match_flip_mode(record, flip_mode):
+    base_pred = _norm_pred(record.get("base_ctx_pred"))
+    ab_pred = _norm_pred(record.get("ab_ctx_pred"))
+    if flip_mode == "non_unknown_to_unknown":
+        return base_pred != "unknown" and ab_pred == "unknown"
+    if flip_mode == "unknown_to_non_unknown":
+        return base_pred == "unknown" and ab_pred != "unknown"
+    if flip_mode == "unknown_to_unknown":
+        return base_pred == "unknown" and ab_pred == "unknown"
+    if flip_mode == "any_unknown_base":
+        return base_pred == "unknown"
+    if flip_mode == "all":
+        return True
+    raise ValueError(f"Unsupported flip_mode: {flip_mode}")
+
+
+def select_flip_rows(ablation_payload, csv_rows, flip_mode):
+    selected = []
+    for record in ablation_payload.get("records", []):
+        if not _match_flip_mode(record, flip_mode):
+            continue
+        row_idx = int(record["row_idx"])
+        if row_idx < 0 or row_idx >= len(csv_rows):
+            continue
+        source = csv_rows[row_idx]
+        question = source.get("question", "")
+        gold = source.get("gold_norm") or source.get("gold") or record.get("gold", "")
+        wrong = source.get("wrong_norm") or source.get("wrong") or record.get("wrong", "")
+        selected.append(
+            {
+                "row_idx": row_idx,
+                "sample_id": str(source.get("id", row_idx)),
+                "sample_key": lens_common.sample_key(source.get("img_id", ""), question),
+                "img_id": source.get("img_id", ""),
+                "image_path": source.get("image_path", ""),
+                "detection_path": source.get("detection_path", ""),
+                "mask_path": source.get("mask_path", ""),
+                "ic_target_labels": source.get("ic_target_labels", "[]"),
+                "question": question,
+                "gold_answer": gold,
+                "wrong_answer": wrong,
+                "base_ctx_pred": _norm_pred(record.get("base_ctx_pred")),
+                "ab_ctx_pred": _norm_pred(record.get("ab_ctx_pred")),
+            }
+        )
+    return selected
+
+
+def build_ctx_samples_from_flip_rows(
+    selected_rows,
+    processor,
+    image_size,
+    mask_scale=1.0,
+):
+    samples = []
+    for row in selected_rows:
+        prompt_text = lens_common.make_prompt_no_evidence(row["question"])
+        batch_row = {
+            "image_path": row["image_path"],
+            "detection_path": row["detection_path"],
+            "mask_path": row["mask_path"],
+            "ic_target_labels": row["ic_target_labels"],
+            "image_variant": "ic",
+            "prompt_text": prompt_text,
+        }
+        ctx_inputs = lens_common.build_batch_inputs(
+            processor=processor,
+            rows=[batch_row],
+            project_root=ROOT_DIR,
+            image_size=image_size,
+            mask_scale=mask_scale,
+        )
+        samples.append(
+            {
+                "row_idx": int(row["row_idx"]),
+                "question": row["question"],
+                "gold": str(row["gold_answer"] or "").strip().lower(),
+                "wrong": str(row["wrong_answer"] or "").strip().lower(),
+                "unknown": "unknown",
+                "base_ctx_pred": row["base_ctx_pred"],
+                "ctx_inputs": ctx_inputs,
+            }
+        )
+    return samples
+
+
+def build_ablate_args(data_csv, image_root, position, trace_mode, max_image_side):
+    return Namespace(
+        data_csv=data_csv,
+        image_root=image_root,
+        max_examples=-1,
+        max_image_side=max_image_side,
+        position=position,
+        trace_mode=trace_mode,
+    )
+
+
+def select_flip_samples_from_built(ablation_payload, built_samples, flip_mode):
+    flip_map = {
+        int(record["row_idx"]): record
+        for record in ablation_payload.get("records", [])
+        if _match_flip_mode(record, flip_mode)
+    }
+    selected = []
+    for sample in built_samples:
+        row_idx = int(sample["row_idx"])
+        if row_idx not in flip_map:
+            continue
+        record = flip_map[row_idx]
+        item = dict(sample)
+        item["ablation_record"] = record
+        selected.append(item)
+    return selected
+
+
+def attach_ablation_records(samples, ablation_payload):
+    record_map = {int(record["row_idx"]): record for record in ablation_payload.get("records", [])}
+    selected = []
+    for sample in samples:
+        row_idx = int(sample["row_idx"])
+        if row_idx not in record_map:
+            continue
+        item = dict(sample)
+        item["ablation_record"] = record_map[row_idx]
+        selected.append(item)
+    return selected
+
+
+def load_tuned_lens(lens_ckpt_path, device):
+    ckpt = torch.load(lens_ckpt_path, map_location="cpu")
+    translators = lens_modeling.build_translators(
+        layer_indices=ckpt["layer_indices"],
+        hidden_dim=ckpt["hidden_dim"],
+        dtype=lens_modeling.resolve_dtype(ckpt["translator_dtype"]),
+        rank=ckpt["translator_rank"],
+    ).to(device)
+    translators.load_state_dict(ckpt["state_dict"], strict=True)
+    translators.eval()
+    return ckpt, translators
+
+
+def load_model_like_ablate_head(model_name, dtype, device):
+    model = shared_load_mm_model(
+        model_name,
+        torch_dtype=dtype,
+        trust_remote_code=True,
+        attn_implementation="eager",
+    )
+    return model.to(device)
+
+
+def max_abs_diff(xs, ys):
+    if len(xs) != len(ys):
+        raise ValueError("Cannot compare sequences with different lengths.")
+    if not xs:
+        return 0.0
+    return max(abs(float(x) - float(y)) for x, y in zip(xs, ys))
+
+
+def is_numeric_like(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def summarize_ablation_effect(before_summary, after_summary):
+    probe_diff = max_abs_diff(
+        before_summary["probe_mean_scores_by_layer"],
+        after_summary["probe_mean_scores_by_layer"],
+    )
+    unknown_diff = max_abs_diff(
+        before_summary["tuned_lens_mean_unknown_logprob_by_layer"],
+        after_summary["tuned_lens_mean_unknown_logprob_by_layer"],
+    )
+    best_competing_diff = max_abs_diff(
+        before_summary["tuned_lens_mean_best_competing_logprob_by_layer"],
+        after_summary["tuned_lens_mean_best_competing_logprob_by_layer"],
+    )
+    return {
+        "probe_max_abs_diff": probe_diff,
+        "unknown_max_abs_diff": unknown_diff,
+        "best_competing_max_abs_diff": best_competing_diff,
+    }
+
+
+def verify_ablation_changes_original_path(model, sample, selected_heads_path, keep_mode, trace_mode):
+    tokenizer = sample["ctx_inputs"].get("tokenizer", None)
+    if tokenizer is None:
+        tokenizer = None
+    device = next(model.parameters()).device
+
+    before_cache = ablate_mod.build_prompt_cache_from_inputs(model, sample["ctx_inputs"])
+    before_scores = ablate_mod.score_answer_candidates_with_cache(
+        model, sample.get("tokenizer", None) or sample["_tokenizer"], before_cache, sample["gold"], sample["wrong"], sample.get("unknown", "unknown"), trace_mode, device
+    )
+
+    selected_pairs = ablate_mod.parse_selected_heads(selected_heads_path)
+    layer_to_heads = ablate_mod.pack_layer_to_heads(selected_pairs)
+    handles = ablate_mod.install_head_mask_hooks(model, layer_to_heads, keep_mode=keep_mode)
+    try:
+        after_cache = ablate_mod.build_prompt_cache_from_inputs(model, sample["ctx_inputs"])
+        after_scores = ablate_mod.score_answer_candidates_with_cache(
+            model, sample.get("tokenizer", None) or sample["_tokenizer"], after_cache, sample["gold"], sample["wrong"], sample.get("unknown", "unknown"), trace_mode, device
+        )
+    finally:
+        for handle in handles:
+            handle.remove()
+
+    keys = sorted(set(before_scores.keys()) | set(after_scores.keys()))
+    max_diff = 0.0
+    numeric_before = {}
+    numeric_after = {}
+    for key in keys:
+        before_value = before_scores.get(key, 0.0)
+        after_value = after_scores.get(key, 0.0)
+        if not (is_numeric_like(before_value) and is_numeric_like(after_value)):
+            continue
+        before_value = float(before_value)
+        after_value = float(after_value)
+        numeric_before[key] = before_value
+        numeric_after[key] = after_value
+        max_diff = max(max_diff, abs(before_value - after_value))
+    return {
+        "row_idx": sample["row_idx"],
+        "max_abs_score_diff": max_diff,
+        "before_scores": numeric_before,
+        "after_scores": numeric_after,
+        "n_selected_heads": len(selected_pairs),
+    }
+
+
+def plot_single_line(layer_indices, values, ylabel, title, out_path, color, zero_line):
+    plt.figure(figsize=(8.4, 4.8))
+    plt.plot(layer_indices, values, marker="o", linewidth=2.2, color=color)
+    plt.axhline(zero_line, linestyle="--", linewidth=1, color="gray", alpha=0.7)
+    plt.xlabel("Layer")
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.grid(alpha=0.25)
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=220)
+    plt.close()
+
+
+def plot_unknown_best_competing(layer_indices, unknown_values, best_competing_values, title, out_path):
+    plt.figure(figsize=(8.4, 4.8))
+    plt.plot(layer_indices, unknown_values, marker="o", linewidth=2.2, color="#2f6db3", label="unknown")
+    plt.plot(layer_indices, best_competing_values, marker="o", linewidth=2.2, color="#d04f3e", label="best competing")
+    plt.xlabel("Layer")
+    plt.ylabel("Mean tuned-lens logprob")
+    plt.title(title)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=220)
+    plt.close()
+
+
+def plot_probe_before_after(layer_indices, before_values, after_values, ylabel, title, out_path, zero_line):
+    plt.figure(figsize=(8.4, 4.8))
+    plt.plot(
+        layer_indices,
+        before_values,
+        marker="o",
+        linewidth=2.2,
+        linestyle="-",
+        color="#d04f3e",
+        label="before ablation",
+    )
+    plt.plot(
+        layer_indices,
+        after_values,
+        marker="o",
+        linewidth=2.2,
+        linestyle="-",
+        color="#2f6db3",
+        label="after ablation",
+    )
+    plt.axhline(zero_line, linestyle="--", linewidth=1, color="gray", alpha=0.7)
+    plt.xlabel("Layer")
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=220)
+    plt.close()
+
+
+def plot_tuned_lens_before_after(layer_indices, before_values, after_values, ylabel, title, out_path):
+    plt.figure(figsize=(8.4, 4.8))
+    plt.plot(
+        layer_indices,
+        before_values,
+        marker="o",
+        linewidth=2.2,
+        linestyle="-",
+        color="#d04f3e",
+        label="before ablation",
+    )
+    plt.plot(
+        layer_indices,
+        after_values,
+        marker="o",
+        linewidth=2.2,
+        linestyle="-",
+        color="#2f6db3",
+        label="after ablation",
+    )
+    plt.xlabel("Layer")
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=220)
+    plt.close()
+
+
+def collect_condition_outputs(
+    samples,
+    model,
+    tokenizer,
+    first_device,
+    model_dtype,
+    output_head,
+    probe_specs,
+    score_type,
+    translators,
+    lens_ckpt,
+    image_size,
+    batch_size,
+):
+    layer_indices = sorted(probe_specs.keys())
+    probe_sums = [0.0 for _ in layer_indices]
+    probe_count = 0
+
+    lens_layer_indices = lens_ckpt["layer_indices"]
+    unknown_sums = [0.0 for _ in lens_layer_indices]
+    best_competing_sums = [0.0 for _ in lens_layer_indices]
+    lens_count = 0
+
+    lm_device = output_head.weight.device
+    unknown_token_ids = lens_common.answer_token_ids(tokenizer, "unknown")
+    if len(unknown_token_ids) != 1:
+        raise RuntimeError(f"'unknown' must map to exactly one token, got {unknown_token_ids}")
+    unknown_token_id = int(unknown_token_ids[0])
+    usable_samples = []
+    for sample in samples:
+        item = dict(sample)
+        competing_answers = []
+        seen = set()
+        for candidate in (sample.get("wrong", ""), sample.get("gold", "")):
+            candidate_norm = str(candidate or "").strip().lower()
+            if not candidate_norm or candidate_norm == "unknown" or candidate_norm in seen:
+                continue
+            seen.add(candidate_norm)
+            competing_answers.append(candidate_norm)
+        item["competing_answers"] = competing_answers
+        usable_samples.append(item)
+
+    batches = list(chunked(usable_samples, batch_size))
+    pbar = tqdm(batches, total=len(batches), desc="collect condition outputs", unit="batch", leave=False)
+    for batch_rows in pbar:
+        batch_inputs = lens_common.collate_processor_outputs(
+            [sample["ctx_inputs"] for sample in batch_rows],
+            pad_token_id=0,
+        )
+        batch_inputs.pop("token_type_ids", None)
+        batch_inputs = lens_common.move_to_device(batch_inputs, first_device, model_dtype)
+        positions = batch_inputs["attention_mask"].sum(dim=1) - 1
+
+        with torch.no_grad():
+            # Match the original ablation script more closely: it ablates along the
+            # prompt-cache path with use_cache=True. Some model implementations route
+            # attention differently when cache is disabled.
+            out = model(**batch_inputs, output_hidden_states=True, use_cache=True, return_dict=True)
+
+        hidden_states = out.hidden_states[1:]
+        past_key_values = out.past_key_values
+        for pos, layer_idx in enumerate(layer_indices):
+            hs_tensor = hidden_states[layer_idx]
+            batch_index = torch.arange(len(batch_rows), device=hs_tensor.device)
+            local_positions = positions.to(hs_tensor.device)
+            gathered = hs_tensor[batch_index, local_positions].cpu()
+            scores = apply_probe_batch(gathered, probe_specs[layer_idx], score_type)
+            probe_sums[pos] += float(scores.sum().item())
+        probe_count += len(batch_rows)
+
+        for layer_pos, layer_idx in enumerate(lens_layer_indices):
+            hs_tensor = hidden_states[layer_idx]
+            batch_index = torch.arange(len(batch_rows), device=hs_tensor.device)
+            local_positions = positions.to(hs_tensor.device)
+            gathered = hs_tensor[batch_index, local_positions]
+            translator = translators[str(layer_idx)]
+            translator_dtype = next(translator.parameters()).dtype
+            translator_device = next(translator.parameters()).device
+            tuned_hidden = translator(gathered.to(device=translator_device, dtype=translator_dtype))
+            tuned_logits = output_head(tuned_hidden.to(device=lm_device, dtype=output_head.weight.dtype))
+
+            log_probs = torch.log_softmax(tuned_logits, dim=-1)
+            unknown_scores = log_probs[:, unknown_token_id]
+            best_competing_scores = []
+            for batch_idx, sample in enumerate(batch_rows):
+                competing_ids = []
+                for candidate in sample.get("competing_answers", []):
+                    token_ids = lens_common.answer_token_ids(tokenizer, candidate)
+                    if len(token_ids) == 1:
+                        competing_ids.append(int(token_ids[0]))
+                competing_ids = sorted(set(competing_ids))
+                if not competing_ids:
+                    competing_ids = [unknown_token_id]
+                sample_scores = log_probs[batch_idx, competing_ids]
+                best_competing_scores.append(torch.max(sample_scores))
+            best_competing_scores = torch.stack(best_competing_scores, dim=0)
+            unknown_sums[layer_pos] += float(unknown_scores.sum().item())
+            best_competing_sums[layer_pos] += float(best_competing_scores.sum().item())
+            if layer_pos == 0:
+                lens_count += len(batch_rows)
+        pbar.set_postfix(probe_count=probe_count, lens_count=lens_count)
+
+    probe_means = [value / max(1, probe_count) for value in probe_sums]
+    unknown_means = [value / max(1, lens_count) for value in unknown_sums]
+    best_competing_means = [value / max(1, lens_count) for value in best_competing_sums]
+    return {
+        "probe_layer_indices": layer_indices,
+        "probe_mean_scores_by_layer": probe_means,
+        "probe_count": probe_count,
+        "lens_layer_indices": lens_layer_indices,
+        "tuned_lens_mean_unknown_logprob_by_layer": unknown_means,
+        "tuned_lens_mean_best_competing_logprob_by_layer": best_competing_means,
+        "tuned_lens_count": lens_count,
+    }
+
+
+def infer_cache_device(past_key_values):
+    if isinstance(past_key_values, tuple):
+        for layer_states in past_key_values:
+            if isinstance(layer_states, tuple):
+                for state in layer_states:
+                    if torch.is_tensor(state):
+                        return state.device
+    for attr_name in ("key_cache", "value_cache"):
+        attr = getattr(past_key_values, attr_name, None)
+        if isinstance(attr, list):
+            for state in attr:
+                if torch.is_tensor(state):
+                    return state.device
+    layers = getattr(past_key_values, "layers", None)
+    if layers is not None:
+        for layer in layers:
+            for attr_name in ("keys", "values", "key_cache", "value_cache"):
+                state = getattr(layer, attr_name, None)
+                if torch.is_tensor(state):
+                    return state.device
+    return torch.device("cpu")
+
+
+def slice_single_sample_past_key_values(past_key_values, item_idx):
+    if hasattr(past_key_values, "batch_select_indices"):
+        sample_past = copy.deepcopy(past_key_values)
+        batch_indices = torch.tensor(
+            [item_idx],
+            dtype=torch.long,
+            device=infer_cache_device(past_key_values),
+        )
+        sample_past.batch_select_indices(batch_indices)
+        return sample_past
+
+    return tuple(
+        tuple(state[item_idx : item_idx + 1] for state in layer_states)
+        for layer_states in past_key_values
+    )
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Analyze image-conflict ablation flips with probe and tuned lens trajectories.")
+    ap.add_argument("--ablation_json", required=True)
+    ap.add_argument("--model", required=True)
+    ap.add_argument("--model_name", default="")
+    ap.add_argument("--probe_dir", required=True)
+    ap.add_argument("--lens_ckpt", required=True)
+    ap.add_argument("--out_dir", required=True)
+    ap.add_argument("--data_csv", default="")
+    ap.add_argument("--selected_heads", default="")
+    ap.add_argument("--position", default="image_conflict")
+    ap.add_argument("--score_type", default="logit", choices=["logit", "prob"])
+    ap.add_argument("--dtype", default="bfloat16", choices=["float16", "bfloat16", "float32"])
+    ap.add_argument("--device_map", default="auto")
+    ap.add_argument("--image_size", type=int, default=672)
+    ap.add_argument("--batch_size", type=int, default=2)
+    ap.add_argument("--max_samples", type=int, default=0)
+    ap.add_argument(
+        "--flip_mode",
+        default="non_unknown_to_unknown",
+        choices=["non_unknown_to_unknown", "unknown_to_non_unknown", "unknown_to_unknown", "any_unknown_base", "all"],
+        help="Which ablation records to analyze.",
+    )
+    ap.add_argument("--resume", action="store_true")
+    args = ap.parse_args()
+    args.model, _model_spec = resolve_model_selection(model_name=args.model_name, model=args.model)
+    args.out_dir = prefix_model_relative_path(args.out_dir, model_name=args.model_name, model=args.model)
+
+    ablation_payload, data_csv, selected_heads_path, position, image_root, trace_mode, keep_mode, max_image_side, ablation_config = resolve_ablation_meta(
+        args.ablation_json,
+        args.data_csv,
+        args.selected_heads,
+        args.position,
+    )
+    csv_rows = read_csv_rows(data_csv)
+    mask_scale = float(ablation_config.get("mask_scale", 1.0))
+
+    tracker = ResumeTracker(
+        resume_dir=build_resume_dir(
+            ROOT_DIR,
+            task_name="analyze_ablation_flip_with_probe_and_lens",
+            model_name=args.model_name,
+            model=args.model,
+            position=position,
+            scope=build_resume_scope(
+                args.ablation_json,
+                args.probe_dir,
+                args.lens_ckpt,
+                args.score_type,
+                args.max_samples,
+                args.flip_mode,
+            ),
+        ),
+        enabled=args.resume,
+    )
+    tracker.start(
+        ablation_json=args.ablation_json,
+        data_csv=data_csv,
+        selected_heads=selected_heads_path,
+        position=position,
+        model=args.model,
+        model_name=args.model_name,
+        out_dir=str(args.out_dir),
+        score_type=args.score_type,
+        batch_size=args.batch_size,
+        max_samples=args.max_samples,
+    )
+
+    lens_common.ensure_video_import_compat()
+    processor = load_processor_with_compat(args.model)
+    if args.device_map != "auto":
+        device = torch.device(args.device_map)
+    else:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = load_model_like_ablate_head(
+        args.model,
+        dtype=lens_modeling.resolve_dtype(args.dtype),
+        device=device,
+    )
+    model.eval()
+    for param in model.parameters():
+        param.requires_grad_(False)
+
+    output_head = lens_common.get_output_head(model)
+    first_device = next(model.parameters()).device
+    model_dtype = next(model.parameters()).dtype
+    probe_specs = load_probe_specs(args.probe_dir)
+    lens_ckpt, translators = load_tuned_lens(args.lens_ckpt, first_device)
+    tokenizer = processor.tokenizer
+
+    ablate_args = build_ablate_args(
+        data_csv=data_csv,
+        image_root=image_root,
+        position=position,
+        trace_mode=trace_mode,
+        max_image_side=max_image_side,
+    )
+    df = ablate_mod.pd.read_csv(data_csv)
+    built_samples = ablate_mod.build_samples(ablate_args, df, processor, tokenizer, model, str(first_device))
+    if built_samples:
+        for sample in built_samples:
+            sample["_tokenizer"] = tokenizer
+        selected_samples = select_flip_samples_from_built(ablation_payload, built_samples, args.flip_mode)
+    else:
+        selected_rows = select_flip_rows(ablation_payload, csv_rows, args.flip_mode)
+        fallback_samples = build_ctx_samples_from_flip_rows(
+            selected_rows=selected_rows,
+            processor=processor,
+            image_size=args.image_size,
+            mask_scale=mask_scale,
+        )
+        for sample in fallback_samples:
+            sample["_tokenizer"] = tokenizer
+        selected_samples = attach_ablation_records(fallback_samples, ablation_payload)
+    if args.max_samples > 0:
+        selected_samples = selected_samples[: args.max_samples]
+    if not selected_samples:
+        total_records = len(ablation_payload.get("records", []))
+        matched_records = sum(1 for r in ablation_payload.get("records", []) if _match_flip_mode(r, args.flip_mode))
+        built_row_idx = {int(sample["row_idx"]) for sample in built_samples}
+        overlap = sum(
+            1
+            for r in ablation_payload.get("records", [])
+            if _match_flip_mode(r, args.flip_mode) and int(r.get("row_idx", -1)) in built_row_idx
+        )
+        raise RuntimeError(
+            f"No samples found for flip_mode={args.flip_mode} after alignment. "
+            f"ablation_records={total_records}, matched_records={matched_records}, "
+            f"built_samples={len(built_samples)}, overlap={overlap}."
+        )
+
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    before_resume_path = tracker.resume_dir / "before_summary.json"
+    after_resume_path = tracker.resume_dir / "after_summary.json"
+    original_check_path = tracker.resume_dir / "original_path_check.json"
+
+    original_path_check = load_json(original_check_path)
+    if not original_path_check:
+        original_path_check = verify_ablation_changes_original_path(
+            model=model,
+            sample=selected_samples[0],
+            selected_heads_path=selected_heads_path,
+            keep_mode=keep_mode,
+            trace_mode=trace_mode,
+        )
+        atomic_write_json(original_check_path, original_path_check)
+        tracker.update(original_path_check=original_path_check)
+    if original_path_check["max_abs_score_diff"] == 0.0:
+        raise RuntimeError(
+            "Ablation is already a no-op on the original ablate_head.py scoring path in this environment. "
+            "This likely means the current Hulu-Med/transformers runtime does not expose the same attention-mask "
+            "hooking path as the environment that produced the saved ablation JSON."
+        )
+
+    before_summary = load_json(before_resume_path)
+    if not before_summary:
+        before_summary = collect_condition_outputs(
+            samples=selected_samples,
+            model=model,
+            tokenizer=tokenizer,
+            first_device=first_device,
+            model_dtype=model_dtype,
+            output_head=output_head,
+            probe_specs=probe_specs,
+            score_type=args.score_type,
+            translators=translators,
+            lens_ckpt=lens_ckpt,
+            image_size=args.image_size,
+            batch_size=args.batch_size,
+        )
+        atomic_write_json(before_resume_path, before_summary)
+        tracker.mark_done("stage:before", {"probe_count": before_summary.get("probe_count", 0)})
+    tracker.update(before_summary_path=str(before_resume_path))
+
+    selected_pairs = ablate_mod.parse_selected_heads(selected_heads_path)
+    layer_to_heads = ablate_mod.pack_layer_to_heads(selected_pairs)
+    after_summary = load_json(after_resume_path)
+    if not after_summary:
+        handles = ablate_mod.install_head_mask_hooks(model, layer_to_heads, keep_mode=keep_mode)
+        try:
+            after_summary = collect_condition_outputs(
+                samples=selected_samples,
+                model=model,
+                tokenizer=tokenizer,
+                first_device=first_device,
+                model_dtype=model_dtype,
+                output_head=output_head,
+                probe_specs=probe_specs,
+                score_type=args.score_type,
+                translators=translators,
+                lens_ckpt=lens_ckpt,
+                image_size=args.image_size,
+                batch_size=args.batch_size,
+            )
+        finally:
+            for handle in handles:
+                handle.remove()
+        atomic_write_json(after_resume_path, after_summary)
+        tracker.mark_done("stage:after", {"probe_count": after_summary.get("probe_count", 0)})
+    tracker.update(after_summary_path=str(after_resume_path))
+
+    diff_summary = summarize_ablation_effect(before_summary, after_summary)
+    if (
+        diff_summary["probe_max_abs_diff"] == 0.0
+        and diff_summary["unknown_max_abs_diff"] == 0.0
+        and diff_summary["best_competing_max_abs_diff"] == 0.0
+    ):
+        raise RuntimeError(
+            "Ablation had no measurable effect in this analysis path: before/after probe and "
+            "tuned-lens trajectories are exactly identical. The hooks likely did not affect the "
+            "current forward path. Please verify the hook target or model forward mode."
+        )
+
+    probe_compare_png = out_dir / f"probe_before_after_ablation_{args.score_type}.png"
+    lens_before_png = out_dir / "tuned_lens_before_ablation.png"
+    lens_after_png = out_dir / "tuned_lens_after_ablation.png"
+    lens_unknown_compare_png = out_dir / "tuned_lens_unknown_before_after.png"
+    lens_competing_compare_png = out_dir / "tuned_lens_best_competing_before_after.png"
+
+    zero_line = 0.5 if args.score_type == "prob" else 0.0
+    ylabel = "Mean probe probability" if args.score_type == "prob" else "Mean probe logit"
+    plot_probe_before_after(
+        before_summary["probe_layer_indices"],
+        before_summary["probe_mean_scores_by_layer"],
+        after_summary["probe_mean_scores_by_layer"],
+        ylabel=ylabel,
+        title=f"Probe before vs after ablation ({args.score_type})\nflip_mode={args.flip_mode} samples (n={before_summary['probe_count']})",
+        out_path=probe_compare_png,
+        zero_line=zero_line,
+    )
+    plot_unknown_best_competing(
+        before_summary["lens_layer_indices"],
+        before_summary["tuned_lens_mean_unknown_logprob_by_layer"],
+        before_summary["tuned_lens_mean_best_competing_logprob_by_layer"],
+        title=f"Tuned lens before ablation\nunknown vs best competing (n={before_summary['tuned_lens_count']})",
+        out_path=lens_before_png,
+    )
+    plot_unknown_best_competing(
+        after_summary["lens_layer_indices"],
+        after_summary["tuned_lens_mean_unknown_logprob_by_layer"],
+        after_summary["tuned_lens_mean_best_competing_logprob_by_layer"],
+        title=f"Tuned lens after ablation\nunknown vs best competing (n={after_summary['tuned_lens_count']})",
+        out_path=lens_after_png,
+    )
+    plot_tuned_lens_before_after(
+        before_summary["lens_layer_indices"],
+        before_summary["tuned_lens_mean_unknown_logprob_by_layer"],
+        after_summary["tuned_lens_mean_unknown_logprob_by_layer"],
+        ylabel="Mean tuned-lens logprob",
+        title=f"Tuned lens unknown: before vs after\nflip_mode={args.flip_mode}",
+        out_path=lens_unknown_compare_png,
+    )
+    plot_tuned_lens_before_after(
+        before_summary["lens_layer_indices"],
+        before_summary["tuned_lens_mean_best_competing_logprob_by_layer"],
+        after_summary["tuned_lens_mean_best_competing_logprob_by_layer"],
+        ylabel="Mean tuned-lens logprob",
+        title=f"Tuned lens best competing: before vs after\nflip_mode={args.flip_mode}",
+        out_path=lens_competing_compare_png,
+    )
+
+    payload = {
+        "ablation_json": args.ablation_json,
+        "data_csv": data_csv,
+        "selected_heads": selected_heads_path,
+        "position": position,
+        "keep_mode": keep_mode,
+        "score_type": args.score_type,
+        "n_selected_heads": len(selected_pairs),
+        "n_installed_hooks": len(selected_pairs),
+        "original_path_check": original_path_check,
+        "flip_mode": args.flip_mode,
+        "n_selected_flip_samples": len(selected_samples),
+        "selected_samples": [
+            {
+                "row_idx": sample["row_idx"],
+                "question": sample["question"],
+                "gold": sample["gold"],
+                "wrong": sample["wrong"],
+                "base_ctx_pred": sample["base_ctx_pred"],
+                "ab_ctx_pred_from_json": sample["ablation_record"]["ab_ctx_pred"],
+                "ab_ctx_pred_is_non_unknown": sample["ablation_record"]["ab_ctx_pred"] != "unknown",
+            }
+            for sample in selected_samples
+        ],
+        "before_ablation": before_summary,
+        "after_ablation": after_summary,
+        "ablation_effect_summary": diff_summary,
+        "saved_plots": {
+            "probe_before_after": str(probe_compare_png),
+            "tuned_lens_before": str(lens_before_png),
+            "tuned_lens_after": str(lens_after_png),
+            "tuned_lens_unknown_before_after": str(lens_unknown_compare_png),
+            "tuned_lens_best_competing_before_after": str(lens_competing_compare_png),
+        },
+    }
+    summary_path = out_dir / "summary.json"
+    summary_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    print(f"saved_probe_before_after={probe_compare_png}")
+    print(f"saved_tuned_lens_before={lens_before_png}")
+    print(f"saved_tuned_lens_after={lens_after_png}")
+    print(f"saved_tuned_lens_unknown_before_after={lens_unknown_compare_png}")
+    print(f"saved_tuned_lens_best_competing_before_after={lens_competing_compare_png}")
+    print(f"saved_summary={summary_path}")
+    tracker.finish(
+        summary_path=str(summary_path),
+        before_summary_path=str(before_resume_path),
+        after_summary_path=str(after_resume_path),
+        flip_mode=args.flip_mode,
+        n_selected_flip_samples=len(selected_samples),
+    )
+
+
+if __name__ == "__main__":
+    main()

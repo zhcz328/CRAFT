@@ -1,0 +1,31 @@
+{
+  "models": {
+    "hulumed4b": {
+      "model_path": "/root/autodl-tmp/Hulu-Med-4B",
+      "model_name": "hulumed-4b"
+    },
+    "internvl35_4b": {
+      "model_path": "/root/autodl-tmp/InternVL3_5-4B",
+      "model_name": "InternVL3_5-4B"
+    },
+    "qwen35_4b": {
+      "model_path": "/root/autodl-tmp/Qwen3_5-4B",
+      "model_name": "Qwen3.5-4B"
+    },
+    "qwen3vl_4b": {
+      "model_path": "/root/autodl-tmp/Qwen3-VL-4B-Instruct",
+      "model_name": "qwen3vl-4b"
+    },
+    "qwen3vl_2b": {
+      "model_path": "/root/autodl-tmp/qwen3vl-2B",
+      "model_name": "qwen3vl-2b"
+    }
+  },
+  "tasks": {
+    "eval": {
+      "env": {
+        "DEVICE_MAP": "cuda:1"
+      }
+    }
+  }
+}

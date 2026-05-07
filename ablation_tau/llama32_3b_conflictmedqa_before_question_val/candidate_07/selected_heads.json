@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 0.51484375,
+    "bc_max": 0.69453125,
+    "total_candidates": 40,
+    "selected": 2
+  },
+  "selected_heads": [
+    {
+      "layer": 9,
+      "head": 8,
+      "er": 0.7080729166666667,
+      "bc": 0.65078125,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.0880335421973582
+    },
+    {
+      "layer": 9,
+      "head": 20,
+      "er": 0.5627604166666667,
+      "bc": 0.69296875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.8120995421036296
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_07/selected_heads.json"
+}

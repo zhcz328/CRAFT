@@ -1,0 +1,13 @@
+python CHDP/train_probe.py \
+  --train_bundle /root/autodl-tmp/CHDP/VQA_RAD/hulumed4b/features_before_question/train_dataset.pt \
+  --val_bundle /root/autodl-tmp/CHDP/VQA_RAD/hulumed4b/features_before_question/val_dataset.pt \
+  --model_type bigru \
+  --feature_set chdp_minimal \
+  --epochs 30 \
+  --patience 8 \
+  --batch_size 32 \
+  --lr 1e-3 \
+  --weight_decay 1e-4 \
+  --dropout 0.1 \
+  --selection_metric auprc \
+  --out_dir /root/autodl-tmp/CHDP/VQA_RAD/hulumed4b/results/chdp_bigru_before_question

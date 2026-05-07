@@ -1,0 +1,60 @@
+{
+  "n_samples": 391,
+  "n_layers": 36,
+  "trace_mode": "conflict",
+  "position": "before_answer",
+  "patch_k": 16,
+  "plan_scores_source": {
+    "mode": "single_metric",
+    "metric": "follow_conflict",
+    "weights": {
+      "follow_conflict": 1.0
+    }
+  },
+  "scan_plan": {
+    "method": "plateau",
+    "plateau_start": 0,
+    "round0_rise": [
+      6,
+      8,
+      15,
+      18,
+      19,
+      21
+    ],
+    "round1_preplateau": [
+      0,
+      1
+    ],
+    "round1_topk_fallback": [],
+    "round2_tail": [
+      32,
+      33,
+      34,
+      35
+    ],
+    "merged_unique_layers": [
+      0,
+      1,
+      6,
+      8,
+      15,
+      18,
+      19,
+      21,
+      32,
+      33,
+      34,
+      35
+    ],
+    "tail_k": 4,
+    "preplateau_width": 13,
+    "plateau_min_score_frac": 0.65,
+    "plateau_eps": 0.6,
+    "plateau_min_len": 6,
+    "topk_fallback": 8,
+    "rise_k": 6,
+    "rise_min_layer": 0,
+    "rise_max_layer": 35
+  }
+}

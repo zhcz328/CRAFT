@@ -1,0 +1,17 @@
+{
+  "model": "/root/autodl-tmp/Llama-3.2-3B-Instruct",
+  "prompt_profile": "llama",
+  "position": "before_answer",
+  "N": 805,
+  "Acc_base": 100.0,
+  "Acc_support": 100.0,
+  "Acc_conflict": 9.937888198757763,
+  "resist_rate": 9.937888198757763,
+  "follow_conflict_rate": 90.06211180124224,
+  "resist_rate_given_base_correct": 9.937888198757763,
+  "follow_conflict_rate_given_base_correct": 90.06211180124224,
+  "files": {
+    "preds": "llama32_3b/result_all_positions_yesno/llama32_3b/before_answer/preds.jsonl",
+    "summary": "llama32_3b/result_all_positions_yesno/llama32_3b/before_answer/summary.json"
+  }
+}

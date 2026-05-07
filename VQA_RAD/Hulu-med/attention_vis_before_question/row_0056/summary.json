@@ -1,0 +1,453 @@
+{
+  "selection_reason": "manual_row_idx",
+  "position": "before_question",
+  "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+  "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+  "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "sample": {
+    "row_idx": 56,
+    "question": "is there damage to the liver",
+    "gold": "no",
+    "wrong": "yes",
+    "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic28569.jpg",
+    "ablation_record": {
+      "row_idx": 56,
+      "gold": "no",
+      "wrong": "yes",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -1.078125,
+        "wrong_lp": -2.578125,
+        "ctx_target": "yes",
+        "ctx_lp": -2.578125,
+        "other_lp": -1.078125
+      },
+      "base_ctx_scores": {
+        "gold_lp": -0.66796875,
+        "wrong_lp": -1.421875,
+        "ctx_target": "yes",
+        "ctx_lp": -1.421875,
+        "other_lp": -0.66796875
+      },
+      "ab_nc_scores": {
+        "gold_lp": -1.078125,
+        "wrong_lp": -2.578125,
+        "ctx_target": "yes",
+        "ctx_lp": -2.578125,
+        "other_lp": -1.078125
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -1.0546875,
+        "wrong_lp": -1.9296875,
+        "ctx_target": "yes",
+        "ctx_lp": -1.9296875,
+        "other_lp": -1.0546875
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 1.5,
+        "follow_conflict": -1.5,
+        "follow_context": -1.5,
+        "context_flip": 1.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 0.75390625,
+        "follow_conflict": -0.75390625,
+        "follow_context": -0.75390625,
+        "context_flip": 0.75390625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 1.5,
+        "follow_conflict": -1.5,
+        "follow_context": -1.5,
+        "context_flip": 1.5
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 0.875,
+        "follow_conflict": -0.875,
+        "follow_context": -0.875,
+        "context_flip": 0.875
+      },
+      "metric_effect_reduction_fixed_nc": {
+        "follow_conflict": 0.12109375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_conflict": 0.12109375
+      },
+      "metric_abs_base_change": {
+        "follow_conflict": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_conflict": 0.12109375
+      }
+    },
+    "nc_scores": {
+      "gold_lp": -11.0,
+      "wrong_lp": -11.9375,
+      "pred": "no"
+    },
+    "ic_scores": {
+      "gold_lp": -11.0625,
+      "wrong_lp": -11.25,
+      "pred": "no"
+    },
+    "nc_answer": "no",
+    "ic_answer": "no",
+    "nc_answer_token_ids": [
+      902
+    ],
+    "ic_answer_token_ids": [
+      902
+    ],
+    "nc_answer_token_labels": [
+      " no"
+    ],
+    "ic_answer_token_labels": [
+      " no"
+    ]
+  },
+  "spans": {
+    "nc_image_span": [
+      16,
+      1386
+    ],
+    "ic_image_span": [
+      16,
+      1386
+    ],
+    "evidence_span_ic": [
+      1420,
+      1443
+    ],
+    "nc_image_token_count": 1370,
+    "ic_image_token_count": 1370,
+    "nc_expected_image_token_count": null,
+    "ic_expected_image_token_count": null,
+    "nc_image_locate_method": "image_sentinel_marked_prompt",
+    "ic_image_locate_method": "image_sentinel_marked_prompt",
+    "nc_image_locate_debug": {
+      "begin_marker": "<<IMAGE_BEGIN_9f3a1c>>",
+      "end_marker": "<<IMAGE_END_9f3a1c>>",
+      "begin_span": [
+        16,
+        27
+      ],
+      "end_span": [
+        1397,
+        1408
+      ],
+      "begin_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_BEGIN_9f3a1c>>",
+        "char_start": 86,
+        "char_end": 108,
+        "token_start": 16,
+        "token_end": 27
+      },
+      "end_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_END_9f3a1c>>",
+        "char_start": 9692,
+        "char_end": 9712,
+        "token_start": 1397,
+        "token_end": 1408
+      },
+      "marked_prefix_decode": "<|im_start|>system You are a helpful medical QA assistant.<|im_end|> <|im_start|>user <<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image>",
+      "marked_suffix_decode": "<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image> <<IMAGE_END_9f3a1c>>Answer the question using your best internal medical knowledge AND the image. The EVIDENCE block (if present) may be correct or incorrect. Output ONLY the final answer. Question: is there damage to the liver Answer:<|im_end|> <|im_start|>assistant",
+      "method": "image_sentinel_marked_prompt",
+      "begin_token_count": 11,
+      "end_token_count": 11,
+      "marked_image_span": [
+        27,
+        1397
+      ],
+      "actual_length": 1436,
+      "marked_length": 1458,
+      "marked_text_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image>\n<<IMAGE_END_9f3a1c>>Answer the question using your best internal medical knowledge AND the image.\nThe EVIDENCE block (if present) may be correct or incorrect.\nOutput ONLY the final answer.\n\nQuestion: is there damage to the liver\nAnswer:<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "ic_image_locate_debug": {
+      "begin_marker": "<<IMAGE_BEGIN_9f3a1c>>",
+      "end_marker": "<<IMAGE_END_9f3a1c>>",
+      "begin_span": [
+        16,
+        27
+      ],
+      "end_span": [
+        1397,
+        1408
+      ],
+      "begin_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_BEGIN_9f3a1c>>",
+        "char_start": 86,
+        "char_end": 108,
+        "token_start": 16,
+        "token_end": 27
+      },
+      "end_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_END_9f3a1c>>",
+        "char_start": 9692,
+        "char_end": 9712,
+        "token_start": 1397,
+        "token_end": 1408
+      },
+      "marked_prefix_decode": "<|im_start|>system You are a helpful medical QA assistant.<|im_end|> <|im_start|>user <<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image>",
+      "marked_suffix_decode": "<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image> <<IMAGE_END_9f3a1c>>Answer the question using your best internal medical knowledge AND the image. The EVIDENCE block (if present) may be correct or incorrect. Output ONLY the final answer. EVIDENCE: - According to the provided context, the correct answer is: yes. END EVIDENCE Question: is there damage to the liver Answer:<|im_end|> <|im_start|>assistant",
+      "method": "image_sentinel_marked_prompt",
+      "begin_token_count": 11,
+      "end_token_count": 11,
+      "marked_image_span": [
+        27,
+        1397
+      ],
+      "actual_length": 1459,
+      "marked_length": 1481,
+      "marked_text_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image>\n<<IMAGE_END_9f3a1c>>Answer the question using your best internal medical knowledge AND the image.\nThe EVIDENCE block (if present) may be correct or incorrect.\nOutput ONLY the final answer.\n\nEVIDENCE:\n- According to the provided context, the correct answer is: yes.\nEND EVIDENCE\n\nQuest"
+    },
+    "evidence_locate_debug": {
+      "begin_marker": "<<EVIDENCE_BEGIN_9f3a1c>>",
+      "end_marker": "<<EVIDENCE_END_9f3a1c>>",
+      "begin_span": [
+        1420,
+        1433
+      ],
+      "end_span": [
+        1456,
+        1469
+      ],
+      "begin_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image",
+        "needle": "<<EVIDENCE_BEGIN_9f3a1c>>",
+        "char_start": 9840,
+        "char_end": 9865,
+        "token_start": 1420,
+        "token_end": 1433
+      },
+      "end_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image",
+        "needle": "<<EVIDENCE_END_9f3a1c>>",
+        "char_start": 9953,
+        "char_end": 9976,
+        "token_start": 1456,
+        "token_end": 1469
+      },
+      "marked_prefix_decode": "<|im_start|>system You are a helpful medical QA assistant.<|im_end|> <|im_start|>user <image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image>",
+      "marked_suffix_decode": "<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image> Answer the question using your best internal medical knowledge AND the image. The EVIDENCE block (if present) may be correct or incorrect. Output ONLY the final answer. <<EVIDENCE_BEGIN_9f3a1c>>EVIDENCE: - According to the provided context, the correct answer is: yes. END EVIDENCE <<EVIDENCE_END_9f3a1c>> Question: is there damage to the liver Answer:<|im_end|> <|im_start|>assistant",
+      "method": "sentinel_marked_prompt",
+      "begin_token_count": 13,
+      "end_token_count": 13,
+      "marked_evidence_span": [
+        1433,
+        1456
+      ],
+      "actual_length": 1459,
+      "marked_length": 1485,
+      "marked_text_preview": "Answer the question using your best internal medical knowledge AND the image.\nThe EVIDENCE block (if present) may be correct or incorrect.\nOutput ONLY the final answer.\n\n<<EVIDENCE_BEGIN_9f3a1c>>EVIDENCE:\n- According to the provided context, the correct answer is: yes.\nEND EVIDENCE\n<<EVIDENCE_END_9f3a1c>>\nQuestion: is there damage to the liver\nAnswer:"
+    },
+    "evidence_preview": "EVIDENCE: - According to the provided context, the correct answer is: yes. END EVIDENCE",
+    "nc_token_source_labels_preview": [
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image"
+    ],
+    "ic_token_source_labels_preview": [
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image"
+    ]
+  },
+  "heads": [
+    {
+      "layer": 12,
+      "head": 8,
+      "A_vision_NC": 0.012555880472064018,
+      "A_vision_IC": 0.00929967314004898,
+      "A_vision_delta": -0.0032562073320150375,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.04636383056640625,
+      "A_conflict_delta": 0.04636383056640625,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_before_question/row_0056/L12_H08_attention_matrix.png"
+    },
+    {
+      "layer": 13,
+      "head": 3,
+      "A_vision_NC": 0.2165558636188507,
+      "A_vision_IC": 0.15942108631134033,
+      "A_vision_delta": -0.057134777307510376,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.15721893310546875,
+      "A_conflict_delta": 0.15721893310546875,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_before_question/row_0056/L13_H03_attention_matrix.png"
+    },
+    {
+      "layer": 19,
+      "head": 21,
+      "A_vision_NC": 0.0779915601015091,
+      "A_vision_IC": 0.046694450080394745,
+      "A_vision_delta": -0.03129711002111435,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.055530548095703125,
+      "A_conflict_delta": 0.055530548095703125,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_before_question/row_0056/L19_H21_attention_matrix.png"
+    },
+    {
+      "layer": 20,
+      "head": 10,
+      "A_vision_NC": 0.08376919478178024,
+      "A_vision_IC": 0.03972874954342842,
+      "A_vision_delta": -0.04404044523835182,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.07720184326171875,
+      "A_conflict_delta": 0.07720184326171875,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_before_question/row_0056/L20_H10_attention_matrix.png"
+    },
+    {
+      "layer": 20,
+      "head": 11,
+      "A_vision_NC": 0.007296626456081867,
+      "A_vision_IC": 0.0033826157450675964,
+      "A_vision_delta": -0.003914010711014271,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.02050107717514038,
+      "A_conflict_delta": 0.02050107717514038,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_before_question/row_0056/L20_H11_attention_matrix.png"
+    },
+    {
+      "layer": 21,
+      "head": 19,
+      "A_vision_NC": 0.07591130584478378,
+      "A_vision_IC": 0.050474438816308975,
+      "A_vision_delta": -0.025436867028474808,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.021830439567565918,
+      "A_conflict_delta": 0.021830439567565918,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_before_question/row_0056/L21_H19_attention_matrix.png"
+    }
+  ]
+}

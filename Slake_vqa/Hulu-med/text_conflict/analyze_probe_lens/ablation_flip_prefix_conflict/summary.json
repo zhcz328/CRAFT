@@ -1,0 +1,1340 @@
+{
+  "ablation_json": "/root/logit_lens/Slake_vqa/Hulu-med/text_conflict/result_slake_hulumed4b_prefix/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+  "data_csv": "./data/slake_nc_cc_both_correct_val.csv",
+  "selected_heads": "/root/logit_lens/Slake_vqa/Hulu-med/text_conflict/result_slake_hulumed4b_prefix/headscan_slake_mm_accel_hulumed4b_96g/selected_heads_stable_hulumed4b.json",
+  "position": "prefix",
+  "keep_mode": "self",
+  "score_type": "logit",
+  "n_selected_heads": 7,
+  "n_installed_hooks": 4,
+  "original_path_check": {
+    "row_idx": 24,
+    "max_abs_score_diff": 2.27734375,
+    "before_scores": {
+      "ctx_lp": -0.66015625,
+      "gold_lp": -1.2890625,
+      "other_lp": -1.2890625,
+      "wrong_lp": -0.66015625
+    },
+    "after_scores": {
+      "ctx_lp": -2.9375,
+      "gold_lp": -0.93359375,
+      "other_lp": -0.93359375,
+      "wrong_lp": -2.9375
+    },
+    "n_selected_heads": 7
+  },
+  "n_flip_correct_samples": 114,
+  "selected_samples": [
+    {
+      "row_idx": 24,
+      "question": "Can atelectasis be observed on the lower left lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 25,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 27,
+      "question": "Is the tumor enhancing?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 31,
+      "question": "Which is bigger in this image, liver or heart?",
+      "gold": "heart",
+      "wrong": "liver",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 32,
+      "question": "Does the lung look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 37,
+      "question": "Is/Are there abnormalities in the patient's left lung?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 44,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 45,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 48,
+      "question": "Does the picture contain lung?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 59,
+      "question": "Can cardiomegaly be observed in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 66,
+      "question": "Is the lung abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 71,
+      "question": "Which is the biggest in this image,lung,liver or heart?",
+      "gold": "liver",
+      "wrong": "lung",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 80,
+      "question": "Can pneumonia be observed on the lower right lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 81,
+      "question": "Which is the biggest in this image,lung,liver or heart?",
+      "gold": "lung",
+      "wrong": "liver",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 83,
+      "question": "Does the picture contain lung?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 89,
+      "question": "Which is smaller in this image, small bowel or liver?",
+      "gold": "liver",
+      "wrong": "small bowel",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 91,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 99,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 108,
+      "question": "Which is smaller in this image,small bowel or kidney?",
+      "gold": "kidney",
+      "wrong": "small bowel",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 117,
+      "question": "Is this a T1 weighted or T2 weighted MRI image?",
+      "gold": "t2",
+      "wrong": "t1",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 122,
+      "question": "Does the kidney look normal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 126,
+      "question": "Which is the biggest in this image,lung,liver or heart?",
+      "gold": "liver",
+      "wrong": "lung",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 132,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 136,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 146,
+      "question": "Is there spinal cord in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 149,
+      "question": "Which organ is abnormal, heart or lung?",
+      "gold": "lung",
+      "wrong": "heart",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 151,
+      "question": "Is the lung abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 152,
+      "question": "Is the brain healthy?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 164,
+      "question": "Which is the biggest in this image, left lung, spleen or liver?",
+      "gold": "liver",
+      "wrong": "left lung",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 174,
+      "question": "Which is bigger in this image, heart or lung?",
+      "gold": "lung",
+      "wrong": "heart",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 175,
+      "question": "Can pneumonia be observed on the lower right lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 180,
+      "question": "Is there small bowel in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 190,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 200,
+      "question": "Does the brain look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 201,
+      "question": "Can pneumonia be observed on the lower right lung in this picture?",
+      "gold": "no",
+      "wrong": "yes",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 202,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 203,
+      "question": "Can mass be observed on the lower left lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 204,
+      "question": "Can nodule be observed on the upper right lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 207,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 211,
+      "question": "Which organ is abnormal, heart or lung?",
+      "gold": "heart",
+      "wrong": "lung",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 214,
+      "question": "Does the picture contain spine cord?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 217,
+      "question": "Does the picture contain spinal cord?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 220,
+      "question": "Does the esophagus exist in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 223,
+      "question": "Does this image look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 230,
+      "question": "Does this image look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 247,
+      "question": "Which is smaller in this image,spleen or right kidney?",
+      "gold": "right kidney",
+      "wrong": "spleen",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 248,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 251,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 254,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 259,
+      "question": "Is the liver healthy?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 260,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 282,
+      "question": "Which organ is abnormal, heart or lung?",
+      "gold": "lung",
+      "wrong": "heart",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 292,
+      "question": "Does this image look normal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 297,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 298,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 312,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 318,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 328,
+      "question": "Does the patient have any abnormalities?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 336,
+      "question": "Does the patient have any abnormalities?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 338,
+      "question": "Which is bigger in this image, lung or heart?",
+      "gold": "lung",
+      "wrong": "heart",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 360,
+      "question": "Does the parotid appear in the image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 362,
+      "question": "Which kind of weighting is this image generated with, t1 or t2?",
+      "gold": "t2",
+      "wrong": "t1",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 370,
+      "question": "Can mass be observed on the right lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 371,
+      "question": "Does the lung look healthy?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 372,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 373,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 374,
+      "question": "Is there small bowel in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 381,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 389,
+      "question": "Which is the biggest in this image,lung,liver or heart?",
+      "gold": "lung",
+      "wrong": "liver",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 394,
+      "question": "Is the liver healthy?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 396,
+      "question": "Is the liver healthy?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 403,
+      "question": "Is/Are there abnormalities in the patient's left brain lobe?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 404,
+      "question": "Which is bigger in this image, bladder or small bowel?",
+      "gold": "bladder",
+      "wrong": "small bowel",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 405,
+      "question": "Which is the biggest in this image, bladder, small bowel or rectum?",
+      "gold": "bladder",
+      "wrong": "small bowel",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 414,
+      "question": "Is/Are there abnormalities in the patient's right lung?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 419,
+      "question": "Which kind of weighting is this image generated with, t1 or t2?",
+      "gold": "t2",
+      "wrong": "t1",
+      "base_ctx_pred": "gold",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 422,
+      "question": "Is/Are there abnormalities in the patient's left lung?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 425,
+      "question": "Is the brain enhancing tumor hyperdense or hypodense?",
+      "gold": "hyperdense",
+      "wrong": "hypodense",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 439,
+      "question": "Does the patient have brain tumor?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 452,
+      "question": "Which kind of weighting is this image generated with, t1 or t2?",
+      "gold": "t2",
+      "wrong": "t1",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 458,
+      "question": "Does the spinal cord appear in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 459,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 462,
+      "question": "Does this image look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 466,
+      "question": "Does the picture contain liver?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 467,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 468,
+      "question": "Which is smaller in this image,kidney or small bowel?",
+      "gold": "kidney",
+      "wrong": "small bowel",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 470,
+      "question": "Can nodule be observed on the upper right lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 477,
+      "question": "Does the picture contain kidney?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 490,
+      "question": "Does the patient have liver cancer?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 491,
+      "question": "Which is the biggest in this image,lung,liver or heart?",
+      "gold": "lung",
+      "wrong": "liver",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 502,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 509,
+      "question": "Which is bigger in this image, lung or liver?",
+      "gold": "lung",
+      "wrong": "liver",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 512,
+      "question": "Does the brain look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "gold",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 520,
+      "question": "Does this image look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 522,
+      "question": "Which is the biggest in this image,lung,liver or heart?",
+      "gold": "lung",
+      "wrong": "liver",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 523,
+      "question": "Does this image look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 527,
+      "question": "Does the temporal lobe appear in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 541,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 544,
+      "question": "Can pneumothorax be observed on the lower left lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 549,
+      "question": "Is/Are there abnormalities in the patient's right lung?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 554,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 558,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 559,
+      "question": "Which is bigger in this image, bladder or rectum?",
+      "gold": "bladder",
+      "wrong": "rectum",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 561,
+      "question": "Is the lung abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 563,
+      "question": "Are there abnormalities in this image?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 565,
+      "question": "Does the patient have liver cancer?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 582,
+      "question": "Does the picture contain spinal cord?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 590,
+      "question": "Does this image look abnormal?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 592,
+      "question": "Does the picture contain kidney?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 593,
+      "question": "Does the picture contain heart?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 596,
+      "question": "Can mass be observed on the left lung in this picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 604,
+      "question": "Does the picture contain spleen?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 606,
+      "question": "Which side of lung is abnormal in this image,left or right?",
+      "gold": "left",
+      "wrong": "right",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    },
+    {
+      "row_idx": 608,
+      "question": "Can brain edema be observed in the picture?",
+      "gold": "yes",
+      "wrong": "no",
+      "base_ctx_pred": "wrong",
+      "ab_ctx_pred_from_json": "gold"
+    }
+  ],
+  "before_ablation": {
+    "probe_layer_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "probe_mean_scores_by_layer": [
+      0.09867442421729497,
+      0.27866469222333345,
+      0.297663788155963,
+      0.40950454601593184,
+      0.38078497505436343,
+      0.37989582198982436,
+      0.3448931406039679,
+      0.4669064039511508,
+      0.654080696211997,
+      0.5386011418396313,
+      0.41399096898946974,
+      0.5246956299095856,
+      0.7619444617282665,
+      0.9385784122655821,
+      1.1200848490718687,
+      1.0908299007926856,
+      1.588986391740802,
+      1.771612378196758,
+      2.517312924720739,
+      3.2369020579938304,
+      4.171814502004469,
+      5.133168415803659,
+      5.779477229243831,
+      5.764454010481897,
+      5.499307396641949,
+      5.150772295369391,
+      5.036043339392595,
+      6.319611910599888,
+      5.630975418838492,
+      5.226537767242183,
+      5.448577591985987,
+      4.766252149092524,
+      4.7214841060340405,
+      5.228113179274819,
+      4.3299199285214405,
+      4.68616196513176
+    ],
+    "probe_count": 114,
+    "lens_layer_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "tuned_lens_mean_gold_logprob_by_layer": [
+      -2.053259903924507,
+      -1.7721126999771386,
+      -1.6353939499771386,
+      -1.5728596846262615,
+      -1.5771428534859104,
+      -1.6205570530473141,
+      -1.5618262416438053,
+      -1.6175759675209982,
+      -1.5949608359420508,
+      -1.7040702794727527,
+      -1.7906673874771386,
+      -1.8826955535955596,
+      -1.9125749395604719,
+      -1.9850889883543317,
+      -2.216491469165735,
+      -1.744923144056086,
+      -1.4509842563093753,
+      -1.366712908995779,
+      -1.6574072963313053,
+      -2.9482424928430926,
+      -3.612301780466448,
+      -4.097488173267298,
+      -3.5945940896084436,
+      -3.58984673232363,
+      -3.847075707034061,
+      -7.271586388872381,
+      -5.08557709476404,
+      -2.668325294528091,
+      -4.995222965876262,
+      -7.787060867276108,
+      -7.463678405995955,
+      -3.2121653347684624,
+      -24.372558346965857,
+      -13.052527684914438,
+      -29.710884538658878,
+      -4.283532840118074
+    ],
+    "tuned_lens_mean_wrong_logprob_by_layer": [
+      -2.29432375389233,
+      -2.029452591611628,
+      -1.89221986134847,
+      -1.7719142144186455,
+      -1.6575022078396981,
+      -1.6044594446818035,
+      -1.6487645433660139,
+      -1.6480621036730314,
+      -1.5717531672695226,
+      -1.4471557851423298,
+      -1.4075279068528561,
+      -1.38538392384847,
+      -1.2903832385414524,
+      -1.2706035647475928,
+      -1.208677509374786,
+      -1.3725258509318035,
+      -1.6403716739855314,
+      -1.8322447893912333,
+      -1.8441830517952902,
+      -1.962618024725663,
+      -1.7739054863913017,
+      -1.4565673637808414,
+      -1.2938960727892423,
+      -3.8139302270454274,
+      -3.993373825884702,
+      -1.6016367527476527,
+      -1.9374695409808242,
+      -3.872405683785154,
+      -4.880542712253437,
+      -0.9070000366160744,
+      -3.7383352246200827,
+      -6.490613074679124,
+      -2.674218719465691,
+      -6.017405920907071,
+      -6.735346802493982,
+      -1.6123374334552831
+    ],
+    "tuned_lens_count": 114
+  },
+  "after_ablation": {
+    "probe_layer_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "probe_mean_scores_by_layer": [
+      0.09867442421729497,
+      0.27866469222333345,
+      0.297663788155963,
+      0.40950454601593184,
+      0.38078497505436343,
+      0.37989582198982436,
+      0.3448931406039679,
+      0.4669064039511508,
+      0.654080696211997,
+      0.5386011418396313,
+      0.41399096898946974,
+      0.5246956299095856,
+      0.7619444617282665,
+      0.9385784122655821,
+      1.1200848490718687,
+      1.0908299007926856,
+      -0.41223293544495837,
+      -0.8434964633432397,
+      -0.9196639936744121,
+      5.0082074848183415,
+      0.11998091847227331,
+      1.538910731411817,
+      -0.8422210540687829,
+      -2.5067600647085593,
+      0.6457388336002304,
+      -0.9152598896374305,
+      0.33465036004781723,
+      5.524361831315777,
+      4.056454561912177,
+      3.4933568901268015,
+      4.103722376716242,
+      3.965948447454394,
+      2.8532925366440365,
+      3.091954629802913,
+      2.9568913635193255,
+      4.323736731551196
+    ],
+    "probe_count": 114,
+    "lens_layer_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "tuned_lens_mean_gold_logprob_by_layer": [
+      -2.0368942377860084,
+      -1.7557470338386403,
+      -1.6190282838386403,
+      -1.556494018487763,
+      -1.560777187347412,
+      -1.6041913869088156,
+      -1.5454605755053068,
+      -1.6012103013824999,
+      -1.5785951698035525,
+      -1.6877046133342541,
+      -1.7743017213386403,
+      -1.8663298874570613,
+      -1.8962092734219735,
+      -1.9687233222158331,
+      -2.2001258030272366,
+      -1.7285574779175876,
+      -1.4083070838660525,
+      -1.2826239184329384,
+      -1.482617921996535,
+      -2.4526635805765786,
+      -3.1594822783219185,
+      -3.4544049480505157,
+      -3.0180569949902987,
+      -3.8877933820088706,
+      -2.9878848142791212,
+      -3.234042995854428,
+      -2.9251655517962942,
+      -2.3097503864974307,
+      -5.353578032108775,
+      -3.7071718176205954,
+      -3.8530212787159703,
+      -1.9325369711507832,
+      -9.329970765532108,
+      -10.666667982151633,
+      -16.04190782915082,
+      -2.9105450960627772
+    ],
+    "tuned_lens_mean_wrong_logprob_by_layer": [
+      -2.3253152997870195,
+      -2.060444137506318,
+      -1.9232114072431599,
+      -1.8029057603133352,
+      -1.6884937537343878,
+      -1.6354509905764931,
+      -1.6797560892607037,
+      -1.679053649567721,
+      -1.6027447131642125,
+      -1.4781473310370195,
+      -1.4385194527475458,
+      -1.4163754697431599,
+      -1.3213747844361423,
+      -1.3015951106422825,
+      -1.2396690552694756,
+      -1.4035173968264931,
+      -1.660929420538116,
+      -1.7977274091620195,
+      -1.9557484994854843,
+      -2.2044881770485327,
+      -2.3445649314344976,
+      -2.382994191688404,
+      -3.2348504903023705,
+      -7.722433583778248,
+      -8.007504143212971,
+      -5.491026217477364,
+      -3.7345007919428643,
+      -10.413116513637075,
+      -16.321464730982196,
+      -7.759802625890364,
+      -22.93227539982712,
+      -15.138650899393516,
+      -8.054164677335505,
+      -21.07476717651936,
+      -19.934472678000468,
+      -4.373952982718484
+    ],
+    "tuned_lens_count": 114
+  },
+  "ablation_effect_summary": {
+    "probe_max_abs_diff": 8.271214075190457,
+    "gold_max_abs_diff": 15.042587581433748,
+    "wrong_max_abs_diff": 19.193940175207036
+  },
+  "saved_plots": {
+    "probe_before_after": "analyze_probe_lens/ablation_flip_prefix_conflict/probe_before_after_ablation_logit.png",
+    "tuned_lens_before": "analyze_probe_lens/ablation_flip_prefix_conflict/tuned_lens_before_ablation.png",
+    "tuned_lens_after": "analyze_probe_lens/ablation_flip_prefix_conflict/tuned_lens_after_ablation.png"
+  }
+}

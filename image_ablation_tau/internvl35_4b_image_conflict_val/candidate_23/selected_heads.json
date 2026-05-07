@@ -1,0 +1,148 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.087863262357,
+    "base_max": 0.725341780432,
+    "base_min": null
+  },
+  "input_json": "/root/logit_lens/Slake_vqa/image_conflict/internvl35_4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "core_layers",
+    "scan_layers": [
+      25,
+      31,
+      35
+    ],
+    "n_samples": 58,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B"
+  },
+  "n_candidates": 50,
+  "n_selected": 8,
+  "selected": [
+    {
+      "layer": 31,
+      "head": 6,
+      "mean_abs_effect_reduction": 0.08786326235738294,
+      "mean_abs_base_change": 0.16594827997273412,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.25381154233011705
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.16594827997273412
+      },
+      "conflict_specific_score": 0.5294585331844711,
+      "backbone_score": 0.014580757261000775
+    },
+    {
+      "layer": 31,
+      "head": 7,
+      "mean_abs_effect_reduction": 0.11041259560091742,
+      "mean_abs_base_change": 0.22422211745689655,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.33463471305781395
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.22422211745689655
+      },
+      "conflict_specific_score": 0.49242289043698867,
+      "backbone_score": 0.024756945979549725
+    },
+    {
+      "layer": 25,
+      "head": 9,
+      "mean_abs_effect_reduction": 0.09444664059014156,
+      "mean_abs_base_change": 0.19694992797128086,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.29139656856142243
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.19694992797128086
+      },
+      "conflict_specific_score": 0.4795440243059614,
+      "backbone_score": 0.01860125906135783
+    },
+    {
+      "layer": 35,
+      "head": 5,
+      "mean_abs_effect_reduction": 0.1664260296986021,
+      "mean_abs_base_change": 0.3966695871846429,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.563095616883245
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.3966695871846429
+      },
+      "conflict_specific_score": 0.41955727264732595,
+      "backbone_score": 0.06601614449732361
+    },
+    {
+      "layer": 25,
+      "head": 5,
+      "mean_abs_effect_reduction": 0.21115006866126224,
+      "mean_abs_base_change": 0.5182137345445568,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.729363803205819
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.5182137345445568
+      },
+      "conflict_specific_score": 0.40745670585155325,
+      "backbone_score": 0.10942086563029228
+    },
+    {
+      "layer": 25,
+      "head": 17,
+      "mean_abs_effect_reduction": 0.0995862237338362,
+      "mean_abs_base_change": 0.28663793103448276,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.38622415476831895
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.28663793103448276
+      },
+      "conflict_specific_score": 0.34742741809156397,
+      "backbone_score": 0.02854518913060391
+    },
+    {
+      "layer": 31,
+      "head": 8,
+      "mean_abs_effect_reduction": 0.19390868729558483,
+      "mean_abs_base_change": 0.5809242006005912,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.774832887896176
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.5809242006005912
+      },
+      "conflict_specific_score": 0.33379286540696074,
+      "backbone_score": 0.11264624915669764
+    },
+    {
+      "layer": 25,
+      "head": 14,
+      "mean_abs_effect_reduction": 0.17570757865905762,
+      "mean_abs_base_change": 0.6158699886552219,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.7915775673142795
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.6158699886552219
+      },
+      "conflict_specific_score": 0.28529932712486084,
+      "backbone_score": 0.10821302447539033
+    }
+  ]
+}

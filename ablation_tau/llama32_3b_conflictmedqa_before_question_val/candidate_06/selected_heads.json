@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 0.4234375,
+    "bc_max": 1.32421875,
+    "total_candidates": 40,
+    "selected": 13
+  },
+  "selected_heads": [
+    {
+      "layer": 9,
+      "head": 8,
+      "er": 0.7080729166666667,
+      "bc": 0.65078125,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 1.0880335421973582
+    },
+    {
+      "layer": 9,
+      "head": 20,
+      "er": 0.5627604166666667,
+      "bc": 0.69296875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.8120995421036296
+    },
+    {
+      "layer": 12,
+      "head": 18,
+      "er": 0.49661458333333336,
+      "bc": 0.6526041666666667,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.760972497153077
+    },
+    {
+      "layer": 9,
+      "head": 6,
+      "er": 0.5588541666666667,
+      "bc": 0.7919270833333333,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.705688027016763
+    },
+    {
+      "layer": 7,
+      "head": 4,
+      "er": 0.8138020833333334,
+      "bc": 1.2690104166666667,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6412882284943983
+    },
+    {
+      "layer": 8,
+      "head": 6,
+      "er": 0.8432291666666667,
+      "bc": 1.32421875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6367743470573269
+    },
+    {
+      "layer": 7,
+      "head": 1,
+      "er": 0.4234375,
+      "bc": 0.69453125,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6096729129568857
+    },
+    {
+      "layer": 12,
+      "head": 4,
+      "er": 0.55390625,
+      "bc": 0.91875,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.6028905002552378
+    },
+    {
+      "layer": 12,
+      "head": 15,
+      "er": 0.625,
+      "bc": 1.0684895833333334,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.5849373029102503
+    },
+    {
+      "layer": 7,
+      "head": 14,
+      "er": 0.44088541666666664,
+      "bc": 0.7880208333333333,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.5594837579584829
+    },
+    {
+      "layer": 7,
+      "head": 0,
+      "er": 0.7153645833333333,
+      "bc": 1.2888020833333333,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.5550611979319054
+    },
+    {
+      "layer": 13,
+      "head": 20,
+      "er": 0.4825520833333333,
+      "bc": 1.02890625,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.4689947352721379
+    },
+    {
+      "layer": 12,
+      "head": 8,
+      "er": 0.46953125,
+      "bc": 1.2979166666666666,
+      "source": "round_outputs:round1_preplateau",
+      "cs_score": 0.36175734567652346
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/llama32_3b_conflictmedqa_before_question_val/candidate_06/selected_heads.json"
+}

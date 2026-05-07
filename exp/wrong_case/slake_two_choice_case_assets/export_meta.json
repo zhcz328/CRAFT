@@ -1,0 +1,36 @@
+{
+  "image_path": "/root/autodl-tmp/data/SLAKE/imgs/xmlab208/source.jpg",
+  "detection_path": "/root/autodl-tmp/data/SLAKE/imgs/xmlab208/detection.json",
+  "mask_path": "/root/autodl-tmp/data/SLAKE/imgs/xmlab208/mask.png",
+  "target_labels": [
+    "Liver"
+  ],
+  "mask_scale": 2.0,
+  "outputs": {
+    "source": "/root/logit_lens/exp/wrong_case/slake_two_choice_case_assets/source.png",
+    "masked": "/root/logit_lens/exp/wrong_case/slake_two_choice_case_assets/masked_scale2.png",
+    "scaled_mask": "/root/logit_lens/exp/wrong_case/slake_two_choice_case_assets/scaled_mask_scale2.png",
+    "overlay": "/root/logit_lens/exp/wrong_case/slake_two_choice_case_assets/overlay_scale2.png"
+  },
+  "mask_meta": {
+    "target_labels": [
+      "Liver"
+    ],
+    "mask_bbox": [
+      8,
+      39,
+      282,
+      395
+    ],
+    "selected_label_count": 1,
+    "used_mask_pixels": true,
+    "fallback_rectangles": 0,
+    "mask_all": false,
+    "add_noise": false,
+    "add_noise_all": false,
+    "noise_std": 0.0,
+    "noise_seed": null,
+    "mask_scale": 2.0,
+    "noise_scale": 1.0
+  }
+}

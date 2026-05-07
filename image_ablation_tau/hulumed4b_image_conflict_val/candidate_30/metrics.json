@@ -1,0 +1,42 @@
+{
+  "format": "image_conflict_ablation_json",
+  "path": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_30/ablation_val.json",
+  "config": {
+    "data_csv": "/root/logit_lens/Slake_vqa/image_conflict/data/hulumed4b/slake_nc_correct_ic_ready_val.csv",
+    "image_root": "/root/logit_lens/Slake_vqa/image_conflict",
+    "model": "/root/autodl-tmp/Hulu-Med-4B",
+    "selected_heads": "/root/logit_lens/image_ablation_tau/hulumed4b_image_conflict_val/candidate_30/selected_heads.json",
+    "trace_mode": "conflict",
+    "position": "image_conflict",
+    "mask_scale": 2.0,
+    "metrics": [
+      "follow_context"
+    ],
+    "mask_scope": "ctx_only",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda",
+    "max_examples": 0,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "n_selected_heads": 1,
+  "sample_filter": "none",
+  "metrics": {
+    "n_all": 132,
+    "counts": {
+      "correct_to_unknown": 2,
+      "unknown_to_other": 0,
+      "unknown_rate": 52
+    },
+    "C2U": 1.5151515151515151,
+    "U2O": 0.0,
+    "UR": 39.39393939393939,
+    "rule_tuple": [
+      1.5151515151515151,
+      0.0,
+      39.39393939393939
+    ]
+  }
+}

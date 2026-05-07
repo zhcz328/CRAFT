@@ -1,0 +1,30 @@
+{
+  "criterion": "dual",
+  "note": "Dual is not re-evaluated by this runner; these paths point to the existing results.",
+  "head_file": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_groups.json",
+  "n_selected_heads": 3,
+  "selected_heads": [
+    {
+      "layer": 18,
+      "head": 31
+    },
+    {
+      "layer": 18,
+      "head": 22
+    },
+    {
+      "layer": 35,
+      "head": 8
+    }
+  ],
+  "result_files": {
+    "train": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/summary_train.json",
+    "val": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/summary_val.json",
+    "all": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/summary_all.json"
+  },
+  "existing_results_found": {
+    "train": true,
+    "val": true,
+    "all": true
+  }
+}

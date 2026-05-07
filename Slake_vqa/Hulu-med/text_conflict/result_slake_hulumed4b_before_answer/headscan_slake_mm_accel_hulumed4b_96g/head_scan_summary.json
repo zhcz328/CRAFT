@@ -1,0 +1,46 @@
+{
+  "data_csv": "./data/slake_nc_cc_both_correct_train.csv",
+  "image_root": "/root/autodl-tmp/data/SLAKE",
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "trace_mode": "conflict",
+  "position": "before_answer",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_conflict"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 0,
+  "coarse_limit": 256,
+  "coarse_topk": 50,
+  "coarse_with_nc": false,
+  "coarse_seed": 42,
+  "plan": "./result_slake_hulumed4b_before_answer/trace_conflict_scan_plan.json",
+  "rounds_ran": [
+    "merged_unique_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "merged_unique_layers",
+      "result_path": "result_slake_hulumed4b_before_answer/headscan_slake_mm_accel_hulumed4b_96g/head_scan_merged_unique_layers.json",
+      "scan_layers": [
+        0,
+        1,
+        3,
+        11,
+        15,
+        16,
+        17,
+        18,
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "n_samples": 1426,
+  "skipped": 0,
+  "saved": "result_slake_hulumed4b_before_answer/headscan_slake_mm_accel_hulumed4b_96g/head_scan_summary.json"
+}

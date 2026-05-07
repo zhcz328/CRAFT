@@ -1,0 +1,164 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.35,
+    "base_max": 0.5,
+    "base_min": null
+  },
+  "input_json": "internvl35_4b/result_before_question_slake/headscan_slake_mm_accel/head_scan_merged_unique_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "merged_unique_layers",
+    "scan_layers": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      32,
+      33,
+      34,
+      35
+    ],
+    "n_samples": 1439,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_conflict"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "before_question",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B"
+  },
+  "n_candidates": 50,
+  "n_selected": 8,
+  "selected": [
+    {
+      "layer": 21,
+      "head": 11,
+      "mean_abs_effect_reduction": 0.8912261297836993,
+      "mean_abs_base_change": 0.4109499898530113,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.8912261297836993
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.4109499898530113
+      },
+      "conflict_specific_score": 2.1686920138639225,
+      "backbone_score": 0.36624936899134974
+    },
+    {
+      "layer": 34,
+      "head": 5,
+      "mean_abs_effect_reduction": 0.6241224173293336,
+      "mean_abs_base_change": 0.2936139763685628,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.6241224173293336
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.2936139763685628
+      },
+      "conflict_specific_score": 2.125649124062045,
+      "backbone_score": 0.18325106469282523
+    },
+    {
+      "layer": 24,
+      "head": 30,
+      "mean_abs_effect_reduction": 0.667120668687615,
+      "mean_abs_base_change": 0.3726197952524998,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.667120668687615
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.3726197952524998
+      },
+      "conflict_specific_score": 1.7903473912011614,
+      "backbone_score": 0.24858236697508984
+    },
+    {
+      "layer": 24,
+      "head": 31,
+      "mean_abs_effect_reduction": 0.387254002112494,
+      "mean_abs_base_change": 0.26951140169471066,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.387254002112494
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.26951140169471066
+      },
+      "conflict_specific_score": 1.436868951771484,
+      "backbone_score": 0.1043693689212247
+    },
+    {
+      "layer": 32,
+      "head": 5,
+      "mean_abs_effect_reduction": 0.4465850974388467,
+      "mean_abs_base_change": 0.46135182957254905,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.4465850974388467
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.46135182957254905
+      },
+      "conflict_specific_score": 0.9679903726885455,
+      "backbone_score": 0.20603285176324704
+    },
+    {
+      "layer": 24,
+      "head": 9,
+      "mean_abs_effect_reduction": 0.37182249800872275,
+      "mean_abs_base_change": 0.4127820349965682,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.37182249800872275
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.4127820349965682
+      },
+      "conflict_specific_score": 0.9007698148539802,
+      "backbone_score": 0.153481647385548
+    },
+    {
+      "layer": 22,
+      "head": 8,
+      "mean_abs_effect_reduction": 0.40650183728703865,
+      "mean_abs_base_change": 0.47567608316711785,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.40650183728703865
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.47567608316711785
+      },
+      "conflict_specific_score": 0.8545751974858623,
+      "backbone_score": 0.1933632017609356
+    },
+    {
+      "layer": 20,
+      "head": 14,
+      "mean_abs_effect_reduction": 0.3811290552418956,
+      "mean_abs_base_change": 0.47006362026312687,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.3811290552418956
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.47006362026312687
+      },
+      "conflict_specific_score": 0.8108014064716293,
+      "backbone_score": 0.17915490349447072
+    }
+  ]
+}

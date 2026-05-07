@@ -1,0 +1,19 @@
+{
+  "summary": "/root/logit_lens/PIC/fig6/fig6_conflictmedqa_qwen3_4b_vqa_rad_full_attention_summary.json",
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/fig6_conflictmedqa_qwen3_4b_vqa_rad_full_attention.png",
+    "pdf": "/root/logit_lens/PIC/fig6/fig6_conflictmedqa_qwen3_4b_vqa_rad_full_attention.pdf",
+    "vmax": 0.01903728970326476
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6",
+  "conflict_bundle": {
+    "title": "ConflictMedQA Qwen3-4B before_question",
+    "model_name": "/root/autodl-tmp/qwen3-4B",
+    "sample_title": "pair=124 | side=correct | gold=yes | wrong=no | Dr. Lopez initiates management for Mr. Jenkins, a 54-year-old man w..."
+  },
+  "vqa_bundle": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=208 | does this image show a tension pneumothorax | gold=no | wrong=yes"
+  }
+}

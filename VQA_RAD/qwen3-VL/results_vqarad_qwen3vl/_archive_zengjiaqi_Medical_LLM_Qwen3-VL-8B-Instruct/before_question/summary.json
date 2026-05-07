@@ -1,0 +1,22 @@
+{
+  "model": "/archive/zengjiaqi/Medical_LLM/Qwen3-VL-8B-Instruct",
+  "data_csv": "./data/vqa_rad_train_closed.csv",
+  "image_root": "./data/VQA_RAD_Image_Folder",
+  "position": "before_question",
+  "N": 200,
+  "skipped_missing_img": 0,
+  "support_correct_rate": 85.0,
+  "conflict_still_gold_rate": 62.5,
+  "conflict_follow_evidence_rate": 37.5,
+  "resist_rate": 77.5,
+  "changed_rate": 22.5,
+  "resist_rate_given_sup_correct": 73.52941176470588,
+  "changed_rate_given_sup_correct": 26.470588235294116,
+  "follow_conflict_rate_given_sup_correct": 26.470588235294116,
+  "avg_support_margin": 9.442444404902673,
+  "avg_conflict_margin": 6.691871851504995,
+  "files": {
+    "preds_jsonl": "results_vqarad_qwen3vl/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/preds.jsonl",
+    "summary_json": "results_vqarad_qwen3vl/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/summary.json"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "saved": "llama32_3b/result_all_positions/conflict_positions.jsonl",
+  "positions": [
+    "prefix",
+    "before_question",
+    "before_answer"
+  ],
+  "summary_by_position": {
+    "prefix": {
+      "n_samples": 344,
+      "support_acc": 1.0,
+      "follow_conflict_rate": 0.5465116279069767,
+      "resist_rate(pred_same_as_base)": 0.45348837209302323,
+      "flip_rate": 0.5465116279069767,
+      "mean_shift_support": -0.07851343376691951,
+      "mean_shift_conflict": -0.8942772177762763
+    },
+    "before_question": {
+      "n_samples": 344,
+      "support_acc": 1.0,
+      "follow_conflict_rate": 0.7848837209302325,
+      "resist_rate(pred_same_as_base)": 0.21511627906976744,
+      "flip_rate": 0.7848837209302325,
+      "mean_shift_support": 0.23631894311239554,
+      "mean_shift_conflict": -1.127165905264921
+    },
+    "before_answer": {
+      "n_samples": 344,
+      "support_acc": 0.9738372093023255,
+      "follow_conflict_rate": 0.35755813953488375,
+      "resist_rate(pred_same_as_base)": 0.6424418604651163,
+      "flip_rate": 0.35755813953488375,
+      "mean_shift_support": 0.8060932159423828,
+      "mean_shift_conflict": -0.5143021428307821
+    }
+  }
+}

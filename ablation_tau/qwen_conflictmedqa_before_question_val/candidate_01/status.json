@@ -1,0 +1,28 @@
+{
+  "candidate_index": 1,
+  "thresholds": {
+    "effect_reduction_gt": 2.298349056604,
+    "base_delta_change_lt": 2.340212264151
+  },
+  "n_selected": 10,
+  "selection_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/selected_heads.json",
+  "ablation_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/ablate_heads_val.jsonl",
+  "metrics": {
+    "n_all": 174,
+    "counts": {
+      "follow_conflict": 97,
+      "correct_to_wrong": 0,
+      "wrong_to_correct": 64
+    },
+    "CFR": 55.747126436781606,
+    "C2W": 0.0,
+    "W2C": 36.7816091954023,
+    "strength_tuple": [
+      55.747126436781606,
+      0.0,
+      -36.7816091954023
+    ]
+  },
+  "metrics_path": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_01/metrics.json",
+  "decision": "rejected_stronger_than_current"
+}

@@ -1,0 +1,36 @@
+{
+  "data": "/home/zengjiaqi/icl/interp/logit_lens/pubmedqa/data_results_pubmedqa_filter_nc_cc_qwen3_4B/_archive_zengjiaqi_Medical_LLM_Qwen3_model_Qwen_Qwen3-4B.filtered.train.json",
+  "fmt": "json",
+  "model": "/archive/zengjiaqi/Medical_LLM/Qwen3_model/Qwen/Qwen3-4B",
+  "position": "before_question",
+  "include_context": true,
+  "enable_thinking": false,
+  "keep_mode": "self",
+  "metrics": [
+    "abstain_adv",
+    "follow_conflict",
+    "yesno_margin"
+  ],
+  "weights": [
+    0.05,
+    0.95,
+    0.0
+  ],
+  "max_examples": 121,
+  "plan": "/home/zengjiaqi/icl/interp/logit_lens/pubmedqa/result_train_before_question_5_95/layer_trace/scan_plan.json",
+  "rounds_ran": [
+    "round0_rise",
+    "round1_topk_fallback"
+  ],
+  "round_outputs": [
+    {
+      "round": "round0_rise",
+      "result_path": "result_train_before_question/headscan_pubmed/head_scan_round0_rise.json"
+    },
+    {
+      "round": "round1_topk_fallback",
+      "result_path": "result_train_before_question/headscan_pubmed/head_scan_round1_topk_fallback.json"
+    }
+  ],
+  "saved": "result_train_before_question/headscan_pubmed/head_scan_summary.json"
+}

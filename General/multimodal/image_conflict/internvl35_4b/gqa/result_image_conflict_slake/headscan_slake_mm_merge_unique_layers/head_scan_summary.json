@@ -1,0 +1,37 @@
+{
+  "data_csv": "./data/internvl35_4b/gqa/gqa_nc_correct_ic_ready_train.csv",
+  "image_root": ".",
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "trace_mode": "conflict",
+  "position": "image_conflict",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_context"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 0,
+  "plan": "internvl35_4b/gqa/result_image_conflict_slake/trace_image_conflict_scan_plan.json",
+  "plan_layer_key": "merged_unique_layers",
+  "rounds_ran": [
+    "merged_unique_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "merged_unique_layers",
+      "result_path": "internvl35_4b/gqa/result_image_conflict_slake/headscan_slake_mm/head_scan_merged_unique_layers.json",
+      "scan_layers": [
+        21,
+        22,
+        23,
+        28,
+        29,
+        30
+      ]
+    }
+  ],
+  "n_samples": 67,
+  "skipped": 226,
+  "saved": "internvl35_4b/gqa/result_image_conflict_slake/headscan_slake_mm/head_scan_summary.json"
+}

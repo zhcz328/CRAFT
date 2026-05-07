@@ -1,0 +1,198 @@
+{
+  "conflict": {
+    "title": "VQA-RAD Hulu-med-4B text-only before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=353 | is this supratentorial or infratentorial | gold=supratentorial | wrong=infratentorial",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      63,
+      89
+    ],
+    "matrix_shape": [
+      97,
+      97
+    ],
+    "meta": {
+      "selection_reason": "same_model_text_only",
+      "sample_kind": "pred_correct",
+      "row_idx": 353,
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "question": "is this supratentorial or infratentorial",
+      "gold": "supratentorial",
+      "wrong": "infratentorial",
+      "chosen_record": {
+        "id": 643,
+        "img_id": "synpic40096.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic40096.jpg",
+        "category": "plane",
+        "question": "is this supratentorial or infratentorial",
+        "gold": "supratentorial",
+        "conflict": "infratentorial",
+        "position": "before_question",
+        "support_pred": "supratentorial",
+        "conflict_pred": "supratentorial",
+        "support_scores": {
+          "supratentorial": -10.031761646270752,
+          "infratentorial": -44.08160400390625
+        },
+        "conflict_scores": {
+          "supratentorial": -10.12619149684906,
+          "infratentorial": -35.13238525390625
+        },
+        "support_margin": 34.0498423576355,
+        "conflict_margin": 25.00619375705719,
+        "changed": false,
+        "resist": true,
+        "follow_conflict": false,
+        "resist_to_gold": true,
+        "nc_pred": "supratentorial",
+        "changed_vs_nc": false,
+        "resist_vs_nc": true,
+        "conflict_pred_is_unknown": false,
+        "changed_to_unknown_vs_nc": false,
+        "conflict_is_unknown": false,
+        "csv_row_idx": 353
+      },
+      "query_span": [
+        78,
+        89
+      ],
+      "conflict_span": [
+        63,
+        89
+      ],
+      "same_model_text_only": true
+    }
+  },
+  "vqa": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=353 | is this supratentorial or infratentorial | gold=supratentorial | wrong=infratentorial",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      1143,
+      1169
+    ],
+    "matrix_shape": [
+      1190,
+      1190
+    ],
+    "meta": {
+      "selection_reason": "pred_correct_batch",
+      "sample_kind": "pred_correct",
+      "row_idx": 353,
+      "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+      "preds_jsonl": "/root/logit_lens/VQA_RAD/Hulu-med/eval-results_vqarad_hulumed4b_all/_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B/before_question/preds.jsonl",
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic40096.jpg",
+      "question": "is this supratentorial or infratentorial",
+      "gold": "supratentorial",
+      "wrong": "infratentorial",
+      "chosen_record": {
+        "id": 643,
+        "img_id": "synpic40096.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic40096.jpg",
+        "category": "plane",
+        "question": "is this supratentorial or infratentorial",
+        "gold": "supratentorial",
+        "conflict": "infratentorial",
+        "position": "before_question",
+        "support_pred": "supratentorial",
+        "conflict_pred": "supratentorial",
+        "support_scores": {
+          "supratentorial": -10.031761646270752,
+          "infratentorial": -44.08160400390625
+        },
+        "conflict_scores": {
+          "supratentorial": -10.12619149684906,
+          "infratentorial": -35.13238525390625
+        },
+        "support_margin": 34.0498423576355,
+        "conflict_margin": 25.00619375705719,
+        "changed": false,
+        "resist": true,
+        "follow_conflict": false,
+        "resist_to_gold": true,
+        "nc_pred": "supratentorial",
+        "changed_vs_nc": false,
+        "resist_vs_nc": true,
+        "conflict_pred_is_unknown": false,
+        "changed_to_unknown_vs_nc": false,
+        "conflict_is_unknown": false,
+        "csv_row_idx": 353
+      },
+      "question_span": [
+        1171,
+        1182
+      ],
+      "visual_span": [
+        16,
+        1109
+      ],
+      "ic_evidence_span": [
+        1143,
+        1169
+      ]
+    }
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_01_pairsame_model_row353_row353.png",
+    "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_01_pairsame_model_row353_row353.pdf",
+    "vmin": 5.0164292421357785e-06,
+    "vcenter": 0.000461145904329088,
+    "vmax": 0.022858556111653643
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6"
+}

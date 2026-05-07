@@ -1,0 +1,17 @@
+{
+  "models": {
+    "qwen3_4b": {
+      "model_path": "/root/autodl-tmp/qwen3-4B"
+    },
+    "llama32_3b": {
+      "model_path": "/root/autodl-tmp/Llama-3.2-3B-Instruct"
+    }
+  },
+  "tasks": {
+    "filter_yesno": {
+      "env": {
+        "DATA_PATH": "data/train-00000-of-00001.parquet"
+      }
+    }
+  }
+}

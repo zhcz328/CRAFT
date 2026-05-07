@@ -1,0 +1,313 @@
+{
+  "panels": [
+    {
+      "title": "Qwen3-4B",
+      "series": [
+        {
+          "benchmark": "ConflictMedQA",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/conflictmedqa/Qwen3-4B_exp/result_train/before_question/layer_trace_rise/layer_trace.json",
+          "metric": null,
+          "n_layers": 36,
+          "raw_min": 0.02122641509433962,
+          "raw_max": 29.419811320754718,
+          "display_max": 1.3450297252351426,
+          "onset_layer": 18,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/conflictmedqa/Qwen3-4B_exp/result_train/before_question/layer_trace_rise/scan_plan.json",
+          "scan_layers": [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "benchmark": "PubMedQA",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/pubmedqa/qwen3_4b/result_yesno/before_question/layer_trace/trace.json",
+          "metric": "follow_conflict",
+          "n_layers": 36,
+          "raw_min": -0.14705582094192504,
+          "raw_max": 9.411588423728944,
+          "display_max": 1.0756073880024108,
+          "onset_layer": 15,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/pubmedqa/qwen3_4b/result_yesno/before_question/layer_trace/scan_plan.json",
+          "scan_layers": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        }
+      ],
+      "l_enc": 16,
+      "l_star": 24,
+      "scan_windows": [
+        [
+          16,
+          24
+        ],
+        [
+          28,
+          35
+        ]
+      ]
+    },
+    {
+      "title": "Llama3.2-3B",
+      "series": [
+        {
+          "benchmark": "ConflictMedQA",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/conflictmedqa/Qwen3-4B_exp/llama32_3b/result/before_question/layer_trace_rise/layer_trace.json",
+          "metric": null,
+          "n_layers": 28,
+          "raw_min": 0.0421875,
+          "raw_max": 3.928125,
+          "display_max": 1.3794585589542756,
+          "onset_layer": 9,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/conflictmedqa/Qwen3-4B_exp/llama32_3b/result/before_question/layer_trace_rise/scan_plan.json",
+          "scan_layers": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ]
+        },
+        {
+          "benchmark": "PubMedQA",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/pubmedqa/llama32_3b/result_yesno/before_question/layer_trace/trace.json",
+          "metric": "follow_conflict",
+          "n_layers": 28,
+          "raw_min": -0.24539822722567287,
+          "raw_max": 2.468784877232143,
+          "display_max": 1.1850280961134134,
+          "onset_layer": 9,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/pubmedqa/llama32_3b/result_yesno/before_question/layer_trace/scan_plan.json",
+          "scan_layers": [
+            18,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ]
+        }
+      ],
+      "l_enc": 9,
+      "l_star": 15,
+      "scan_windows": [
+        [
+          7,
+          15
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          20,
+          27
+        ]
+      ]
+    },
+    {
+      "title": "Hulu-Med-4B",
+      "series": [
+        {
+          "benchmark": "VQA-RAD",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/trace_conflict.json",
+          "metric": "follow_conflict",
+          "n_layers": 36,
+          "raw_min": -0.05903948085082462,
+          "raw_max": 2.001905033960367,
+          "display_max": 1.514709805788898,
+          "onset_layer": 15,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/trace_conflict_scan_plan.json",
+          "scan_layers": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "benchmark": "Slake-VQA",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/Slake_vqa/Hulu-med/text_conflict/result_slake_hulumed4b_before_question/trace_conflict.json",
+          "metric": "follow_conflict",
+          "n_layers": 36,
+          "raw_min": -0.032941138928267596,
+          "raw_max": 1.8003462131695527,
+          "display_max": 1.452681945726861,
+          "onset_layer": 14,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/Slake_vqa/Hulu-med/text_conflict/result_slake_hulumed4b_before_question/trace_conflict_scan_plan.json",
+          "scan_layers": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            24,
+            32,
+            33,
+            34,
+            35
+          ]
+        }
+      ],
+      "l_enc": 14,
+      "l_star": 22,
+      "scan_windows": [
+        [
+          11,
+          22
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          32,
+          35
+        ]
+      ]
+    },
+    {
+      "title": "InternVL3.5",
+      "series": [
+        {
+          "benchmark": "VQA-RAD",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/trace_conflict.json",
+          "metric": "follow_conflict",
+          "n_layers": 36,
+          "raw_min": -0.3443962694239138,
+          "raw_max": 4.589662072993281,
+          "display_max": 1.5838888588596738,
+          "onset_layer": 19,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/trace_conflict_scan_plan.json",
+          "scan_layers": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "benchmark": "Slake-VQA",
+          "path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/Slake_vqa/text_conflict/internvl35_4b/result_before_question_slake/trace_conflict.json",
+          "metric": "follow_conflict",
+          "n_layers": 36,
+          "raw_min": -0.10397096571614131,
+          "raw_max": 4.1431608282915,
+          "display_max": 1.4620083587530468,
+          "onset_layer": 14,
+          "scan_plan_path": "/root/logit_lens/PIC/fig4/fig4_share_package/data/Slake_vqa/text_conflict/internvl35_4b/result_before_question_slake/trace_conflict_scan_plan.json",
+          "scan_layers": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            32,
+            33,
+            34,
+            35
+          ]
+        }
+      ],
+      "l_enc": 10,
+      "l_star": 25,
+      "scan_windows": [
+        [
+          11,
+          25
+        ],
+        [
+          32,
+          35
+        ]
+      ]
+    }
+  ],
+  "warnings": [],
+  "normalized_display": true,
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig4/fig4_share_package/fig4_layer_trace.png",
+    "pdf": "/root/logit_lens/PIC/fig4/fig4_share_package/fig4_layer_trace.pdf",
+    "sources": "/root/logit_lens/PIC/fig4/fig4_share_package/fig4_layer_trace_sources.json"
+  }
+}

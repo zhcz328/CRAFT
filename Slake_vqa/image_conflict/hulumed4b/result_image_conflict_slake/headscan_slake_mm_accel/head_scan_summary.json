@@ -1,0 +1,38 @@
+{
+  "data_csv": "./data/hulumed4b/slake_nc_correct_ic_ready_train.csv",
+  "image_root": ".",
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "trace_mode": "conflict",
+  "position": "image_conflict",
+  "keep_mode": "self",
+  "metrics": [
+    "follow_context"
+  ],
+  "weights": [
+    1.0
+  ],
+  "limit": 0,
+  "coarse_limit": 128,
+  "coarse_topk": 36,
+  "coarse_with_nc": false,
+  "coarse_seed": 42,
+  "plan": "hulumed4b/result_image_conflict_slake/trace_image_conflict_scan_plan.json",
+  "plan_layer_key": "core_layers",
+  "rounds_ran": [
+    "core_layers"
+  ],
+  "round_outputs": [
+    {
+      "round": "core_layers",
+      "result_path": "hulumed4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+      "scan_layers": [
+        16,
+        17,
+        35
+      ]
+    }
+  ],
+  "n_samples": 204,
+  "skipped": 104,
+  "saved": "hulumed4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_summary.json"
+}

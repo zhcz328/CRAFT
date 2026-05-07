@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "head_file_path": "/root/logit_lens/selection_criteria_ablation/results_observational_vs_interventional/llama32-3b/before_question/selected_heads/observational/observational_selected_heads.json",
+    "masked_conflict_specific": [
+      {
+        "layer": 9,
+        "heads": [
+          8,
+          20
+        ]
+      },
+      {
+        "layer": 24,
+        "heads": [
+          9
+        ]
+      }
+    ],
+    "selection_meta": {
+      "criterion": "observational",
+      "selection_rule": "sort by absolute Pearson correlation descending",
+      "metric_key": "observational_score",
+      "direction": "descending",
+      "threshold_at_last_selected": 0.37674131267481603,
+      "target_count_from_dual": 3,
+      "selected_count": 3,
+      "n_candidates": 40,
+      "model_key": "llama32-3b",
+      "task": "conflictmedqa",
+      "position": "before_question",
+      "feature": "final-query attention mass to inserted evidence block",
+      "target": "follow_conflict label on conflict prompt (1 if prediction equals conflict answer)",
+      "score": "absolute Pearson correlation",
+      "pairs_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/llama32_3b/data/kept_pairs_a12_b10_all_train.jsonl",
+      "n_labels": 240,
+      "positive_rate": 0.7458333333333333,
+      "candidate_head_count": 40,
+      "skipped_span": 0,
+      "skipped_attn": 0
+    },
+    "fixed_thresholds": null,
+    "mask_scope": "all",
+    "positions": [
+      "before_question"
+    ]
+  },
+  "summary_by_position": {
+    "before_question": {
+      "n_samples": 104,
+      "base_acc_before": 1.0,
+      "base_acc_before_recomputed": 1.0,
+      "base_acc_after": 0.9326923076923077,
+      "base_acc_delta": -0.06730769230769229,
+      "support_acc_before": 1.0,
+      "support_acc_after": 0.9326923076923077,
+      "support_acc_delta": -0.06730769230769229,
+      "follow_conflict_rate_before": 0.7596153846153846,
+      "follow_conflict_rate_after": 0.5576923076923077,
+      "follow_conflict_rate_delta": -0.20192307692307687,
+      "resist_rate_after(pred_same_as_base_after)": 0.5096153846153846,
+      "flip_rate_after": 0.49038461538461536,
+      "mean_shift_support_before": 0.19041846348689154,
+      "mean_shift_support_after": 0.3829317826491136,
+      "mean_shift_support_delta": 0.19251331916222206,
+      "mean_shift_conflict_before": -1.189526264484112,
+      "mean_shift_conflict_after": -0.4962497124305138,
+      "mean_shift_conflict_delta": 0.6932765520535983
+    }
+  }
+}

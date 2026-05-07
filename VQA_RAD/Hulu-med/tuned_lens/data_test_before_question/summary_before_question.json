@@ -1,0 +1,36 @@
+{
+  "position": "before_question",
+  "preds_jsonl": "C:\\Users\\29818\\Desktop\\logit_lens\\cross_modal\\Hulu-med\\eval-results_vqarad_hulumed4b_all\\_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B\\before_question\\preds.jsonl",
+  "train": {
+    "n_records": 1173,
+    "prompt_type_counts": {
+      "base": 391,
+      "support": 391,
+      "conflict": 391
+    },
+    "matched_outcome_samples": 391,
+    "total_samples": 391,
+    "follow_counts_conflict_only": {
+      "resist": 204,
+      "follow_conflict": 187,
+      "unknown": 0
+    }
+  },
+  "val": {
+    "n_records": 1170,
+    "prompt_type_counts": {
+      "base": 390,
+      "support": 390,
+      "conflict": 390
+    },
+    "matched_outcome_samples": 390,
+    "total_samples": 390,
+    "follow_counts_conflict_only": {
+      "resist": 217,
+      "follow_conflict": 173,
+      "unknown": 0
+    }
+  },
+  "train_path": "C:\\Users\\29818\\Desktop\\logit_lens\\cross_modal\\Hulu-med\\tuned_lens\\data_test_before_question\\train_before_question.jsonl",
+  "val_path": "C:\\Users\\29818\\Desktop\\logit_lens\\cross_modal\\Hulu-med\\tuned_lens\\data_test_before_question\\val_before_question.jsonl"
+}

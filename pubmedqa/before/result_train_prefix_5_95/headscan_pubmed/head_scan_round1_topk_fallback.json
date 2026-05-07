@@ -1,0 +1,152 @@
+{
+  "data": "data_results_pubmedqa_filter_nc_cc_qwen3_4B/_archive_zengjiaqi_Medical_LLM_Qwen3_model_Qwen_Qwen3-4B.filtered.train.json",
+  "fmt": "json",
+  "model": "/root/autodl-tmp/qwen3-4B",
+  "position": "prefix",
+  "include_context": true,
+  "enable_thinking": false,
+  "keep_mode": "self",
+  "metrics": [
+    "abstain_adv",
+    "follow_conflict",
+    "yesno_margin"
+  ],
+  "weights": [
+    0.05,
+    0.95,
+    0.0
+  ],
+  "n_samples": 121,
+  "scan_layers": [
+    26,
+    27,
+    29,
+    30,
+    31,
+    34,
+    35
+  ],
+  "top20": [
+    {
+      "layer": 35,
+      "head": 10,
+      "mean_abs_effect_reduction": 4.812267561983472,
+      "mean_abs_base_change": 6.129080578512397
+    },
+    {
+      "layer": 29,
+      "head": 13,
+      "mean_abs_effect_reduction": 2.1587035123966936,
+      "mean_abs_base_change": 3.253215392561985
+    },
+    {
+      "layer": 27,
+      "head": 17,
+      "mean_abs_effect_reduction": 1.592768595041321,
+      "mean_abs_base_change": 0.8974819214876034
+    },
+    {
+      "layer": 29,
+      "head": 10,
+      "mean_abs_effect_reduction": 1.5420454545454554,
+      "mean_abs_base_change": 1.6731146694214878
+    },
+    {
+      "layer": 29,
+      "head": 12,
+      "mean_abs_effect_reduction": 1.321203512396694,
+      "mean_abs_base_change": 0.8579932851239664
+    },
+    {
+      "layer": 34,
+      "head": 15,
+      "mean_abs_effect_reduction": 1.1351756198347107,
+      "mean_abs_base_change": 0.8162835743801649
+    },
+    {
+      "layer": 34,
+      "head": 14,
+      "mean_abs_effect_reduction": 0.9847623966942148,
+      "mean_abs_base_change": 1.9949509297520658
+    },
+    {
+      "layer": 31,
+      "head": 19,
+      "mean_abs_effect_reduction": 0.9685692148760333,
+      "mean_abs_base_change": 0.6610149793388429
+    },
+    {
+      "layer": 27,
+      "head": 19,
+      "mean_abs_effect_reduction": 0.8743026859504134,
+      "mean_abs_base_change": 0.8560175619834707
+    },
+    {
+      "layer": 29,
+      "head": 23,
+      "mean_abs_effect_reduction": 0.8683626033057851,
+      "mean_abs_base_change": 0.3919292355371899
+    },
+    {
+      "layer": 29,
+      "head": 14,
+      "mean_abs_effect_reduction": 0.8662190082644635,
+      "mean_abs_base_change": 0.7740056818181814
+    },
+    {
+      "layer": 29,
+      "head": 11,
+      "mean_abs_effect_reduction": 0.8346590909090911,
+      "mean_abs_base_change": 0.43579545454545443
+    },
+    {
+      "layer": 30,
+      "head": 4,
+      "mean_abs_effect_reduction": 0.8280733471074379,
+      "mean_abs_base_change": 1.3620738636363634
+    },
+    {
+      "layer": 27,
+      "head": 18,
+      "mean_abs_effect_reduction": 0.7643336776859502,
+      "mean_abs_base_change": 0.41543130165289266
+    },
+    {
+      "layer": 31,
+      "head": 14,
+      "mean_abs_effect_reduction": 0.7003615702479339,
+      "mean_abs_base_change": 0.41202221074380163
+    },
+    {
+      "layer": 31,
+      "head": 28,
+      "mean_abs_effect_reduction": 0.6749483471074377,
+      "mean_abs_base_change": 1.9779313016528928
+    },
+    {
+      "layer": 35,
+      "head": 27,
+      "mean_abs_effect_reduction": 0.6602530991735539,
+      "mean_abs_base_change": 0.468956611570248
+    },
+    {
+      "layer": 27,
+      "head": 8,
+      "mean_abs_effect_reduction": 0.6486828512396693,
+      "mean_abs_base_change": 1.31014979338843
+    },
+    {
+      "layer": 26,
+      "head": 30,
+      "mean_abs_effect_reduction": 0.6329545454545451,
+      "mean_abs_base_change": 0.6256973140495867
+    },
+    {
+      "layer": 29,
+      "head": 7,
+      "mean_abs_effect_reduction": 0.6183884297520661,
+      "mean_abs_base_change": 0.33074638429752057
+    }
+  ],
+  "saved": "result_train_prefix/headscan_pubmed/head_scan_round1_topk_fallback.json"
+}

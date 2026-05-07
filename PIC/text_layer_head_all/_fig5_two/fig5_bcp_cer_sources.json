@@ -1,0 +1,75 @@
+{
+  "panels": [
+    {
+      "title": "Hulu-med-4B",
+      "scan": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/head_scan_merged_unique_layers.json",
+      "selected_source": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "selection_thresholds_raw": {
+        "cer_min": 0.25,
+        "bcp_max": 0.25
+      },
+      "display_thresholds": {
+        "bcp": 0.028000000000000004,
+        "cer": 0.06899999999999999
+      },
+      "display_limits": {
+        "x": 0.06,
+        "y": 0.12
+      },
+      "n_clipped": 3,
+      "scale": {
+        "bcp": 8.928571428571427,
+        "cer": 3.6231884057971016
+      },
+      "n_candidates": 48,
+      "n_augmented_background": 150,
+      "n_display_points": 198,
+      "n_selected": 6,
+      "quadrant_counts": {
+        "causal": 6,
+        "backbone_upper": 7,
+        "irrelevant": 30,
+        "backbone_lower": 5
+      },
+      "note": null
+    },
+    {
+      "title": "InternVL3.5-4B",
+      "scan": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+      "selected_source": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json",
+      "selection_thresholds_raw": {
+        "cer_min": 0.55,
+        "bcp_max": 0.6
+      },
+      "display_thresholds": {
+        "bcp": 0.028000000000000004,
+        "cer": 0.069
+      },
+      "display_limits": {
+        "x": 0.08,
+        "y": 0.12
+      },
+      "n_clipped": 5,
+      "scale": {
+        "bcp": 21.428571428571423,
+        "cer": 7.971014492753623
+      },
+      "n_candidates": 48,
+      "n_augmented_background": 150,
+      "n_display_points": 198,
+      "n_selected": 10,
+      "quadrant_counts": {
+        "causal": 10,
+        "backbone_upper": 8,
+        "irrelevant": 20,
+        "backbone_lower": 10
+      },
+      "note": null
+    }
+  ],
+  "outputs": {
+    "png": "/root/logit_lens/PIC/text_layer_head_all/_fig5_two/fig5_bcp_cer_scatter.png",
+    "pdf": "/root/logit_lens/PIC/text_layer_head_all/_fig5_two/fig5_bcp_cer_scatter.pdf",
+    "sources": "/root/logit_lens/PIC/text_layer_head_all/_fig5_two/fig5_bcp_cer_sources.json"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "format": "vqa_ablation_json",
+  "path": "/root/logit_lens/ablation_tau/internvl35_4b_text_conflict_before_question_val/candidate_06/ablation_val.json",
+  "config": {
+    "data_csv": "/root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv",
+    "image_root": ".",
+    "model": "/root/autodl-tmp/InternVL3_5-4B",
+    "selected_heads": "/root/logit_lens/ablation_tau/internvl35_4b_text_conflict_before_question_val/candidate_06/selected_heads.json",
+    "trace_mode": "conflict",
+    "position": "before_question",
+    "metrics": [
+      "gold_wrong_margin",
+      "follow_context"
+    ],
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda",
+    "max_examples": -1,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "n_selected_heads": 12,
+  "metrics": {
+    "n_all": 175,
+    "counts": {
+      "follow_conflict": 16,
+      "correct_to_wrong": 4,
+      "wrong_to_correct": 26
+    },
+    "CFR": 9.142857142857142,
+    "C2W": 2.2857142857142856,
+    "W2C": 14.857142857142858,
+    "strength_tuple": [
+      9.142857142857142,
+      2.2857142857142856,
+      -14.857142857142858
+    ]
+  }
+}

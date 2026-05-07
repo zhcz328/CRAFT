@@ -1,0 +1,36 @@
+{
+  "candidate_index": 36,
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": -0.024367759968,
+    "base_max": 0.202586208952,
+    "base_min": null
+  },
+  "n_selected": 21,
+  "selection_path": "/root/logit_lens/image_ablation_tau/internvl35_4b_image_conflict_val/candidate_36/selected_heads.json",
+  "ablation_path": "/root/logit_lens/image_ablation_tau/internvl35_4b_image_conflict_val/candidate_36/ablation_val.json",
+  "metrics": {
+    "n_all": 31,
+    "counts": {
+      "correct_to_unknown": 3,
+      "unknown_to_other": 0,
+      "unknown_rate": 10
+    },
+    "C2U": 9.67741935483871,
+    "U2O": 0.0,
+    "UR": 32.25806451612903,
+    "rule_tuple": [
+      9.67741935483871,
+      0.0,
+      32.25806451612903
+    ]
+  },
+  "metrics_path": "/root/logit_lens/image_ablation_tau/internvl35_4b_image_conflict_val/candidate_36/metrics.json",
+  "comparison_flags": {
+    "C2U_lower": false,
+    "U2O_higher": false,
+    "UR_higher": false
+  },
+  "matched_rule_count": 0,
+  "decision": "rejected_rule_not_met"
+}

@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "mode": "B_fixed",
+    "er_min": 0.795400943396,
+    "bc_max": 0.935731132075,
+    "total_candidates": 40,
+    "selected": 2
+  },
+  "selected_heads": [
+    {
+      "layer": 33,
+      "head": 4,
+      "er": 0.8160377358490566,
+      "bc": 0.6609669811320755,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 1.234610085728184
+    },
+    {
+      "layer": 32,
+      "head": 26,
+      "er": 0.8160377358490566,
+      "bc": 0.9133254716981132,
+      "source": "round_outputs:round0_rising",
+      "cs_score": 0.8934786860297924
+    }
+  ],
+  "saved": "/root/logit_lens/ablation_tau/qwen_conflictmedqa_before_question_val/candidate_03/selected_heads.json"
+}

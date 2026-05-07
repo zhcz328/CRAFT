@@ -1,0 +1,5564 @@
+{
+  "config": {
+    "data_csv": "./data/qwen3vl_2b/gqa/gqa_nc_correct_ic_ready_train.csv",
+    "image_root": ".",
+    "model": "/root/autodl-tmp/qwen3vl-2B",
+    "mode": "pareto",
+    "selected_heads": "qwen3vl_2b/gqa/result_image_conflict_slake/selected_heads_core_layers_pareto.json",
+    "trace_mode": "conflict",
+    "position": "image_conflict",
+    "mask_scale": 1.0,
+    "metrics": [
+      "follow_context"
+    ],
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda:0",
+    "max_examples": 50,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0,
+    "sample_filter": "none",
+    "scoring_mode": "cache"
+  },
+  "selected_pairs": [
+    {
+      "layer": 22,
+      "head": 2
+    }
+  ],
+  "n_selected_heads": 1,
+  "mode": "pareto",
+  "n_samples": 50,
+  "sample_filter": "none",
+  "mask_scale": 1.0,
+  "mean_hallucination_relief": -10.14375,
+  "mean_ic_follow_context_gain": -10.045,
+  "mean_nc_gold_margin_damage": 0.09875,
+  "pred_nc": {
+    "base_acc": 0.98,
+    "ab_acc": 0.98,
+    "acc_delta": 0.0
+  },
+  "pred_ctx": {
+    "base_acc": 0.32,
+    "ab_acc": 0.98,
+    "acc_delta": 0.66
+  },
+  "ctx_unknown": {
+    "base_rate": 0.68,
+    "ab_rate": 0.02,
+    "rate_delta": -0.66
+  },
+  "per_metric": {
+    "follow_context": {
+      "mean_abs_effect_reduction_fixed_nc": -10.045,
+      "mean_abs_effect_reduction_mask_scope": -10.045,
+      "mean_abs_base_change": 0.44,
+      "mean_abs_ctx_change": 10.06
+    }
+  },
+  "records": [
+    {
+      "row_idx": 0,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.125,
+        "wrong_lp": -24.75,
+        "unknown_lp": -18.875,
+        "candidate_scores": {
+          "yes": -15.125,
+          "no": -24.75,
+          "unknown": -18.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.875,
+        "other_lp": -15.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -32.25,
+        "wrong_lp": -24.375,
+        "unknown_lp": -15.625,
+        "candidate_scores": {
+          "yes": -32.25,
+          "no": -24.375,
+          "unknown": -15.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.625,
+        "other_lp": -24.375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -27.125,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -27.125,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -27.125,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -27.125,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 9.625,
+        "follow_conflict": -3.75,
+        "follow_context": -3.75,
+        "context_flip": 3.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -7.875,
+        "follow_conflict": 16.625,
+        "follow_context": 8.75,
+        "context_flip": -8.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 10.75,
+        "follow_conflict": -4.375,
+        "follow_context": -4.375,
+        "context_flip": 4.375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 10.75,
+        "follow_conflict": -4.375,
+        "follow_context": -4.375,
+        "context_flip": 4.375
+      },
+      "base_nc_gold_margin": 3.75,
+      "ab_nc_gold_margin": 4.375,
+      "ctx_follow_context_gain": -13.125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -13.125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -13.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -13.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 13.125
+      }
+    },
+    {
+      "row_idx": 1,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -38.5,
+        "unknown_lp": -30.375,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -38.5,
+          "unknown": -30.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.375,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.4375,
+        "wrong_lp": -16.125,
+        "unknown_lp": -13.4375,
+        "candidate_scores": {
+          "yes": -14.4375,
+          "no": -16.125,
+          "unknown": -13.4375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.4375,
+        "other_lp": -14.4375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -37.75,
+        "unknown_lp": -30.25,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -37.75,
+          "unknown": -30.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.25,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -37.75,
+        "unknown_lp": -30.25,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -37.75,
+          "unknown": -30.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.25,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 22.125,
+        "follow_conflict": -14.0,
+        "follow_context": -14.0,
+        "context_flip": 14.0
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 1.6875,
+        "follow_conflict": 1.0,
+        "follow_context": 1.0,
+        "context_flip": -1.0
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 21.5,
+        "follow_conflict": -14.0,
+        "follow_context": -14.0,
+        "context_flip": 14.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 21.5,
+        "follow_conflict": -14.0,
+        "follow_context": -14.0,
+        "context_flip": 14.0
+      },
+      "base_nc_gold_margin": 14.0,
+      "ab_nc_gold_margin": 14.0,
+      "ctx_follow_context_gain": -15.0,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -15.0,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -15.0
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -15.0
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 15.0
+      }
+    },
+    {
+      "row_idx": 2,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -14.9375,
+        "wrong_lp": -20.25,
+        "unknown_lp": -15.9375,
+        "candidate_scores": {
+          "yes": -14.9375,
+          "no": -20.25,
+          "unknown": -15.9375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.9375,
+        "other_lp": -14.9375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -28.75,
+        "wrong_lp": -23.0,
+        "unknown_lp": -14.625,
+        "candidate_scores": {
+          "yes": -28.75,
+          "no": -23.0,
+          "unknown": -14.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.625,
+        "other_lp": -23.0,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -14.6875,
+        "wrong_lp": -20.125,
+        "unknown_lp": -15.6875,
+        "candidate_scores": {
+          "yes": -14.6875,
+          "no": -20.125,
+          "unknown": -15.6875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.6875,
+        "other_lp": -14.6875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -14.6875,
+        "wrong_lp": -20.125,
+        "unknown_lp": -15.6875,
+        "candidate_scores": {
+          "yes": -14.6875,
+          "no": -20.125,
+          "unknown": -15.6875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.6875,
+        "other_lp": -14.6875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 5.3125,
+        "follow_conflict": -1.0,
+        "follow_context": -1.0,
+        "context_flip": 1.0
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -5.75,
+        "follow_conflict": 14.125,
+        "follow_context": 8.375,
+        "context_flip": -8.375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 5.4375,
+        "follow_conflict": -1.0,
+        "follow_context": -1.0,
+        "context_flip": 1.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 5.4375,
+        "follow_conflict": -1.0,
+        "follow_context": -1.0,
+        "context_flip": 1.0
+      },
+      "base_nc_gold_margin": 1.0,
+      "ab_nc_gold_margin": 1.0,
+      "ctx_follow_context_gain": -9.375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -9.375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -9.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -9.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 9.375
+      }
+    },
+    {
+      "row_idx": 3,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.0625,
+        "wrong_lp": -20.875,
+        "unknown_lp": -17.0,
+        "candidate_scores": {
+          "yes": -15.0625,
+          "no": -20.875,
+          "unknown": -17.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.0,
+        "other_lp": -15.0625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.0625,
+        "wrong_lp": -17.625,
+        "unknown_lp": -13.1875,
+        "candidate_scores": {
+          "yes": -14.0625,
+          "no": -17.625,
+          "unknown": -13.1875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.1875,
+        "other_lp": -14.0625,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.1875,
+        "wrong_lp": -21.5,
+        "unknown_lp": -17.5,
+        "candidate_scores": {
+          "yes": -15.1875,
+          "no": -21.5,
+          "unknown": -17.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.5,
+        "other_lp": -15.1875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.1875,
+        "wrong_lp": -21.5,
+        "unknown_lp": -17.5,
+        "candidate_scores": {
+          "yes": -15.1875,
+          "no": -21.5,
+          "unknown": -17.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.5,
+        "other_lp": -15.1875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 5.8125,
+        "follow_conflict": -1.9375,
+        "follow_context": -1.9375,
+        "context_flip": 1.9375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 3.5625,
+        "follow_conflict": 0.875,
+        "follow_context": 0.875,
+        "context_flip": -0.875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 6.3125,
+        "follow_conflict": -2.3125,
+        "follow_context": -2.3125,
+        "context_flip": 2.3125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 6.3125,
+        "follow_conflict": -2.3125,
+        "follow_context": -2.3125,
+        "context_flip": 2.3125
+      },
+      "base_nc_gold_margin": 1.9375,
+      "ab_nc_gold_margin": 2.3125,
+      "ctx_follow_context_gain": -3.1875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -3.1875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -3.1875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -3.1875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 3.1875
+      }
+    },
+    {
+      "row_idx": 4,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.8125,
+        "wrong_lp": -36.25,
+        "unknown_lp": -30.125,
+        "candidate_scores": {
+          "yes": -15.8125,
+          "no": -36.25,
+          "unknown": -30.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.125,
+        "other_lp": -15.8125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.4375,
+        "wrong_lp": -19.25,
+        "unknown_lp": -15.1875,
+        "candidate_scores": {
+          "yes": -14.4375,
+          "no": -19.25,
+          "unknown": -15.1875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.1875,
+        "other_lp": -14.4375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.8125,
+        "wrong_lp": -36.0,
+        "unknown_lp": -29.375,
+        "candidate_scores": {
+          "yes": -15.8125,
+          "no": -36.0,
+          "unknown": -29.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.375,
+        "other_lp": -15.8125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.8125,
+        "wrong_lp": -36.0,
+        "unknown_lp": -29.375,
+        "candidate_scores": {
+          "yes": -15.8125,
+          "no": -36.0,
+          "unknown": -29.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.375,
+        "other_lp": -15.8125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 20.4375,
+        "follow_conflict": -14.3125,
+        "follow_context": -14.3125,
+        "context_flip": 14.3125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 4.8125,
+        "follow_conflict": -0.75,
+        "follow_context": -0.75,
+        "context_flip": 0.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 20.1875,
+        "follow_conflict": -13.5625,
+        "follow_context": -13.5625,
+        "context_flip": 13.5625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 20.1875,
+        "follow_conflict": -13.5625,
+        "follow_context": -13.5625,
+        "context_flip": 13.5625
+      },
+      "base_nc_gold_margin": 14.3125,
+      "ab_nc_gold_margin": 13.5625,
+      "ctx_follow_context_gain": -12.8125,
+      "nc_gold_margin_damage": 0.75,
+      "hallucination_relief": -13.5625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -12.8125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -12.8125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.75
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 12.8125
+      }
+    },
+    {
+      "row_idx": 5,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.5,
+        "wrong_lp": -33.5,
+        "unknown_lp": -25.25,
+        "candidate_scores": {
+          "yes": -16.5,
+          "no": -33.5,
+          "unknown": -25.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -25.25,
+        "other_lp": -16.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -28.75,
+        "wrong_lp": -19.25,
+        "unknown_lp": -15.4375,
+        "candidate_scores": {
+          "yes": -28.75,
+          "no": -19.25,
+          "unknown": -15.4375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.4375,
+        "other_lp": -19.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -33.75,
+        "unknown_lp": -25.375,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -33.75,
+          "unknown": -25.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -25.375,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -33.75,
+        "unknown_lp": -25.375,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -33.75,
+          "unknown": -25.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -25.375,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 17.0,
+        "follow_conflict": -8.75,
+        "follow_context": -8.75,
+        "context_flip": 8.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -9.5,
+        "follow_conflict": 13.3125,
+        "follow_context": 3.8125,
+        "context_flip": -3.8125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 17.375,
+        "follow_conflict": -9.0,
+        "follow_context": -9.0,
+        "context_flip": 9.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 17.375,
+        "follow_conflict": -9.0,
+        "follow_context": -9.0,
+        "context_flip": 9.0
+      },
+      "base_nc_gold_margin": 8.75,
+      "ab_nc_gold_margin": 9.0,
+      "ctx_follow_context_gain": -12.8125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -12.8125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -12.8125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -12.8125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 12.8125
+      }
+    },
+    {
+      "row_idx": 6,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.125,
+        "wrong_lp": -26.25,
+        "unknown_lp": -21.375,
+        "candidate_scores": {
+          "yes": -16.125,
+          "no": -26.25,
+          "unknown": -21.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.375,
+        "other_lp": -16.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -27.5,
+        "wrong_lp": -19.875,
+        "unknown_lp": -16.25,
+        "candidate_scores": {
+          "yes": -27.5,
+          "no": -19.875,
+          "unknown": -16.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.25,
+        "other_lp": -19.875,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.375,
+        "wrong_lp": -28.625,
+        "unknown_lp": -23.375,
+        "candidate_scores": {
+          "yes": -17.375,
+          "no": -28.625,
+          "unknown": -23.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.375,
+        "other_lp": -17.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.375,
+        "wrong_lp": -28.625,
+        "unknown_lp": -23.375,
+        "candidate_scores": {
+          "yes": -17.375,
+          "no": -28.625,
+          "unknown": -23.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.375,
+        "other_lp": -17.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 10.125,
+        "follow_conflict": -5.25,
+        "follow_context": -5.25,
+        "context_flip": 5.25
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -7.625,
+        "follow_conflict": 11.25,
+        "follow_context": 3.625,
+        "context_flip": -3.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.25,
+        "follow_conflict": -6.0,
+        "follow_context": -6.0,
+        "context_flip": 6.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 11.25,
+        "follow_conflict": -6.0,
+        "follow_context": -6.0,
+        "context_flip": 6.0
+      },
+      "base_nc_gold_margin": 5.25,
+      "ab_nc_gold_margin": 6.0,
+      "ctx_follow_context_gain": -9.625,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -9.625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -9.625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -9.625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.75
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 9.625
+      }
+    },
+    {
+      "row_idx": 7,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -40.0,
+        "unknown_lp": -29.5,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -40.0,
+          "unknown": -29.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.5,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -21.375,
+        "wrong_lp": -16.25,
+        "unknown_lp": -13.3125,
+        "candidate_scores": {
+          "yes": -21.375,
+          "no": -16.25,
+          "unknown": -13.3125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.3125,
+        "other_lp": -16.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -40.5,
+        "unknown_lp": -29.125,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -40.5,
+          "unknown": -29.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.125,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -40.5,
+        "unknown_lp": -29.125,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -40.5,
+          "unknown": -29.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.125,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 23.75,
+        "follow_conflict": -13.25,
+        "follow_context": -13.25,
+        "context_flip": 13.25
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -5.125,
+        "follow_conflict": 8.0625,
+        "follow_context": 2.9375,
+        "context_flip": -2.9375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 24.25,
+        "follow_conflict": -12.875,
+        "follow_context": -12.875,
+        "context_flip": 12.875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 24.25,
+        "follow_conflict": -12.875,
+        "follow_context": -12.875,
+        "context_flip": 12.875
+      },
+      "base_nc_gold_margin": 13.25,
+      "ab_nc_gold_margin": 12.875,
+      "ctx_follow_context_gain": -15.8125,
+      "nc_gold_margin_damage": 0.375,
+      "hallucination_relief": -16.1875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -15.8125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -15.8125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 15.8125
+      }
+    },
+    {
+      "row_idx": 8,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.5,
+        "wrong_lp": -40.25,
+        "unknown_lp": -29.375,
+        "candidate_scores": {
+          "yes": -16.5,
+          "no": -40.25,
+          "unknown": -29.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.375,
+        "other_lp": -16.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -36.5,
+        "unknown_lp": -26.5,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -36.5,
+          "unknown": -26.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.5,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -41.0,
+        "unknown_lp": -29.75,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -41.0,
+          "unknown": -29.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.75,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -41.0,
+        "unknown_lp": -29.75,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -41.0,
+          "unknown": -29.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.75,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 23.75,
+        "follow_conflict": -12.875,
+        "follow_context": -12.875,
+        "context_flip": 12.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 20.25,
+        "follow_conflict": -10.25,
+        "follow_context": -10.25,
+        "context_flip": 10.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 24.625,
+        "follow_conflict": -13.375,
+        "follow_context": -13.375,
+        "context_flip": 13.375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 24.625,
+        "follow_conflict": -13.375,
+        "follow_context": -13.375,
+        "context_flip": 13.375
+      },
+      "base_nc_gold_margin": 12.875,
+      "ab_nc_gold_margin": 13.375,
+      "ctx_follow_context_gain": -3.125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -3.125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -3.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -3.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.5
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 3.125
+      }
+    },
+    {
+      "row_idx": 9,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -18.75,
+        "wrong_lp": -43.25,
+        "unknown_lp": -32.5,
+        "candidate_scores": {
+          "yes": -18.75,
+          "no": -43.25,
+          "unknown": -32.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -32.5,
+        "other_lp": -18.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -18.0,
+        "wrong_lp": -40.5,
+        "unknown_lp": -29.375,
+        "candidate_scores": {
+          "yes": -18.0,
+          "no": -40.5,
+          "unknown": -29.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.375,
+        "other_lp": -18.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -19.0,
+        "wrong_lp": -44.75,
+        "unknown_lp": -33.5,
+        "candidate_scores": {
+          "yes": -19.0,
+          "no": -44.75,
+          "unknown": -33.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -33.5,
+        "other_lp": -19.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -19.0,
+        "wrong_lp": -44.75,
+        "unknown_lp": -33.5,
+        "candidate_scores": {
+          "yes": -19.0,
+          "no": -44.75,
+          "unknown": -33.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -33.5,
+        "other_lp": -19.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 24.5,
+        "follow_conflict": -13.75,
+        "follow_context": -13.75,
+        "context_flip": 13.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 22.5,
+        "follow_conflict": -11.375,
+        "follow_context": -11.375,
+        "context_flip": 11.375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 25.75,
+        "follow_conflict": -14.5,
+        "follow_context": -14.5,
+        "context_flip": 14.5
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 25.75,
+        "follow_conflict": -14.5,
+        "follow_context": -14.5,
+        "context_flip": 14.5
+      },
+      "base_nc_gold_margin": 13.75,
+      "ab_nc_gold_margin": 14.5,
+      "ctx_follow_context_gain": -3.125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -3.125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -3.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -3.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.75
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 3.125
+      }
+    },
+    {
+      "row_idx": 10,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -36.75,
+        "unknown_lp": -29.0,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -36.75,
+          "unknown": -29.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.0,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -16.875,
+        "wrong_lp": -16.75,
+        "unknown_lp": -12.25,
+        "candidate_scores": {
+          "yes": -16.875,
+          "no": -16.75,
+          "unknown": -12.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.25,
+        "other_lp": -16.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -37.5,
+        "unknown_lp": -30.375,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -37.5,
+          "unknown": -30.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.375,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -37.5,
+        "unknown_lp": -30.375,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -37.5,
+          "unknown": -30.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.375,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 19.75,
+        "follow_conflict": -12.0,
+        "follow_context": -12.0,
+        "context_flip": 12.0
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -0.125,
+        "follow_conflict": 4.625,
+        "follow_context": 4.5,
+        "context_flip": -4.5
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 21.125,
+        "follow_conflict": -14.0,
+        "follow_context": -14.0,
+        "context_flip": 14.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 21.125,
+        "follow_conflict": -14.0,
+        "follow_context": -14.0,
+        "context_flip": 14.0
+      },
+      "base_nc_gold_margin": 12.0,
+      "ab_nc_gold_margin": 14.0,
+      "ctx_follow_context_gain": -18.5,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -18.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -18.5
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -18.5
+      },
+      "metric_abs_base_change": {
+        "follow_context": 2.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 18.5
+      }
+    },
+    {
+      "row_idx": 11,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.625,
+        "wrong_lp": -37.75,
+        "unknown_lp": -28.375,
+        "candidate_scores": {
+          "yes": -17.625,
+          "no": -37.75,
+          "unknown": -28.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -28.375,
+        "other_lp": -17.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -27.375,
+        "wrong_lp": -19.125,
+        "unknown_lp": -14.4375,
+        "candidate_scores": {
+          "yes": -27.375,
+          "no": -19.125,
+          "unknown": -14.4375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.4375,
+        "other_lp": -19.125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.875,
+        "wrong_lp": -36.0,
+        "unknown_lp": -26.625,
+        "candidate_scores": {
+          "yes": -16.875,
+          "no": -36.0,
+          "unknown": -26.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.625,
+        "other_lp": -16.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.875,
+        "wrong_lp": -36.0,
+        "unknown_lp": -26.625,
+        "candidate_scores": {
+          "yes": -16.875,
+          "no": -36.0,
+          "unknown": -26.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.625,
+        "other_lp": -16.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 20.125,
+        "follow_conflict": -10.75,
+        "follow_context": -10.75,
+        "context_flip": 10.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -8.25,
+        "follow_conflict": 12.9375,
+        "follow_context": 4.6875,
+        "context_flip": -4.6875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 19.125,
+        "follow_conflict": -9.75,
+        "follow_context": -9.75,
+        "context_flip": 9.75
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 19.125,
+        "follow_conflict": -9.75,
+        "follow_context": -9.75,
+        "context_flip": 9.75
+      },
+      "base_nc_gold_margin": 10.75,
+      "ab_nc_gold_margin": 9.75,
+      "ctx_follow_context_gain": -14.4375,
+      "nc_gold_margin_damage": 1.0,
+      "hallucination_relief": -15.4375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -14.4375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -14.4375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 14.4375
+      }
+    },
+    {
+      "row_idx": 12,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -14.5,
+        "wrong_lp": -21.875,
+        "unknown_lp": -18.375,
+        "candidate_scores": {
+          "yes": -14.5,
+          "no": -21.875,
+          "unknown": -18.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.375,
+        "other_lp": -14.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.5625,
+        "wrong_lp": -20.0,
+        "unknown_lp": -17.375,
+        "candidate_scores": {
+          "yes": -14.5625,
+          "no": -20.0,
+          "unknown": -17.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.375,
+        "other_lp": -14.5625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -14.6875,
+        "wrong_lp": -21.875,
+        "unknown_lp": -18.875,
+        "candidate_scores": {
+          "yes": -14.6875,
+          "no": -21.875,
+          "unknown": -18.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.875,
+        "other_lp": -14.6875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -14.6875,
+        "wrong_lp": -21.875,
+        "unknown_lp": -18.875,
+        "candidate_scores": {
+          "yes": -14.6875,
+          "no": -21.875,
+          "unknown": -18.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.875,
+        "other_lp": -14.6875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 7.375,
+        "follow_conflict": -3.875,
+        "follow_context": -3.875,
+        "context_flip": 3.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 5.4375,
+        "follow_conflict": -2.8125,
+        "follow_context": -2.8125,
+        "context_flip": 2.8125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 7.1875,
+        "follow_conflict": -4.1875,
+        "follow_context": -4.1875,
+        "context_flip": 4.1875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 7.1875,
+        "follow_conflict": -4.1875,
+        "follow_context": -4.1875,
+        "context_flip": 4.1875
+      },
+      "base_nc_gold_margin": 3.875,
+      "ab_nc_gold_margin": 4.1875,
+      "ctx_follow_context_gain": -1.375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -1.375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -1.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -1.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.3125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.375
+      }
+    },
+    {
+      "row_idx": 13,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.1875,
+        "wrong_lp": -19.625,
+        "unknown_lp": -16.875,
+        "candidate_scores": {
+          "yes": -15.1875,
+          "no": -19.625,
+          "unknown": -16.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.875,
+        "other_lp": -15.1875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -31.375,
+        "wrong_lp": -19.375,
+        "unknown_lp": -16.25,
+        "candidate_scores": {
+          "yes": -31.375,
+          "no": -19.375,
+          "unknown": -16.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.25,
+        "other_lp": -19.375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.375,
+        "wrong_lp": -20.125,
+        "unknown_lp": -17.25,
+        "candidate_scores": {
+          "yes": -15.375,
+          "no": -20.125,
+          "unknown": -17.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.25,
+        "other_lp": -15.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.375,
+        "wrong_lp": -20.125,
+        "unknown_lp": -17.25,
+        "candidate_scores": {
+          "yes": -15.375,
+          "no": -20.125,
+          "unknown": -17.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.25,
+        "other_lp": -15.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 4.4375,
+        "follow_conflict": -1.6875,
+        "follow_context": -1.6875,
+        "context_flip": 1.6875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -12.0,
+        "follow_conflict": 15.125,
+        "follow_context": 3.125,
+        "context_flip": -3.125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 4.75,
+        "follow_conflict": -1.875,
+        "follow_context": -1.875,
+        "context_flip": 1.875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 4.75,
+        "follow_conflict": -1.875,
+        "follow_context": -1.875,
+        "context_flip": 1.875
+      },
+      "base_nc_gold_margin": 1.6875,
+      "ab_nc_gold_margin": 1.875,
+      "ctx_follow_context_gain": -5.0,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -5.0,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -5.0
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -5.0
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.1875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 5.0
+      }
+    },
+    {
+      "row_idx": 14,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "unknown",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "unknown",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -14.875,
+        "wrong_lp": -21.375,
+        "unknown_lp": -14.625,
+        "candidate_scores": {
+          "yes": -14.875,
+          "no": -21.375,
+          "unknown": -14.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.625,
+        "other_lp": -14.875,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -33.0,
+        "wrong_lp": -26.5,
+        "unknown_lp": -15.875,
+        "candidate_scores": {
+          "yes": -33.0,
+          "no": -26.5,
+          "unknown": -15.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.875,
+        "other_lp": -26.5,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.25,
+        "wrong_lp": -22.25,
+        "unknown_lp": -15.125,
+        "candidate_scores": {
+          "yes": -15.25,
+          "no": -22.25,
+          "unknown": -15.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.125,
+        "other_lp": -15.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.25,
+        "wrong_lp": -22.25,
+        "unknown_lp": -15.125,
+        "candidate_scores": {
+          "yes": -15.25,
+          "no": -22.25,
+          "unknown": -15.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.125,
+        "other_lp": -15.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 6.5,
+        "follow_conflict": 0.25,
+        "follow_context": 0.25,
+        "context_flip": -0.25
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -6.5,
+        "follow_conflict": 17.125,
+        "follow_context": 10.625,
+        "context_flip": -10.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 7.0,
+        "follow_conflict": 0.125,
+        "follow_context": 0.125,
+        "context_flip": -0.125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 7.0,
+        "follow_conflict": 0.125,
+        "follow_context": 0.125,
+        "context_flip": -0.125
+      },
+      "base_nc_gold_margin": -0.25,
+      "ab_nc_gold_margin": -0.125,
+      "ctx_follow_context_gain": -10.5,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -10.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -10.5
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -10.5
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 10.5
+      }
+    },
+    {
+      "row_idx": 15,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.0,
+        "wrong_lp": -24.25,
+        "unknown_lp": -18.875,
+        "candidate_scores": {
+          "yes": -15.0,
+          "no": -24.25,
+          "unknown": -18.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.875,
+        "other_lp": -15.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.1875,
+        "wrong_lp": -20.125,
+        "unknown_lp": -15.9375,
+        "candidate_scores": {
+          "yes": -14.1875,
+          "no": -20.125,
+          "unknown": -15.9375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.9375,
+        "other_lp": -14.1875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.375,
+        "wrong_lp": -25.375,
+        "unknown_lp": -20.0,
+        "candidate_scores": {
+          "yes": -15.375,
+          "no": -25.375,
+          "unknown": -20.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.0,
+        "other_lp": -15.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.375,
+        "wrong_lp": -25.375,
+        "unknown_lp": -20.0,
+        "candidate_scores": {
+          "yes": -15.375,
+          "no": -25.375,
+          "unknown": -20.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.0,
+        "other_lp": -15.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 9.25,
+        "follow_conflict": -3.875,
+        "follow_context": -3.875,
+        "context_flip": 3.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 5.9375,
+        "follow_conflict": -1.75,
+        "follow_context": -1.75,
+        "context_flip": 1.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 10.0,
+        "follow_conflict": -4.625,
+        "follow_context": -4.625,
+        "context_flip": 4.625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 10.0,
+        "follow_conflict": -4.625,
+        "follow_context": -4.625,
+        "context_flip": 4.625
+      },
+      "base_nc_gold_margin": 3.875,
+      "ab_nc_gold_margin": 4.625,
+      "ctx_follow_context_gain": -2.875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -2.875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -2.875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -2.875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.75
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 2.875
+      }
+    },
+    {
+      "row_idx": 16,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -14.375,
+        "wrong_lp": -23.25,
+        "unknown_lp": -17.875,
+        "candidate_scores": {
+          "yes": -14.375,
+          "no": -23.25,
+          "unknown": -17.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.875,
+        "other_lp": -14.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -21.625,
+        "wrong_lp": -17.75,
+        "unknown_lp": -12.9375,
+        "candidate_scores": {
+          "yes": -21.625,
+          "no": -17.75,
+          "unknown": -12.9375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.9375,
+        "other_lp": -17.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -14.375,
+        "wrong_lp": -23.375,
+        "unknown_lp": -18.25,
+        "candidate_scores": {
+          "yes": -14.375,
+          "no": -23.375,
+          "unknown": -18.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.25,
+        "other_lp": -14.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -14.375,
+        "wrong_lp": -23.375,
+        "unknown_lp": -18.25,
+        "candidate_scores": {
+          "yes": -14.375,
+          "no": -23.375,
+          "unknown": -18.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.25,
+        "other_lp": -14.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.875,
+        "follow_conflict": -3.5,
+        "follow_context": -3.5,
+        "context_flip": 3.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -3.875,
+        "follow_conflict": 8.6875,
+        "follow_context": 4.8125,
+        "context_flip": -4.8125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.0,
+        "follow_conflict": -3.875,
+        "follow_context": -3.875,
+        "context_flip": 3.875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 9.0,
+        "follow_conflict": -3.875,
+        "follow_context": -3.875,
+        "context_flip": 3.875
+      },
+      "base_nc_gold_margin": 3.5,
+      "ab_nc_gold_margin": 3.875,
+      "ctx_follow_context_gain": -8.6875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -8.6875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -8.6875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -8.6875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 8.6875
+      }
+    },
+    {
+      "row_idx": 17,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.625,
+        "wrong_lp": -40.75,
+        "unknown_lp": -28.75,
+        "candidate_scores": {
+          "yes": -17.625,
+          "no": -40.75,
+          "unknown": -28.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -28.75,
+        "other_lp": -17.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -15.4375,
+        "wrong_lp": -23.25,
+        "unknown_lp": -16.75,
+        "candidate_scores": {
+          "yes": -15.4375,
+          "no": -23.25,
+          "unknown": -16.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.75,
+        "other_lp": -15.4375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -39.25,
+        "unknown_lp": -27.5,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -39.25,
+          "unknown": -27.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.5,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -39.25,
+        "unknown_lp": -27.5,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -39.25,
+          "unknown": -27.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.5,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 23.125,
+        "follow_conflict": -11.125,
+        "follow_context": -11.125,
+        "context_flip": 11.125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 7.8125,
+        "follow_conflict": -1.3125,
+        "follow_context": -1.3125,
+        "context_flip": 1.3125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 22.25,
+        "follow_conflict": -10.5,
+        "follow_context": -10.5,
+        "context_flip": 10.5
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 22.25,
+        "follow_conflict": -10.5,
+        "follow_context": -10.5,
+        "context_flip": 10.5
+      },
+      "base_nc_gold_margin": 11.125,
+      "ab_nc_gold_margin": 10.5,
+      "ctx_follow_context_gain": -9.1875,
+      "nc_gold_margin_damage": 0.625,
+      "hallucination_relief": -9.8125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -9.1875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -9.1875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 9.1875
+      }
+    },
+    {
+      "row_idx": 18,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.75,
+        "wrong_lp": -37.0,
+        "unknown_lp": -26.875,
+        "candidate_scores": {
+          "yes": -16.75,
+          "no": -37.0,
+          "unknown": -26.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.875,
+        "other_lp": -16.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -15.875,
+        "wrong_lp": -23.25,
+        "unknown_lp": -17.5,
+        "candidate_scores": {
+          "yes": -15.875,
+          "no": -23.25,
+          "unknown": -17.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.5,
+        "other_lp": -15.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.5,
+        "wrong_lp": -37.0,
+        "unknown_lp": -26.5,
+        "candidate_scores": {
+          "yes": -16.5,
+          "no": -37.0,
+          "unknown": -26.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.5,
+        "other_lp": -16.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.5,
+        "wrong_lp": -37.0,
+        "unknown_lp": -26.5,
+        "candidate_scores": {
+          "yes": -16.5,
+          "no": -37.0,
+          "unknown": -26.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.5,
+        "other_lp": -16.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 20.25,
+        "follow_conflict": -10.125,
+        "follow_context": -10.125,
+        "context_flip": 10.125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 7.375,
+        "follow_conflict": -1.625,
+        "follow_context": -1.625,
+        "context_flip": 1.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 20.5,
+        "follow_conflict": -10.0,
+        "follow_context": -10.0,
+        "context_flip": 10.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 20.5,
+        "follow_conflict": -10.0,
+        "follow_context": -10.0,
+        "context_flip": 10.0
+      },
+      "base_nc_gold_margin": 10.125,
+      "ab_nc_gold_margin": 10.0,
+      "ctx_follow_context_gain": -8.375,
+      "nc_gold_margin_damage": 0.125,
+      "hallucination_relief": -8.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -8.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -8.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 8.375
+      }
+    },
+    {
+      "row_idx": 19,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.4375,
+        "wrong_lp": -23.25,
+        "unknown_lp": -17.375,
+        "candidate_scores": {
+          "yes": -15.4375,
+          "no": -23.25,
+          "unknown": -17.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.375,
+        "other_lp": -15.4375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -19.0,
+        "wrong_lp": -19.125,
+        "unknown_lp": -14.0,
+        "candidate_scores": {
+          "yes": -19.0,
+          "no": -19.125,
+          "unknown": -14.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.0,
+        "other_lp": -19.0,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -24.75,
+        "unknown_lp": -18.25,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -24.75,
+          "unknown": -18.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.25,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -24.75,
+        "unknown_lp": -18.25,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -24.75,
+          "unknown": -18.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.25,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 7.8125,
+        "follow_conflict": -1.9375,
+        "follow_context": -1.9375,
+        "context_flip": 1.9375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 0.125,
+        "follow_conflict": 5.0,
+        "follow_context": 5.0,
+        "context_flip": -5.0
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.5,
+        "follow_conflict": -2.0,
+        "follow_context": -2.0,
+        "context_flip": 2.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 8.5,
+        "follow_conflict": -2.0,
+        "follow_context": -2.0,
+        "context_flip": 2.0
+      },
+      "base_nc_gold_margin": 1.9375,
+      "ab_nc_gold_margin": 2.0,
+      "ctx_follow_context_gain": -7.0,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -7.0,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -7.0
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -7.0
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 7.0
+      }
+    },
+    {
+      "row_idx": 20,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -32.0,
+        "unknown_lp": -22.875,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -32.0,
+          "unknown": -22.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.875,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -31.375,
+        "wrong_lp": -24.5,
+        "unknown_lp": -16.25,
+        "candidate_scores": {
+          "yes": -31.375,
+          "no": -24.5,
+          "unknown": -16.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.25,
+        "other_lp": -24.5,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.75,
+        "wrong_lp": -33.5,
+        "unknown_lp": -24.125,
+        "candidate_scores": {
+          "yes": -17.75,
+          "no": -33.5,
+          "unknown": -24.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -24.125,
+        "other_lp": -17.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.75,
+        "wrong_lp": -33.5,
+        "unknown_lp": -24.125,
+        "candidate_scores": {
+          "yes": -17.75,
+          "no": -33.5,
+          "unknown": -24.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -24.125,
+        "other_lp": -17.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 15.0,
+        "follow_conflict": -5.875,
+        "follow_context": -5.875,
+        "context_flip": 5.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -6.875,
+        "follow_conflict": 15.125,
+        "follow_context": 8.25,
+        "context_flip": -8.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 15.75,
+        "follow_conflict": -6.375,
+        "follow_context": -6.375,
+        "context_flip": 6.375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 15.75,
+        "follow_conflict": -6.375,
+        "follow_context": -6.375,
+        "context_flip": 6.375
+      },
+      "base_nc_gold_margin": 5.875,
+      "ab_nc_gold_margin": 6.375,
+      "ctx_follow_context_gain": -14.625,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -14.625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -14.625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -14.625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.5
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 14.625
+      }
+    },
+    {
+      "row_idx": 21,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.25,
+        "wrong_lp": -34.75,
+        "unknown_lp": -27.125,
+        "candidate_scores": {
+          "yes": -17.25,
+          "no": -34.75,
+          "unknown": -27.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.125,
+        "other_lp": -17.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -17.25,
+        "wrong_lp": -33.75,
+        "unknown_lp": -26.375,
+        "candidate_scores": {
+          "yes": -17.25,
+          "no": -33.75,
+          "unknown": -26.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.375,
+        "other_lp": -17.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.375,
+        "wrong_lp": -35.0,
+        "unknown_lp": -27.875,
+        "candidate_scores": {
+          "yes": -17.375,
+          "no": -35.0,
+          "unknown": -27.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.875,
+        "other_lp": -17.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.375,
+        "wrong_lp": -35.0,
+        "unknown_lp": -27.875,
+        "candidate_scores": {
+          "yes": -17.375,
+          "no": -35.0,
+          "unknown": -27.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.875,
+        "other_lp": -17.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 17.5,
+        "follow_conflict": -9.875,
+        "follow_context": -9.875,
+        "context_flip": 9.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 16.5,
+        "follow_conflict": -9.125,
+        "follow_context": -9.125,
+        "context_flip": 9.125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 17.625,
+        "follow_conflict": -10.5,
+        "follow_context": -10.5,
+        "context_flip": 10.5
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 17.625,
+        "follow_conflict": -10.5,
+        "follow_context": -10.5,
+        "context_flip": 10.5
+      },
+      "base_nc_gold_margin": 9.875,
+      "ab_nc_gold_margin": 10.5,
+      "ctx_follow_context_gain": -1.375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -1.375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -1.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -1.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.375
+      }
+    },
+    {
+      "row_idx": 22,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -27.0,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -27.0,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -29.25,
+        "wrong_lp": -21.375,
+        "unknown_lp": -15.0625,
+        "candidate_scores": {
+          "yes": -29.25,
+          "no": -21.375,
+          "unknown": -15.0625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.0625,
+        "other_lp": -21.375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -27.75,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -27.75,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -27.75,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -27.75,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 10.75,
+        "follow_conflict": -5.25,
+        "follow_context": -5.25,
+        "context_flip": 5.25
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -7.875,
+        "follow_conflict": 14.1875,
+        "follow_context": 6.3125,
+        "context_flip": -6.3125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.5,
+        "follow_conflict": -5.25,
+        "follow_context": -5.25,
+        "context_flip": 5.25
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 11.5,
+        "follow_conflict": -5.25,
+        "follow_context": -5.25,
+        "context_flip": 5.25
+      },
+      "base_nc_gold_margin": 5.25,
+      "ab_nc_gold_margin": 5.25,
+      "ctx_follow_context_gain": -11.5625,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -11.5625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -11.5625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -11.5625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 11.5625
+      }
+    },
+    {
+      "row_idx": 23,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -18.375,
+        "wrong_lp": -37.5,
+        "unknown_lp": -26.625,
+        "candidate_scores": {
+          "yes": -18.375,
+          "no": -37.5,
+          "unknown": -26.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.625,
+        "other_lp": -18.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -23.375,
+        "wrong_lp": -22.5,
+        "unknown_lp": -13.5,
+        "candidate_scores": {
+          "yes": -23.375,
+          "no": -22.5,
+          "unknown": -13.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.5,
+        "other_lp": -22.5,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -18.125,
+        "wrong_lp": -37.25,
+        "unknown_lp": -26.125,
+        "candidate_scores": {
+          "yes": -18.125,
+          "no": -37.25,
+          "unknown": -26.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.125,
+        "other_lp": -18.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -18.125,
+        "wrong_lp": -37.25,
+        "unknown_lp": -26.125,
+        "candidate_scores": {
+          "yes": -18.125,
+          "no": -37.25,
+          "unknown": -26.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.125,
+        "other_lp": -18.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 19.125,
+        "follow_conflict": -8.25,
+        "follow_context": -8.25,
+        "context_flip": 8.25
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -0.875,
+        "follow_conflict": 9.875,
+        "follow_context": 9.0,
+        "context_flip": -9.0
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 19.125,
+        "follow_conflict": -8.0,
+        "follow_context": -8.0,
+        "context_flip": 8.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 19.125,
+        "follow_conflict": -8.0,
+        "follow_context": -8.0,
+        "context_flip": 8.0
+      },
+      "base_nc_gold_margin": 8.25,
+      "ab_nc_gold_margin": 8.0,
+      "ctx_follow_context_gain": -17.0,
+      "nc_gold_margin_damage": 0.25,
+      "hallucination_relief": -17.25,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -17.0
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -17.0
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 17.0
+      }
+    },
+    {
+      "row_idx": 24,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.75,
+        "wrong_lp": -30.375,
+        "unknown_lp": -19.75,
+        "candidate_scores": {
+          "yes": -16.75,
+          "no": -30.375,
+          "unknown": -19.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -19.75,
+        "other_lp": -16.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -25.625,
+        "wrong_lp": -23.75,
+        "unknown_lp": -14.25,
+        "candidate_scores": {
+          "yes": -25.625,
+          "no": -23.75,
+          "unknown": -14.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.25,
+        "other_lp": -23.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -31.875,
+        "unknown_lp": -20.0,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -31.875,
+          "unknown": -20.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.0,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -31.875,
+        "unknown_lp": -20.0,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -31.875,
+          "unknown": -20.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.0,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 13.625,
+        "follow_conflict": -3.0,
+        "follow_context": -3.0,
+        "context_flip": 3.0
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -1.875,
+        "follow_conflict": 11.375,
+        "follow_context": 9.5,
+        "context_flip": -9.5
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 14.875,
+        "follow_conflict": -3.0,
+        "follow_context": -3.0,
+        "context_flip": 3.0
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 14.875,
+        "follow_conflict": -3.0,
+        "follow_context": -3.0,
+        "context_flip": 3.0
+      },
+      "base_nc_gold_margin": 3.0,
+      "ab_nc_gold_margin": 3.0,
+      "ctx_follow_context_gain": -12.5,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -12.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -12.5
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -12.5
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 12.5
+      }
+    },
+    {
+      "row_idx": 25,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -26.5,
+        "wrong_lp": -37.25,
+        "unknown_lp": -29.375,
+        "candidate_scores": {
+          "yes": -26.5,
+          "no": -37.25,
+          "unknown": -29.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.375,
+        "other_lp": -26.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -27.5,
+        "wrong_lp": -37.0,
+        "unknown_lp": -29.75,
+        "candidate_scores": {
+          "yes": -27.5,
+          "no": -37.0,
+          "unknown": -29.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -29.75,
+        "other_lp": -27.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -28.0,
+        "wrong_lp": -39.5,
+        "unknown_lp": -32.5,
+        "candidate_scores": {
+          "yes": -28.0,
+          "no": -39.5,
+          "unknown": -32.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -32.5,
+        "other_lp": -28.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -28.0,
+        "wrong_lp": -39.5,
+        "unknown_lp": -32.5,
+        "candidate_scores": {
+          "yes": -28.0,
+          "no": -39.5,
+          "unknown": -32.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -32.5,
+        "other_lp": -28.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 10.75,
+        "follow_conflict": -2.875,
+        "follow_context": -2.875,
+        "context_flip": 2.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 9.5,
+        "follow_conflict": -2.25,
+        "follow_context": -2.25,
+        "context_flip": 2.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.5,
+        "follow_conflict": -4.5,
+        "follow_context": -4.5,
+        "context_flip": 4.5
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 11.5,
+        "follow_conflict": -4.5,
+        "follow_context": -4.5,
+        "context_flip": 4.5
+      },
+      "base_nc_gold_margin": 2.875,
+      "ab_nc_gold_margin": 4.5,
+      "ctx_follow_context_gain": -2.25,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -2.25,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -2.25
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -2.25
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 2.25
+      }
+    },
+    {
+      "row_idx": 26,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.125,
+        "wrong_lp": -28.125,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -15.125,
+          "no": -28.125,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -15.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -15.125,
+        "wrong_lp": -28.0,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -15.125,
+          "no": -28.0,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -15.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.0,
+        "wrong_lp": -30.375,
+        "unknown_lp": -22.5,
+        "candidate_scores": {
+          "yes": -16.0,
+          "no": -30.375,
+          "unknown": -22.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.5,
+        "other_lp": -16.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.0,
+        "wrong_lp": -30.375,
+        "unknown_lp": -22.5,
+        "candidate_scores": {
+          "yes": -16.0,
+          "no": -30.375,
+          "unknown": -22.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.5,
+        "other_lp": -16.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 13.0,
+        "follow_conflict": -5.875,
+        "follow_context": -5.875,
+        "context_flip": 5.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 12.875,
+        "follow_conflict": -5.625,
+        "follow_context": -5.625,
+        "context_flip": 5.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 14.375,
+        "follow_conflict": -6.5,
+        "follow_context": -6.5,
+        "context_flip": 6.5
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 14.375,
+        "follow_conflict": -6.5,
+        "follow_context": -6.5,
+        "context_flip": 6.5
+      },
+      "base_nc_gold_margin": 5.875,
+      "ab_nc_gold_margin": 6.5,
+      "ctx_follow_context_gain": -0.875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -0.875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -0.875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -0.875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.875
+      }
+    },
+    {
+      "row_idx": 27,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.625,
+        "wrong_lp": -28.25,
+        "unknown_lp": -19.375,
+        "candidate_scores": {
+          "yes": -16.625,
+          "no": -28.25,
+          "unknown": -19.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -19.375,
+        "other_lp": -16.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -16.125,
+        "wrong_lp": -26.25,
+        "unknown_lp": -18.75,
+        "candidate_scores": {
+          "yes": -16.125,
+          "no": -26.25,
+          "unknown": -18.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.75,
+        "other_lp": -16.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -30.25,
+        "unknown_lp": -20.625,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -30.25,
+          "unknown": -20.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.625,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -30.25,
+        "unknown_lp": -20.625,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -30.25,
+          "unknown": -20.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.625,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 11.625,
+        "follow_conflict": -2.75,
+        "follow_context": -2.75,
+        "context_flip": 2.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 10.125,
+        "follow_conflict": -2.625,
+        "follow_context": -2.625,
+        "context_flip": 2.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 13.25,
+        "follow_conflict": -3.625,
+        "follow_context": -3.625,
+        "context_flip": 3.625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 13.25,
+        "follow_conflict": -3.625,
+        "follow_context": -3.625,
+        "context_flip": 3.625
+      },
+      "base_nc_gold_margin": 2.75,
+      "ab_nc_gold_margin": 3.625,
+      "ctx_follow_context_gain": -1.0,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -1.0,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -1.0
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -1.0
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.0
+      }
+    },
+    {
+      "row_idx": 28,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.875,
+        "wrong_lp": -32.0,
+        "unknown_lp": -24.5,
+        "candidate_scores": {
+          "yes": -15.875,
+          "no": -32.0,
+          "unknown": -24.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -24.5,
+        "other_lp": -15.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -33.5,
+        "unknown_lp": -25.625,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -33.5,
+          "unknown": -25.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -25.625,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.75,
+        "wrong_lp": -32.25,
+        "unknown_lp": -24.625,
+        "candidate_scores": {
+          "yes": -15.75,
+          "no": -32.25,
+          "unknown": -24.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -24.625,
+        "other_lp": -15.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.75,
+        "wrong_lp": -32.25,
+        "unknown_lp": -24.625,
+        "candidate_scores": {
+          "yes": -15.75,
+          "no": -32.25,
+          "unknown": -24.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -24.625,
+        "other_lp": -15.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 16.125,
+        "follow_conflict": -8.625,
+        "follow_context": -8.625,
+        "context_flip": 8.625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 17.125,
+        "follow_conflict": -9.25,
+        "follow_context": -9.25,
+        "context_flip": 9.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 16.5,
+        "follow_conflict": -8.875,
+        "follow_context": -8.875,
+        "context_flip": 8.875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 16.5,
+        "follow_conflict": -8.875,
+        "follow_context": -8.875,
+        "context_flip": 8.875
+      },
+      "base_nc_gold_margin": 8.625,
+      "ab_nc_gold_margin": 8.875,
+      "ctx_follow_context_gain": 0.375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": 0.375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.375
+      }
+    },
+    {
+      "row_idx": 29,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -13.0625,
+        "wrong_lp": -17.0,
+        "unknown_lp": -13.5625,
+        "candidate_scores": {
+          "yes": -13.0625,
+          "no": -17.0,
+          "unknown": -13.5625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.5625,
+        "other_lp": -13.0625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -36.5,
+        "wrong_lp": -29.5,
+        "unknown_lp": -15.875,
+        "candidate_scores": {
+          "yes": -36.5,
+          "no": -29.5,
+          "unknown": -15.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.875,
+        "other_lp": -29.5,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -13.0625,
+        "wrong_lp": -17.0,
+        "unknown_lp": -13.5625,
+        "candidate_scores": {
+          "yes": -13.0625,
+          "no": -17.0,
+          "unknown": -13.5625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.5625,
+        "other_lp": -13.0625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -13.0625,
+        "wrong_lp": -17.0,
+        "unknown_lp": -13.5625,
+        "candidate_scores": {
+          "yes": -13.0625,
+          "no": -17.0,
+          "unknown": -13.5625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.5625,
+        "other_lp": -13.0625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 3.9375,
+        "follow_conflict": -0.5,
+        "follow_context": -0.5,
+        "context_flip": 0.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -7.0,
+        "follow_conflict": 20.625,
+        "follow_context": 13.625,
+        "context_flip": -13.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 3.9375,
+        "follow_conflict": -0.5,
+        "follow_context": -0.5,
+        "context_flip": 0.5
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 3.9375,
+        "follow_conflict": -0.5,
+        "follow_context": -0.5,
+        "context_flip": 0.5
+      },
+      "base_nc_gold_margin": 0.5,
+      "ab_nc_gold_margin": 0.5,
+      "ctx_follow_context_gain": -14.125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -14.125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -14.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -14.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 14.125
+      }
+    },
+    {
+      "row_idx": 30,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.875,
+        "wrong_lp": -24.0,
+        "unknown_lp": -18.5,
+        "candidate_scores": {
+          "yes": -15.875,
+          "no": -24.0,
+          "unknown": -18.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.5,
+        "other_lp": -15.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -20.0,
+        "wrong_lp": -17.625,
+        "unknown_lp": -13.375,
+        "candidate_scores": {
+          "yes": -20.0,
+          "no": -17.625,
+          "unknown": -13.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.375,
+        "other_lp": -17.625,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.5,
+        "wrong_lp": -26.875,
+        "unknown_lp": -20.625,
+        "candidate_scores": {
+          "yes": -17.5,
+          "no": -26.875,
+          "unknown": -20.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.625,
+        "other_lp": -17.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.5,
+        "wrong_lp": -26.875,
+        "unknown_lp": -20.625,
+        "candidate_scores": {
+          "yes": -17.5,
+          "no": -26.875,
+          "unknown": -20.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.625,
+        "other_lp": -17.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.125,
+        "follow_conflict": -2.625,
+        "follow_context": -2.625,
+        "context_flip": 2.625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -2.375,
+        "follow_conflict": 6.625,
+        "follow_context": 4.25,
+        "context_flip": -4.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.375,
+        "follow_conflict": -3.125,
+        "follow_context": -3.125,
+        "context_flip": 3.125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 9.375,
+        "follow_conflict": -3.125,
+        "follow_context": -3.125,
+        "context_flip": 3.125
+      },
+      "base_nc_gold_margin": 2.625,
+      "ab_nc_gold_margin": 3.125,
+      "ctx_follow_context_gain": -7.375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -7.375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -7.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -7.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.5
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 7.375
+      }
+    },
+    {
+      "row_idx": 31,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.5,
+        "wrong_lp": -27.75,
+        "unknown_lp": -20.0,
+        "candidate_scores": {
+          "yes": -16.5,
+          "no": -27.75,
+          "unknown": -20.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.0,
+        "other_lp": -16.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -21.0,
+        "wrong_lp": -20.875,
+        "unknown_lp": -13.125,
+        "candidate_scores": {
+          "yes": -21.0,
+          "no": -20.875,
+          "unknown": -13.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.125,
+        "other_lp": -20.875,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.625,
+        "wrong_lp": -28.875,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -16.625,
+          "no": -28.875,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -16.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.625,
+        "wrong_lp": -28.875,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -16.625,
+          "no": -28.875,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -16.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 11.25,
+        "follow_conflict": -3.5,
+        "follow_context": -3.5,
+        "context_flip": 3.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -0.125,
+        "follow_conflict": 7.875,
+        "follow_context": 7.75,
+        "context_flip": -7.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 12.25,
+        "follow_conflict": -4.375,
+        "follow_context": -4.375,
+        "context_flip": 4.375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 12.25,
+        "follow_conflict": -4.375,
+        "follow_context": -4.375,
+        "context_flip": 4.375
+      },
+      "base_nc_gold_margin": 3.5,
+      "ab_nc_gold_margin": 4.375,
+      "ctx_follow_context_gain": -12.125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -12.125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -12.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -12.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 12.125
+      }
+    },
+    {
+      "row_idx": 32,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.5,
+        "wrong_lp": -38.0,
+        "unknown_lp": -34.0,
+        "candidate_scores": {
+          "yes": -16.5,
+          "no": -38.0,
+          "unknown": -34.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -34.0,
+        "other_lp": -16.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -37.75,
+        "wrong_lp": -25.25,
+        "unknown_lp": -16.375,
+        "candidate_scores": {
+          "yes": -37.75,
+          "no": -25.25,
+          "unknown": -16.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.375,
+        "other_lp": -25.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -37.25,
+        "unknown_lp": -33.5,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -37.25,
+          "unknown": -33.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -33.5,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -37.25,
+        "unknown_lp": -33.5,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -37.25,
+          "unknown": -33.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -33.5,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 21.5,
+        "follow_conflict": -17.5,
+        "follow_context": -17.5,
+        "context_flip": 17.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -12.5,
+        "follow_conflict": 21.375,
+        "follow_context": 8.875,
+        "context_flip": -8.875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 21.0,
+        "follow_conflict": -17.25,
+        "follow_context": -17.25,
+        "context_flip": 17.25
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 21.0,
+        "follow_conflict": -17.25,
+        "follow_context": -17.25,
+        "context_flip": 17.25
+      },
+      "base_nc_gold_margin": 17.5,
+      "ab_nc_gold_margin": 17.25,
+      "ctx_follow_context_gain": -26.125,
+      "nc_gold_margin_damage": 0.25,
+      "hallucination_relief": -26.375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -26.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -26.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 26.125
+      }
+    },
+    {
+      "row_idx": 33,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.125,
+        "wrong_lp": -27.875,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -16.125,
+          "no": -27.875,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -16.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -38.5,
+        "wrong_lp": -27.75,
+        "unknown_lp": -15.625,
+        "candidate_scores": {
+          "yes": -38.5,
+          "no": -27.75,
+          "unknown": -15.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.625,
+        "other_lp": -27.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.875,
+        "wrong_lp": -27.5,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -15.875,
+          "no": -27.5,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -15.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.875,
+        "wrong_lp": -27.5,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -15.875,
+          "no": -27.5,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -15.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 11.75,
+        "follow_conflict": -5.375,
+        "follow_context": -5.375,
+        "context_flip": 5.375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -10.75,
+        "follow_conflict": 22.875,
+        "follow_context": 12.125,
+        "context_flip": -12.125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.625,
+        "follow_conflict": -5.125,
+        "follow_context": -5.125,
+        "context_flip": 5.125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 11.625,
+        "follow_conflict": -5.125,
+        "follow_context": -5.125,
+        "context_flip": 5.125
+      },
+      "base_nc_gold_margin": 5.375,
+      "ab_nc_gold_margin": 5.125,
+      "ctx_follow_context_gain": -17.25,
+      "nc_gold_margin_damage": 0.25,
+      "hallucination_relief": -17.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -17.25
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -17.25
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 17.25
+      }
+    },
+    {
+      "row_idx": 34,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -13.875,
+        "wrong_lp": -19.5,
+        "unknown_lp": -18.5,
+        "candidate_scores": {
+          "yes": -13.875,
+          "no": -19.5,
+          "unknown": -18.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.5,
+        "other_lp": -13.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -21.0,
+        "wrong_lp": -16.125,
+        "unknown_lp": -13.6875,
+        "candidate_scores": {
+          "yes": -21.0,
+          "no": -16.125,
+          "unknown": -13.6875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.6875,
+        "other_lp": -16.125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -14.0,
+        "wrong_lp": -19.625,
+        "unknown_lp": -18.75,
+        "candidate_scores": {
+          "yes": -14.0,
+          "no": -19.625,
+          "unknown": -18.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.75,
+        "other_lp": -14.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -14.0,
+        "wrong_lp": -19.625,
+        "unknown_lp": -18.75,
+        "candidate_scores": {
+          "yes": -14.0,
+          "no": -19.625,
+          "unknown": -18.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.75,
+        "other_lp": -14.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 5.625,
+        "follow_conflict": -4.625,
+        "follow_context": -4.625,
+        "context_flip": 4.625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -4.875,
+        "follow_conflict": 7.3125,
+        "follow_context": 2.4375,
+        "context_flip": -2.4375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 5.625,
+        "follow_conflict": -4.75,
+        "follow_context": -4.75,
+        "context_flip": 4.75
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 5.625,
+        "follow_conflict": -4.75,
+        "follow_context": -4.75,
+        "context_flip": 4.75
+      },
+      "base_nc_gold_margin": 4.625,
+      "ab_nc_gold_margin": 4.75,
+      "ctx_follow_context_gain": -7.1875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -7.1875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -7.1875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -7.1875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 7.1875
+      }
+    },
+    {
+      "row_idx": 35,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -14.9375,
+        "wrong_lp": -24.0,
+        "unknown_lp": -16.625,
+        "candidate_scores": {
+          "yes": -14.9375,
+          "no": -24.0,
+          "unknown": -16.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.625,
+        "other_lp": -14.9375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.5625,
+        "wrong_lp": -22.5,
+        "unknown_lp": -15.8125,
+        "candidate_scores": {
+          "yes": -14.5625,
+          "no": -22.5,
+          "unknown": -15.8125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.8125,
+        "other_lp": -14.5625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.3125,
+        "wrong_lp": -25.0,
+        "unknown_lp": -17.0,
+        "candidate_scores": {
+          "yes": -15.3125,
+          "no": -25.0,
+          "unknown": -17.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.0,
+        "other_lp": -15.3125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.3125,
+        "wrong_lp": -25.0,
+        "unknown_lp": -17.0,
+        "candidate_scores": {
+          "yes": -15.3125,
+          "no": -25.0,
+          "unknown": -17.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.0,
+        "other_lp": -15.3125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 9.0625,
+        "follow_conflict": -1.6875,
+        "follow_context": -1.6875,
+        "context_flip": 1.6875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 7.9375,
+        "follow_conflict": -1.25,
+        "follow_context": -1.25,
+        "context_flip": 1.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.6875,
+        "follow_conflict": -1.6875,
+        "follow_context": -1.6875,
+        "context_flip": 1.6875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 9.6875,
+        "follow_conflict": -1.6875,
+        "follow_context": -1.6875,
+        "context_flip": 1.6875
+      },
+      "base_nc_gold_margin": 1.6875,
+      "ab_nc_gold_margin": 1.6875,
+      "ctx_follow_context_gain": -0.4375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -0.4375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -0.4375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -0.4375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.4375
+      }
+    },
+    {
+      "row_idx": 36,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.5,
+        "wrong_lp": -34.5,
+        "unknown_lp": -24.5,
+        "candidate_scores": {
+          "yes": -17.5,
+          "no": -34.5,
+          "unknown": -24.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -24.5,
+        "other_lp": -17.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -31.5,
+        "wrong_lp": -25.25,
+        "unknown_lp": -14.75,
+        "candidate_scores": {
+          "yes": -31.5,
+          "no": -25.25,
+          "unknown": -14.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.75,
+        "other_lp": -25.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -33.25,
+        "unknown_lp": -23.625,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -33.25,
+          "unknown": -23.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.625,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -33.25,
+        "unknown_lp": -23.625,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -33.25,
+          "unknown": -23.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.625,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 17.0,
+        "follow_conflict": -7.0,
+        "follow_context": -7.0,
+        "context_flip": 7.0
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -6.25,
+        "follow_conflict": 16.75,
+        "follow_context": 10.5,
+        "context_flip": -10.5
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 16.25,
+        "follow_conflict": -6.625,
+        "follow_context": -6.625,
+        "context_flip": 6.625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 16.25,
+        "follow_conflict": -6.625,
+        "follow_context": -6.625,
+        "context_flip": 6.625
+      },
+      "base_nc_gold_margin": 7.0,
+      "ab_nc_gold_margin": 6.625,
+      "ctx_follow_context_gain": -17.125,
+      "nc_gold_margin_damage": 0.375,
+      "hallucination_relief": -17.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -17.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -17.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 17.125
+      }
+    },
+    {
+      "row_idx": 37,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.5,
+        "wrong_lp": -32.5,
+        "unknown_lp": -20.625,
+        "candidate_scores": {
+          "yes": -16.5,
+          "no": -32.5,
+          "unknown": -20.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.625,
+        "other_lp": -16.5,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -16.375,
+        "wrong_lp": -32.0,
+        "unknown_lp": -19.5,
+        "candidate_scores": {
+          "yes": -16.375,
+          "no": -32.0,
+          "unknown": -19.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -19.5,
+        "other_lp": -16.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.625,
+        "wrong_lp": -35.75,
+        "unknown_lp": -22.375,
+        "candidate_scores": {
+          "yes": -17.625,
+          "no": -35.75,
+          "unknown": -22.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.375,
+        "other_lp": -17.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.625,
+        "wrong_lp": -35.75,
+        "unknown_lp": -22.375,
+        "candidate_scores": {
+          "yes": -17.625,
+          "no": -35.75,
+          "unknown": -22.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.375,
+        "other_lp": -17.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 16.0,
+        "follow_conflict": -4.125,
+        "follow_context": -4.125,
+        "context_flip": 4.125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 15.625,
+        "follow_conflict": -3.125,
+        "follow_context": -3.125,
+        "context_flip": 3.125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 18.125,
+        "follow_conflict": -4.75,
+        "follow_context": -4.75,
+        "context_flip": 4.75
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 18.125,
+        "follow_conflict": -4.75,
+        "follow_context": -4.75,
+        "context_flip": 4.75
+      },
+      "base_nc_gold_margin": 4.125,
+      "ab_nc_gold_margin": 4.75,
+      "ctx_follow_context_gain": -1.625,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -1.625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -1.625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -1.625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.625
+      }
+    },
+    {
+      "row_idx": 38,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -14.875,
+        "wrong_lp": -20.25,
+        "unknown_lp": -17.375,
+        "candidate_scores": {
+          "yes": -14.875,
+          "no": -20.25,
+          "unknown": -17.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.375,
+        "other_lp": -14.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.9375,
+        "wrong_lp": -20.625,
+        "unknown_lp": -15.8125,
+        "candidate_scores": {
+          "yes": -14.9375,
+          "no": -20.625,
+          "unknown": -15.8125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.8125,
+        "other_lp": -14.9375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -14.875,
+        "wrong_lp": -20.375,
+        "unknown_lp": -17.625,
+        "candidate_scores": {
+          "yes": -14.875,
+          "no": -20.375,
+          "unknown": -17.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.625,
+        "other_lp": -14.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -14.875,
+        "wrong_lp": -20.375,
+        "unknown_lp": -17.625,
+        "candidate_scores": {
+          "yes": -14.875,
+          "no": -20.375,
+          "unknown": -17.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.625,
+        "other_lp": -14.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 5.375,
+        "follow_conflict": -2.5,
+        "follow_context": -2.5,
+        "context_flip": 2.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 5.6875,
+        "follow_conflict": -0.875,
+        "follow_context": -0.875,
+        "context_flip": 0.875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 5.5,
+        "follow_conflict": -2.75,
+        "follow_context": -2.75,
+        "context_flip": 2.75
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 5.5,
+        "follow_conflict": -2.75,
+        "follow_context": -2.75,
+        "context_flip": 2.75
+      },
+      "base_nc_gold_margin": 2.5,
+      "ab_nc_gold_margin": 2.75,
+      "ctx_follow_context_gain": -1.875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -1.875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -1.875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -1.875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.875
+      }
+    },
+    {
+      "row_idx": 39,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.625,
+        "wrong_lp": -38.75,
+        "unknown_lp": -27.375,
+        "candidate_scores": {
+          "yes": -17.625,
+          "no": -38.75,
+          "unknown": -27.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.375,
+        "other_lp": -17.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -37.0,
+        "wrong_lp": -31.375,
+        "unknown_lp": -16.5,
+        "candidate_scores": {
+          "yes": -37.0,
+          "no": -31.375,
+          "unknown": -16.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.5,
+        "other_lp": -31.375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.75,
+        "wrong_lp": -37.0,
+        "unknown_lp": -26.125,
+        "candidate_scores": {
+          "yes": -16.75,
+          "no": -37.0,
+          "unknown": -26.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.125,
+        "other_lp": -16.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.75,
+        "wrong_lp": -37.0,
+        "unknown_lp": -26.125,
+        "candidate_scores": {
+          "yes": -16.75,
+          "no": -37.0,
+          "unknown": -26.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.125,
+        "other_lp": -16.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 21.125,
+        "follow_conflict": -9.75,
+        "follow_context": -9.75,
+        "context_flip": 9.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -5.625,
+        "follow_conflict": 20.5,
+        "follow_context": 14.875,
+        "context_flip": -14.875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 20.25,
+        "follow_conflict": -9.375,
+        "follow_context": -9.375,
+        "context_flip": 9.375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 20.25,
+        "follow_conflict": -9.375,
+        "follow_context": -9.375,
+        "context_flip": 9.375
+      },
+      "base_nc_gold_margin": 9.75,
+      "ab_nc_gold_margin": 9.375,
+      "ctx_follow_context_gain": -24.25,
+      "nc_gold_margin_damage": 0.375,
+      "hallucination_relief": -24.625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -24.25
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -24.25
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 24.25
+      }
+    },
+    {
+      "row_idx": 40,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.125,
+        "wrong_lp": -34.5,
+        "unknown_lp": -28.875,
+        "candidate_scores": {
+          "yes": -17.125,
+          "no": -34.5,
+          "unknown": -28.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -28.875,
+        "other_lp": -17.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -15.0625,
+        "wrong_lp": -16.25,
+        "unknown_lp": -11.9375,
+        "candidate_scores": {
+          "yes": -15.0625,
+          "no": -16.25,
+          "unknown": -11.9375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.9375,
+        "other_lp": -15.0625,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -35.75,
+        "unknown_lp": -30.625,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -35.75,
+          "unknown": -30.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.625,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -35.75,
+        "unknown_lp": -30.625,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -35.75,
+          "unknown": -30.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -30.625,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 17.375,
+        "follow_conflict": -11.75,
+        "follow_context": -11.75,
+        "context_flip": 11.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 1.1875,
+        "follow_conflict": 3.125,
+        "follow_context": 3.125,
+        "context_flip": -3.125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 18.75,
+        "follow_conflict": -13.625,
+        "follow_context": -13.625,
+        "context_flip": 13.625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 18.75,
+        "follow_conflict": -13.625,
+        "follow_context": -13.625,
+        "context_flip": 13.625
+      },
+      "base_nc_gold_margin": 11.75,
+      "ab_nc_gold_margin": 13.625,
+      "ctx_follow_context_gain": -16.75,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -16.75,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -16.75
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -16.75
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 16.75
+      }
+    },
+    {
+      "row_idx": 41,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -14.6875,
+        "wrong_lp": -22.0,
+        "unknown_lp": -18.5,
+        "candidate_scores": {
+          "yes": -14.6875,
+          "no": -22.0,
+          "unknown": -18.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.5,
+        "other_lp": -14.6875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -15.25,
+        "wrong_lp": -20.75,
+        "unknown_lp": -15.875,
+        "candidate_scores": {
+          "yes": -15.25,
+          "no": -20.75,
+          "unknown": -15.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.875,
+        "other_lp": -15.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -14.4375,
+        "wrong_lp": -21.5,
+        "unknown_lp": -18.375,
+        "candidate_scores": {
+          "yes": -14.4375,
+          "no": -21.5,
+          "unknown": -18.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.375,
+        "other_lp": -14.4375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -14.4375,
+        "wrong_lp": -21.5,
+        "unknown_lp": -18.375,
+        "candidate_scores": {
+          "yes": -14.4375,
+          "no": -21.5,
+          "unknown": -18.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -18.375,
+        "other_lp": -14.4375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 7.3125,
+        "follow_conflict": -3.8125,
+        "follow_context": -3.8125,
+        "context_flip": 3.8125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 5.5,
+        "follow_conflict": -0.625,
+        "follow_context": -0.625,
+        "context_flip": 0.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 7.0625,
+        "follow_conflict": -3.9375,
+        "follow_context": -3.9375,
+        "context_flip": 3.9375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 7.0625,
+        "follow_conflict": -3.9375,
+        "follow_context": -3.9375,
+        "context_flip": 3.9375
+      },
+      "base_nc_gold_margin": 3.8125,
+      "ab_nc_gold_margin": 3.9375,
+      "ctx_follow_context_gain": -3.3125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -3.3125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -3.3125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -3.3125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 3.3125
+      }
+    },
+    {
+      "row_idx": 42,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -35.0,
+        "unknown_lp": -27.125,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -35.0,
+          "unknown": -27.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.125,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -37.5,
+        "wrong_lp": -24.75,
+        "unknown_lp": -16.0,
+        "candidate_scores": {
+          "yes": -37.5,
+          "no": -24.75,
+          "unknown": -16.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.0,
+        "other_lp": -24.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -35.75,
+        "unknown_lp": -27.125,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -35.75,
+          "unknown": -27.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.125,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.25,
+        "wrong_lp": -35.75,
+        "unknown_lp": -27.125,
+        "candidate_scores": {
+          "yes": -16.25,
+          "no": -35.75,
+          "unknown": -27.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.125,
+        "other_lp": -16.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 18.75,
+        "follow_conflict": -10.875,
+        "follow_context": -10.875,
+        "context_flip": 10.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -12.75,
+        "follow_conflict": 21.5,
+        "follow_context": 8.75,
+        "context_flip": -8.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 19.5,
+        "follow_conflict": -10.875,
+        "follow_context": -10.875,
+        "context_flip": 10.875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 19.5,
+        "follow_conflict": -10.875,
+        "follow_context": -10.875,
+        "context_flip": 10.875
+      },
+      "base_nc_gold_margin": 10.875,
+      "ab_nc_gold_margin": 10.875,
+      "ctx_follow_context_gain": -19.625,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -19.625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -19.625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -19.625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 19.625
+      }
+    },
+    {
+      "row_idx": 43,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -28.625,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -28.625,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -30.875,
+        "wrong_lp": -22.125,
+        "unknown_lp": -15.125,
+        "candidate_scores": {
+          "yes": -30.875,
+          "no": -22.125,
+          "unknown": -15.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.125,
+        "other_lp": -22.125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -28.875,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -28.875,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -28.875,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -28.875,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 11.625,
+        "follow_conflict": -4.0,
+        "follow_context": -4.0,
+        "context_flip": 4.0
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -8.75,
+        "follow_conflict": 15.75,
+        "follow_context": 7.0,
+        "context_flip": -7.0
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.875,
+        "follow_conflict": -3.75,
+        "follow_context": -3.75,
+        "context_flip": 3.75
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 11.875,
+        "follow_conflict": -3.75,
+        "follow_context": -3.75,
+        "context_flip": 3.75
+      },
+      "base_nc_gold_margin": 4.0,
+      "ab_nc_gold_margin": 3.75,
+      "ctx_follow_context_gain": -10.75,
+      "nc_gold_margin_damage": 0.25,
+      "hallucination_relief": -11.0,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -10.75
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -10.75
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 10.75
+      }
+    },
+    {
+      "row_idx": 44,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.875,
+        "wrong_lp": -24.875,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -16.875,
+          "no": -24.875,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -16.875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -15.75,
+        "wrong_lp": -20.125,
+        "unknown_lp": -15.375,
+        "candidate_scores": {
+          "yes": -15.75,
+          "no": -20.125,
+          "unknown": -15.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.375,
+        "other_lp": -15.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -16.625,
+        "wrong_lp": -24.75,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -16.625,
+          "no": -24.75,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -16.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.625,
+        "wrong_lp": -24.75,
+        "unknown_lp": -20.75,
+        "candidate_scores": {
+          "yes": -16.625,
+          "no": -24.75,
+          "unknown": -20.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.75,
+        "other_lp": -16.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.0,
+        "follow_conflict": -3.875,
+        "follow_context": -3.875,
+        "context_flip": 3.875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 4.375,
+        "follow_conflict": 0.375,
+        "follow_context": 0.375,
+        "context_flip": -0.375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.125,
+        "follow_conflict": -4.125,
+        "follow_context": -4.125,
+        "context_flip": 4.125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 8.125,
+        "follow_conflict": -4.125,
+        "follow_context": -4.125,
+        "context_flip": 4.125
+      },
+      "base_nc_gold_margin": 3.875,
+      "ab_nc_gold_margin": 4.125,
+      "ctx_follow_context_gain": -4.5,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -4.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -4.5
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -4.5
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 4.5
+      }
+    },
+    {
+      "row_idx": 45,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.375,
+        "wrong_lp": -24.625,
+        "unknown_lp": -21.875,
+        "candidate_scores": {
+          "yes": -15.375,
+          "no": -24.625,
+          "unknown": -21.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.875,
+        "other_lp": -15.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -14.25,
+        "wrong_lp": -16.625,
+        "unknown_lp": -13.25,
+        "candidate_scores": {
+          "yes": -14.25,
+          "no": -16.625,
+          "unknown": -13.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.25,
+        "other_lp": -14.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.0625,
+        "wrong_lp": -24.375,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -15.0625,
+          "no": -24.375,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -15.0625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.0625,
+        "wrong_lp": -24.375,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -15.0625,
+          "no": -24.375,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -15.0625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 9.25,
+        "follow_conflict": -6.5,
+        "follow_context": -6.5,
+        "context_flip": 6.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 2.375,
+        "follow_conflict": 1.0,
+        "follow_context": 1.0,
+        "context_flip": -1.0
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.3125,
+        "follow_conflict": -6.4375,
+        "follow_context": -6.4375,
+        "context_flip": 6.4375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 9.3125,
+        "follow_conflict": -6.4375,
+        "follow_context": -6.4375,
+        "context_flip": 6.4375
+      },
+      "base_nc_gold_margin": 6.5,
+      "ab_nc_gold_margin": 6.4375,
+      "ctx_follow_context_gain": -7.4375,
+      "nc_gold_margin_damage": 0.0625,
+      "hallucination_relief": -7.5,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -7.4375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -7.4375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.0625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 7.4375
+      }
+    },
+    {
+      "row_idx": 46,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -17.0,
+        "wrong_lp": -28.0,
+        "unknown_lp": -21.125,
+        "candidate_scores": {
+          "yes": -17.0,
+          "no": -28.0,
+          "unknown": -21.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.125,
+        "other_lp": -17.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -26.375,
+        "wrong_lp": -25.75,
+        "unknown_lp": -15.0,
+        "candidate_scores": {
+          "yes": -26.375,
+          "no": -25.75,
+          "unknown": -15.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.0,
+        "other_lp": -25.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -17.125,
+        "wrong_lp": -28.625,
+        "unknown_lp": -21.375,
+        "candidate_scores": {
+          "yes": -17.125,
+          "no": -28.625,
+          "unknown": -21.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.375,
+        "other_lp": -17.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.125,
+        "wrong_lp": -28.625,
+        "unknown_lp": -21.375,
+        "candidate_scores": {
+          "yes": -17.125,
+          "no": -28.625,
+          "unknown": -21.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.375,
+        "other_lp": -17.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 11.0,
+        "follow_conflict": -4.125,
+        "follow_context": -4.125,
+        "context_flip": 4.125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -0.625,
+        "follow_conflict": 11.375,
+        "follow_context": 10.75,
+        "context_flip": -10.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.5,
+        "follow_conflict": -4.25,
+        "follow_context": -4.25,
+        "context_flip": 4.25
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 11.5,
+        "follow_conflict": -4.25,
+        "follow_context": -4.25,
+        "context_flip": 4.25
+      },
+      "base_nc_gold_margin": 4.125,
+      "ab_nc_gold_margin": 4.25,
+      "ctx_follow_context_gain": -15.0,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -15.0,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -15.0
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -15.0
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 15.0
+      }
+    },
+    {
+      "row_idx": 47,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -18.0,
+        "wrong_lp": -31.0,
+        "unknown_lp": -20.625,
+        "candidate_scores": {
+          "yes": -18.0,
+          "no": -31.0,
+          "unknown": -20.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.625,
+        "other_lp": -18.0,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -36.75,
+        "wrong_lp": -27.75,
+        "unknown_lp": -16.625,
+        "candidate_scores": {
+          "yes": -36.75,
+          "no": -27.75,
+          "unknown": -16.625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.625,
+        "other_lp": -27.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -18.25,
+        "wrong_lp": -32.25,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -18.25,
+          "no": -32.25,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -18.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -18.25,
+        "wrong_lp": -32.25,
+        "unknown_lp": -21.5,
+        "candidate_scores": {
+          "yes": -18.25,
+          "no": -32.25,
+          "unknown": -21.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.5,
+        "other_lp": -18.25,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 13.0,
+        "follow_conflict": -2.625,
+        "follow_context": -2.625,
+        "context_flip": 2.625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -9.0,
+        "follow_conflict": 20.125,
+        "follow_context": 11.125,
+        "context_flip": -11.125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 14.0,
+        "follow_conflict": -3.25,
+        "follow_context": -3.25,
+        "context_flip": 3.25
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 14.0,
+        "follow_conflict": -3.25,
+        "follow_context": -3.25,
+        "context_flip": 3.25
+      },
+      "base_nc_gold_margin": 2.625,
+      "ab_nc_gold_margin": 3.25,
+      "ctx_follow_context_gain": -14.375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -14.375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -14.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -14.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 14.375
+      }
+    },
+    {
+      "row_idx": 48,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -16.125,
+        "wrong_lp": -34.25,
+        "unknown_lp": -24.125,
+        "candidate_scores": {
+          "yes": -16.125,
+          "no": -34.25,
+          "unknown": -24.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -24.125,
+        "other_lp": -16.125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -36.5,
+        "wrong_lp": -28.75,
+        "unknown_lp": -16.125,
+        "candidate_scores": {
+          "yes": -36.5,
+          "no": -28.75,
+          "unknown": -16.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.125,
+        "other_lp": -28.75,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.75,
+        "wrong_lp": -33.75,
+        "unknown_lp": -23.5,
+        "candidate_scores": {
+          "yes": -15.75,
+          "no": -33.75,
+          "unknown": -23.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.5,
+        "other_lp": -15.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.75,
+        "wrong_lp": -33.75,
+        "unknown_lp": -23.5,
+        "candidate_scores": {
+          "yes": -15.75,
+          "no": -33.75,
+          "unknown": -23.5
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.5,
+        "other_lp": -15.75,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 18.125,
+        "follow_conflict": -8.0,
+        "follow_context": -8.0,
+        "context_flip": 8.0
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -7.75,
+        "follow_conflict": 20.375,
+        "follow_context": 12.625,
+        "context_flip": -12.625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 18.0,
+        "follow_conflict": -7.75,
+        "follow_context": -7.75,
+        "context_flip": 7.75
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 18.0,
+        "follow_conflict": -7.75,
+        "follow_context": -7.75,
+        "context_flip": 7.75
+      },
+      "base_nc_gold_margin": 8.0,
+      "ab_nc_gold_margin": 7.75,
+      "ctx_follow_context_gain": -20.375,
+      "nc_gold_margin_damage": 0.25,
+      "hallucination_relief": -20.625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -20.375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -20.375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.25
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 20.375
+      }
+    },
+    {
+      "row_idx": 49,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -15.625,
+        "wrong_lp": -27.5,
+        "unknown_lp": -21.125,
+        "candidate_scores": {
+          "yes": -15.625,
+          "no": -27.5,
+          "unknown": -21.125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.125,
+        "other_lp": -15.625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -29.5,
+        "wrong_lp": -25.125,
+        "unknown_lp": -14.875,
+        "candidate_scores": {
+          "yes": -29.5,
+          "no": -25.125,
+          "unknown": -14.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.875,
+        "other_lp": -25.125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -15.375,
+        "wrong_lp": -27.375,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -15.375,
+          "no": -27.375,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -15.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -15.375,
+        "wrong_lp": -27.375,
+        "unknown_lp": -21.0,
+        "candidate_scores": {
+          "yes": -15.375,
+          "no": -27.375,
+          "unknown": -21.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0,
+        "other_lp": -15.375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 11.875,
+        "follow_conflict": -5.5,
+        "follow_context": -5.5,
+        "context_flip": 5.5
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -4.375,
+        "follow_conflict": 14.625,
+        "follow_context": 10.25,
+        "context_flip": -10.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 12.0,
+        "follow_conflict": -5.625,
+        "follow_context": -5.625,
+        "context_flip": 5.625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 12.0,
+        "follow_conflict": -5.625,
+        "follow_context": -5.625,
+        "context_flip": 5.625
+      },
+      "base_nc_gold_margin": 5.5,
+      "ab_nc_gold_margin": 5.625,
+      "ctx_follow_context_gain": -15.875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -15.875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -15.875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -15.875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 15.875
+      }
+    }
+  ]
+}

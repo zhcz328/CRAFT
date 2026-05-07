@@ -1,0 +1,85 @@
+{
+  "requested_samples": 1,
+  "generated_samples": 1,
+  "out_dir": "/root/logit_lens/PIC/fig6/result_heatmap",
+  "items": [
+    {
+      "index": 1,
+      "stem": "fig6_sample_01_pairsame_model_rowna_row353",
+      "summary": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_01_pairsame_model_rowna_row353_summary.json",
+      "outputs": {
+        "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_01_pairsame_model_rowna_row353.png",
+        "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_01_pairsame_model_rowna_row353.pdf",
+        "vmin": 5.0164292421357785e-06,
+        "vcenter": 0.0015211731195449835,
+        "vmax": 0.029893620808919268
+      },
+      "conflict_bundle": {
+        "title": "ConflictMedQA text-only on Hulu-med-4B",
+        "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+        "sample_title": "pair=898 | side=wrong | gold=no | wrong=yes | Dr. Patel, an internal medicine resident, is managing a 54-year-old...",
+        "selected_sample": {
+          "pair_id": 898,
+          "side": "wrong",
+          "position": "before_question",
+          "gold": "no",
+          "conflict_label": "yes",
+          "base": {
+            "pred": "no",
+            "delta": -23.75
+          },
+          "support": {
+            "pred": "no",
+            "delta": -20.875
+          },
+          "conflict": {
+            "pred": "yes",
+            "delta": 21.375
+          },
+          "shift_support": 2.875,
+          "shift_conflict": 45.125
+        },
+        "same_model_text_only": true
+      },
+      "vqa_bundle": {
+        "title": "VQA-RAD Hulu-med-4B before_question",
+        "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+        "sample_title": "row=353 | is this supratentorial or infratentorial | gold=supratentorial | wrong=infratentorial",
+        "row_idx": 353,
+        "chosen_record": {
+          "id": 643,
+          "img_id": "synpic40096.jpg",
+          "image_path": "data/VQA_RAD_Image_Folder/synpic40096.jpg",
+          "category": "plane",
+          "question": "is this supratentorial or infratentorial",
+          "gold": "supratentorial",
+          "conflict": "infratentorial",
+          "position": "before_question",
+          "support_pred": "supratentorial",
+          "conflict_pred": "supratentorial",
+          "support_scores": {
+            "supratentorial": -10.031761646270752,
+            "infratentorial": -44.08160400390625
+          },
+          "conflict_scores": {
+            "supratentorial": -10.12619149684906,
+            "infratentorial": -35.13238525390625
+          },
+          "support_margin": 34.0498423576355,
+          "conflict_margin": 25.00619375705719,
+          "changed": false,
+          "resist": true,
+          "follow_conflict": false,
+          "resist_to_gold": true,
+          "nc_pred": "supratentorial",
+          "changed_vs_nc": false,
+          "resist_vs_nc": true,
+          "conflict_pred_is_unknown": false,
+          "changed_to_unknown_vs_nc": false,
+          "conflict_is_unknown": false,
+          "csv_row_idx": 353
+        }
+      }
+    }
+  ]
+}

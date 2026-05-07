@@ -1,0 +1,111 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.15,
+    "base_max": 0.15,
+    "base_min": null
+  },
+  "combine": "union",
+  "rounds": [
+    "round1_preplateau",
+    "round1_topk_fallback"
+  ],
+  "round_meta": {
+    "round1_preplateau": {
+      "scan_layers": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "n_samples": 500,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "prefix",
+      "keep_mode": "self"
+    },
+    "round1_topk_fallback": {
+      "scan_layers": [
+        27
+      ],
+      "n_samples": 500,
+      "metrics": [
+        "follow_conflict",
+        "yesno_margin"
+      ],
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "position": "prefix",
+      "keep_mode": "self"
+    }
+  },
+  "n_selected": 6,
+  "selected": [
+    {
+      "layer": 30,
+      "head": 27,
+      "best_effect_reduction": 0.3584568414688107,
+      "best_base_change": 0.14735801658630374,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 28,
+      "head": 8,
+      "best_effect_reduction": 0.2616413111209868,
+      "best_base_change": 0.1400796215534211,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 7,
+      "best_effect_reduction": 0.24445381951332074,
+      "best_base_change": 0.12053398294448862,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 32,
+      "head": 14,
+      "best_effect_reduction": 0.22684408583641066,
+      "best_base_change": 0.12678486227989205,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 34,
+      "head": 15,
+      "best_effect_reduction": 0.2247605796813964,
+      "best_base_change": 0.10284919400215153,
+      "selected_in_rounds": [
+        "round1_preplateau"
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 22,
+      "best_effect_reduction": 0.19178709840774535,
+      "best_base_change": 0.12525268135070816,
+      "selected_in_rounds": [
+        "round1_topk_fallback"
+      ]
+    }
+  ]
+}

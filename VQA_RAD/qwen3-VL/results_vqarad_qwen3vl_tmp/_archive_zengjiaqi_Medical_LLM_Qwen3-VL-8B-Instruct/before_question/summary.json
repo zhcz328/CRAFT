@@ -1,0 +1,31 @@
+{
+  "model": "/archive/zengjiaqi/Medical_LLM/Qwen3-VL-8B-Instruct",
+  "data_csv": "./data/vqa_rad_train_closed.csv",
+  "image_root": "./data/VQA_RAD_Image_Folder",
+  "position": "before_question",
+  "N": 20,
+  "skipped_missing_img": 0,
+  "support_correct_rate": 80.0,
+  "conflict_still_gold_rate": 80.0,
+  "conflict_follow_evidence_rate": 20.0,
+  "resist_rate": 100.0,
+  "changed_rate": 0.0,
+  "resist_rate_given_sup_correct": 100.0,
+  "changed_rate_given_sup_correct": 0.0,
+  "follow_conflict_rate_given_sup_correct": 0.0,
+  "avg_support_margin": 11.07734375,
+  "avg_conflict_margin": 9.78828125,
+  "files": {
+    "preds_jsonl": "results_vqarad_qwen3vl_tmp/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/preds.jsonl",
+    "summary_json": "results_vqarad_qwen3vl_tmp/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/summary.json",
+    "nc_cc_both_correct_csv": "results_vqarad_qwen3vl_tmp/_archive_zengjiaqi_Medical_LLM_Qwen3-VL-8B-Instruct/before_question/nc_cc_both_correct.csv"
+  },
+  "nc_correct_rate": 80.0,
+  "avg_nc_margin": 9.78671875,
+  "resist_rate_given_nc_correct": 100.0,
+  "changed_rate_given_nc_correct": 0.0,
+  "follow_conflict_rate_given_nc_correct": 0.0,
+  "nc_correct_cnt": 16,
+  "nc_cc_both_correct_cnt": 16,
+  "nc_cc_both_correct_rate_overall": 80.0
+}

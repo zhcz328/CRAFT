@@ -1,0 +1,91 @@
+{
+  "output_stem": "fig6_slake_internvl35_alllayers_conflictmedqa_pair1263_val_row133",
+  "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_slake_internvl35_alllayers_conflictmedqa_pair1263_val_row133.png",
+  "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_slake_internvl35_alllayers_conflictmedqa_pair1263_val_row133.pdf",
+  "aggregation": "all_layers_all_heads_mean",
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "left_source": "ConflictMedQA question from previous Qwen3-4B setup, run on InternVL3_5-4B text-only",
+  "right_source": "Slake multimodal sample on InternVL3_5-4B",
+  "conflict_pair_id": 1263,
+  "conflict_side": "correct",
+  "split": "val",
+  "row_idx": 133,
+  "question": "Does the picture contain spleen?",
+  "gold": "Yes",
+  "wrong": "No",
+  "image_path": "/root/autodl-tmp/data/SLAKE/imgs/xmlab201/source.jpg",
+  "search_limit": 80,
+  "ablate_record": {
+    "row_idx": 133,
+    "gold": "yes",
+    "wrong": "no",
+    "base_nc_pred": "gold",
+    "base_ctx_pred": "gold",
+    "ab_nc_pred": "gold",
+    "ab_ctx_pred": "gold",
+    "base_nc_scores": {
+      "gold_lp": -13.5625,
+      "wrong_lp": -16.75,
+      "ctx_target": "no",
+      "ctx_lp": -16.75,
+      "other_lp": -13.5625
+    },
+    "base_ctx_scores": {
+      "gold_lp": -11.4375,
+      "wrong_lp": -11.75,
+      "ctx_target": "no",
+      "ctx_lp": -11.75,
+      "other_lp": -11.4375
+    },
+    "ab_nc_scores": {
+      "gold_lp": -13.5625,
+      "wrong_lp": -16.75,
+      "ctx_target": "no",
+      "ctx_lp": -16.75,
+      "other_lp": -13.5625
+    },
+    "ab_ctx_scores": {
+      "gold_lp": -13.625,
+      "wrong_lp": -15.625,
+      "ctx_target": "no",
+      "ctx_lp": -15.625,
+      "other_lp": -13.625
+    },
+    "base_nc_metrics": {
+      "gold_wrong_margin": 3.1875,
+      "follow_conflict": -3.1875,
+      "follow_context": -3.1875,
+      "context_flip": 3.1875
+    },
+    "base_ctx_metrics": {
+      "gold_wrong_margin": 0.3125,
+      "follow_conflict": -0.3125,
+      "follow_context": -0.3125,
+      "context_flip": 0.3125
+    },
+    "ab_nc_metrics": {
+      "gold_wrong_margin": 3.1875,
+      "follow_conflict": -3.1875,
+      "follow_context": -3.1875,
+      "context_flip": 3.1875
+    },
+    "ab_ctx_metrics": {
+      "gold_wrong_margin": 2.0,
+      "follow_conflict": -2.0,
+      "follow_context": -2.0,
+      "context_flip": 2.0
+    },
+    "metric_effect_reduction_fixed_nc": {
+      "follow_conflict": 1.6875
+    },
+    "metric_effect_reduction_mask_scope": {
+      "follow_conflict": 1.6875
+    },
+    "metric_abs_base_change": {
+      "follow_conflict": 0.0
+    },
+    "metric_abs_ctx_change": {
+      "follow_conflict": 1.6875
+    }
+  }
+}

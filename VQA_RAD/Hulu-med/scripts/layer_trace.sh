@@ -1,0 +1,14 @@
+python layer_trace_vqarad_mm_current_fixed_fastcache.py \
+  --data_csv ./data/nc_cc_both_correct_rerun_tmp_train.csv \
+  --image_root . \
+  --model /root/autodl-tmp/Hulu-Med-4B \
+  --trace_mode conflict \
+  --position before_answer \
+  --patch_k 16 \
+  --limit 0 \
+  --metrics follow_conflict \
+  --out result_train_hulumed4b_before_answer/trace_conflict.json \
+  --plot_prefix result_train_hulumed4b_before_answer/trace_conflict \
+  --scan_plan_out result_train_hulumed4b_before_answer/trace_conflict_scan_plan.json \
+  --scan_plan_metric follow_conflict \
+  --device cuda:0

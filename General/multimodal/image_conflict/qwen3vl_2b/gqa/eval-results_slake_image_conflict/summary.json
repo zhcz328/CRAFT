@@ -1,0 +1,70 @@
+{
+  "n_records": 672,
+  "nc_correct": 670,
+  "ic_unknown": 462,
+  "ic_gold": 206,
+  "ic_wrong": 4,
+  "ic_other": 0,
+  "changed_vs_nc": 464,
+  "by_category": {
+    "rel": {
+      "n": 208,
+      "nc_correct": 207,
+      "ic_unknown": 183,
+      "ic_gold": 25,
+      "ic_wrong": 0,
+      "ic_other": 0
+    },
+    "obj": {
+      "n": 260,
+      "nc_correct": 260,
+      "ic_unknown": 125,
+      "ic_gold": 134,
+      "ic_wrong": 1,
+      "ic_other": 0
+    },
+    "attr": {
+      "n": 204,
+      "nc_correct": 203,
+      "ic_unknown": 154,
+      "ic_gold": 47,
+      "ic_wrong": 3,
+      "ic_other": 0
+    }
+  },
+  "nc_correct_rate": 0.9970238095238095,
+  "ic_unknown_rate": 0.6875,
+  "ic_gold_rate": 0.30654761904761907,
+  "ic_wrong_rate": 0.005952380952380952,
+  "ic_other_rate": 0.0,
+  "changed_vs_nc_rate": 0.6904761904761905,
+  "ic_top_predictions": [
+    [
+      "unknown",
+      462
+    ],
+    [
+      "yes",
+      209
+    ],
+    [
+      "no",
+      1
+    ]
+  ],
+  "model": "/root/autodl-tmp/qwen3vl-2B",
+  "model_name": "qwen3vl-2b",
+  "data_csv": "./data/qwen3vl_2b/gqa/gqa_nc_correct_ic_ready.csv",
+  "out_dir": "qwen3vl_2b/gqa/eval-results_slake_image_conflict",
+  "preds_jsonl": "qwen3vl_2b/gqa/eval-results_slake_image_conflict/preds.jsonl",
+  "summary_json": "qwen3vl_2b/gqa/eval-results_slake_image_conflict/summary.json",
+  "unknown_target": "unknown",
+  "save_processed_images": false,
+  "processed_image_dir": "",
+  "mask_all": false,
+  "add_noise": false,
+  "add_noise_all": false,
+  "mask_scale": 1.0,
+  "noise_scale": 1.0,
+  "noise_std": 0.0
+}

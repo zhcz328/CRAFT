@@ -1,0 +1,164 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.55,
+    "base_max": 0.6,
+    "base_min": null
+  },
+  "input_json": "internvl35_4b/result_prefix_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "merged_unique_layers",
+    "scan_layers": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      32,
+      33,
+      34,
+      35
+    ],
+    "n_samples": 698,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_conflict"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "prefix",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B"
+  },
+  "n_candidates": 48,
+  "n_selected": 8,
+  "selected": [
+    {
+      "layer": 24,
+      "head": 30,
+      "mean_abs_effect_reduction": 0.7330404987991027,
+      "mean_abs_base_change": 0.2757517896955539,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.7330404987991027
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.2757517896955539
+      },
+      "conflict_specific_score": 2.6583248699257744,
+      "backbone_score": 0.2021372294631741
+    },
+    {
+      "layer": 21,
+      "head": 11,
+      "mean_abs_effect_reduction": 0.6308009404166038,
+      "mean_abs_base_change": 0.31382636064103137,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.6308009404166038
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.31382636064103137
+      },
+      "conflict_specific_score": 2.010025318149809,
+      "backbone_score": 0.19796196341988284
+    },
+    {
+      "layer": 14,
+      "head": 26,
+      "mean_abs_effect_reduction": 0.7854784691231299,
+      "mean_abs_base_change": 0.5490749206788902,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.7854784691231299
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.5490749206788902
+      },
+      "conflict_specific_score": 1.4305461950543126,
+      "backbone_score": 0.4312865281287587
+    },
+    {
+      "layer": 19,
+      "head": 8,
+      "mean_abs_effect_reduction": 0.5542182514182477,
+      "mean_abs_base_change": 0.4647556948115286,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.5542182514182477
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.4647556948115286
+      },
+      "conflict_specific_score": 1.1924911628072365,
+      "backbone_score": 0.25757608851511815
+    },
+    {
+      "layer": 17,
+      "head": 29,
+      "mean_abs_effect_reduction": 0.5952714283691778,
+      "mean_abs_base_change": 0.5319599256474514,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.5952714283691778
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.5319599256474514
+      },
+      "conflict_specific_score": 1.1190134456674068,
+      "backbone_score": 0.31666054477532
+    },
+    {
+      "layer": 18,
+      "head": 1,
+      "mean_abs_effect_reduction": 0.563609543195085,
+      "mean_abs_base_change": 0.5176554902918359,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.563609543195085
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.5176554902918359
+      },
+      "conflict_specific_score": 1.088771325705474,
+      "backbone_score": 0.2917555744158094
+    },
+    {
+      "layer": 14,
+      "head": 4,
+      "mean_abs_effect_reduction": 0.596686601468007,
+      "mean_abs_base_change": 0.5660011440430125,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.596686601468007
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.5660011440430125
+      },
+      "conflict_specific_score": 1.0542126169448973,
+      "backbone_score": 0.33772529906602905
+    },
+    {
+      "layer": 15,
+      "head": 20,
+      "mean_abs_effect_reduction": 0.572069607525637,
+      "mean_abs_base_change": 0.5856415354419916,
+      "metric_mean_abs_effect_reduction": {
+        "follow_conflict": 0.572069607525637
+      },
+      "metric_mean_abs_base_change": {
+        "follow_conflict": 0.5856415354419916
+      },
+      "conflict_specific_score": 0.9768238693487128,
+      "backbone_score": 0.33502772333101155
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+python layer_trace_vqarad_mm_current_fixed_fastcache.py \
+  --data_csv ./data/nc_cc_both_correct_rerun.csv \
+  --image_root . \
+  --model /archive/zengjiaqi/Medical_LLM/Qwen3-VL-8B-Instruct \
+  --trace_mode conflict \
+  --position before_question \
+  --patch_k 16 \
+  --limit 300 \
+  --metrics follow_conflict \
+  --out result_tmp360/trace_conflict.json \
+  --plot_prefix result_tmp360/trace_conflict \
+  --scan_plan_out result_tmp360/trace_conflict_scan_plan.json \
+  --scan_plan_metric follow_conflict

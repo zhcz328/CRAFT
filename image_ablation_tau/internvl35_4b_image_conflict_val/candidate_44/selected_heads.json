@@ -1,0 +1,49 @@
+{
+  "mode": "custom",
+  "thresholds": {
+    "eff_min": -0.259328358209,
+    "base_max": 0.044776119403,
+    "base_min": null
+  },
+  "input_json": "/root/logit_lens/General/multimodal/image_conflict/internvl35_4b/gqa/result_image_conflict_slake/headscan_slake_mm/head_scan_core_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "core_layers",
+    "scan_layers": [
+      22,
+      29
+    ],
+    "n_samples": 67,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B"
+  },
+  "n_candidates": 50,
+  "n_selected": 1,
+  "selected": [
+    {
+      "layer": 29,
+      "head": 31,
+      "mean_abs_effect_reduction": -0.2332089552238806,
+      "mean_abs_base_change": 0.03544776119402985,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": -0.19776119402985073
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.03544776119402985
+      },
+      "conflict_specific_score": -6.578761778088787,
+      "backbone_score": -0.008266735353085319
+    }
+  ]
+}

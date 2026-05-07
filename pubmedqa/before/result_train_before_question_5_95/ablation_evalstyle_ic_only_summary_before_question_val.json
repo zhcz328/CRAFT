@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "data": "/home/zengjiaqi/icl/interp/logit_lens/pubmedqa/data_results_pubmedqa_filter_nc_cc_qwen3_4B/_archive_zengjiaqi_Medical_LLM_Qwen3_model_Qwen_Qwen3-4B.filtered.val.json",
+    "fmt": "json",
+    "model": "/archive/zengjiaqi/Medical_LLM/Qwen3_model/Qwen/Qwen3-4B",
+    "selected_heads": "/home/zengjiaqi/icl/interp/logit_lens/pubmedqa/result_train_before_question_5_95/headscan_pubmed/selected_conflict_heads.json",
+    "position": "before_question",
+    "include_context": true,
+    "mask_scope": "ic_only",
+    "keep_mode": "self",
+    "thresholds": {
+      "nc_yn_tau": 2.0,
+      "nc_unk_tau": 0.0,
+      "ic_tau": 2.0,
+      "ic_unk_tau": 0.0
+    },
+    "layer2heads": {
+      "22": [
+        0,
+        10,
+        11
+      ],
+      "24": [
+        31
+      ],
+      "20": [
+        8,
+        11,
+        30
+      ]
+    }
+  },
+  "baseline": {
+    "N": 81,
+    "Acc_NC_overall": 97.53086419753086,
+    "NC_unknown_rate": 2.4691358024691357,
+    "NC_coverage": 97.53086419753086,
+    "NC_conditional_accuracy": 100.0,
+    "Acc_IC_overall": 23.45679012345679,
+    "resist_rate": 24.050632911392405,
+    "changed_rate": 75.9493670886076,
+    "abstain_rate": 26.582278481012658,
+    "flip_rate": 49.36708860759494,
+    "eligible_attack": 79,
+    "NC_not_binary_rate_over_N": 2.4691358024691357,
+    "resist_rate_given_NC_correct": 24.050632911392405,
+    "changed_rate_given_NC_correct": 75.9493670886076,
+    "abstain_rate_given_NC_correct": 26.582278481012658,
+    "flip_rate_given_NC_correct": 49.36708860759494,
+    "NC_correct_binary_cnt": 79
+  },
+  "masked": {
+    "N": 81,
+    "Acc_NC_overall": 97.53086419753086,
+    "NC_unknown_rate": 2.4691358024691357,
+    "NC_coverage": 97.53086419753086,
+    "NC_conditional_accuracy": 100.0,
+    "Acc_IC_overall": 93.82716049382717,
+    "resist_rate": 93.67088607594937,
+    "changed_rate": 6.329113924050633,
+    "abstain_rate": 3.7974683544303796,
+    "flip_rate": 2.5316455696202533,
+    "eligible_attack": 79,
+    "NC_not_binary_rate_over_N": 2.4691358024691357,
+    "resist_rate_given_NC_correct": 93.67088607594937,
+    "changed_rate_given_NC_correct": 6.329113924050633,
+    "abstain_rate_given_NC_correct": 3.7974683544303796,
+    "flip_rate_given_NC_correct": 2.5316455696202533,
+    "NC_correct_binary_cnt": 79
+  },
+  "delta(masked-baseline)": {
+    "N": 0,
+    "Acc_NC_overall": 0.0,
+    "NC_unknown_rate": 0.0,
+    "NC_coverage": 0.0,
+    "NC_conditional_accuracy": 0.0,
+    "Acc_IC_overall": 70.37037037037038,
+    "resist_rate": 69.62025316455697,
+    "changed_rate": -69.62025316455697,
+    "abstain_rate": -22.78481012658228,
+    "flip_rate": -46.835443037974684,
+    "eligible_attack": 0,
+    "NC_not_binary_rate_over_N": 0.0,
+    "resist_rate_given_NC_correct": 69.62025316455697,
+    "changed_rate_given_NC_correct": -69.62025316455697,
+    "abstain_rate_given_NC_correct": -22.78481012658228,
+    "flip_rate_given_NC_correct": -46.835443037974684,
+    "NC_correct_binary_cnt": 0
+  }
+}

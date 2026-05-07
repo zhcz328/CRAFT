@@ -1,0 +1,50 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 3.1045839e-05,
+    "base_max": 0.10661595008,
+    "base_min": null
+  },
+  "input_json": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "core_layers",
+    "scan_layers": [
+      16,
+      17,
+      35
+    ],
+    "n_samples": 204,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/Hulu-Med-4B"
+  },
+  "n_candidates": 36,
+  "n_selected": 1,
+  "selected": [
+    {
+      "layer": 35,
+      "head": 16,
+      "mean_abs_effect_reduction": 0.0039807815177767885,
+      "mean_abs_base_change": 0.07154590475792978,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.07552668627570658
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.07154590475792978
+      },
+      "conflict_specific_score": 0.05563876636236434,
+      "backbone_score": 0.00028480861533298525
+    }
+  ]
+}

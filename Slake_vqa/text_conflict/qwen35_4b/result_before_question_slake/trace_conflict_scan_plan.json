@@ -1,0 +1,81 @@
+{
+  "n_samples": 300,
+  "n_layers": 32,
+  "trace_mode": "conflict",
+  "position": "before_question",
+  "patch_k": 16,
+  "plan_scores_source": {
+    "mode": "single_metric",
+    "metric": "follow_conflict",
+    "weights": {
+      "follow_conflict": 1.0
+    }
+  },
+  "scan_plan": {
+    "method": "plateau",
+    "plateau_start": 10,
+    "round0_rise": [
+      3,
+      9,
+      12,
+      14,
+      15,
+      27
+    ],
+    "round1_preplateau": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11
+    ],
+    "round1_topk_fallback": [],
+    "round2_tail": [
+      28,
+      29,
+      30,
+      31
+    ],
+    "merged_unique_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "tail_k": 4,
+    "preplateau_width": 13,
+    "plateau_min_score_frac": 0.65,
+    "plateau_eps": 0.6,
+    "plateau_min_len": 6,
+    "topk_fallback": 8,
+    "rise_k": 6,
+    "rise_min_layer": 0,
+    "rise_max_layer": 35
+  },
+  "shards": [
+    "qwen35_4b/result_before_question_slake/trace_conflict_shards/trace_conflict.shard00of03.json",
+    "qwen35_4b/result_before_question_slake/trace_conflict_shards/trace_conflict.shard01of03.json",
+    "qwen35_4b/result_before_question_slake/trace_conflict_shards/trace_conflict.shard02of03.json"
+  ]
+}

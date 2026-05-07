@@ -1,0 +1,42 @@
+{
+  "format": "image_conflict_ablation_json",
+  "path": "/root/logit_lens/image_ablation_tau/internvl35_4b_image_conflict_val/candidate_37/ablation_val.json",
+  "config": {
+    "data_csv": "/root/logit_lens/Slake_vqa/image_conflict/data/internvl35_4b/slake_nc_correct_ic_ready_val.csv",
+    "image_root": "/root/logit_lens/Slake_vqa/image_conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B",
+    "selected_heads": "/root/logit_lens/image_ablation_tau/internvl35_4b_image_conflict_val/candidate_37/selected_heads.json",
+    "trace_mode": "conflict",
+    "position": "image_conflict",
+    "mask_scale": 2.0,
+    "metrics": [
+      "follow_context"
+    ],
+    "mask_scope": "ctx_only",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda",
+    "max_examples": 0,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "n_selected_heads": 1,
+  "sample_filter": "none",
+  "metrics": {
+    "n_all": 31,
+    "counts": {
+      "correct_to_unknown": 0,
+      "unknown_to_other": 0,
+      "unknown_rate": 5
+    },
+    "C2U": 0.0,
+    "U2O": 0.0,
+    "UR": 16.129032258064516,
+    "rule_tuple": [
+      0.0,
+      0.0,
+      16.129032258064516
+    ]
+  }
+}

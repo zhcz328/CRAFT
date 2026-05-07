@@ -1,0 +1,29 @@
+{
+  "candidate_index": 8,
+  "thresholds": {
+    "eff_min": 0.188812800685,
+    "base_max": 0.182544650934,
+    "base_min": null
+  },
+  "n_selected": 10,
+  "selection_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_08/selected_heads.json",
+  "ablation_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_08/ablation_val.json",
+  "metrics": {
+    "n_all": 390,
+    "counts": {
+      "follow_conflict": 56,
+      "correct_to_wrong": 7,
+      "wrong_to_correct": 125
+    },
+    "CFR": 14.35897435897436,
+    "C2W": 1.794871794871795,
+    "W2C": 32.05128205128205,
+    "strength_tuple": [
+      14.35897435897436,
+      1.794871794871795,
+      -32.05128205128205
+    ]
+  },
+  "metrics_path": "/root/logit_lens/ablation_tau/hulumed_before_question_val/candidate_08/metrics.json",
+  "decision": "rejected_stronger_than_current"
+}

@@ -1,0 +1,40 @@
+{
+  "format": "vqa_ablation_json",
+  "path": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+  "config": {
+    "data_csv": "/root/logit_lens/cross_modal/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+    "image_root": ".",
+    "model": "/root/autodl-tmp/Hulu-Med-4B",
+    "selected_heads": "/root/logit_lens/cross_modal/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+    "trace_mode": "conflict",
+    "position": "before_question",
+    "metrics": [
+      "follow_conflict"
+    ],
+    "mask_scope": "ctx_only",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda",
+    "max_examples": -1,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "n_selected_heads": 6,
+  "metrics": {
+    "n_all": 390,
+    "counts": {
+      "follow_conflict": 71,
+      "correct_to_wrong": 3,
+      "wrong_to_correct": 107
+    },
+    "CFR": 18.205128205128204,
+    "C2W": 0.7692307692307693,
+    "W2C": 27.435897435897434,
+    "strength_tuple": [
+      18.205128205128204,
+      0.7692307692307693,
+      -27.435897435897434
+    ]
+  }
+}

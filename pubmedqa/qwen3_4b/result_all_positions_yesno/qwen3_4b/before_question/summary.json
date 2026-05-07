@@ -1,0 +1,16 @@
+{
+  "model": "/root/autodl-tmp/qwen3-4B",
+  "position": "before_question",
+  "N": 3066,
+  "Acc_base": 95.23809523809524,
+  "Acc_support": 99.90215264187867,
+  "Acc_conflict": 49.34768427919113,
+  "resist_rate": 49.34768427919113,
+  "follow_conflict_rate": 50.65231572080887,
+  "resist_rate_given_base_correct": 49.897260273972606,
+  "follow_conflict_rate_given_base_correct": 50.102739726027394,
+  "files": {
+    "preds": "qwen3_4b/result_all_positions_yesno/qwen3_4b/before_question/preds.jsonl",
+    "summary": "qwen3_4b/result_all_positions_yesno/qwen3_4b/before_question/summary.json"
+  }
+}

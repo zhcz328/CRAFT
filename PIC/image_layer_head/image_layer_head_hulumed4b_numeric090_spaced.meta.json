@@ -1,0 +1,23 @@
+{
+  "task_json": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "retrieval_json": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "single_model_mode": true,
+  "output": "/root/logit_lens/PIC/image_layer_head/image_layer_head_hulumed4b_numeric090_spaced.png",
+  "pdf_output": "/root/logit_lens/PIC/image_layer_head/image_layer_head_hulumed4b_numeric090_spaced.pdf",
+  "legend_only": false,
+  "hide_text_keep_ticks": true,
+  "conflict_points": 10,
+  "backbone_points": 8,
+  "irrelevant_points": 78,
+  "compress_layers": true,
+  "fill_from_json": null,
+  "fill_missing_heads": true,
+  "augment_from_selected_json": "/root/logit_lens/heal-medvqa/hulumed4b/result_image_conflict_heal_medvqa/selected_heads_core_layers.json",
+  "augment_radius": 2,
+  "augment_per_anchor": 2,
+  "metrics_used": [
+    "mean_abs_effect_reduction",
+    "mean_abs_base_change"
+  ],
+  "numeric_font_multiplier": 0.9
+}

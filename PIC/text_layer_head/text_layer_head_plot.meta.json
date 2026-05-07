@@ -1,0 +1,13 @@
+{
+  "task_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/head_scan_merged_unique_layers.json",
+  "retrieval_json": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+  "output": "/root/logit_lens/PIC/text_layer_head/text_layer_head_plot.png",
+  "task_points": 31,
+  "retrieval_points": 114,
+  "in_context_points": 0,
+  "parametric_points": 105,
+  "metrics_used": [
+    "mean_abs_effect_reduction",
+    "mean_abs_base_change"
+  ]
+}

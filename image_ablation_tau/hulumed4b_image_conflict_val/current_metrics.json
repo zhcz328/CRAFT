@@ -1,0 +1,42 @@
+{
+  "format": "image_conflict_ablation_json",
+  "path": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/ablate/ablate_selected_heads_ctx_only_val.json",
+  "config": {
+    "data_csv": "./data/hulumed4b/slake_nc_correct_ic_ready_val.csv",
+    "image_root": ".",
+    "model": "/root/autodl-tmp/Hulu-Med-4B",
+    "selected_heads": "hulumed4b/result_image_conflict_slake/selected_heads_core_layers.json",
+    "trace_mode": "conflict",
+    "position": "image_conflict",
+    "mask_scale": 2.0,
+    "metrics": [
+      "follow_context"
+    ],
+    "mask_scope": "ctx_only",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda",
+    "max_examples": 0,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "n_selected_heads": 6,
+  "sample_filter": "none",
+  "metrics": {
+    "n_all": 132,
+    "counts": {
+      "correct_to_unknown": 36,
+      "unknown_to_other": 0,
+      "unknown_rate": 86
+    },
+    "C2U": 27.272727272727273,
+    "U2O": 0.0,
+    "UR": 65.15151515151516,
+    "rule_tuple": [
+      27.272727272727273,
+      0.0,
+      65.15151515151516
+    ]
+  }
+}

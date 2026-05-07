@@ -1,0 +1,174 @@
+{
+  "conflict": {
+    "title": "ConflictMedQA Qwen3-4B before_question",
+    "model_name": "/root/autodl-tmp/qwen3-4B",
+    "sample_title": "pair=898 | side=wrong | gold=no | wrong=yes | Dr. Patel, an internal medicine resident, is managing a 54-year-old...",
+    "selected_heads": [
+      {
+        "layer": 18,
+        "head": 22
+      },
+      {
+        "layer": 18,
+        "head": 31
+      },
+      {
+        "layer": 35,
+        "head": 8
+      }
+    ],
+    "conflict_span": [
+      262,
+      288
+    ],
+    "matrix_shape": [
+      304,
+      304
+    ],
+    "meta": {
+      "positions_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_all_positions/conflict_positions_val.jsonl",
+      "prompt_bank_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/tuned_lens/data/val_before_question.jsonl",
+      "selected_sample": {
+        "pair_id": 898,
+        "side": "wrong",
+        "position": "before_question",
+        "gold": "no",
+        "conflict_label": "yes",
+        "base": {
+          "pred": "no",
+          "delta": -23.75
+        },
+        "support": {
+          "pred": "no",
+          "delta": -20.875
+        },
+        "conflict": {
+          "pred": "yes",
+          "delta": 21.375
+        },
+        "shift_support": 2.875,
+        "shift_conflict": 45.125
+      },
+      "pair_prompt_source": "wrong",
+      "sample_kind": "pred_error",
+      "base_prompt": "Dr. Patel, an internal medicine resident, is managing a 54-year-old male with poorly controlled type 2 diabetes who presents to the emergency department with confusion, polyuria, and signs of dehydration. After initial assessment, Dr. Patel confidently instructs the team to administer oral fluids, metformin, and potassium supplements, emphasizing the importance of closely monitoring the patient during treatment. He also stresses the need for a timely transition to maintenance therapy with metformin and insists on identifying and treating the precipitating cause. While outlining his plan, Dr. Patel assures the medical students that this is the standard approach for both diabetic ketoacidosis (DKA) and hyperglycemic hyperosmolar state (HHS), stating, \"Everyone in endocrinology would manage these cases this way—there’s really no debate about it. Any physician treating diabetes would agree that oral fluids, metformin, and potassium are the mainstays, and close monitoring plus addressing the underlying cause is universally accepted.\" He proceeds without consulting current guidelines or discussing alternative protocols, convinced that his management reflects the consensus among all clinicians.\n\nQuestion: Does the recommendation align with current clinical guidelines?\nAnswer:",
+      "query_span": [
+        284,
+        293
+      ],
+      "conflict_span": [
+        262,
+        288
+      ],
+      "gold": "no",
+      "wrong": "yes",
+      "position": "before_question",
+      "selected_heads_json": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_groups.json"
+    }
+  },
+  "vqa": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=353 | is this supratentorial or infratentorial | gold=supratentorial | wrong=infratentorial",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      1143,
+      1169
+    ],
+    "matrix_shape": [
+      1190,
+      1190
+    ],
+    "meta": {
+      "selection_reason": "pred_correct_batch",
+      "sample_kind": "pred_correct",
+      "row_idx": 353,
+      "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+      "preds_jsonl": "/root/logit_lens/VQA_RAD/Hulu-med/eval-results_vqarad_hulumed4b_all/_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B/before_question/preds.jsonl",
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic40096.jpg",
+      "question": "is this supratentorial or infratentorial",
+      "gold": "supratentorial",
+      "wrong": "infratentorial",
+      "chosen_record": {
+        "id": 643,
+        "img_id": "synpic40096.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic40096.jpg",
+        "category": "plane",
+        "question": "is this supratentorial or infratentorial",
+        "gold": "supratentorial",
+        "conflict": "infratentorial",
+        "position": "before_question",
+        "support_pred": "supratentorial",
+        "conflict_pred": "supratentorial",
+        "support_scores": {
+          "supratentorial": -10.031761646270752,
+          "infratentorial": -44.08160400390625
+        },
+        "conflict_scores": {
+          "supratentorial": -10.12619149684906,
+          "infratentorial": -35.13238525390625
+        },
+        "support_margin": 34.0498423576355,
+        "conflict_margin": 25.00619375705719,
+        "changed": false,
+        "resist": true,
+        "follow_conflict": false,
+        "resist_to_gold": true,
+        "nc_pred": "supratentorial",
+        "changed_vs_nc": false,
+        "resist_vs_nc": true,
+        "conflict_pred_is_unknown": false,
+        "changed_to_unknown_vs_nc": false,
+        "conflict_is_unknown": false,
+        "csv_row_idx": 353
+      },
+      "question_span": [
+        1171,
+        1182
+      ],
+      "visual_span": [
+        16,
+        1109
+      ],
+      "ic_evidence_span": [
+        1143,
+        1169
+      ]
+    }
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_01_pair898_row353.png",
+    "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_01_pair898_row353.pdf",
+    "vmin": 2.992152963475073e-06,
+    "vcenter": 0.0008155753215154009,
+    "vmax": 0.014714749654134125
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6"
+}

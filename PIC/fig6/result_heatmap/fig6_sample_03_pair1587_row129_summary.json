@@ -1,0 +1,172 @@
+{
+  "conflict": {
+    "title": "ConflictMedQA Qwen3-4B before_question",
+    "model_name": "/root/autodl-tmp/qwen3-4B",
+    "sample_title": "pair=1587 | side=correct | gold=yes | wrong=no | Dr. Patel offers HIV testing and PrEP to Maria, a 28-year-old woman...",
+    "selected_heads": [
+      {
+        "layer": 18,
+        "head": 22
+      },
+      {
+        "layer": 18,
+        "head": 31
+      },
+      {
+        "layer": 35,
+        "head": 8
+      }
+    ],
+    "conflict_span": [
+      227,
+      254
+    ],
+    "matrix_shape": [
+      270,
+      270
+    ],
+    "meta": {
+      "positions_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_all_positions/conflict_positions_val.jsonl",
+      "prompt_bank_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/tuned_lens/data/val_before_question.jsonl",
+      "selected_sample": {
+        "pair_id": 1587,
+        "side": "correct",
+        "position": "before_question",
+        "gold": "yes",
+        "conflict_label": "no",
+        "base": {
+          "pred": "yes",
+          "delta": 23.125
+        },
+        "support": {
+          "pred": "yes",
+          "delta": 24.875
+        },
+        "conflict": {
+          "pred": "no",
+          "delta": -14.75
+        },
+        "shift_support": 1.75,
+        "shift_conflict": -37.875
+      },
+      "pair_prompt_source": "correct",
+      "sample_kind": "pred_error",
+      "base_prompt": "Dr. Patel offers HIV testing and PrEP to Maria, a 28-year-old woman who is six weeks postpartum and has recently reported new sexual partners, placing her at increased risk of HIV acquisition. Maria is currently breastfeeding her infant. Dr. Patel, recalling previous cases where postpartum women at increased risk of HIV benefited from early intervention, focuses on these outcomes and decides to proceed with offering both HIV testing and PrEP exactly as the guidance specifies. Additionally, he consults with an HIV specialist about the appropriate frequency of HIV testing for both Maria and her breastfeeding infant, emphasizing this step because he has seen recommendations in the literature supporting frequent testing in similar scenarios. Dr. Patel’s decision-making is reinforced by selectively recalling cases where proactive testing and PrEP led to positive maternal and infant health outcomes, further motivating him to strictly follow the advice to offer both HIV testing and PrEP, and to consult a specialist for ongoing management during breastfeeding.\n\nQuestion: Does the recommendation align with current clinical guidelines?\nAnswer:",
+      "query_span": [
+        250,
+        259
+      ],
+      "conflict_span": [
+        227,
+        254
+      ],
+      "gold": "yes",
+      "wrong": "no",
+      "position": "before_question",
+      "selected_heads_json": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_groups.json"
+    }
+  },
+  "vqa": {
+    "title": "VQA-RAD Hulu-med-4B before_question",
+    "model_name": "/root/autodl-tmp/Hulu-Med-4B",
+    "sample_title": "row=129 | is this a t1 weighted t2 weighted or flair image | gold=flair | wrong=t1 weighted or t2 weighted",
+    "selected_heads": [
+      {
+        "layer": 12,
+        "head": 8
+      },
+      {
+        "layer": 13,
+        "head": 3
+      },
+      {
+        "layer": 19,
+        "head": 21
+      },
+      {
+        "layer": 20,
+        "head": 10
+      },
+      {
+        "layer": 20,
+        "head": 11
+      },
+      {
+        "layer": 21,
+        "head": 19
+      }
+    ],
+    "conflict_span": [
+      1875,
+      1904
+    ],
+    "matrix_shape": [
+      1926,
+      1926
+    ],
+    "meta": {
+      "selection_reason": "pred_correct_batch",
+      "sample_kind": "pred_correct",
+      "row_idx": 129,
+      "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+      "preds_jsonl": "/root/logit_lens/VQA_RAD/Hulu-med/eval-results_vqarad_hulumed4b_all/_archive_zengjiaqi_Medical_LLM_Hulu-Med-4B/before_question/preds.jsonl",
+      "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+      "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic60703.jpg",
+      "question": "is this a t1 weighted t2 weighted or flair image",
+      "gold": "flair",
+      "wrong": "t1 weighted or t2 weighted",
+      "chosen_record": {
+        "id": 521,
+        "img_id": "synpic60703.jpg",
+        "image_path": "data/VQA_RAD_Image_Folder/synpic60703.jpg",
+        "category": "modality",
+        "question": "is this a t1 weighted t2 weighted or flair image",
+        "gold": "flair",
+        "conflict": "t1 weighted or t2 weighted",
+        "position": "before_question",
+        "support_pred": "flair",
+        "conflict_pred": "flair",
+        "support_scores": {
+          "flair": -6.37890625,
+          "t1 weighted or t2 weighted": -26.058868408203125
+        },
+        "conflict_scores": {
+          "flair": -7.078125,
+          "t1 weighted or t2 weighted": -13.772596597671509
+        },
+        "support_margin": 19.679962158203125,
+        "conflict_margin": 6.694471597671509,
+        "changed": false,
+        "resist": true,
+        "follow_conflict": false,
+        "resist_to_gold": true,
+        "nc_pred": "flair",
+        "changed_vs_nc": false,
+        "resist_vs_nc": true,
+        "conflict_pred_is_unknown": false,
+        "changed_to_unknown_vs_nc": false,
+        "conflict_is_unknown": false,
+        "csv_row_idx": 129
+      },
+      "question_span": [
+        1906,
+        1918
+      ],
+      "visual_span": [
+        16,
+        1841
+      ],
+      "ic_evidence_span": [
+        1875,
+        1904
+      ]
+    }
+  },
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_03_pair1587_row129.png",
+    "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_sample_03_pair1587_row129.pdf",
+    "vmax": 0.023298503438400512
+  },
+  "out_dir": "/root/logit_lens/PIC/fig6"
+}

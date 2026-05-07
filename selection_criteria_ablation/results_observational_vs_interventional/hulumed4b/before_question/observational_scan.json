@@ -1,0 +1,77 @@
+{
+  "model": "Hulu-med-4B",
+  "task": "vqa_rad",
+  "position": "before_question",
+  "selected_heads": [
+    {
+      "layer": 32,
+      "head": 8,
+      "observational_score": 0.3167211836982972,
+      "mean_feature": 0.054832048733216114,
+      "positive_rate": 0.47570332480818417,
+      "n_samples": 391
+    },
+    {
+      "layer": 20,
+      "head": 0,
+      "observational_score": 0.3023083425845274,
+      "mean_feature": 0.019128489677253585,
+      "positive_rate": 0.47570332480818417,
+      "n_samples": 391
+    },
+    {
+      "layer": 22,
+      "head": 11,
+      "observational_score": 0.295525590214299,
+      "mean_feature": 0.027101833802050033,
+      "positive_rate": 0.47570332480818417,
+      "n_samples": 391
+    },
+    {
+      "layer": 21,
+      "head": 8,
+      "observational_score": 0.28298531816827194,
+      "mean_feature": 0.03398479647038843,
+      "positive_rate": 0.47570332480818417,
+      "n_samples": 391
+    },
+    {
+      "layer": 21,
+      "head": 9,
+      "observational_score": 0.2811037871342082,
+      "mean_feature": 0.23362283145680146,
+      "positive_rate": 0.47570332480818417,
+      "n_samples": 391
+    },
+    {
+      "layer": 22,
+      "head": 30,
+      "observational_score": 0.27366327368063503,
+      "mean_feature": 0.07587918723025895,
+      "positive_rate": 0.47570332480818417,
+      "n_samples": 391
+    }
+  ],
+  "meta": {
+    "criterion": "observational",
+    "selection_rule": "sort by absolute Pearson correlation descending",
+    "metric_key": "observational_score",
+    "direction": "descending",
+    "threshold_at_last_selected": 0.27366327368063503,
+    "target_count_from_dual": 6,
+    "selected_count": 6,
+    "n_candidates": 480,
+    "model_key": "hulumed4b",
+    "task": "vqa_rad",
+    "position": "before_question",
+    "feature": "final-query attention mass to inserted evidence block",
+    "target": "follow_conflict label on conflict prompt (1 if prediction equals conflict answer)",
+    "score": "absolute Pearson correlation",
+    "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_train.csv",
+    "n_labels": 391,
+    "positive_rate": 0.47570332480818417,
+    "candidate_head_count": 480,
+    "skipped_span": 0,
+    "skipped_attn": 0
+  }
+}

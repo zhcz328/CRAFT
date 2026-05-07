@@ -1,0 +1,142 @@
+{
+  "output_root": "/root/logit_lens/selection_criteria_ablation/results_path_check",
+  "position": "before_question",
+  "splits": [
+    "val"
+  ],
+  "dry_run": true,
+  "models": {
+    "qwen3-4b": {
+      "display_name": "Qwen3-4B",
+      "task": "conflictmedqa",
+      "project_root": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp",
+      "scan_path": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_scan_summary.json",
+      "dual": {
+        "criterion": "dual",
+        "note": "Dual is not re-evaluated by this runner; these paths point to the existing results.",
+        "head_file": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_groups.json",
+        "n_selected_heads": 3,
+        "selected_heads": [
+          {
+            "layer": 18,
+            "head": 31
+          },
+          {
+            "layer": 18,
+            "head": 22
+          },
+          {
+            "layer": 35,
+            "head": 8
+          }
+        ],
+        "result_files": {
+          "train": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/summary_train.json",
+          "val": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/summary_val.json",
+          "all": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/summary_all.json"
+        },
+        "existing_results_found": {
+          "train": true,
+          "val": true,
+          "all": true
+        }
+      },
+      "criteria": {
+        "cer-only": {
+          "head_file": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/selected_heads/cer-only/cer-only_selected_heads.json",
+          "selection_meta": {
+            "criterion": "cer-only",
+            "selection_rule": "sort by mean_abs_effect_reduction descending",
+            "metric_key": "cer",
+            "direction": "descending",
+            "threshold_at_last_selected": 6.248231132075472,
+            "target_count_from_dual": 3,
+            "selected_count": 3,
+            "count_diff": 0,
+            "tolerance": 3,
+            "n_candidates": 40
+          },
+          "runs": {
+            "val": {
+              "command": [
+                "/root/miniconda3/bin/python",
+                "ablate_head_inf.py",
+                "--pairs",
+                "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/data/kept_pairs_a12_b10_all_val.jsonl",
+                "--model",
+                "/root/autodl-tmp/qwen3-4B",
+                "--head_file",
+                "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/selected_heads/cer-only/cer-only_selected_heads.json",
+                "--out",
+                "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/cer-only/cer-only_val.jsonl",
+                "--summary_out",
+                "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/cer-only/cer-only_val_summary.json",
+                "--positions",
+                "before_question",
+                "--mask_scope",
+                "all",
+                "--dtype",
+                "bfloat16",
+                "--device_map",
+                "cuda:1"
+              ],
+              "command_text": "/root/miniconda3/bin/python ablate_head_inf.py --pairs /root/logit_lens/conflictmedqa/Qwen3-4B_exp/data/kept_pairs_a12_b10_all_val.jsonl --model /root/autodl-tmp/qwen3-4B --head_file /root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/selected_heads/cer-only/cer-only_selected_heads.json --out /root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/cer-only/cer-only_val.jsonl --summary_out /root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/cer-only/cer-only_val_summary.json --positions before_question --mask_scope all --dtype bfloat16 --device_map cuda:1",
+              "cwd": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp",
+              "result": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/cer-only/cer-only_val.jsonl",
+              "summary": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/cer-only/cer-only_val_summary.json",
+              "log": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/logs/cer-only_val.log",
+              "status": "not_run"
+            }
+          }
+        },
+        "bcp-only": {
+          "head_file": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/selected_heads/bcp-only/bcp-only_selected_heads.json",
+          "selection_meta": {
+            "criterion": "bcp-only",
+            "selection_rule": "sort by BCP ascending",
+            "metric_key": "bcp",
+            "direction": "ascending",
+            "threshold_at_last_selected": 0.9357311320754716,
+            "target_count_from_dual": 3,
+            "selected_count": 3,
+            "count_diff": 0,
+            "tolerance": 3,
+            "n_candidates": 40
+          },
+          "runs": {
+            "val": {
+              "command": [
+                "/root/miniconda3/bin/python",
+                "ablate_head_inf.py",
+                "--pairs",
+                "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/data/kept_pairs_a12_b10_all_val.jsonl",
+                "--model",
+                "/root/autodl-tmp/qwen3-4B",
+                "--head_file",
+                "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/selected_heads/bcp-only/bcp-only_selected_heads.json",
+                "--out",
+                "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/bcp-only/bcp-only_val.jsonl",
+                "--summary_out",
+                "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/bcp-only/bcp-only_val_summary.json",
+                "--positions",
+                "before_question",
+                "--mask_scope",
+                "all",
+                "--dtype",
+                "bfloat16",
+                "--device_map",
+                "cuda:1"
+              ],
+              "command_text": "/root/miniconda3/bin/python ablate_head_inf.py --pairs /root/logit_lens/conflictmedqa/Qwen3-4B_exp/data/kept_pairs_a12_b10_all_val.jsonl --model /root/autodl-tmp/qwen3-4B --head_file /root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/selected_heads/bcp-only/bcp-only_selected_heads.json --out /root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/bcp-only/bcp-only_val.jsonl --summary_out /root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/bcp-only/bcp-only_val_summary.json --positions before_question --mask_scope all --dtype bfloat16 --device_map cuda:1",
+              "cwd": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp",
+              "result": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/bcp-only/bcp-only_val.jsonl",
+              "summary": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/bcp-only/bcp-only_val_summary.json",
+              "log": "/root/logit_lens/selection_criteria_ablation/results_path_check/qwen3-4b/before_question/logs/bcp-only_val.log",
+              "status": "not_run"
+            }
+          }
+        }
+      }
+    }
+  }
+}

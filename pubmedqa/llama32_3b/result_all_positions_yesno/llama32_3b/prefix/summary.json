@@ -1,0 +1,17 @@
+{
+  "model": "/root/autodl-tmp/Llama-3.2-3B-Instruct",
+  "prompt_profile": "llama",
+  "position": "prefix",
+  "N": 805,
+  "Acc_base": 100.0,
+  "Acc_support": 99.00621118012423,
+  "Acc_conflict": 84.09937888198758,
+  "resist_rate": 84.09937888198758,
+  "follow_conflict_rate": 15.900621118012422,
+  "resist_rate_given_base_correct": 84.09937888198758,
+  "follow_conflict_rate_given_base_correct": 15.900621118012422,
+  "files": {
+    "preds": "llama32_3b/result_all_positions_yesno/llama32_3b/prefix/preds.jsonl",
+    "summary": "llama32_3b/result_all_positions_yesno/llama32_3b/prefix/summary.json"
+  }
+}

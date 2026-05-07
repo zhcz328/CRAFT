@@ -1,0 +1,354 @@
+{
+  "config": {
+    "model": "/root/autodl-tmp/Hulu-Med-4B",
+    "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+    "image_root": "/root/logit_lens/VQA_RAD/Hulu-med",
+    "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+    "sample_index": 0,
+    "position": "before_question",
+    "dtype": "bf16",
+    "device": "cuda",
+    "warmup": 1,
+    "repeats": 3,
+    "max_image_side": 672
+  },
+  "sample": {
+    "row_idx": 988,
+    "question": "is there any bleeding in this patient brain",
+    "gold": "no",
+    "wrong": "yes",
+    "img_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic23631.jpg"
+  },
+  "sample_inputs": {
+    "image_size": [
+      537,
+      672
+    ],
+    "ctx_prompt_token_count": 1916,
+    "nc_prompt_token_count": 1893
+  },
+  "selected_heads": [
+    {
+      "layer": 12,
+      "head": 8
+    },
+    {
+      "layer": 13,
+      "head": 3
+    },
+    {
+      "layer": 19,
+      "head": 21
+    },
+    {
+      "layer": 20,
+      "head": 10
+    },
+    {
+      "layer": 20,
+      "head": 11
+    },
+    {
+      "layer": 21,
+      "head": 19
+    }
+  ],
+  "patched_layers": [
+    {
+      "layer_idx": 12,
+      "removed_q_heads": [
+        8
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 13,
+      "removed_q_heads": [
+        3
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 19,
+      "removed_q_heads": [
+        21
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 20,
+      "removed_q_heads": [
+        10,
+        11
+      ],
+      "kept_q_head_count": 30,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "layer_idx": 21,
+      "removed_q_heads": [
+        19
+      ],
+      "kept_q_head_count": 31,
+      "used_kv_heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "normal_ctx": {
+    "timing": {
+      "warmup": 1,
+      "repeats": 3,
+      "elapsed_ms": [
+        207.3820997029543,
+        206.91417530179024,
+        207.04559609293938
+      ],
+      "elapsed_ms_mean": 207.1139570325613,
+      "elapsed_ms_min": 206.91417530179024,
+      "elapsed_ms_max": 207.3820997029543,
+      "peak_memory_mb": [
+        9398.78857421875,
+        9398.78857421875,
+        9398.78857421875
+      ],
+      "peak_memory_mb_mean": 9398.78857421875,
+      "result": {
+        "scores": {
+          "gold_lp": -11.0,
+          "wrong_lp": -11.3125,
+          "ctx_target": "yes",
+          "ctx_lp": -11.3125,
+          "other_lp": -11.0
+        },
+        "metrics": {
+          "gold_wrong_margin": 0.3125,
+          "follow_conflict": -0.3125,
+          "follow_context": -0.3125,
+          "context_flip": 0.3125
+        },
+        "pred": "gold"
+      }
+    },
+    "profile": {
+      "reported_total_flops": 19539960511501,
+      "reported_total_flops_giga": 19539.960511501,
+      "self_cpu_time_total_ms": 188.159,
+      "self_cuda_time_total_ms": 0.0,
+      "event_count": 201,
+      "top_flop_ops": [
+        {
+          "key": "aten::mm",
+          "flops": 15413346304000,
+          "self_cpu_time_total_us": 3273,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::bmm",
+          "flops": 2579206225408,
+          "self_cpu_time_total_us": 2188,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::addmm",
+          "flops": 1534250975232,
+          "self_cpu_time_total_us": 2503,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::add",
+          "flops": 6607127516,
+          "self_cpu_time_total_us": 2783,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::mul",
+          "flops": 6549879345,
+          "self_cpu_time_total_us": 3801,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::to",
+          "flops": 0,
+          "self_cpu_time_total_us": 3363,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::_to_copy",
+          "flops": 0,
+          "self_cpu_time_total_us": 1967,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::empty_strided",
+          "flops": 0,
+          "self_cpu_time_total_us": 1769,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::copy_",
+          "flops": 0,
+          "self_cpu_time_total_us": 3222,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "Activity Buffer Request",
+          "flops": 0,
+          "self_cpu_time_total_us": 1891,
+          "self_cuda_time_total_us": 0
+        }
+      ]
+    }
+  },
+  "pruned_ctx": {
+    "timing": {
+      "warmup": 1,
+      "repeats": 3,
+      "elapsed_ms": [
+        208.38839374482632,
+        207.86145329475403,
+        208.05374532938004
+      ],
+      "elapsed_ms_mean": 208.10119745632014,
+      "elapsed_ms_min": 207.86145329475403,
+      "elapsed_ms_max": 208.38839374482632,
+      "peak_memory_mb": [
+        9410.70751953125,
+        9410.70751953125,
+        9410.70751953125
+      ],
+      "peak_memory_mb_mean": 9410.70751953125,
+      "result": {
+        "scores": {
+          "gold_lp": -11.0,
+          "wrong_lp": -11.5625,
+          "ctx_target": "yes",
+          "ctx_lp": -11.5625,
+          "other_lp": -11.0
+        },
+        "metrics": {
+          "gold_wrong_margin": 0.5625,
+          "follow_conflict": -0.5625,
+          "follow_context": -0.5625,
+          "context_flip": 0.5625
+        },
+        "pred": "gold"
+      }
+    },
+    "profile": {
+      "reported_total_flops": 19517964285441,
+      "reported_total_flops_giga": 19517.964285441,
+      "self_cpu_time_total_ms": 188.419,
+      "self_cuda_time_total_ms": 0.0,
+      "event_count": 202,
+      "top_flop_ops": [
+        {
+          "key": "aten::mm",
+          "flops": 15400789606400,
+          "self_cpu_time_total_us": 3193,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::bmm",
+          "flops": 2569808322048,
+          "self_cpu_time_total_us": 2120,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::addmm",
+          "flops": 1534250975232,
+          "self_cpu_time_total_us": 2497,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::add",
+          "flops": 6587536416,
+          "self_cpu_time_total_us": 2730,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::mul",
+          "flops": 6527845345,
+          "self_cpu_time_total_us": 3712,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::to",
+          "flops": 0,
+          "self_cpu_time_total_us": 850,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::_to_copy",
+          "flops": 0,
+          "self_cpu_time_total_us": 1849,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::empty_strided",
+          "flops": 0,
+          "self_cpu_time_total_us": 1776,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "aten::copy_",
+          "flops": 0,
+          "self_cpu_time_total_us": 3212,
+          "self_cuda_time_total_us": 0
+        },
+        {
+          "key": "Activity Buffer Request",
+          "flops": 0,
+          "self_cpu_time_total_us": 1303,
+          "self_cuda_time_total_us": 0
+        }
+      ]
+    }
+  }
+}

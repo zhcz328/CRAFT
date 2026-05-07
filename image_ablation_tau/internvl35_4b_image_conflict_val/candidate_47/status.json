@@ -1,0 +1,13 @@
+{
+  "candidate_index": 47,
+  "mode": "custom",
+  "thresholds": {
+    "eff_min": -0.5,
+    "base_max": 0.158582089552,
+    "base_min": null
+  },
+  "n_selected": 20,
+  "selection_path": "/root/logit_lens/image_ablation_tau/internvl35_4b_image_conflict_val/candidate_47/selected_heads.json",
+  "ablation_path": "/root/logit_lens/image_ablation_tau/internvl35_4b_image_conflict_val/candidate_47/ablation_val.json",
+  "decision": "pending_ablation"
+}

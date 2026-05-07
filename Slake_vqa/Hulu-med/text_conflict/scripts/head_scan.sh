@@ -1,0 +1,12 @@
+python head_scan_slake_mm_fastcache.py\
+  --data_csv ./data/slake_nc_cc_both_correct_train.csv \
+  --image_root  /root/autodl-tmp/data/SLAKE/imgs \
+  --model /root/autodl-tmp/Hulu-Med-4B \
+  --device auto \
+  --dtype bf16 \
+  --trace_mode conflict \
+  --position before_question \
+  --metric follow_conflict \
+  --plan ./result_slake_hulumed4b_before_question/trace_conflict_scan_plan.json \
+  --plan_out_dir ./result_slake_hulumed4b_before_question/headscan_slake_mm_hulumed4b \
+  --limit 0

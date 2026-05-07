@@ -1,0 +1,431 @@
+{
+  "selection_reason": "manual_row_idx",
+  "position": "prefix",
+  "ablation_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_prefix/ablate_selected_heads_ctx_only_hulumed4b_val.json",
+  "selected_heads_json": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_prefix/headscan_vqarad_mm_hulumed4b_prefix/selected_heads_stable_hulumed4b.json",
+  "data_csv": "/root/logit_lens/VQA_RAD/Hulu-med/data/nc_cc_both_correct_rerun_tmp_val.csv",
+  "model": "/root/autodl-tmp/Hulu-Med-4B",
+  "sample": {
+    "row_idx": 53,
+    "question": "did this patient receive iv contrast",
+    "gold": "yes",
+    "wrong": "no",
+    "image_path": "/root/logit_lens/VQA_RAD/Hulu-med/data/VQA_RAD_Image_Folder/synpic32727.jpg",
+    "ablation_record": {
+      "row_idx": 53,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "wrong",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -0.73046875,
+        "wrong_lp": -3.671875,
+        "ctx_target": "no",
+        "ctx_lp": -3.671875,
+        "other_lp": -0.73046875
+      },
+      "base_ctx_scores": {
+        "gold_lp": -1.5390625,
+        "wrong_lp": -0.66015625,
+        "ctx_target": "no",
+        "ctx_lp": -0.66015625,
+        "other_lp": -1.5390625
+      },
+      "ab_nc_scores": {
+        "gold_lp": -0.73046875,
+        "wrong_lp": -3.671875,
+        "ctx_target": "no",
+        "ctx_lp": -3.671875,
+        "other_lp": -0.73046875
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -0.83984375,
+        "wrong_lp": -2.09375,
+        "ctx_target": "no",
+        "ctx_lp": -2.09375,
+        "other_lp": -0.83984375
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 2.94140625,
+        "follow_conflict": -2.94140625,
+        "follow_context": -2.94140625,
+        "context_flip": 2.94140625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -0.87890625,
+        "follow_conflict": 0.87890625,
+        "follow_context": 0.87890625,
+        "context_flip": -0.87890625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 2.94140625,
+        "follow_conflict": -2.94140625,
+        "follow_context": -2.94140625,
+        "context_flip": 2.94140625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 1.25390625,
+        "follow_conflict": -1.25390625,
+        "follow_context": -1.25390625,
+        "context_flip": 1.25390625
+      },
+      "metric_effect_reduction_fixed_nc": {
+        "follow_conflict": 2.1328125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_conflict": 2.1328125
+      },
+      "metric_abs_base_change": {
+        "follow_conflict": 0.0
+      },
+      "metric_abs_ctx_change": {
+        "follow_conflict": 2.1328125
+      }
+    },
+    "nc_scores": {
+      "gold_lp": -9.5625,
+      "wrong_lp": -12.8125,
+      "pred": "yes"
+    },
+    "ic_scores": {
+      "gold_lp": -10.5625,
+      "wrong_lp": -10.5625,
+      "pred": "yes"
+    },
+    "nc_answer": "yes",
+    "ic_answer": "yes",
+    "nc_answer_token_ids": [
+      9834
+    ],
+    "ic_answer_token_ids": [
+      9834
+    ],
+    "nc_answer_token_labels": [
+      " yes"
+    ],
+    "ic_answer_token_labels": [
+      " yes"
+    ]
+  },
+  "spans": {
+    "nc_image_span": [
+      16,
+      1386
+    ],
+    "ic_image_span": [
+      16,
+      1386
+    ],
+    "evidence_span_ic": [
+      1386,
+      1409
+    ],
+    "nc_image_token_count": 1370,
+    "ic_image_token_count": 1370,
+    "nc_expected_image_token_count": null,
+    "ic_expected_image_token_count": null,
+    "nc_image_locate_method": "image_sentinel_marked_prompt",
+    "ic_image_locate_method": "image_sentinel_marked_prompt",
+    "nc_image_locate_debug": {
+      "begin_marker": "<<IMAGE_BEGIN_9f3a1c>>",
+      "end_marker": "<<IMAGE_END_9f3a1c>>",
+      "begin_span": [
+        16,
+        27
+      ],
+      "end_span": [
+        1397,
+        1408
+      ],
+      "begin_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_BEGIN_9f3a1c>>",
+        "char_start": 86,
+        "char_end": 108,
+        "token_start": 16,
+        "token_end": 27
+      },
+      "end_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_END_9f3a1c>>",
+        "char_start": 9692,
+        "char_end": 9712,
+        "token_start": 1397,
+        "token_end": 1408
+      },
+      "marked_prefix_decode": "<|im_start|>system You are a helpful medical QA assistant.<|im_end|> <|im_start|>user <<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image>",
+      "marked_suffix_decode": "<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image> <<IMAGE_END_9f3a1c>>Answer the question using your best internal medical knowledge AND the image. The EVIDENCE block (if present) may be correct or incorrect. Output ONLY the final answer. Question: did this patient receive iv contrast Answer:<|im_end|> <|im_start|>assistant",
+      "method": "image_sentinel_marked_prompt",
+      "begin_token_count": 11,
+      "end_token_count": 11,
+      "marked_image_span": [
+        27,
+        1397
+      ],
+      "actual_length": 1436,
+      "marked_length": 1458,
+      "marked_text_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image>\n<<IMAGE_END_9f3a1c>>Answer the question using your best internal medical knowledge AND the image.\nThe EVIDENCE block (if present) may be correct or incorrect.\nOutput ONLY the final answer.\n\nQuestion: did this patient receive iv contrast\nAnswer:<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "ic_image_locate_debug": {
+      "begin_marker": "<<IMAGE_BEGIN_9f3a1c>>",
+      "end_marker": "<<IMAGE_END_9f3a1c>>",
+      "begin_span": [
+        16,
+        27
+      ],
+      "end_span": [
+        1397,
+        1408
+      ],
+      "begin_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_BEGIN_9f3a1c>>",
+        "char_start": 86,
+        "char_end": 108,
+        "token_start": 16,
+        "token_end": 27
+      },
+      "end_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><imag",
+        "needle": "<<IMAGE_END_9f3a1c>>",
+        "char_start": 9692,
+        "char_end": 9712,
+        "token_start": 1397,
+        "token_end": 1408
+      },
+      "marked_prefix_decode": "<|im_start|>system You are a helpful medical QA assistant.<|im_end|> <|im_start|>user <<IMAGE_BEGIN_9f3a1c>><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image>",
+      "marked_suffix_decode": "<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image> <<IMAGE_END_9f3a1c>>EVIDENCE: - According to the provided context, the correct answer is: no. END EVIDENCE Answer the question using your best internal medical knowledge AND the image. The EVIDENCE block (if present) may be correct or incorrect. Output ONLY the final answer. Question: did this patient receive iv contrast Answer:<|im_end|> <|im_start|>assistant",
+      "method": "image_sentinel_marked_prompt",
+      "begin_token_count": 11,
+      "end_token_count": 11,
+      "marked_image_span": [
+        27,
+        1397
+      ],
+      "actual_length": 1459,
+      "marked_length": 1481,
+      "marked_text_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<<IMAGE_BEGIN_9f3a1c>><image>\n<<IMAGE_END_9f3a1c>>EVIDENCE:\n- According to the provided context, the correct answer is: no.\nEND EVIDENCE\n\nAnswer the question using your best internal medical knowledge AND the image.\nThe EVIDENCE block (if present) may be correct or incorrect.\nOutput ONLY the final answer.\n\nQuesti"
+    },
+    "evidence_locate_debug": {
+      "begin_marker": "<<EVIDENCE_BEGIN_9f3a1c>>",
+      "end_marker": "<<EVIDENCE_END_9f3a1c>>",
+      "begin_span": [
+        1386,
+        1399
+      ],
+      "end_span": [
+        1422,
+        1435
+      ],
+      "begin_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image",
+        "needle": "<<EVIDENCE_BEGIN_9f3a1c>>",
+        "char_start": 9670,
+        "char_end": 9695,
+        "token_start": 1386,
+        "token_end": 1399
+      },
+      "end_meta": {
+        "decoded_preview": "<|im_start|>system\nYou are a helpful medical QA assistant.<|im_end|>\n<|im_start|>user\n<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image",
+        "needle": "<<EVIDENCE_END_9f3a1c>>",
+        "char_start": 9782,
+        "char_end": 9805,
+        "token_start": 1422,
+        "token_end": 1435
+      },
+      "marked_prefix_decode": "<|im_start|>system You are a helpful medical QA assistant.<|im_end|> <|im_start|>user <image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image>",
+      "marked_suffix_decode": "<image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image><image> <<EVIDENCE_BEGIN_9f3a1c>>EVIDENCE: - According to the provided context, the correct answer is: no. END EVIDENCE <<EVIDENCE_END_9f3a1c>> Answer the question using your best internal medical knowledge AND the image. The EVIDENCE block (if present) may be correct or incorrect. Output ONLY the final answer. Question: did this patient receive iv contrast Answer:<|im_end|> <|im_start|>assistant",
+      "method": "sentinel_marked_prompt",
+      "begin_token_count": 13,
+      "end_token_count": 13,
+      "marked_evidence_span": [
+        1399,
+        1422
+      ],
+      "actual_length": 1459,
+      "marked_length": 1485,
+      "marked_text_preview": "<<EVIDENCE_BEGIN_9f3a1c>>EVIDENCE:\n- According to the provided context, the correct answer is: no.\nEND EVIDENCE\n<<EVIDENCE_END_9f3a1c>>\nAnswer the question using your best internal medical knowledge AND the image.\nThe EVIDENCE block (if present) may be correct or incorrect.\nOutput ONLY the final answer.\n\nQuestion: did this patient receive iv contrast\nAnswer:"
+    },
+    "evidence_preview": "EVIDENCE: - According to the provided context, the correct answer is: no. END EVIDENCE",
+    "nc_token_source_labels_preview": [
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image"
+    ],
+    "ic_token_source_labels_preview": [
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "text",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image"
+    ]
+  },
+  "heads": [
+    {
+      "layer": 13,
+      "head": 8,
+      "A_vision_NC": 0.17004075646400452,
+      "A_vision_IC": 0.0814695805311203,
+      "A_vision_delta": -0.08857117593288422,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.6313638687133789,
+      "A_conflict_delta": 0.6313638687133789,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_prefix/row_0053/L13_H08_attention_matrix.png"
+    },
+    {
+      "layer": 20,
+      "head": 10,
+      "A_vision_NC": 0.062199804931879044,
+      "A_vision_IC": 0.03243323788046837,
+      "A_vision_delta": -0.029766567051410675,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.13498926162719727,
+      "A_conflict_delta": 0.13498926162719727,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_prefix/row_0053/L20_H10_attention_matrix.png"
+    },
+    {
+      "layer": 20,
+      "head": 11,
+      "A_vision_NC": 0.00451355054974556,
+      "A_vision_IC": 0.0017267214134335518,
+      "A_vision_delta": -0.002786829136312008,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.0072796642780303955,
+      "A_conflict_delta": 0.0072796642780303955,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_prefix/row_0053/L20_H11_attention_matrix.png"
+    },
+    {
+      "layer": 21,
+      "head": 19,
+      "A_vision_NC": 0.1339239478111267,
+      "A_vision_IC": 0.0706234946846962,
+      "A_vision_delta": -0.06330045312643051,
+      "A_conflict_NC": 0.0,
+      "A_conflict_IC": 0.13232755661010742,
+      "A_conflict_delta": 0.13232755661010742,
+      "figure_png": "/root/logit_lens/VQA_RAD/Hulu-med/attention_vis_prefix/row_0053/L21_H19_attention_matrix.png"
+    }
+  ]
+}

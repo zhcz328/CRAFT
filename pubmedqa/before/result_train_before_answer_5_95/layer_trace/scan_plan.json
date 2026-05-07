@@ -1,0 +1,48 @@
+{
+  "scheme": "B_conflict_evidence_injection",
+  "position": "before_answer",
+  "patch_k": 8,
+  "patch_all_tokens": false,
+  "patch_mode": "last_8",
+  "include_context": true,
+  "n_samples": 121,
+  "n_layers": 36,
+  "plan_scores_source": {
+    "mode": "weighted_metrics",
+    "metrics": [
+      "abstain_adv",
+      "follow_conflict"
+    ],
+    "weights": {
+      "abstain_adv": 0.05,
+      "follow_conflict": 0.95
+    }
+  },
+  "scan_plan": {
+    "method": "topk_fallback",
+    "plateau_start": null,
+    "round0_rise": [
+      20,
+      21,
+      22,
+      23,
+      32,
+      33
+    ],
+    "round1_topk_fallback": [
+      24,
+      27,
+      29,
+      30,
+      31,
+      34,
+      35
+    ],
+    "round2_tail": [],
+    "tail_k": 4,
+    "topk_fallback": 8,
+    "plateau_min_score_frac": 0.8,
+    "plateau_eps": 0.6,
+    "plateau_min_len": 6
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "output_root": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check",
+  "position": "before_question",
+  "splits": [
+    "val"
+  ],
+  "dry_run": true,
+  "models": {
+    "internvl35-4b": {
+      "display_name": "InternVL3.5-4B",
+      "task": "vqa_rad",
+      "project_root": "/root/logit_lens/VQA_RAD/text_conflict",
+      "scan_path": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+      "dual": {
+        "criterion": "dual",
+        "note": "Dual is not re-evaluated by this runner; these paths point to the existing results.",
+        "head_file": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json",
+        "n_selected_heads": 10,
+        "selected_heads": [
+          {
+            "layer": 34,
+            "head": 5
+          },
+          {
+            "layer": 24,
+            "head": 30
+          },
+          {
+            "layer": 21,
+            "head": 11
+          },
+          {
+            "layer": 19,
+            "head": 21
+          },
+          {
+            "layer": 20,
+            "head": 29
+          },
+          {
+            "layer": 20,
+            "head": 14
+          },
+          {
+            "layer": 20,
+            "head": 30
+          },
+          {
+            "layer": 18,
+            "head": 23
+          },
+          {
+            "layer": 14,
+            "head": 26
+          },
+          {
+            "layer": 21,
+            "head": 27
+          }
+        ],
+        "result_files": {
+          "train": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/ablate/ablate_selected_heads_all_train.json",
+          "val": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/ablate/ablate_selected_heads_all_val.json"
+        },
+        "existing_results_found": {
+          "train": true,
+          "val": true
+        }
+      },
+      "criteria": {
+        "cer-only": {
+          "head_file": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/selected_heads/cer-only/cer-only_selected_heads.json",
+          "selection_meta": {
+            "criterion": "cer-only",
+            "selection_rule": "sort by mean_abs_effect_reduction descending",
+            "metric_key": "cer",
+            "direction": "descending",
+            "threshold_at_last_selected": 0.6686213856781793,
+            "target_count_from_dual": 10,
+            "selected_count": 10,
+            "count_diff": 0,
+            "tolerance": 3,
+            "n_candidates": 48
+          },
+          "runs": {
+            "val": {
+              "command": [
+                "/root/miniconda3/bin/python",
+                "ablate_head.py",
+                "--data_csv",
+                "/root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv",
+                "--image_root",
+                ".",
+                "--model",
+                "/root/autodl-tmp/InternVL3_5-4B",
+                "--selected_heads",
+                "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/selected_heads/cer-only/cer-only_selected_heads.json",
+                "--out_json",
+                "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/cer-only/cer-only_val.json",
+                "--device",
+                "cuda:0",
+                "--dtype",
+                "bf16",
+                "--trace_mode",
+                "conflict",
+                "--position",
+                "before_question",
+                "--metrics",
+                "follow_conflict",
+                "--mask_scope",
+                "all",
+                "--keep_mode",
+                "self",
+                "--seed",
+                "0",
+                "--max_image_side",
+                "672",
+                "--model_name",
+                "InternVL3_5-4B"
+              ],
+              "command_text": "/root/miniconda3/bin/python ablate_head.py --data_csv /root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv --image_root . --model /root/autodl-tmp/InternVL3_5-4B --selected_heads /root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/selected_heads/cer-only/cer-only_selected_heads.json --out_json /root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/cer-only/cer-only_val.json --device cuda:0 --dtype bf16 --trace_mode conflict --position before_question --metrics follow_conflict --mask_scope all --keep_mode self --seed 0 --max_image_side 672 --model_name InternVL3_5-4B",
+              "cwd": "/root/logit_lens/VQA_RAD/text_conflict",
+              "result": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/cer-only/cer-only_val.json",
+              "summary": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/cer-only/cer-only_val.json",
+              "log": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/logs/cer-only_val.log",
+              "status": "not_run"
+            }
+          }
+        },
+        "bcp-only": {
+          "head_file": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/selected_heads/bcp-only/bcp-only_selected_heads.json",
+          "selection_meta": {
+            "criterion": "bcp-only",
+            "selection_rule": "sort by BCP ascending",
+            "metric_key": "bcp",
+            "direction": "ascending",
+            "threshold_at_last_selected": 0.38028418402958736,
+            "target_count_from_dual": 10,
+            "selected_count": 10,
+            "count_diff": 0,
+            "tolerance": 3,
+            "n_candidates": 48
+          },
+          "runs": {
+            "val": {
+              "command": [
+                "/root/miniconda3/bin/python",
+                "ablate_head.py",
+                "--data_csv",
+                "/root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv",
+                "--image_root",
+                ".",
+                "--model",
+                "/root/autodl-tmp/InternVL3_5-4B",
+                "--selected_heads",
+                "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/selected_heads/bcp-only/bcp-only_selected_heads.json",
+                "--out_json",
+                "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/bcp-only/bcp-only_val.json",
+                "--device",
+                "cuda:0",
+                "--dtype",
+                "bf16",
+                "--trace_mode",
+                "conflict",
+                "--position",
+                "before_question",
+                "--metrics",
+                "follow_conflict",
+                "--mask_scope",
+                "all",
+                "--keep_mode",
+                "self",
+                "--seed",
+                "0",
+                "--max_image_side",
+                "672",
+                "--model_name",
+                "InternVL3_5-4B"
+              ],
+              "command_text": "/root/miniconda3/bin/python ablate_head.py --data_csv /root/logit_lens/VQA_RAD/text_conflict/data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv --image_root . --model /root/autodl-tmp/InternVL3_5-4B --selected_heads /root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/selected_heads/bcp-only/bcp-only_selected_heads.json --out_json /root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/bcp-only/bcp-only_val.json --device cuda:0 --dtype bf16 --trace_mode conflict --position before_question --metrics follow_conflict --mask_scope all --keep_mode self --seed 0 --max_image_side 672 --model_name InternVL3_5-4B",
+              "cwd": "/root/logit_lens/VQA_RAD/text_conflict",
+              "result": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/bcp-only/bcp-only_val.json",
+              "summary": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/bcp-only/bcp-only_val.json",
+              "log": "/root/logit_lens/selection_criteria_ablation/results_internvl_672_check/internvl35-4b/before_question/logs/bcp-only_val.log",
+              "status": "not_run"
+            }
+          }
+        }
+      }
+    }
+  }
+}

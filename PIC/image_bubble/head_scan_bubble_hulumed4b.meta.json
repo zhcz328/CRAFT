@@ -1,0 +1,20 @@
+{
+  "input": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+  "output": "/root/logit_lens/PIC/image_bubble/head_scan_bubble_hulumed4b.svg",
+  "legend_output": null,
+  "fill_missing_heads": true,
+  "augment_from_selected_json": "/root/logit_lens/heal-medvqa/hulumed4b/result_image_conflict_heal_medvqa/selected_heads_core_layers.json",
+  "augment_radius": 2,
+  "augment_per_anchor": 2,
+  "rendered_points": 96,
+  "scanned_layers": [
+    16,
+    17,
+    35
+  ],
+  "metrics_used": [
+    "mean_abs_effect_reduction",
+    "mean_abs_base_change"
+  ],
+  "text_removed_from_main_plot": true
+}

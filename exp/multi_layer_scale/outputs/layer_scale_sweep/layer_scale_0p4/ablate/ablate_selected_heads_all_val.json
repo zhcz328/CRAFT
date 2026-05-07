@@ -1,0 +1,3490 @@
+{
+  "config": {
+    "data_csv": "/root/logit_lens/Slake_vqa/image_conflict/data/internvl35_4b/slake_nc_correct_ic_ready_val.csv",
+    "image_root": "/root/logit_lens/Slake_vqa/image_conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B",
+    "selected_heads": "/root/logit_lens/exp/multi_layer_scale/outputs/layer_scale_sweep/layer_scale_0p4/select_train/selected_heads_auto.json",
+    "trace_mode": "conflict",
+    "position": "image_conflict",
+    "mask_scale": 1.0,
+    "metrics": [
+      "follow_context"
+    ],
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "dtype": "fp16",
+    "device": "cuda",
+    "max_examples": 0,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "selected_pairs": [
+    {
+      "layer": 25,
+      "head": 11
+    },
+    {
+      "layer": 25,
+      "head": 18
+    },
+    {
+      "layer": 25,
+      "head": 27
+    },
+    {
+      "layer": 31,
+      "head": 6
+    },
+    {
+      "layer": 31,
+      "head": 9
+    },
+    {
+      "layer": 31,
+      "head": 23
+    }
+  ],
+  "n_selected_heads": 6,
+  "n_samples": 31,
+  "sample_filter": "none",
+  "mask_scale": 1.0,
+  "mean_hallucination_relief": 0.09929435483870967,
+  "mean_ic_follow_context_gain": 0.8040574596774194,
+  "mean_nc_gold_margin_damage": 0.7047631048387096,
+  "pred_nc": {
+    "base_acc": 1.0,
+    "ab_acc": 0.8709677419354839,
+    "acc_delta": -0.12903225806451613
+  },
+  "pred_ctx": {
+    "base_acc": 0.6774193548387096,
+    "ab_acc": 0.6774193548387096,
+    "acc_delta": 0.0
+  },
+  "ctx_unknown": {
+    "base_rate": 0.1935483870967742,
+    "ab_rate": 0.22580645161290322,
+    "rate_delta": 0.03225806451612903
+  },
+  "per_metric": {
+    "follow_context": {
+      "mean_abs_effect_reduction_fixed_nc": 0.8040574596774194,
+      "mean_abs_effect_reduction_mask_scope": 0.8040574596774194,
+      "mean_abs_base_change": 0.8998235887096774,
+      "mean_abs_ctx_change": 0.8332913306451613
+    }
+  },
+  "records": [
+    {
+      "row_idx": 0,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.3671875,
+        "wrong_lp": -15.3046875,
+        "unknown_lp": -16.734375,
+        "candidate_scores": {
+          "liver": -8.3671875,
+          "spleen": -15.3046875,
+          "unknown": -16.734375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.734375,
+        "other_lp": -8.3671875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.3359375,
+        "wrong_lp": -14.96875011920929,
+        "unknown_lp": -16.765625,
+        "candidate_scores": {
+          "liver": -8.3359375,
+          "spleen": -14.96875011920929,
+          "unknown": -16.765625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.765625,
+        "other_lp": -8.3359375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.3125,
+        "wrong_lp": -16.921875,
+        "unknown_lp": -15.8828125,
+        "candidate_scores": {
+          "liver": -8.3125,
+          "spleen": -16.921875,
+          "unknown": -15.8828125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.8828125,
+        "other_lp": -8.3125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.2265625,
+        "wrong_lp": -16.640625,
+        "unknown_lp": -15.9609375,
+        "candidate_scores": {
+          "liver": -8.2265625,
+          "spleen": -16.640625,
+          "unknown": -15.9609375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.9609375,
+        "other_lp": -8.2265625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 6.9375,
+        "follow_conflict": -8.3671875,
+        "follow_context": -8.3671875,
+        "context_flip": 8.3671875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 6.6328126192092896,
+        "follow_conflict": -8.4296875,
+        "follow_context": -8.4296875,
+        "context_flip": 8.4296875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.609375,
+        "follow_conflict": -7.5703125,
+        "follow_context": -7.5703125,
+        "context_flip": 7.5703125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 8.4140625,
+        "follow_conflict": -7.734375,
+        "follow_context": -7.734375,
+        "context_flip": 7.734375
+      },
+      "base_nc_gold_margin": 6.9375,
+      "ab_nc_gold_margin": 7.5703125,
+      "ctx_follow_context_gain": 0.6953125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": 0.6953125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.6953125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.6953125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.796875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.6953125
+      }
+    },
+    {
+      "row_idx": 1,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -25.234375,
+        "wrong_lp": -45.96875,
+        "unknown_lp": -27.03125,
+        "candidate_scores": {
+          "yes": -25.234375,
+          "no": -45.96875,
+          "unknown": -27.03125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -27.03125,
+        "other_lp": -25.234375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -18.328125,
+        "wrong_lp": -28.265625,
+        "unknown_lp": -13.6484375,
+        "candidate_scores": {
+          "yes": -18.328125,
+          "no": -28.265625,
+          "unknown": -13.6484375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.6484375,
+        "other_lp": -18.328125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -23.84375,
+        "wrong_lp": -45.59375,
+        "unknown_lp": -26.203125,
+        "candidate_scores": {
+          "yes": -23.84375,
+          "no": -45.59375,
+          "unknown": -26.203125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -26.203125,
+        "other_lp": -23.84375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.859375,
+        "wrong_lp": -27.984375,
+        "unknown_lp": -13.3671875,
+        "candidate_scores": {
+          "yes": -17.859375,
+          "no": -27.984375,
+          "unknown": -13.3671875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.3671875,
+        "other_lp": -17.859375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 20.734375,
+        "follow_conflict": -1.796875,
+        "follow_context": -1.796875,
+        "context_flip": 1.796875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 9.9375,
+        "follow_conflict": 4.6796875,
+        "follow_context": 4.6796875,
+        "context_flip": -4.6796875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 21.75,
+        "follow_conflict": -2.359375,
+        "follow_context": -2.359375,
+        "context_flip": 2.359375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 10.125,
+        "follow_conflict": 4.4921875,
+        "follow_context": 4.4921875,
+        "context_flip": -4.4921875
+      },
+      "base_nc_gold_margin": 1.796875,
+      "ab_nc_gold_margin": 2.359375,
+      "ctx_follow_context_gain": -0.1875,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -0.1875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -0.1875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -0.1875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.5625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.1875
+      }
+    },
+    {
+      "row_idx": 2,
+      "gold": "bladder",
+      "wrong": "small bowel",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -7.09765625,
+        "wrong_lp": -25.20328724384308,
+        "unknown_lp": -12.1640625,
+        "candidate_scores": {
+          "bladder": -7.09765625,
+          "small bowel": -25.20328724384308,
+          "unknown": -12.1640625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.1640625,
+        "other_lp": -7.09765625,
+        "pred_answer": "bladder",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -7.30078125,
+        "wrong_lp": -23.625229239463806,
+        "unknown_lp": -11.71875,
+        "candidate_scores": {
+          "bladder": -7.30078125,
+          "small bowel": -23.625229239463806,
+          "unknown": -11.71875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.71875,
+        "other_lp": -7.30078125,
+        "pred_answer": "bladder",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -7.78515625,
+        "wrong_lp": -26.45322859287262,
+        "unknown_lp": -11.2421875,
+        "candidate_scores": {
+          "bladder": -7.78515625,
+          "small bowel": -26.45322859287262,
+          "unknown": -11.2421875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.2421875,
+        "other_lp": -7.78515625,
+        "pred_answer": "bladder",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.0859375,
+        "wrong_lp": -25.109511733055115,
+        "unknown_lp": -10.96875,
+        "candidate_scores": {
+          "bladder": -8.0859375,
+          "small bowel": -25.109511733055115,
+          "unknown": -10.96875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.96875,
+        "other_lp": -8.0859375,
+        "pred_answer": "bladder",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 18.10563099384308,
+        "follow_conflict": -5.06640625,
+        "follow_context": -5.06640625,
+        "context_flip": 5.06640625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 16.324447989463806,
+        "follow_conflict": -4.41796875,
+        "follow_context": -4.41796875,
+        "context_flip": 4.41796875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 18.66807234287262,
+        "follow_conflict": -3.45703125,
+        "follow_context": -3.45703125,
+        "context_flip": 3.45703125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 17.023574233055115,
+        "follow_conflict": -2.8828125,
+        "follow_context": -2.8828125,
+        "context_flip": 2.8828125
+      },
+      "base_nc_gold_margin": 5.06640625,
+      "ab_nc_gold_margin": 3.45703125,
+      "ctx_follow_context_gain": 1.53515625,
+      "nc_gold_margin_damage": 1.609375,
+      "hallucination_relief": -0.07421875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 1.53515625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 1.53515625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.609375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.53515625
+      }
+    },
+    {
+      "row_idx": 3,
+      "gold": "kidney",
+      "wrong": "duodenum",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -6.32421875,
+        "wrong_lp": -15.328127980232239,
+        "unknown_lp": -10.4765625,
+        "candidate_scores": {
+          "kidney": -6.32421875,
+          "duodenum": -15.328127980232239,
+          "unknown": -10.4765625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.4765625,
+        "other_lp": -6.32421875,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -6.57421875,
+        "wrong_lp": -14.99219024181366,
+        "unknown_lp": -10.4765625,
+        "candidate_scores": {
+          "kidney": -6.57421875,
+          "duodenum": -14.99219024181366,
+          "unknown": -10.4765625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.4765625,
+        "other_lp": -6.57421875,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -6.28515625,
+        "wrong_lp": -15.382823824882507,
+        "unknown_lp": -9.5390625,
+        "candidate_scores": {
+          "kidney": -6.28515625,
+          "duodenum": -15.382823824882507,
+          "unknown": -9.5390625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.5390625,
+        "other_lp": -6.28515625,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -6.5703125,
+        "wrong_lp": -14.859384059906006,
+        "unknown_lp": -9.6171875,
+        "candidate_scores": {
+          "kidney": -6.5703125,
+          "duodenum": -14.859384059906006,
+          "unknown": -9.6171875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.6171875,
+        "other_lp": -6.5703125,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 9.003909230232239,
+        "follow_conflict": -4.15234375,
+        "follow_context": -4.15234375,
+        "context_flip": 4.15234375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 8.41797149181366,
+        "follow_conflict": -3.90234375,
+        "follow_context": -3.90234375,
+        "context_flip": 3.90234375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.097667574882507,
+        "follow_conflict": -3.25390625,
+        "follow_context": -3.25390625,
+        "context_flip": 3.25390625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 8.289071559906006,
+        "follow_conflict": -3.046875,
+        "follow_context": -3.046875,
+        "context_flip": 3.046875
+      },
+      "base_nc_gold_margin": 4.15234375,
+      "ab_nc_gold_margin": 3.25390625,
+      "ctx_follow_context_gain": 0.85546875,
+      "nc_gold_margin_damage": 0.8984375,
+      "hallucination_relief": -0.04296875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.85546875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.85546875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.8984375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.85546875
+      }
+    },
+    {
+      "row_idx": 4,
+      "gold": "liver",
+      "wrong": "kidney",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.46875,
+        "wrong_lp": -17.28125,
+        "unknown_lp": -16.4375,
+        "candidate_scores": {
+          "liver": -8.46875,
+          "kidney": -17.28125,
+          "unknown": -16.4375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.4375,
+        "other_lp": -8.46875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.25,
+        "wrong_lp": -13.9375,
+        "unknown_lp": -10.9609375,
+        "candidate_scores": {
+          "liver": -8.25,
+          "kidney": -13.9375,
+          "unknown": -10.9609375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.9609375,
+        "other_lp": -8.25,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.328125,
+        "wrong_lp": -17.75,
+        "unknown_lp": -15.2109375,
+        "candidate_scores": {
+          "liver": -8.328125,
+          "kidney": -17.75,
+          "unknown": -15.2109375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.2109375,
+        "other_lp": -8.328125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.1640625,
+        "wrong_lp": -14.515625,
+        "unknown_lp": -10.078125,
+        "candidate_scores": {
+          "liver": -8.1640625,
+          "kidney": -14.515625,
+          "unknown": -10.078125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.078125,
+        "other_lp": -8.1640625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.8125,
+        "follow_conflict": -7.96875,
+        "follow_context": -7.96875,
+        "context_flip": 7.96875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 5.6875,
+        "follow_conflict": -2.7109375,
+        "follow_context": -2.7109375,
+        "context_flip": 2.7109375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.421875,
+        "follow_conflict": -6.8828125,
+        "follow_context": -6.8828125,
+        "context_flip": 6.8828125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 6.3515625,
+        "follow_conflict": -1.9140625,
+        "follow_context": -1.9140625,
+        "context_flip": 1.9140625
+      },
+      "base_nc_gold_margin": 7.96875,
+      "ab_nc_gold_margin": 6.8828125,
+      "ctx_follow_context_gain": 0.796875,
+      "nc_gold_margin_damage": 1.0859375,
+      "hallucination_relief": -0.2890625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.796875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.796875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.0859375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.796875
+      }
+    },
+    {
+      "row_idx": 5,
+      "gold": "liver",
+      "wrong": "heart",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.171875,
+        "wrong_lp": -18.703125,
+        "unknown_lp": -15.015625,
+        "candidate_scores": {
+          "liver": -8.171875,
+          "heart": -18.703125,
+          "unknown": -15.015625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.015625,
+        "other_lp": -8.171875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.828125,
+        "wrong_lp": -9.84375,
+        "unknown_lp": -10.609375,
+        "candidate_scores": {
+          "liver": -8.828125,
+          "heart": -9.84375,
+          "unknown": -10.609375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.609375,
+        "other_lp": -8.828125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.0390625,
+        "wrong_lp": -19.671875,
+        "unknown_lp": -13.9296875,
+        "candidate_scores": {
+          "liver": -8.0390625,
+          "heart": -19.671875,
+          "unknown": -13.9296875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.9296875,
+        "other_lp": -8.0390625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.53125,
+        "wrong_lp": -10.359375,
+        "unknown_lp": -9.6171875,
+        "candidate_scores": {
+          "liver": -8.53125,
+          "heart": -10.359375,
+          "unknown": -9.6171875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.6171875,
+        "other_lp": -8.53125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 10.53125,
+        "follow_conflict": -6.84375,
+        "follow_context": -6.84375,
+        "context_flip": 6.84375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 1.015625,
+        "follow_conflict": -1.78125,
+        "follow_context": -1.78125,
+        "context_flip": 1.78125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.6328125,
+        "follow_conflict": -5.890625,
+        "follow_context": -5.890625,
+        "context_flip": 5.890625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 1.828125,
+        "follow_conflict": -1.0859375,
+        "follow_context": -1.0859375,
+        "context_flip": 1.0859375
+      },
+      "base_nc_gold_margin": 6.84375,
+      "ab_nc_gold_margin": 5.890625,
+      "ctx_follow_context_gain": 0.6953125,
+      "nc_gold_margin_damage": 0.953125,
+      "hallucination_relief": -0.2578125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.6953125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.6953125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.953125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.6953125
+      }
+    },
+    {
+      "row_idx": 6,
+      "gold": "lung",
+      "wrong": "liver",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -7.56640625,
+        "wrong_lp": -14.21875,
+        "unknown_lp": -11.796875,
+        "candidate_scores": {
+          "lung": -7.56640625,
+          "liver": -14.21875,
+          "unknown": -11.796875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.796875,
+        "other_lp": -7.56640625,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -7.54296875,
+        "wrong_lp": -13.84375,
+        "unknown_lp": -11.7578125,
+        "candidate_scores": {
+          "lung": -7.54296875,
+          "liver": -13.84375,
+          "unknown": -11.7578125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.7578125,
+        "other_lp": -7.54296875,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -7.609375,
+        "wrong_lp": -13.703125,
+        "unknown_lp": -10.453125,
+        "candidate_scores": {
+          "lung": -7.609375,
+          "liver": -13.703125,
+          "unknown": -10.453125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.453125,
+        "other_lp": -7.609375,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -7.63671875,
+        "wrong_lp": -13.3671875,
+        "unknown_lp": -10.40625,
+        "candidate_scores": {
+          "lung": -7.63671875,
+          "liver": -13.3671875,
+          "unknown": -10.40625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.40625,
+        "other_lp": -7.63671875,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 6.65234375,
+        "follow_conflict": -4.23046875,
+        "follow_context": -4.23046875,
+        "context_flip": 4.23046875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 6.30078125,
+        "follow_conflict": -4.21484375,
+        "follow_context": -4.21484375,
+        "context_flip": 4.21484375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 6.09375,
+        "follow_conflict": -2.84375,
+        "follow_context": -2.84375,
+        "context_flip": 2.84375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 5.73046875,
+        "follow_conflict": -2.76953125,
+        "follow_context": -2.76953125,
+        "context_flip": 2.76953125
+      },
+      "base_nc_gold_margin": 4.23046875,
+      "ab_nc_gold_margin": 2.84375,
+      "ctx_follow_context_gain": 1.4453125,
+      "nc_gold_margin_damage": 1.38671875,
+      "hallucination_relief": 0.05859375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 1.4453125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 1.4453125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.38671875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.4453125
+      }
+    },
+    {
+      "row_idx": 7,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "unknown",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -20.9375,
+        "wrong_lp": -37.0,
+        "unknown_lp": -21.0625,
+        "candidate_scores": {
+          "yes": -20.9375,
+          "no": -37.0,
+          "unknown": -21.0625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.0625,
+        "other_lp": -20.9375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -16.53125,
+        "wrong_lp": -22.671875,
+        "unknown_lp": -10.375,
+        "candidate_scores": {
+          "yes": -16.53125,
+          "no": -22.671875,
+          "unknown": -10.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.375,
+        "other_lp": -16.53125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -20.484375,
+        "wrong_lp": -37.6875,
+        "unknown_lp": -20.0,
+        "candidate_scores": {
+          "yes": -20.484375,
+          "no": -37.6875,
+          "unknown": -20.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -20.0,
+        "other_lp": -20.484375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.234375,
+        "wrong_lp": -22.21875,
+        "unknown_lp": -9.9609375,
+        "candidate_scores": {
+          "yes": -16.234375,
+          "no": -22.21875,
+          "unknown": -9.9609375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.9609375,
+        "other_lp": -16.234375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 16.0625,
+        "follow_conflict": -0.125,
+        "follow_context": -0.125,
+        "context_flip": 0.125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 6.140625,
+        "follow_conflict": 6.15625,
+        "follow_context": 6.15625,
+        "context_flip": -6.15625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 17.203125,
+        "follow_conflict": 0.484375,
+        "follow_context": 0.484375,
+        "context_flip": -0.484375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 5.984375,
+        "follow_conflict": 6.2734375,
+        "follow_context": 6.2734375,
+        "context_flip": -6.2734375
+      },
+      "base_nc_gold_margin": 0.125,
+      "ab_nc_gold_margin": -0.484375,
+      "ctx_follow_context_gain": 0.1171875,
+      "nc_gold_margin_damage": 0.609375,
+      "hallucination_relief": -0.4921875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.1171875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.1171875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.609375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.1171875
+      }
+    },
+    {
+      "row_idx": 8,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.9765625,
+        "wrong_lp": -14.8515625,
+        "unknown_lp": -16.84375,
+        "candidate_scores": {
+          "liver": -8.9765625,
+          "spleen": -14.8515625,
+          "unknown": -16.84375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.84375,
+        "other_lp": -8.9765625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -9.0546875,
+        "wrong_lp": -13.09375,
+        "unknown_lp": -13.734375,
+        "candidate_scores": {
+          "liver": -9.0546875,
+          "spleen": -13.09375,
+          "unknown": -13.734375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.734375,
+        "other_lp": -9.0546875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.9609375,
+        "wrong_lp": -16.484375,
+        "unknown_lp": -16.109375,
+        "candidate_scores": {
+          "liver": -8.9609375,
+          "spleen": -16.484375,
+          "unknown": -16.109375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.109375,
+        "other_lp": -8.9609375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.9296875,
+        "wrong_lp": -15.0234375,
+        "unknown_lp": -12.90625,
+        "candidate_scores": {
+          "liver": -8.9296875,
+          "spleen": -15.0234375,
+          "unknown": -12.90625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.90625,
+        "other_lp": -8.9296875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 5.875,
+        "follow_conflict": -7.8671875,
+        "follow_context": -7.8671875,
+        "context_flip": 7.8671875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 4.0390625,
+        "follow_conflict": -4.6796875,
+        "follow_context": -4.6796875,
+        "context_flip": 4.6796875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 7.5234375,
+        "follow_conflict": -7.1484375,
+        "follow_context": -7.1484375,
+        "context_flip": 7.1484375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 6.09375,
+        "follow_conflict": -3.9765625,
+        "follow_context": -3.9765625,
+        "context_flip": 3.9765625
+      },
+      "base_nc_gold_margin": 5.875,
+      "ab_nc_gold_margin": 7.1484375,
+      "ctx_follow_context_gain": 0.703125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": 0.703125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.703125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.703125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.71875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.703125
+      }
+    },
+    {
+      "row_idx": 9,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -23.296875,
+        "wrong_lp": -41.125,
+        "unknown_lp": -23.34375,
+        "candidate_scores": {
+          "yes": -23.296875,
+          "no": -41.125,
+          "unknown": -23.34375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.34375,
+        "other_lp": -23.296875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -23.453125,
+        "wrong_lp": -41.28125,
+        "unknown_lp": -23.359375,
+        "candidate_scores": {
+          "yes": -23.453125,
+          "no": -41.28125,
+          "unknown": -23.359375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.359375,
+        "other_lp": -23.453125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -22.15625,
+        "wrong_lp": -40.71875,
+        "unknown_lp": -22.421875,
+        "candidate_scores": {
+          "yes": -22.15625,
+          "no": -40.71875,
+          "unknown": -22.421875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.421875,
+        "other_lp": -22.15625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -22.171875,
+        "wrong_lp": -40.6875,
+        "unknown_lp": -22.203125,
+        "candidate_scores": {
+          "yes": -22.171875,
+          "no": -40.6875,
+          "unknown": -22.203125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.203125,
+        "other_lp": -22.171875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 17.828125,
+        "follow_conflict": -0.046875,
+        "follow_context": -0.046875,
+        "context_flip": 0.046875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 17.828125,
+        "follow_conflict": 0.09375,
+        "follow_context": 0.09375,
+        "context_flip": -0.09375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 18.5625,
+        "follow_conflict": -0.265625,
+        "follow_context": -0.265625,
+        "context_flip": 0.265625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 18.515625,
+        "follow_conflict": -0.03125,
+        "follow_context": -0.03125,
+        "context_flip": 0.03125
+      },
+      "base_nc_gold_margin": 0.046875,
+      "ab_nc_gold_margin": 0.265625,
+      "ctx_follow_context_gain": -0.125,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -0.125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -0.125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -0.125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.21875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.125
+      }
+    },
+    {
+      "row_idx": 10,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "wrong",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "wrong",
+      "base_nc_scores": {
+        "gold_lp": -7.8828125,
+        "wrong_lp": -12.007812857627869,
+        "unknown_lp": -16.90625,
+        "candidate_scores": {
+          "liver": -7.8828125,
+          "spleen": -12.007812857627869,
+          "unknown": -16.90625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.90625,
+        "other_lp": -7.8828125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.8125,
+        "wrong_lp": -6.6679688692092896,
+        "unknown_lp": -10.640625,
+        "candidate_scores": {
+          "liver": -8.8125,
+          "spleen": -6.6679688692092896,
+          "unknown": -10.640625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.640625,
+        "other_lp": -6.6679688692092896,
+        "pred_answer": "spleen",
+        "pred_choice": "wrong"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -7.921875,
+        "wrong_lp": -14.335937738418579,
+        "unknown_lp": -15.7578125,
+        "candidate_scores": {
+          "liver": -7.921875,
+          "spleen": -14.335937738418579,
+          "unknown": -15.7578125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.7578125,
+        "other_lp": -7.921875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -9.0625,
+        "wrong_lp": -8.37500011920929,
+        "unknown_lp": -10.1875,
+        "candidate_scores": {
+          "liver": -9.0625,
+          "spleen": -8.37500011920929,
+          "unknown": -10.1875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.1875,
+        "other_lp": -8.37500011920929,
+        "pred_answer": "spleen",
+        "pred_choice": "wrong"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 4.125000357627869,
+        "follow_conflict": -9.0234375,
+        "follow_context": -9.0234375,
+        "context_flip": 9.0234375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -2.1445311307907104,
+        "follow_conflict": -1.828125,
+        "follow_context": -3.9726561307907104,
+        "context_flip": 3.9726561307907104
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 6.414062738418579,
+        "follow_conflict": -7.8359375,
+        "follow_context": -7.8359375,
+        "context_flip": 7.8359375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": -0.6874998807907104,
+        "follow_conflict": -1.125,
+        "follow_context": -1.8124998807907104,
+        "context_flip": 1.8124998807907104
+      },
+      "base_nc_gold_margin": 4.125000357627869,
+      "ab_nc_gold_margin": 6.414062738418579,
+      "ctx_follow_context_gain": 2.16015625,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": 2.16015625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 2.16015625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 2.16015625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.1875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 2.16015625
+      }
+    },
+    {
+      "row_idx": 11,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -8.5625,
+        "wrong_lp": -16.8125,
+        "unknown_lp": -14.0,
+        "candidate_scores": {
+          "liver": -8.5625,
+          "spleen": -16.8125,
+          "unknown": -14.0
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.0,
+        "other_lp": -8.5625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -11.8125,
+        "wrong_lp": -13.7890625,
+        "unknown_lp": -12.7109375,
+        "candidate_scores": {
+          "liver": -11.8125,
+          "spleen": -13.7890625,
+          "unknown": -12.7109375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.7109375,
+        "other_lp": -11.8125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.5,
+        "wrong_lp": -17.890625,
+        "unknown_lp": -12.6328125,
+        "candidate_scores": {
+          "liver": -8.5,
+          "spleen": -17.890625,
+          "unknown": -12.6328125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.6328125,
+        "other_lp": -8.5,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -11.84375,
+        "wrong_lp": -15.484375,
+        "unknown_lp": -11.046875,
+        "candidate_scores": {
+          "liver": -11.84375,
+          "spleen": -15.484375,
+          "unknown": -11.046875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.046875,
+        "other_lp": -11.84375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.25,
+        "follow_conflict": -5.4375,
+        "follow_context": -5.4375,
+        "context_flip": 5.4375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 1.9765625,
+        "follow_conflict": -0.8984375,
+        "follow_context": -0.8984375,
+        "context_flip": 0.8984375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.390625,
+        "follow_conflict": -4.1328125,
+        "follow_context": -4.1328125,
+        "context_flip": 4.1328125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 3.640625,
+        "follow_conflict": 0.796875,
+        "follow_context": 0.796875,
+        "context_flip": -0.796875
+      },
+      "base_nc_gold_margin": 5.4375,
+      "ab_nc_gold_margin": 4.1328125,
+      "ctx_follow_context_gain": 1.6953125,
+      "nc_gold_margin_damage": 1.3046875,
+      "hallucination_relief": 0.390625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 1.6953125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 1.6953125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.3046875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.6953125
+      }
+    },
+    {
+      "row_idx": 12,
+      "gold": "oval",
+      "wrong": "nan",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.640625,
+        "wrong_lp": -24.84375,
+        "unknown_lp": -11.3515625,
+        "candidate_scores": {
+          "oval": -8.640625,
+          "nan": -24.84375,
+          "unknown": -11.3515625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.3515625,
+        "other_lp": -8.640625,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.6015625,
+        "wrong_lp": -23.796875,
+        "unknown_lp": -10.3671875,
+        "candidate_scores": {
+          "oval": -8.6015625,
+          "nan": -23.796875,
+          "unknown": -10.3671875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.3671875,
+        "other_lp": -8.6015625,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.4375,
+        "wrong_lp": -25.03125,
+        "unknown_lp": -11.0234375,
+        "candidate_scores": {
+          "oval": -8.4375,
+          "nan": -25.03125,
+          "unknown": -11.0234375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.0234375,
+        "other_lp": -8.4375,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.75,
+        "wrong_lp": -23.75,
+        "unknown_lp": -10.28125,
+        "candidate_scores": {
+          "oval": -8.75,
+          "nan": -23.75,
+          "unknown": -10.28125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.28125,
+        "other_lp": -8.75,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 16.203125,
+        "follow_conflict": -2.7109375,
+        "follow_context": -2.7109375,
+        "context_flip": 2.7109375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 15.1953125,
+        "follow_conflict": -1.765625,
+        "follow_context": -1.765625,
+        "context_flip": 1.765625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 16.59375,
+        "follow_conflict": -2.5859375,
+        "follow_context": -2.5859375,
+        "context_flip": 2.5859375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 15.0,
+        "follow_conflict": -1.53125,
+        "follow_context": -1.53125,
+        "context_flip": 1.53125
+      },
+      "base_nc_gold_margin": 2.7109375,
+      "ab_nc_gold_margin": 2.5859375,
+      "ctx_follow_context_gain": 0.234375,
+      "nc_gold_margin_damage": 0.125,
+      "hallucination_relief": 0.109375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.234375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.234375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.234375
+      }
+    },
+    {
+      "row_idx": 13,
+      "gold": "oval",
+      "wrong": "nan",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -9.9921875,
+        "wrong_lp": -23.734375,
+        "unknown_lp": -10.7421875,
+        "candidate_scores": {
+          "oval": -9.9921875,
+          "nan": -23.734375,
+          "unknown": -10.7421875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.7421875,
+        "other_lp": -9.9921875,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -9.953125,
+        "wrong_lp": -23.65625,
+        "unknown_lp": -10.703125,
+        "candidate_scores": {
+          "oval": -9.953125,
+          "nan": -23.65625,
+          "unknown": -10.703125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.703125,
+        "other_lp": -9.953125,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -9.75,
+        "wrong_lp": -22.96875,
+        "unknown_lp": -10.1015625,
+        "candidate_scores": {
+          "oval": -9.75,
+          "nan": -22.96875,
+          "unknown": -10.1015625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.1015625,
+        "other_lp": -9.75,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -9.703125,
+        "wrong_lp": -22.890625,
+        "unknown_lp": -10.0703125,
+        "candidate_scores": {
+          "oval": -9.703125,
+          "nan": -22.890625,
+          "unknown": -10.0703125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.0703125,
+        "other_lp": -9.703125,
+        "pred_answer": "oval",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 13.7421875,
+        "follow_conflict": -0.75,
+        "follow_context": -0.75,
+        "context_flip": 0.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 13.703125,
+        "follow_conflict": -0.75,
+        "follow_context": -0.75,
+        "context_flip": 0.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 13.21875,
+        "follow_conflict": -0.3515625,
+        "follow_context": -0.3515625,
+        "context_flip": 0.3515625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 13.1875,
+        "follow_conflict": -0.3671875,
+        "follow_context": -0.3671875,
+        "context_flip": 0.3671875
+      },
+      "base_nc_gold_margin": 0.75,
+      "ab_nc_gold_margin": 0.3515625,
+      "ctx_follow_context_gain": 0.3828125,
+      "nc_gold_margin_damage": 0.3984375,
+      "hallucination_relief": -0.015625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.3828125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.3828125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.3984375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.3828125
+      }
+    },
+    {
+      "row_idx": 14,
+      "gold": "lung",
+      "wrong": "liver",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -7.94140625,
+        "wrong_lp": -16.6875,
+        "unknown_lp": -14.75,
+        "candidate_scores": {
+          "lung": -7.94140625,
+          "liver": -16.6875,
+          "unknown": -14.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.75,
+        "other_lp": -7.94140625,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -7.9609375,
+        "wrong_lp": -16.40625,
+        "unknown_lp": -14.46875,
+        "candidate_scores": {
+          "lung": -7.9609375,
+          "liver": -16.40625,
+          "unknown": -14.46875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.46875,
+        "other_lp": -7.9609375,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -7.75,
+        "wrong_lp": -15.6171875,
+        "unknown_lp": -13.046875,
+        "candidate_scores": {
+          "lung": -7.75,
+          "liver": -15.6171875,
+          "unknown": -13.046875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.046875,
+        "other_lp": -7.75,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -7.66015625,
+        "wrong_lp": -15.328125,
+        "unknown_lp": -12.8046875,
+        "candidate_scores": {
+          "lung": -7.66015625,
+          "liver": -15.328125,
+          "unknown": -12.8046875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.8046875,
+        "other_lp": -7.66015625,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.74609375,
+        "follow_conflict": -6.80859375,
+        "follow_context": -6.80859375,
+        "context_flip": 6.80859375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 8.4453125,
+        "follow_conflict": -6.5078125,
+        "follow_context": -6.5078125,
+        "context_flip": 6.5078125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 7.8671875,
+        "follow_conflict": -5.296875,
+        "follow_context": -5.296875,
+        "context_flip": 5.296875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 7.66796875,
+        "follow_conflict": -5.14453125,
+        "follow_context": -5.14453125,
+        "context_flip": 5.14453125
+      },
+      "base_nc_gold_margin": 6.80859375,
+      "ab_nc_gold_margin": 5.296875,
+      "ctx_follow_context_gain": 1.36328125,
+      "nc_gold_margin_damage": 1.51171875,
+      "hallucination_relief": -0.1484375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 1.36328125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 1.36328125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.51171875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.36328125
+      }
+    },
+    {
+      "row_idx": 15,
+      "gold": "lung",
+      "wrong": "liver",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.0859375,
+        "wrong_lp": -17.53125,
+        "unknown_lp": -14.6640625,
+        "candidate_scores": {
+          "lung": -8.0859375,
+          "liver": -17.53125,
+          "unknown": -14.6640625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.6640625,
+        "other_lp": -8.0859375,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.09375,
+        "wrong_lp": -17.296875,
+        "unknown_lp": -14.96875,
+        "candidate_scores": {
+          "lung": -8.09375,
+          "liver": -17.296875,
+          "unknown": -14.96875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -14.96875,
+        "other_lp": -8.09375,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -7.8515625,
+        "wrong_lp": -16.546875,
+        "unknown_lp": -12.9921875,
+        "candidate_scores": {
+          "lung": -7.8515625,
+          "liver": -16.546875,
+          "unknown": -12.9921875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.9921875,
+        "other_lp": -7.8515625,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -7.83203125,
+        "wrong_lp": -16.21875,
+        "unknown_lp": -13.390625,
+        "candidate_scores": {
+          "lung": -7.83203125,
+          "liver": -16.21875,
+          "unknown": -13.390625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.390625,
+        "other_lp": -7.83203125,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 9.4453125,
+        "follow_conflict": -6.578125,
+        "follow_context": -6.578125,
+        "context_flip": 6.578125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 9.203125,
+        "follow_conflict": -6.875,
+        "follow_context": -6.875,
+        "context_flip": 6.875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.6953125,
+        "follow_conflict": -5.140625,
+        "follow_context": -5.140625,
+        "context_flip": 5.140625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 8.38671875,
+        "follow_conflict": -5.55859375,
+        "follow_context": -5.55859375,
+        "context_flip": 5.55859375
+      },
+      "base_nc_gold_margin": 6.578125,
+      "ab_nc_gold_margin": 5.140625,
+      "ctx_follow_context_gain": 1.31640625,
+      "nc_gold_margin_damage": 1.4375,
+      "hallucination_relief": -0.12109375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 1.31640625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 1.31640625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.4375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.31640625
+      }
+    },
+    {
+      "row_idx": 16,
+      "gold": "liver",
+      "wrong": "kidney",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "wrong",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "wrong",
+      "base_nc_scores": {
+        "gold_lp": -8.1953125,
+        "wrong_lp": -8.7109375,
+        "unknown_lp": -10.9296875,
+        "candidate_scores": {
+          "liver": -8.1953125,
+          "kidney": -8.7109375,
+          "unknown": -10.9296875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.9296875,
+        "other_lp": -8.1953125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.75,
+        "wrong_lp": -7.46875,
+        "unknown_lp": -10.21875,
+        "candidate_scores": {
+          "liver": -8.75,
+          "kidney": -7.46875,
+          "unknown": -10.21875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.21875,
+        "other_lp": -7.46875,
+        "pred_answer": "kidney",
+        "pred_choice": "wrong"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.0859375,
+        "wrong_lp": -8.8984375,
+        "unknown_lp": -9.96875,
+        "candidate_scores": {
+          "liver": -8.0859375,
+          "kidney": -8.8984375,
+          "unknown": -9.96875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.96875,
+        "other_lp": -8.0859375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.53125,
+        "wrong_lp": -7.57421875,
+        "unknown_lp": -9.453125,
+        "candidate_scores": {
+          "liver": -8.53125,
+          "kidney": -7.57421875,
+          "unknown": -9.453125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.453125,
+        "other_lp": -7.57421875,
+        "pred_answer": "kidney",
+        "pred_choice": "wrong"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 0.515625,
+        "follow_conflict": -2.734375,
+        "follow_context": -2.734375,
+        "context_flip": 2.734375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -1.28125,
+        "follow_conflict": -1.46875,
+        "follow_context": -2.75,
+        "context_flip": 2.75
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 0.8125,
+        "follow_conflict": -1.8828125,
+        "follow_context": -1.8828125,
+        "context_flip": 1.8828125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": -0.95703125,
+        "follow_conflict": -0.921875,
+        "follow_context": -1.87890625,
+        "context_flip": 1.87890625
+      },
+      "base_nc_gold_margin": 0.515625,
+      "ab_nc_gold_margin": 0.8125,
+      "ctx_follow_context_gain": 0.87109375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": 0.87109375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.87109375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.87109375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.8515625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.87109375
+      }
+    },
+    {
+      "row_idx": 17,
+      "gold": "kidney",
+      "wrong": "liver",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -6.2890625,
+        "wrong_lp": -9.6953125,
+        "unknown_lp": -9.0390625,
+        "candidate_scores": {
+          "kidney": -6.2890625,
+          "liver": -9.6953125,
+          "unknown": -9.0390625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.0390625,
+        "other_lp": -6.2890625,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -6.53125,
+        "wrong_lp": -9.21875,
+        "unknown_lp": -8.78125,
+        "candidate_scores": {
+          "kidney": -6.53125,
+          "liver": -9.21875,
+          "unknown": -8.78125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -8.78125,
+        "other_lp": -6.53125,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -6.59765625,
+        "wrong_lp": -9.4921875,
+        "unknown_lp": -8.5703125,
+        "candidate_scores": {
+          "kidney": -6.59765625,
+          "liver": -9.4921875,
+          "unknown": -8.5703125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -8.5703125,
+        "other_lp": -6.59765625,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -6.8125,
+        "wrong_lp": -9.1484375,
+        "unknown_lp": -8.359375,
+        "candidate_scores": {
+          "kidney": -6.8125,
+          "liver": -9.1484375,
+          "unknown": -8.359375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -8.359375,
+        "other_lp": -6.8125,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 3.40625,
+        "follow_conflict": -2.75,
+        "follow_context": -2.75,
+        "context_flip": 2.75
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 2.6875,
+        "follow_conflict": -2.25,
+        "follow_context": -2.25,
+        "context_flip": 2.25
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 2.89453125,
+        "follow_conflict": -1.97265625,
+        "follow_context": -1.97265625,
+        "context_flip": 1.97265625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 2.3359375,
+        "follow_conflict": -1.546875,
+        "follow_context": -1.546875,
+        "context_flip": 1.546875
+      },
+      "base_nc_gold_margin": 2.75,
+      "ab_nc_gold_margin": 1.97265625,
+      "ctx_follow_context_gain": 0.703125,
+      "nc_gold_margin_damage": 0.77734375,
+      "hallucination_relief": -0.07421875,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.703125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.703125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.77734375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.703125
+      }
+    },
+    {
+      "row_idx": 18,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.4375,
+        "wrong_lp": -16.46875,
+        "unknown_lp": -17.109375,
+        "candidate_scores": {
+          "liver": -8.4375,
+          "spleen": -16.46875,
+          "unknown": -17.109375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -17.109375,
+        "other_lp": -8.4375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.203125,
+        "wrong_lp": -8.296875,
+        "unknown_lp": -11.3359375,
+        "candidate_scores": {
+          "liver": -8.203125,
+          "spleen": -8.296875,
+          "unknown": -11.3359375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.3359375,
+        "other_lp": -8.203125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.4375,
+        "wrong_lp": -17.78125,
+        "unknown_lp": -16.203125,
+        "candidate_scores": {
+          "liver": -8.4375,
+          "spleen": -17.78125,
+          "unknown": -16.203125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -16.203125,
+        "other_lp": -8.4375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.2421875,
+        "wrong_lp": -10.3359375,
+        "unknown_lp": -10.796875,
+        "candidate_scores": {
+          "liver": -8.2421875,
+          "spleen": -10.3359375,
+          "unknown": -10.796875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.796875,
+        "other_lp": -8.2421875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.03125,
+        "follow_conflict": -8.671875,
+        "follow_context": -8.671875,
+        "context_flip": 8.671875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 0.09375,
+        "follow_conflict": -3.1328125,
+        "follow_context": -3.1328125,
+        "context_flip": 3.1328125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 9.34375,
+        "follow_conflict": -7.765625,
+        "follow_context": -7.765625,
+        "context_flip": 7.765625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 2.09375,
+        "follow_conflict": -2.5546875,
+        "follow_context": -2.5546875,
+        "context_flip": 2.5546875
+      },
+      "base_nc_gold_margin": 8.03125,
+      "ab_nc_gold_margin": 7.765625,
+      "ctx_follow_context_gain": 0.578125,
+      "nc_gold_margin_damage": 0.265625,
+      "hallucination_relief": 0.3125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.578125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.578125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.90625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.578125
+      }
+    },
+    {
+      "row_idx": 19,
+      "gold": "liver",
+      "wrong": "heart",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.171875,
+        "wrong_lp": -19.171875,
+        "unknown_lp": -15.015625,
+        "candidate_scores": {
+          "liver": -8.171875,
+          "heart": -19.171875,
+          "unknown": -15.015625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.015625,
+        "other_lp": -8.171875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.3046875,
+        "wrong_lp": -10.3671875,
+        "unknown_lp": -10.4453125,
+        "candidate_scores": {
+          "liver": -8.3046875,
+          "heart": -10.3671875,
+          "unknown": -10.4453125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.4453125,
+        "other_lp": -8.3046875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.0703125,
+        "wrong_lp": -20.03125,
+        "unknown_lp": -13.9375,
+        "candidate_scores": {
+          "liver": -8.0703125,
+          "heart": -20.03125,
+          "unknown": -13.9375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.9375,
+        "other_lp": -8.0703125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.109375,
+        "wrong_lp": -11.015625,
+        "unknown_lp": -9.40625,
+        "candidate_scores": {
+          "liver": -8.109375,
+          "heart": -11.015625,
+          "unknown": -9.40625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.40625,
+        "other_lp": -8.109375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 11.0,
+        "follow_conflict": -6.84375,
+        "follow_context": -6.84375,
+        "context_flip": 6.84375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 2.0625,
+        "follow_conflict": -2.140625,
+        "follow_context": -2.140625,
+        "context_flip": 2.140625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 11.9609375,
+        "follow_conflict": -5.8671875,
+        "follow_context": -5.8671875,
+        "context_flip": 5.8671875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 2.90625,
+        "follow_conflict": -1.296875,
+        "follow_context": -1.296875,
+        "context_flip": 1.296875
+      },
+      "base_nc_gold_margin": 6.84375,
+      "ab_nc_gold_margin": 5.8671875,
+      "ctx_follow_context_gain": 0.84375,
+      "nc_gold_margin_damage": 0.9765625,
+      "hallucination_relief": -0.1328125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.84375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.84375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.9765625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.84375
+      }
+    },
+    {
+      "row_idx": 20,
+      "gold": "colon",
+      "wrong": "liver",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "unknown",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -8.4609375,
+        "wrong_lp": -10.71875,
+        "unknown_lp": -9.375,
+        "candidate_scores": {
+          "colon": -8.4609375,
+          "liver": -10.71875,
+          "unknown": -9.375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.375,
+        "other_lp": -8.4609375,
+        "pred_answer": "colon",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.6171875,
+        "wrong_lp": -10.3828125,
+        "unknown_lp": -9.2734375,
+        "candidate_scores": {
+          "colon": -8.6171875,
+          "liver": -10.3828125,
+          "unknown": -9.2734375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.2734375,
+        "other_lp": -8.6171875,
+        "pred_answer": "colon",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -9.4453125,
+        "wrong_lp": -11.421875,
+        "unknown_lp": -8.8515625,
+        "candidate_scores": {
+          "colon": -9.4453125,
+          "liver": -11.421875,
+          "unknown": -8.8515625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -8.8515625,
+        "other_lp": -9.4453125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -9.59375,
+        "wrong_lp": -11.03125,
+        "unknown_lp": -8.7578125,
+        "candidate_scores": {
+          "colon": -9.59375,
+          "liver": -11.03125,
+          "unknown": -8.7578125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -8.7578125,
+        "other_lp": -9.59375,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 2.2578125,
+        "follow_conflict": -0.9140625,
+        "follow_context": -0.9140625,
+        "context_flip": 0.9140625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 1.765625,
+        "follow_conflict": -0.65625,
+        "follow_context": -0.65625,
+        "context_flip": 0.65625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 1.9765625,
+        "follow_conflict": 0.59375,
+        "follow_context": 0.59375,
+        "context_flip": -0.59375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 1.4375,
+        "follow_conflict": 0.8359375,
+        "follow_context": 0.8359375,
+        "context_flip": -0.8359375
+      },
+      "base_nc_gold_margin": 0.9140625,
+      "ab_nc_gold_margin": -0.59375,
+      "ctx_follow_context_gain": 1.4921875,
+      "nc_gold_margin_damage": 1.5078125,
+      "hallucination_relief": -0.015625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 1.4921875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 1.4921875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.5078125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.4921875
+      }
+    },
+    {
+      "row_idx": 21,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.625,
+        "wrong_lp": -15.195312976837158,
+        "unknown_lp": -13.75,
+        "candidate_scores": {
+          "liver": -8.625,
+          "spleen": -15.195312976837158,
+          "unknown": -13.75
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.75,
+        "other_lp": -8.625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.65625,
+        "wrong_lp": -8.92187511920929,
+        "unknown_lp": -12.3203125,
+        "candidate_scores": {
+          "liver": -8.65625,
+          "spleen": -8.92187511920929,
+          "unknown": -12.3203125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.3203125,
+        "other_lp": -8.65625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.515625,
+        "wrong_lp": -16.906250596046448,
+        "unknown_lp": -12.8515625,
+        "candidate_scores": {
+          "liver": -8.515625,
+          "spleen": -16.906250596046448,
+          "unknown": -12.8515625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.8515625,
+        "other_lp": -8.515625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.6875,
+        "wrong_lp": -10.90625011920929,
+        "unknown_lp": -11.71875,
+        "candidate_scores": {
+          "liver": -8.6875,
+          "spleen": -10.90625011920929,
+          "unknown": -11.71875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.71875,
+        "other_lp": -8.6875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 6.570312976837158,
+        "follow_conflict": -5.125,
+        "follow_context": -5.125,
+        "context_flip": 5.125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 0.26562511920928955,
+        "follow_conflict": -3.6640625,
+        "follow_context": -3.6640625,
+        "context_flip": 3.6640625
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.390625596046448,
+        "follow_conflict": -4.3359375,
+        "follow_context": -4.3359375,
+        "context_flip": 4.3359375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 2.2187501192092896,
+        "follow_conflict": -3.03125,
+        "follow_context": -3.03125,
+        "context_flip": 3.03125
+      },
+      "base_nc_gold_margin": 5.125,
+      "ab_nc_gold_margin": 4.3359375,
+      "ctx_follow_context_gain": 0.6328125,
+      "nc_gold_margin_damage": 0.7890625,
+      "hallucination_relief": -0.15625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.6328125
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.6328125
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.7890625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.6328125
+      }
+    },
+    {
+      "row_idx": 22,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "wrong",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "wrong",
+      "base_nc_scores": {
+        "gold_lp": -7.8359375,
+        "wrong_lp": -11.6640625,
+        "unknown_lp": -10.7578125,
+        "candidate_scores": {
+          "liver": -7.8359375,
+          "spleen": -11.6640625,
+          "unknown": -10.7578125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.7578125,
+        "other_lp": -7.8359375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -9.0703125,
+        "wrong_lp": -7.1796875,
+        "unknown_lp": -10.265625,
+        "candidate_scores": {
+          "liver": -9.0703125,
+          "spleen": -7.1796875,
+          "unknown": -10.265625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.265625,
+        "other_lp": -7.1796875,
+        "pred_answer": "spleen",
+        "pred_choice": "wrong"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -7.984375,
+        "wrong_lp": -13.9296875,
+        "unknown_lp": -10.109375,
+        "candidate_scores": {
+          "liver": -7.984375,
+          "spleen": -13.9296875,
+          "unknown": -10.109375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.109375,
+        "other_lp": -7.984375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.984375,
+        "wrong_lp": -8.703125,
+        "unknown_lp": -9.609375,
+        "candidate_scores": {
+          "liver": -8.984375,
+          "spleen": -8.703125,
+          "unknown": -9.609375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.609375,
+        "other_lp": -8.703125,
+        "pred_answer": "spleen",
+        "pred_choice": "wrong"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 3.828125,
+        "follow_conflict": -2.921875,
+        "follow_context": -2.921875,
+        "context_flip": 2.921875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -1.890625,
+        "follow_conflict": -1.1953125,
+        "follow_context": -3.0859375,
+        "context_flip": 3.0859375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 5.9453125,
+        "follow_conflict": -2.125,
+        "follow_context": -2.125,
+        "context_flip": 2.125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": -0.28125,
+        "follow_conflict": -0.625,
+        "follow_context": -0.90625,
+        "context_flip": 0.90625
+      },
+      "base_nc_gold_margin": 2.921875,
+      "ab_nc_gold_margin": 2.125,
+      "ctx_follow_context_gain": 2.1796875,
+      "nc_gold_margin_damage": 0.796875,
+      "hallucination_relief": 1.3828125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 2.1796875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 2.1796875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.796875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 2.1796875
+      }
+    },
+    {
+      "row_idx": 23,
+      "gold": "lung",
+      "wrong": "liver",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.1015625,
+        "wrong_lp": -17.875,
+        "unknown_lp": -15.171875,
+        "candidate_scores": {
+          "lung": -8.1015625,
+          "liver": -17.875,
+          "unknown": -15.171875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.171875,
+        "other_lp": -8.1015625,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.0625,
+        "wrong_lp": -17.25,
+        "unknown_lp": -15.15625,
+        "candidate_scores": {
+          "lung": -8.0625,
+          "liver": -17.25,
+          "unknown": -15.15625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -15.15625,
+        "other_lp": -8.0625,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -7.87109375,
+        "wrong_lp": -16.796875,
+        "unknown_lp": -13.359375,
+        "candidate_scores": {
+          "lung": -7.87109375,
+          "liver": -16.796875,
+          "unknown": -13.359375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.359375,
+        "other_lp": -7.87109375,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -7.83203125,
+        "wrong_lp": -16.171875,
+        "unknown_lp": -13.4140625,
+        "candidate_scores": {
+          "lung": -7.83203125,
+          "liver": -16.171875,
+          "unknown": -13.4140625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -13.4140625,
+        "other_lp": -7.83203125,
+        "pred_answer": "lung",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 9.7734375,
+        "follow_conflict": -7.0703125,
+        "follow_context": -7.0703125,
+        "context_flip": 7.0703125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 9.1875,
+        "follow_conflict": -7.09375,
+        "follow_context": -7.09375,
+        "context_flip": 7.09375
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.92578125,
+        "follow_conflict": -5.48828125,
+        "follow_context": -5.48828125,
+        "context_flip": 5.48828125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 8.33984375,
+        "follow_conflict": -5.58203125,
+        "follow_context": -5.58203125,
+        "context_flip": 5.58203125
+      },
+      "base_nc_gold_margin": 7.0703125,
+      "ab_nc_gold_margin": 5.48828125,
+      "ctx_follow_context_gain": 1.51171875,
+      "nc_gold_margin_damage": 1.58203125,
+      "hallucination_relief": -0.0703125,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 1.51171875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 1.51171875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.58203125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 1.51171875
+      }
+    },
+    {
+      "row_idx": 24,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "unknown",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -21.046875,
+        "wrong_lp": -37.5625,
+        "unknown_lp": -21.25,
+        "candidate_scores": {
+          "yes": -21.046875,
+          "no": -37.5625,
+          "unknown": -21.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.25,
+        "other_lp": -21.046875,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -17.25,
+        "wrong_lp": -22.046875,
+        "unknown_lp": -9.5078125,
+        "candidate_scores": {
+          "yes": -17.25,
+          "no": -22.046875,
+          "unknown": -9.5078125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.5078125,
+        "other_lp": -17.25,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -20.5,
+        "wrong_lp": -38.15625,
+        "unknown_lp": -19.96875,
+        "candidate_scores": {
+          "yes": -20.5,
+          "no": -38.15625,
+          "unknown": -19.96875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -19.96875,
+        "other_lp": -20.5,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -17.015625,
+        "wrong_lp": -21.546875,
+        "unknown_lp": -9.25,
+        "candidate_scores": {
+          "yes": -17.015625,
+          "no": -21.546875,
+          "unknown": -9.25
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.25,
+        "other_lp": -17.015625,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 16.515625,
+        "follow_conflict": -0.203125,
+        "follow_context": -0.203125,
+        "context_flip": 0.203125
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 4.796875,
+        "follow_conflict": 7.7421875,
+        "follow_context": 7.7421875,
+        "context_flip": -7.7421875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 17.65625,
+        "follow_conflict": 0.53125,
+        "follow_context": 0.53125,
+        "context_flip": -0.53125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 4.53125,
+        "follow_conflict": 7.765625,
+        "follow_context": 7.765625,
+        "context_flip": -7.765625
+      },
+      "base_nc_gold_margin": 0.203125,
+      "ab_nc_gold_margin": -0.53125,
+      "ctx_follow_context_gain": 0.0234375,
+      "nc_gold_margin_damage": 0.734375,
+      "hallucination_relief": -0.7109375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.0234375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.0234375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.734375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.0234375
+      }
+    },
+    {
+      "row_idx": 25,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "unknown",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -23.265625,
+        "wrong_lp": -41.125,
+        "unknown_lp": -23.328125,
+        "candidate_scores": {
+          "yes": -23.265625,
+          "no": -41.125,
+          "unknown": -23.328125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -23.328125,
+        "other_lp": -23.265625,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -23.0625,
+        "wrong_lp": -40.34375,
+        "unknown_lp": -22.875,
+        "candidate_scores": {
+          "yes": -23.0625,
+          "no": -40.34375,
+          "unknown": -22.875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -22.875,
+        "other_lp": -23.0625,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -22.0,
+        "wrong_lp": -40.59375,
+        "unknown_lp": -21.796875,
+        "candidate_scores": {
+          "yes": -22.0,
+          "no": -40.59375,
+          "unknown": -21.796875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.796875,
+        "other_lp": -22.0,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -21.765625,
+        "wrong_lp": -39.65625,
+        "unknown_lp": -21.3125,
+        "candidate_scores": {
+          "yes": -21.765625,
+          "no": -39.65625,
+          "unknown": -21.3125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -21.3125,
+        "other_lp": -21.765625,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 17.859375,
+        "follow_conflict": -0.0625,
+        "follow_context": -0.0625,
+        "context_flip": 0.0625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 17.28125,
+        "follow_conflict": 0.1875,
+        "follow_context": 0.1875,
+        "context_flip": -0.1875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 18.59375,
+        "follow_conflict": 0.203125,
+        "follow_context": 0.203125,
+        "context_flip": -0.203125
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 17.890625,
+        "follow_conflict": 0.453125,
+        "follow_context": 0.453125,
+        "context_flip": -0.453125
+      },
+      "base_nc_gold_margin": 0.0625,
+      "ab_nc_gold_margin": -0.203125,
+      "ctx_follow_context_gain": 0.265625,
+      "nc_gold_margin_damage": 0.265625,
+      "hallucination_relief": 0.0,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.265625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.265625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.265625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.265625
+      }
+    },
+    {
+      "row_idx": 26,
+      "gold": "liver",
+      "wrong": "kidney",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "wrong",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.3984375,
+        "wrong_lp": -10.2890625,
+        "unknown_lp": -12.5078125,
+        "candidate_scores": {
+          "liver": -8.3984375,
+          "kidney": -10.2890625,
+          "unknown": -12.5078125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.5078125,
+        "other_lp": -8.3984375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -8.390625,
+        "wrong_lp": -8.3125,
+        "unknown_lp": -11.015625,
+        "candidate_scores": {
+          "liver": -8.390625,
+          "kidney": -8.3125,
+          "unknown": -11.015625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.015625,
+        "other_lp": -8.3125,
+        "pred_answer": "kidney",
+        "pred_choice": "wrong"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.1328125,
+        "wrong_lp": -10.2421875,
+        "unknown_lp": -11.546875,
+        "candidate_scores": {
+          "liver": -8.1328125,
+          "kidney": -10.2421875,
+          "unknown": -11.546875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.546875,
+        "other_lp": -8.1328125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.203125,
+        "wrong_lp": -8.234375,
+        "unknown_lp": -10.3125,
+        "candidate_scores": {
+          "liver": -8.203125,
+          "kidney": -8.234375,
+          "unknown": -10.3125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.3125,
+        "other_lp": -8.203125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 1.890625,
+        "follow_conflict": -4.109375,
+        "follow_context": -4.109375,
+        "context_flip": 4.109375
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": -0.078125,
+        "follow_conflict": -2.625,
+        "follow_context": -2.703125,
+        "context_flip": 2.703125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 2.109375,
+        "follow_conflict": -3.4140625,
+        "follow_context": -3.4140625,
+        "context_flip": 3.4140625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 0.03125,
+        "follow_conflict": -2.109375,
+        "follow_context": -2.109375,
+        "context_flip": 2.109375
+      },
+      "base_nc_gold_margin": 1.890625,
+      "ab_nc_gold_margin": 2.109375,
+      "ctx_follow_context_gain": 0.59375,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": 0.59375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.59375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.59375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.6953125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.59375
+      }
+    },
+    {
+      "row_idx": 27,
+      "gold": "kidney",
+      "wrong": "liver",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -7.02734375,
+        "wrong_lp": -15.875,
+        "unknown_lp": -12.0078125,
+        "candidate_scores": {
+          "kidney": -7.02734375,
+          "liver": -15.875,
+          "unknown": -12.0078125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.0078125,
+        "other_lp": -7.02734375,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -6.84765625,
+        "wrong_lp": -10.1171875,
+        "unknown_lp": -10.140625,
+        "candidate_scores": {
+          "kidney": -6.84765625,
+          "liver": -10.1171875,
+          "unknown": -10.140625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.140625,
+        "other_lp": -6.84765625,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -6.5703125,
+        "wrong_lp": -14.9140625,
+        "unknown_lp": -10.9375,
+        "candidate_scores": {
+          "kidney": -6.5703125,
+          "liver": -14.9140625,
+          "unknown": -10.9375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.9375,
+        "other_lp": -6.5703125,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -6.69140625,
+        "wrong_lp": -9.765625,
+        "unknown_lp": -9.6171875,
+        "candidate_scores": {
+          "kidney": -6.69140625,
+          "liver": -9.765625,
+          "unknown": -9.6171875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.6171875,
+        "other_lp": -6.69140625,
+        "pred_answer": "kidney",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 8.84765625,
+        "follow_conflict": -4.98046875,
+        "follow_context": -4.98046875,
+        "context_flip": 4.98046875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 3.26953125,
+        "follow_conflict": -3.29296875,
+        "follow_context": -3.29296875,
+        "context_flip": 3.29296875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.34375,
+        "follow_conflict": -4.3671875,
+        "follow_context": -4.3671875,
+        "context_flip": 4.3671875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 3.07421875,
+        "follow_conflict": -2.92578125,
+        "follow_context": -2.92578125,
+        "context_flip": 2.92578125
+      },
+      "base_nc_gold_margin": 4.98046875,
+      "ab_nc_gold_margin": 4.3671875,
+      "ctx_follow_context_gain": 0.3671875,
+      "nc_gold_margin_damage": 0.61328125,
+      "hallucination_relief": -0.24609375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.3671875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.3671875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.61328125
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.3671875
+      }
+    },
+    {
+      "row_idx": 28,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.390625,
+        "wrong_lp": -15.218750238418579,
+        "unknown_lp": -12.953125,
+        "candidate_scores": {
+          "liver": -8.390625,
+          "spleen": -15.218750238418579,
+          "unknown": -12.953125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -12.953125,
+        "other_lp": -8.390625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -7.98046875,
+        "wrong_lp": -9.96093761920929,
+        "unknown_lp": -9.7109375,
+        "candidate_scores": {
+          "liver": -7.98046875,
+          "spleen": -9.96093761920929,
+          "unknown": -9.7109375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.7109375,
+        "other_lp": -7.98046875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.4765625,
+        "wrong_lp": -17.12500023841858,
+        "unknown_lp": -11.8125,
+        "candidate_scores": {
+          "liver": -8.4765625,
+          "spleen": -17.12500023841858,
+          "unknown": -11.8125
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.8125,
+        "other_lp": -8.4765625,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.2421875,
+        "wrong_lp": -11.61718761920929,
+        "unknown_lp": -9.3046875,
+        "candidate_scores": {
+          "liver": -8.2421875,
+          "spleen": -11.61718761920929,
+          "unknown": -9.3046875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.3046875,
+        "other_lp": -8.2421875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 6.828125238418579,
+        "follow_conflict": -4.5625,
+        "follow_context": -4.5625,
+        "context_flip": 4.5625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 1.9804688692092896,
+        "follow_conflict": -1.73046875,
+        "follow_context": -1.73046875,
+        "context_flip": 1.73046875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 8.648437738418579,
+        "follow_conflict": -3.3359375,
+        "follow_context": -3.3359375,
+        "context_flip": 3.3359375
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 3.3750001192092896,
+        "follow_conflict": -1.0625,
+        "follow_context": -1.0625,
+        "context_flip": 1.0625
+      },
+      "base_nc_gold_margin": 4.5625,
+      "ab_nc_gold_margin": 3.3359375,
+      "ctx_follow_context_gain": 0.66796875,
+      "nc_gold_margin_damage": 1.2265625,
+      "hallucination_relief": -0.55859375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.66796875
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.66796875
+      },
+      "metric_abs_base_change": {
+        "follow_context": 1.2265625
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.66796875
+      }
+    },
+    {
+      "row_idx": 29,
+      "gold": "yes",
+      "wrong": "no",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "unknown",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "unknown",
+      "base_nc_scores": {
+        "gold_lp": -24.59375,
+        "wrong_lp": -44.375,
+        "unknown_lp": -25.859375,
+        "candidate_scores": {
+          "yes": -24.59375,
+          "no": -44.375,
+          "unknown": -25.859375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -25.859375,
+        "other_lp": -24.59375,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -17.296875,
+        "wrong_lp": -23.671875,
+        "unknown_lp": -10.6171875,
+        "candidate_scores": {
+          "yes": -17.296875,
+          "no": -23.671875,
+          "unknown": -10.6171875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.6171875,
+        "other_lp": -17.296875,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -23.453125,
+        "wrong_lp": -44.4375,
+        "unknown_lp": -25.09375,
+        "candidate_scores": {
+          "yes": -23.453125,
+          "no": -44.4375,
+          "unknown": -25.09375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -25.09375,
+        "other_lp": -23.453125,
+        "pred_answer": "yes",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -16.953125,
+        "wrong_lp": -23.078125,
+        "unknown_lp": -10.4140625,
+        "candidate_scores": {
+          "yes": -16.953125,
+          "no": -23.078125,
+          "unknown": -10.4140625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.4140625,
+        "other_lp": -16.953125,
+        "pred_answer": "unknown",
+        "pred_choice": "unknown"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 19.78125,
+        "follow_conflict": -1.265625,
+        "follow_context": -1.265625,
+        "context_flip": 1.265625
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 6.375,
+        "follow_conflict": 6.6796875,
+        "follow_context": 6.6796875,
+        "context_flip": -6.6796875
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 20.984375,
+        "follow_conflict": -1.640625,
+        "follow_context": -1.640625,
+        "context_flip": 1.640625
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 6.125,
+        "follow_conflict": 6.5390625,
+        "follow_context": 6.5390625,
+        "context_flip": -6.5390625
+      },
+      "base_nc_gold_margin": 1.265625,
+      "ab_nc_gold_margin": 1.640625,
+      "ctx_follow_context_gain": -0.140625,
+      "nc_gold_margin_damage": 0.0,
+      "hallucination_relief": -0.140625,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": -0.140625
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": -0.140625
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.375
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.140625
+      }
+    },
+    {
+      "row_idx": 30,
+      "gold": "liver",
+      "wrong": "spleen",
+      "base_nc_pred": "gold",
+      "base_ctx_pred": "gold",
+      "ab_nc_pred": "gold",
+      "ab_ctx_pred": "gold",
+      "base_nc_scores": {
+        "gold_lp": -8.1328125,
+        "wrong_lp": -13.56250011920929,
+        "unknown_lp": -11.4296875,
+        "candidate_scores": {
+          "liver": -8.1328125,
+          "spleen": -13.56250011920929,
+          "unknown": -11.4296875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -11.4296875,
+        "other_lp": -8.1328125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_ctx_scores": {
+        "gold_lp": -7.90234375,
+        "wrong_lp": -10.10937511920929,
+        "unknown_lp": -9.796875,
+        "candidate_scores": {
+          "liver": -7.90234375,
+          "spleen": -10.10937511920929,
+          "unknown": -9.796875
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.796875,
+        "other_lp": -7.90234375,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_nc_scores": {
+        "gold_lp": -8.28125,
+        "wrong_lp": -15.55468761920929,
+        "unknown_lp": -10.5859375,
+        "candidate_scores": {
+          "liver": -8.28125,
+          "spleen": -15.55468761920929,
+          "unknown": -10.5859375
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -10.5859375,
+        "other_lp": -8.28125,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "ab_ctx_scores": {
+        "gold_lp": -8.171875,
+        "wrong_lp": -11.86718761920929,
+        "unknown_lp": -9.4140625,
+        "candidate_scores": {
+          "liver": -8.171875,
+          "spleen": -11.86718761920929,
+          "unknown": -9.4140625
+        },
+        "ctx_target": "unknown",
+        "ctx_lp": -9.4140625,
+        "other_lp": -8.171875,
+        "pred_answer": "liver",
+        "pred_choice": "gold"
+      },
+      "base_nc_metrics": {
+        "gold_wrong_margin": 5.4296876192092896,
+        "follow_conflict": -3.296875,
+        "follow_context": -3.296875,
+        "context_flip": 3.296875
+      },
+      "base_ctx_metrics": {
+        "gold_wrong_margin": 2.2070313692092896,
+        "follow_conflict": -1.89453125,
+        "follow_context": -1.89453125,
+        "context_flip": 1.89453125
+      },
+      "ab_nc_metrics": {
+        "gold_wrong_margin": 7.2734376192092896,
+        "follow_conflict": -2.3046875,
+        "follow_context": -2.3046875,
+        "context_flip": 2.3046875
+      },
+      "ab_ctx_metrics": {
+        "gold_wrong_margin": 3.6953126192092896,
+        "follow_conflict": -1.2421875,
+        "follow_context": -1.2421875,
+        "context_flip": 1.2421875
+      },
+      "base_nc_gold_margin": 3.296875,
+      "ab_nc_gold_margin": 2.3046875,
+      "ctx_follow_context_gain": 0.65234375,
+      "nc_gold_margin_damage": 0.9921875,
+      "hallucination_relief": -0.33984375,
+      "metric_effect_reduction_fixed_nc": {
+        "follow_context": 0.65234375
+      },
+      "metric_effect_reduction_mask_scope": {
+        "follow_context": 0.65234375
+      },
+      "metric_abs_base_change": {
+        "follow_context": 0.9921875
+      },
+      "metric_abs_ctx_change": {
+        "follow_context": 0.65234375
+      }
+    }
+  ]
+}

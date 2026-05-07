@@ -1,0 +1,30 @@
+{
+  "data": "/root/logit_lens/PIC/tuned_lens/head_distribution/image/hulumed-4B/data/head_margin_samples.jsonl",
+  "n_rows": 31536,
+  "n_heads": 20,
+  "conditions": [
+    "NC",
+    "IC"
+  ],
+  "only_nc_gt_ic": false,
+  "topk_heads": 20,
+  "sort_by_gap": true,
+  "annotate_stats": true,
+  "xtick_count": 3,
+  "panel_width": 5.8,
+  "panel_height": 4.6,
+  "font_scale": 2.5,
+  "x_label": "Tuned lens value",
+  "x_range_global": [
+    -0.1875,
+    0.4375
+  ],
+  "quantiles": [
+    0.1,
+    0.9
+  ],
+  "outputs": [
+    "/root/logit_lens/PIC/tuned_lens/head_distribution/image/hulumed-4B/tuned_lens_head_distribution_val.png",
+    "/root/logit_lens/PIC/tuned_lens/head_distribution/image/hulumed-4B/tuned_lens_head_distribution_val.pdf"
+  ]
+}

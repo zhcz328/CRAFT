@@ -1,0 +1,16 @@
+{
+  "model": "/root/autodl-tmp/qwen3-4B",
+  "position": "before_answer",
+  "N": 3066,
+  "Acc_base": 95.23809523809524,
+  "Acc_support": 99.51076320939335,
+  "Acc_conflict": 35.74690150032616,
+  "resist_rate": 35.74690150032616,
+  "follow_conflict_rate": 64.25309849967384,
+  "resist_rate_given_base_correct": 36.13013698630137,
+  "follow_conflict_rate_given_base_correct": 63.86986301369863,
+  "files": {
+    "preds": "qwen3_4b/result_all_positions_yesno/qwen3_4b/before_answer/preds.jsonl",
+    "summary": "qwen3_4b/result_all_positions_yesno/qwen3_4b/before_answer/summary.json"
+  }
+}

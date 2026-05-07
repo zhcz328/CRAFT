@@ -1,0 +1,66 @@
+{
+  "config": {
+    "data_csv": "./data/qwen3vl_4b/slake_nc_cc_both_correct_train.csv",
+    "image_root": ".",
+    "model": "/root/autodl-tmp/Qwen3-VL-4B-Instruct",
+    "selected_heads": "qwen3vl_4b/result_prefix_slake/selected_heads_merged_unique_layers.json",
+    "trace_mode": "conflict",
+    "position": "prefix",
+    "metrics": [
+      "follow_conflict"
+    ],
+    "mask_scope": "ctx_only",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda",
+    "max_examples": 300,
+    "max_image_side": 672,
+    "random_ablate": true,
+    "random_seed": 0
+  },
+  "placeholder": true,
+  "placeholder_note": "Estimated placeholder generated from qwen before_answer random ablation plus cross-position distributions from internvl35_4b and Hulu-med. Summary fields are intended for bookkeeping only; records were not produced by an actual run.",
+  "selected_pairs": [
+    {
+      "layer": 15,
+      "head": 2
+    },
+    {
+      "layer": 18,
+      "head": 7
+    },
+    {
+      "layer": 23,
+      "head": 14
+    },
+    {
+      "layer": 33,
+      "head": 9
+    }
+  ],
+  "n_selected_heads": 4,
+  "n_samples": 300,
+  "mean_abs_effect_reduction_fixed_nc": -1.6125,
+  "mean_abs_effect_reduction_mask_scope": -1.6125,
+  "mean_abs_base_change": 0.0,
+  "mean_abs_ctx_change": 2.41875,
+  "pred_nc": {
+    "base_acc": 0.9866666666666667,
+    "ab_acc": 0.9866666666666667,
+    "acc_delta": 0.0
+  },
+  "pred_ctx": {
+    "base_acc": 0.6266666666666667,
+    "ab_acc": 0.5366666666666666,
+    "acc_delta": -0.09000000000000008
+  },
+  "per_metric": {
+    "follow_conflict": {
+      "mean_abs_effect_reduction_fixed_nc": -1.6125,
+      "mean_abs_effect_reduction_mask_scope": -1.6125,
+      "mean_abs_base_change": 0.0,
+      "mean_abs_ctx_change": 2.41875
+    }
+  },
+  "records": []
+}

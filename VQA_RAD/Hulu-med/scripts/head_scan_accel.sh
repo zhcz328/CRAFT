@@ -1,0 +1,14 @@
+python head_scan_vqarad_mm_fastcache_accel.py \
+  --data_csv ./data/nc_cc_both_correct_rerun_tmp_train.csv \
+  --image_root . \
+  --model /archive/zengjiaqi/Medical_LLM/Hulu-Med-4B \
+  --device auto \
+  --dtype bf16 \
+  --trace_mode conflict \
+  --position before_question \
+  --metrics follow_conflict \
+  --plan ./result_train_hulumed4b_before_question/trace_conflict_scan_plan.json \
+  --plan_out_dir result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question \
+  --limit 0 \
+  --coarse_limit 60 \
+  --coarse_topk 80

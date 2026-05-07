@@ -1,0 +1,14 @@
+python head_scan_vqarad_acc.py \
+  --data_csv ./data/nc_cc_both_correct_rerun.csv \
+  --image_root . \
+  --model /archive/zengjiaqi/Medical_LLM/Qwen3-VL-8B-Instruct \
+  --device auto \
+  --dtype bf16 \
+  --trace_mode conflict \
+  --position before_question \
+  --metrics follow_conflict \
+  --plan /home/zengjiaqi/icl/interp/logit_lens/cross_modal/result_tmp300/trace_conflict_scan_plan.json \
+  --plan_out_dir result_tmp300/headscan_vqarad_mm_accel \
+  --limit 300 \
+  --coarse_limit 40 \
+  --coarse_topk 40

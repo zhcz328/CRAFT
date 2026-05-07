@@ -1,0 +1,15 @@
+# Probe Ablation Panel Sources
+
+Each panel in this directory uses:
+
+- Left subplot: Probe-A validation AUROC and Probe-B validation Macro-F1 from the saved `summary.json` files.
+- Right subplot: the same two original curves, plus dashed post-ablation curves for Probe-A AUROC and Probe-B Macro-F1 recomputed after installing the model-specific ablation hooks.
+
+For HuluMed, the solid curves intentionally use the `probe_vqa_rad` artifacts so the solid and dashed curves are aligned to the same VQA-RAD ablation setup.
+
+| Model | Probe-A summary | Probe-B summary | Probe-B val manifest | Selected heads | Ablated Probe-B cache |
+|---|---|---|---|---|---|
+| Qwen3-4B | `/root/autodl-tmp/probe/conflictmedqa/qwen3-4b/before_question/results/conflict_linear_before_question/summary.json` | `/root/autodl-tmp/probe/conflictmedqa/qwen3-4b/before_question/results/follow_linear_before_question/summary.json` | `/root/logit_lens/conflictmedqa/Qwen3-4B_exp/probe/data/val_pair_stratified_before_question.jsonl` | `/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_groups.json` | `/root/logit_lens/PIC/probe/qwen3_4b_probe_a_ablation_auroc.json ; /root/logit_lens/PIC/probe/qwen3_4b_probe_b_ablation_macro_f1.json` |
+| Llama3.2-3B | `/root/autodl-tmp/probe/conflictmedqa/llama3.2-3b/before_question/conflict_linear/summary.json` | `/root/autodl-tmp/probe/conflictmedqa/llama3.2-3b/before_question/follow_linear/summary.json` | `/root/logit_lens/conflictmedqa/Qwen3-4B_exp/llama32_3b/probe/data/val_pair_stratified_before_question.jsonl` | `/root/logit_lens/conflictmedqa/Qwen3-4B_exp/llama32_3b/result/before_question/headscan_rounds_top30_inf/selected_heads.json` | `/root/logit_lens/PIC/probe/llama32_3b_probe_a_ablation_auroc.json ; /root/logit_lens/PIC/probe/llama32_3b_probe_b_ablation_macro_f1.json` |
+| InternVL3.5-4B | `/root/autodl-tmp/probe/internvl35_4b/results/before_question/conflict_linear/summary.json` | `/root/autodl-tmp/probe/internvl35_4b/results/before_question/follow_conflict_linear/summary.json` | `/root/autodl-tmp/probe/internvl35_4b/data/val_before_question.jsonl` | `/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json` | `/root/logit_lens/PIC/probe/internvl35_4b_probe_a_ablation_auroc.json ; /root/logit_lens/PIC/probe/internvl35_4b_probe_b_ablation_macro_f1.json` |
+| HuluMed-4B | `/root/autodl-tmp/Hulumed/probe_vqa_rad/results/conflict_linear_before_question/summary.json` | `/root/autodl-tmp/Hulumed/probe_vqa_rad/results/follow_linear_before_question/summary.json` | `/root/logit_lens/VQA_RAD/Hulu-med/probe/data/val_before_question.jsonl` | `/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json` | `/root/logit_lens/PIC/probe/hulumed4b_probe_a_ablation_auroc.json ; /root/logit_lens/PIC/probe/hulumed4b_probe_b_ablation_macro_f1.json` |

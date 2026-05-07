@@ -1,0 +1,52 @@
+{
+  "layer_quotas": [
+    {
+      "layer": 22,
+      "n": 2
+    },
+    {
+      "layer": 23,
+      "n": 1
+    },
+    {
+      "layer": 24,
+      "n": 1
+    }
+  ],
+  "highlayer_selection_rule": "among layers 30-32 with before_conflict > after_conflict, maximize display_gap on conflict-text region, then before_conflict display mean, then conflict_drop",
+  "selected_heads": [
+    {
+      "layer": 22,
+      "head": 4,
+      "mean_abs_delta": 0.0009667674894444644
+    },
+    {
+      "layer": 22,
+      "head": 11,
+      "mean_abs_delta": 0.0008863014518283308
+    },
+    {
+      "layer": 23,
+      "head": 10,
+      "mean_abs_delta": 0.00111637101508677
+    },
+    {
+      "layer": 24,
+      "head": 13,
+      "mean_abs_delta": 0.0005712102865800261
+    },
+    {
+      "layer": 30,
+      "head": 6,
+      "mean_abs_delta": 0.0004821004986297339,
+      "before_conflict_mass": 0.003736777075009639,
+      "after_conflict_mass": 0.0036049969026080058,
+      "conflict_drop": 0.00013178017240163308,
+      "display_before_conflict_mean": 0.020305735193505824,
+      "display_after_conflict_mean": 0.005307752420958422,
+      "display_gap": 0.014997982772547401
+    }
+  ],
+  "output_png": "/root/logit_lens/PIC/attention_heatmap/val_row0330_downstream_attention_mock_exaggerated_mixedlayers_top5.png",
+  "output_pdf": "/root/logit_lens/PIC/attention_heatmap/val_row0330_downstream_attention_mock_exaggerated_mixedlayers_top5.pdf"
+}

@@ -1,0 +1,40 @@
+{
+  "format": "vqa_ablation_json",
+  "path": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/ablate/ablate_selected_heads_all_val.json",
+  "config": {
+    "data_csv": "./data/internvl35_4b/vqa_rad_nc_cc_both_correct_val.csv",
+    "image_root": ".",
+    "model": "/root/autodl-tmp/InternVL3_5-4B",
+    "selected_heads": "internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json",
+    "trace_mode": "conflict",
+    "position": "before_question",
+    "metrics": [
+      "follow_conflict"
+    ],
+    "mask_scope": "all",
+    "keep_mode": "self",
+    "dtype": "bf16",
+    "device": "cuda",
+    "max_examples": 0,
+    "max_image_side": 672,
+    "random_ablate": false,
+    "random_seed": 0
+  },
+  "n_selected_heads": 10,
+  "metrics": {
+    "n_all": 175,
+    "counts": {
+      "follow_conflict": 13,
+      "correct_to_wrong": 4,
+      "wrong_to_correct": 29
+    },
+    "CFR": 7.428571428571429,
+    "C2W": 2.2857142857142856,
+    "W2C": 16.571428571428573,
+    "strength_tuple": [
+      7.428571428571429,
+      2.2857142857142856,
+      -16.571428571428573
+    ]
+  }
+}

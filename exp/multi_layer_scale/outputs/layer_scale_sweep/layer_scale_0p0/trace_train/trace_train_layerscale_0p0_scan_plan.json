@@ -1,0 +1,69 @@
+{
+  "n_samples": 57,
+  "n_layers": 36,
+  "trace_mode": "conflict",
+  "position": "image_conflict",
+  "mask_scale": 1.0,
+  "layer_scale": 0.0,
+  "plan_scores_source": {
+    "mode": "single_metric",
+    "metric": "hallucination_relief",
+    "weights": {
+      "hallucination_relief": 1.0
+    }
+  },
+  "scan_plan": {
+    "method": "positive_topk",
+    "plateau_start": null,
+    "round0_rise": [],
+    "round1_preplateau": [],
+    "round1_topk_fallback": [
+      25,
+      31,
+      35
+    ],
+    "round2_tail": [
+      24,
+      26,
+      30,
+      32,
+      34
+    ],
+    "positive_layers": [
+      25,
+      31,
+      35
+    ],
+    "core_layers": [
+      25,
+      31,
+      35
+    ],
+    "neighbor_layers": [
+      24,
+      26,
+      30,
+      32,
+      34
+    ],
+    "merged_unique_layers": [
+      24,
+      25,
+      26,
+      30,
+      31,
+      32,
+      34,
+      35
+    ],
+    "tail_k": 4,
+    "preplateau_width": 7,
+    "plateau_min_score_frac": 0.8,
+    "plateau_eps": 0.6,
+    "plateau_min_len": 6,
+    "topk_fallback": 8,
+    "rise_k": 6,
+    "rise_min_layer": 0,
+    "rise_max_layer": -1
+  }
+}

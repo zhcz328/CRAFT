@@ -1,0 +1,144 @@
+{
+  "mode": "conflict_specific",
+  "thresholds": {
+    "eff_min": 0.06256532041650069,
+    "eff_max": 0.2,
+    "base_max": 0.16250128495065788,
+    "base_min": null
+  },
+  "auto_search": {
+    "target_min": 6,
+    "target_max": 7,
+    "eff_floor": 1e-06,
+    "eff_cap": 0.2,
+    "base_max_cap": 0.2,
+    "base_min_floor": null,
+    "selected_directly": false,
+    "chosen_summary": {
+      "count": 6,
+      "mean_effect_reduction": 0.08164906745765642,
+      "mean_base_change": 0.1307721057830498,
+      "max_effect_reduction": 0.12460969623766448,
+      "min_effect_reduction": 0.06256532041650069,
+      "max_base_change": 0.16250128495065788,
+      "min_base_change": 0.08295748526589912
+    }
+  },
+  "input_json": "/root/logit_lens/exp/multi_layer_scale/outputs/layer_scale_sweep/layer_scale_1p0/headscan_train/head_scan_core_layers.json",
+  "source": "results",
+  "topk": 50,
+  "meta": {
+    "round": "core_layers",
+    "scan_layers": [
+      1,
+      3,
+      12,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "n_samples": 57,
+    "n_layers": 36,
+    "n_heads": 32,
+    "metrics": [
+      "follow_context"
+    ],
+    "weights": [
+      1.0
+    ],
+    "position": "image_conflict",
+    "keep_mode": "self",
+    "trace_mode": "conflict",
+    "model": "/root/autodl-tmp/InternVL3_5-4B"
+  },
+  "n_candidates": 36,
+  "n_selected": 6,
+  "selected": [
+    {
+      "layer": 33,
+      "head": 7,
+      "mean_abs_effect_reduction": 0.08772251062225878,
+      "mean_abs_base_change": 0.09991776315789473,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.18764027378015352
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.09991776315789473
+      },
+      "conflict_specific_score": 0.8779383155858018,
+      "backbone_score": 0.008765037039970757
+    },
+    {
+      "layer": 31,
+      "head": 6,
+      "mean_abs_effect_reduction": 0.12460969623766448,
+      "mean_abs_base_change": 0.16250128495065788,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.28711098118832235
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.16250128495065788
+      },
+      "conflict_specific_score": 0.7668181175144763,
+      "backbone_score": 0.020249235755931638
+    },
+    {
+      "layer": 34,
+      "head": 17,
+      "mean_abs_effect_reduction": 0.06256532041650069,
+      "mean_abs_base_change": 0.08295748526589912,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.1455228056823998
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.08295748526589912
+      },
+      "conflict_specific_score": 0.7541762631750795,
+      "backbone_score": 0.005190261646608113
+    },
+    {
+      "layer": 32,
+      "head": 7,
+      "mean_abs_effect_reduction": 0.0791534938310322,
+      "mean_abs_base_change": 0.15537569606513307,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.23452918989616528
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.15537569606513307
+      },
+      "conflict_specific_score": 0.5094296367188261,
+      "backbone_score": 0.012298529199983846
+    },
+    {
+      "layer": 32,
+      "head": 12,
+      "mean_abs_effect_reduction": 0.06400500054945026,
+      "mean_abs_base_change": 0.12990797611705043,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.1939129766665007
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.12990797611705043
+      },
+      "conflict_specific_score": 0.4926911323801101,
+      "backbone_score": 0.008314760082749784
+    },
+    {
+      "layer": 12,
+      "head": 24,
+      "mean_abs_effect_reduction": 0.07183838308903209,
+      "mean_abs_base_change": 0.15397242914166367,
+      "metric_mean_abs_effect_reduction": {
+        "follow_context": 0.22581081223069577
+      },
+      "metric_mean_abs_base_change": {
+        "nc_gold_margin": 0.15397242914166367
+      },
+      "conflict_specific_score": 0.4665635070252088,
+      "backbone_score": 0.011061130349827685
+    }
+  ]
+}

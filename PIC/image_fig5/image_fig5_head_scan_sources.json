@@ -1,0 +1,193 @@
+{
+  "panels": [
+    {
+      "title": "Hulu-med-4B",
+      "scan": "/root/logit_lens/heal-medvqa/hulumed4b/result_image_conflict_heal_medvqa/headscan_slake_mm/head_scan_core_layers.json",
+      "selected_source": "/root/logit_lens/Slake_vqa/image_conflict/hulumed4b/result_image_conflict_slake/selected_heads_core_layers.json",
+      "selection_mode": "conflict_specific",
+      "selection_thresholds_raw": {
+        "cer_min": 0.0,
+        "bcp_max": 0.5
+      },
+      "display_thresholds": {
+        "bcp": 0.028000000000000004,
+        "cer": 0.0
+      },
+      "display_limits": {
+        "x_min": 0.0,
+        "x_max": 0.06,
+        "y_min": -0.4,
+        "y_max": 0.4
+      },
+      "scale": {
+        "bcp": 17.857142857142854,
+        "cer": 0.49918790604697644
+      },
+      "n_candidates": 192,
+      "n_selected": 4,
+      "n_augmented_background": 90,
+      "quadrant_counts": {
+        "causal": 4,
+        "backbone_upper": 6,
+        "irrelevant": 120,
+        "backbone_lower": 2
+      },
+      "scan_meta": {
+        "round": "core_layers",
+        "scan_layers": [
+          11,
+          14,
+          15,
+          16,
+          17,
+          35
+        ],
+        "n_samples": 87,
+        "n_layers": 36,
+        "n_heads": 32,
+        "model": "/root/autodl-tmp/Hulu-Med-4B",
+        "used_results_key": "results"
+      },
+      "selected_heads": [
+        {
+          "layer": 16,
+          "head": 12,
+          "cer_raw": 0.13290229885057472,
+          "bcp_raw": 0.3742816091954023,
+          "follow_context_gain": 0.507183908045977
+        },
+        {
+          "layer": 16,
+          "head": 25,
+          "cer_raw": 0.11063218390804598,
+          "bcp_raw": 0.15086206896551724,
+          "follow_context_gain": 0.2614942528735632
+        },
+        {
+          "layer": 17,
+          "head": 18,
+          "cer_raw": 0.05316091954022988,
+          "bcp_raw": 0.22629310344827586,
+          "follow_context_gain": 0.27945402298850575
+        },
+        {
+          "layer": 35,
+          "head": 16,
+          "cer_raw": 0.005028735632183908,
+          "bcp_raw": 0.042385057471264365,
+          "follow_context_gain": 0.04741379310344827
+        }
+      ]
+    },
+    {
+      "title": "InternVL3.5-4B",
+      "scan": "/root/logit_lens/Slake_vqa/image_conflict/internvl35_4b/result_image_conflict_slake/headscan_slake_mm_accel/head_scan_core_layers.json",
+      "selected_source": "/root/logit_lens/Slake_vqa/image_conflict/internvl35_4b/result_image_conflict_slake/selected_heads_core_layers.json",
+      "selection_mode": "conflict_specific",
+      "selection_thresholds_raw": {
+        "cer_min": 0.035,
+        "bcp_max": 0.3
+      },
+      "display_thresholds": {
+        "bcp": 0.028000000000000004,
+        "cer": 0.069
+      },
+      "display_limits": {
+        "x_min": 0.0,
+        "x_max": 0.06,
+        "y_min": 0.0,
+        "y_max": 0.12
+      },
+      "scale": {
+        "bcp": 10.714285714285712,
+        "cer": 0.5072463768115942
+      },
+      "n_candidates": 96,
+      "n_selected": 7,
+      "n_augmented_background": 110,
+      "quadrant_counts": {
+        "causal": 7,
+        "backbone_upper": 4,
+        "irrelevant": 79,
+        "backbone_lower": 6
+      },
+      "scan_meta": {
+        "round": "core_layers",
+        "scan_layers": [
+          25,
+          31,
+          35
+        ],
+        "n_samples": 58,
+        "n_layers": 36,
+        "n_heads": 32,
+        "model": "/root/autodl-tmp/InternVL3_5-4B",
+        "used_results_key": "results"
+      },
+      "selected_heads": [
+        {
+          "layer": 31,
+          "head": 7,
+          "cer_raw": 0.11041259560091742,
+          "bcp_raw": 0.22422211745689655,
+          "follow_context_gain": 0.33463471305781395
+        },
+        {
+          "layer": 25,
+          "head": 17,
+          "cer_raw": 0.0995862237338362,
+          "bcp_raw": 0.28663793103448276,
+          "follow_context_gain": 0.38622415476831895
+        },
+        {
+          "layer": 25,
+          "head": 9,
+          "cer_raw": 0.09444664059014156,
+          "bcp_raw": 0.19694992797128086,
+          "follow_context_gain": 0.29139656856142243
+        },
+        {
+          "layer": 31,
+          "head": 6,
+          "cer_raw": 0.08786326235738294,
+          "bcp_raw": 0.16594827997273412,
+          "follow_context_gain": 0.25381154233011705
+        },
+        {
+          "layer": 35,
+          "head": 22,
+          "cer_raw": 0.0371283169450431,
+          "bcp_raw": 0.10410492995689655,
+          "follow_context_gain": 0.14123324690193967
+        },
+        {
+          "layer": 31,
+          "head": 9,
+          "cer_raw": 0.03650533536384846,
+          "bcp_raw": 0.1031494140625,
+          "follow_context_gain": 0.13965474942634845
+        },
+        {
+          "layer": 31,
+          "head": 2,
+          "cer_raw": 0.03586552677483394,
+          "bcp_raw": 0.13016484112575136,
+          "follow_context_gain": 0.1660303679005853
+        }
+      ]
+    }
+  ],
+  "outputs": {
+    "hulumed4b": {
+      "png": "/root/logit_lens/PIC/image_fig5/image_fig5_head_scan_scatter_hulumed4b.png",
+      "pdf": "/root/logit_lens/PIC/image_fig5/image_fig5_head_scan_scatter_hulumed4b.pdf"
+    },
+    "internvl35_4b": {
+      "png": "/root/logit_lens/PIC/image_fig5/image_fig5_head_scan_scatter_internvl35_4b.png",
+      "pdf": "/root/logit_lens/PIC/image_fig5/image_fig5_head_scan_scatter_internvl35_4b.pdf"
+    },
+    "sources": {
+      "json": "/root/logit_lens/PIC/image_fig5/image_fig5_head_scan_sources.json"
+    }
+  }
+}

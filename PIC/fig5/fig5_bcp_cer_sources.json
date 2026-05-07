@@ -1,0 +1,141 @@
+{
+  "panels": [
+    {
+      "title": "Qwen3-4B",
+      "scan": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/result_train/before_question/headscan_rounds_top50_inf/head_scan_summary.json",
+      "selected_source": "recomputed_from_thresholds",
+      "selection_thresholds_raw": {
+        "cer_min": 2.0,
+        "bcp_max": 1.5
+      },
+      "display_thresholds": {
+        "bcp": 0.028,
+        "cer": 0.06899999999999999
+      },
+      "display_limits": {
+        "x": 0.06,
+        "y": 0.12
+      },
+      "n_clipped": 11,
+      "scale": {
+        "bcp": 53.57142857142857,
+        "cer": 28.985507246376812
+      },
+      "n_candidates": 40,
+      "n_augmented_background": 150,
+      "n_display_points": 190,
+      "n_selected": 5,
+      "quadrant_counts": {
+        "causal": 5,
+        "backbone_upper": 19,
+        "irrelevant": 15,
+        "backbone_lower": 1
+      },
+      "note": "No before_question selected_heads file was found; selected heads are recomputed from scan candidates."
+    },
+    {
+      "title": "Llama3.2-3B",
+      "scan": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/llama32_3b/result/before_question/headscan_rounds_top30_inf/head_scan_summary.json",
+      "selected_source": "/root/logit_lens/conflictmedqa/Qwen3-4B_exp/llama32_3b/result/before_question/headscan_rounds_top30_inf/selected_heads.json",
+      "selection_thresholds_raw": {
+        "cer_min": 0.45,
+        "bcp_max": 0.7
+      },
+      "display_thresholds": {
+        "bcp": 0.028000000000000008,
+        "cer": 0.069
+      },
+      "display_limits": {
+        "x": 0.06,
+        "y": 0.12
+      },
+      "n_clipped": 9,
+      "scale": {
+        "bcp": 24.999999999999993,
+        "cer": 6.521739130434782
+      },
+      "n_candidates": 40,
+      "n_augmented_background": 150,
+      "n_display_points": 190,
+      "n_selected": 3,
+      "quadrant_counts": {
+        "causal": 3,
+        "backbone_upper": 15,
+        "irrelevant": 17,
+        "backbone_lower": 5
+      },
+      "note": null
+    },
+    {
+      "title": "Hulu-med-4B",
+      "scan": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/head_scan_merged_unique_layers.json",
+      "selected_source": "/root/logit_lens/VQA_RAD/Hulu-med/result_train_hulumed4b_before_question/headscan_vqarad_mm_hulumed4b_before_question/selected_heads_stable_hulumed4b.json",
+      "selection_thresholds_raw": {
+        "cer_min": 0.25,
+        "bcp_max": 0.25
+      },
+      "display_thresholds": {
+        "bcp": 0.028000000000000004,
+        "cer": 0.06899999999999999
+      },
+      "display_limits": {
+        "x": 0.06,
+        "y": 0.12
+      },
+      "n_clipped": 3,
+      "scale": {
+        "bcp": 8.928571428571427,
+        "cer": 3.6231884057971016
+      },
+      "n_candidates": 48,
+      "n_augmented_background": 150,
+      "n_display_points": 198,
+      "n_selected": 6,
+      "quadrant_counts": {
+        "causal": 6,
+        "backbone_upper": 7,
+        "irrelevant": 30,
+        "backbone_lower": 5
+      },
+      "note": null
+    },
+    {
+      "title": "InternVL3.5-4B",
+      "scan": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/headscan_vqarad_mm_accel/head_scan_merged_unique_layers.json",
+      "selected_source": "/root/logit_lens/VQA_RAD/text_conflict/internvl35_4b/result_before_question_vqarad/selected_heads_merged_unique_layers.json",
+      "selection_thresholds_raw": {
+        "cer_min": 0.55,
+        "bcp_max": 0.6
+      },
+      "display_thresholds": {
+        "bcp": 0.028000000000000004,
+        "cer": 0.069
+      },
+      "display_limits": {
+        "x": 0.08,
+        "y": 0.12
+      },
+      "n_clipped": 5,
+      "scale": {
+        "bcp": 21.428571428571423,
+        "cer": 7.971014492753623
+      },
+      "n_candidates": 48,
+      "n_augmented_background": 150,
+      "n_display_points": 198,
+      "n_selected": 10,
+      "quadrant_counts": {
+        "causal": 10,
+        "backbone_upper": 8,
+        "irrelevant": 20,
+        "backbone_lower": 10
+      },
+      "note": null
+    }
+  ],
+  "outputs": {
+    "png": "/root/logit_lens/PIC/fig5/fig5_bcp_cer_scatter.png",
+    "pdf": "/root/logit_lens/PIC/fig5/fig5_bcp_cer_scatter.pdf",
+    "sources": "/root/logit_lens/PIC/fig5/fig5_bcp_cer_sources.json"
+  }
+}

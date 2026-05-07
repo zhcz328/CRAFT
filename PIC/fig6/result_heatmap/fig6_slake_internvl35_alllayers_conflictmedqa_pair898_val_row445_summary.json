@@ -1,0 +1,91 @@
+{
+  "output_stem": "fig6_slake_internvl35_alllayers_conflictmedqa_pair898_val_row445",
+  "png": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_slake_internvl35_alllayers_conflictmedqa_pair898_val_row445.png",
+  "pdf": "/root/logit_lens/PIC/fig6/result_heatmap/fig6_slake_internvl35_alllayers_conflictmedqa_pair898_val_row445.pdf",
+  "aggregation": "all_layers_all_heads_mean",
+  "model": "/root/autodl-tmp/InternVL3_5-4B",
+  "left_source": "ConflictMedQA question from previous Qwen3-4B setup, run on InternVL3_5-4B text-only",
+  "right_source": "Slake multimodal sample on InternVL3_5-4B",
+  "conflict_pair_id": 898,
+  "conflict_side": "wrong",
+  "split": "val",
+  "row_idx": 445,
+  "question": "Is this an MRI image with T2 weighted?",
+  "gold": "No",
+  "wrong": "Yes",
+  "image_path": "/root/autodl-tmp/data/SLAKE/imgs/xmlab519/source.jpg",
+  "search_limit": 80,
+  "ablate_record": {
+    "row_idx": 445,
+    "gold": "no",
+    "wrong": "yes",
+    "base_nc_pred": "gold",
+    "base_ctx_pred": "gold",
+    "ab_nc_pred": "gold",
+    "ab_ctx_pred": "gold",
+    "base_nc_scores": {
+      "gold_lp": -13.9375,
+      "wrong_lp": -17.125,
+      "ctx_target": "yes",
+      "ctx_lp": -17.125,
+      "other_lp": -13.9375
+    },
+    "base_ctx_scores": {
+      "gold_lp": -11.25,
+      "wrong_lp": -12.0625,
+      "ctx_target": "yes",
+      "ctx_lp": -12.0625,
+      "other_lp": -11.25
+    },
+    "ab_nc_scores": {
+      "gold_lp": -13.9375,
+      "wrong_lp": -17.125,
+      "ctx_target": "yes",
+      "ctx_lp": -17.125,
+      "other_lp": -13.9375
+    },
+    "ab_ctx_scores": {
+      "gold_lp": -13.0625,
+      "wrong_lp": -15.3125,
+      "ctx_target": "yes",
+      "ctx_lp": -15.3125,
+      "other_lp": -13.0625
+    },
+    "base_nc_metrics": {
+      "gold_wrong_margin": 3.1875,
+      "follow_conflict": -3.1875,
+      "follow_context": -3.1875,
+      "context_flip": 3.1875
+    },
+    "base_ctx_metrics": {
+      "gold_wrong_margin": 0.8125,
+      "follow_conflict": -0.8125,
+      "follow_context": -0.8125,
+      "context_flip": 0.8125
+    },
+    "ab_nc_metrics": {
+      "gold_wrong_margin": 3.1875,
+      "follow_conflict": -3.1875,
+      "follow_context": -3.1875,
+      "context_flip": 3.1875
+    },
+    "ab_ctx_metrics": {
+      "gold_wrong_margin": 2.25,
+      "follow_conflict": -2.25,
+      "follow_context": -2.25,
+      "context_flip": 2.25
+    },
+    "metric_effect_reduction_fixed_nc": {
+      "follow_conflict": 1.4375
+    },
+    "metric_effect_reduction_mask_scope": {
+      "follow_conflict": 1.4375
+    },
+    "metric_abs_base_change": {
+      "follow_conflict": 0.0
+    },
+    "metric_abs_ctx_change": {
+      "follow_conflict": 1.4375
+    }
+  }
+}
