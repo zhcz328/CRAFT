@@ -2,124 +2,225 @@
 
 ## Abstract
 
-As vision language models are increasingly deployed in clinical diagnosis, understanding how they internally resolve competing visual and textual signals becomes a safety imperative. Existing mechanistic analyses remain confined to unimodal text and offer no explanation for why a single misleading sentence can override a correct image based diagnosis, or why a model commits to a confident answer despite insufficient visual evidence. We find that these two safety risks, arbitration failure where textual context overrides visual grounding and brake failure where the model commits without adequate evidence, are mediated by spatially disjoint attention head populations: arbitration heads form a mid to deep wideband reflecting cross layer evidence competition, while brake heads concentrate at the deepest layers as late stage answer commitment gates. To ground these observations in causal circuitry, we introduce \method, which localises each failure mode to a minimal causal head set via dual selection criteria and then verifies necessity and sufficiency through temporal probes and Tuned Lens trajectory analysis. Excising arbitration heads sharply reduces conflict following with negligible degradation on clean inputs, while excising brake heads restores appropriate abstention under degraded visual evidence. The two interventions target spatially disjoint head sets and produce distinct corrective effects, underscoring the mechanistic separability of the two failure modes. Experiments across multiple medical VQA benchmarks and VLM architectures validate both the localisation and the interventions, demonstrating that the identified heads causally drive each failure mode and that targeted modulation generalises without retraining. 
+As vision language models are increasingly deployed in clinical diagnosis, understanding how they internally resolve competing visual and textual signals becomes a safety imperative. Existing mechanistic analyses remain confined to unimodal text and offer no explanation for why a single misleading sentence can override a correct image-based diagnosis, or why a model commits to a confident answer despite insufficient visual evidence. We find that these two safety risks, **arbitration failure** where textual context overrides visual grounding and **brake failure** where the model commits without adequate evidence, are mediated by spatially disjoint attention-head populations: arbitration heads form a mid-to-deep wideband reflecting cross-layer evidence competition, while brake heads concentrate at the deepest layers as late-stage answer-commitment gates. To ground these observations in causal circuitry, we introduce **CRAFT**, which localizes each failure mode to a minimal causal head set via dual selection criteria and then verifies necessity and sufficiency through temporal probes and Tuned Lens trajectory analysis. Excising arbitration heads sharply reduces conflict following with negligible degradation on clean inputs, while excising brake heads restores appropriate abstention under degraded visual evidence. The two interventions target spatially disjoint head sets and produce distinct corrective effects, underscoring the mechanistic separability of the two failure modes. Experiments across multiple medical VQA benchmarks and VLM architectures validate both the localization and the interventions, demonstrating that the identified heads causally drive each failure mode and that targeted modulation generalizes without retraining.
 
-## Requirements
+## Overview
 
-- Python 3.10+ recommended
-- PyTorch + CUDA environment
-- `transformers`, `accelerate`, `numpy`, `pandas`, `matplotlib`, `scikit-learn`
-- Local access to the target model checkpoints
+This repository contains the experimental code for **CRAFT**, a mechanistic interpretability framework for tracing and intervening on failure modes in medical language models and medical vision-language models.
 
-This repository does **not** currently expose a single unified `requirements.txt` at the root. Most scripts assume an existing research environment with Hugging Face models, GPU inference, and standard scientific Python packages installed.
+The paper studies two distinct safety-critical failure modes:
 
-## Quick Start
+- **Arbitration failure**: the model has access to the correct visual evidence, but misleading text overrides the answer.
+- **Brake failure**: the visual evidence is insufficient or degraded, but the model still commits to a concrete answer instead of abstaining with `unknown`.
 
-### Environment
+CRAFT localizes the responsible internal components through a coarse-to-fine intervention pipeline:
+
+1. **Layer-wise scoring** to identify a critical band.
+2. **Head-level selection** using causal effect and clean-capacity preservation criteria.
+3. **Targeted intervention** by excising the selected heads.
+4. **Temporal validation** with probes and Tuned Lens trajectory analysis.
+
+The implementation in this repository spans:
+
+- text-only conflict analysis
+- multimodal text-conflict analysis
+- multimodal image-conflict / abstention analysis
+- threshold sweeps and selection-criteria ablations
+- observational vs. interventional comparisons
+- figure-generation scripts for the paper
+
+## Paper Summary
+
+CRAFT is designed to answer a mechanistic question: **which internal attention heads causally drive unsafe conflict-following and over-commitment behaviors in medical models?**
+
+The main findings reflected in the paper are:
+
+- Arbitration-sensitive heads form a **broad mid-to-deep layer band**.
+- Brake-sensitive heads concentrate in a **small late-layer circuit**.
+- The two head sets are **spatially disjoint**, suggesting mechanistic separability.
+- Excising arbitration heads reduces conflict following while preserving clean accuracy.
+- Excising brake heads increases the model's willingness to abstain under degraded visual evidence.
+
+## Repository Coverage
+
+The repository is organized by task family rather than by a single unified training entrypoint. The main experiment groups are:
+
+- **Text-only conflict**
+  - `conflictmedqa/`
+  - `pubmedqa/`
+  - `pubmedqa_before/`
+- **Multimodal text conflict**
+  - `VQA_RAD/text_conflict/`
+  - `VQA_RAD/Hulu-med/`
+  - `VQA_RAD/qwen3-VL/`
+  - `Slake_vqa/text_conflict/`
+  - `General/multimodal/text_conflict/`
+- **Multimodal image conflict / brake failure**
+  - `Slake_vqa/image_conflict/`
+  - `heal-medvqa/`
+  - `General/multimodal/image_conflict/`
+- **Analysis and visualization**
+  - `selection_criteria_ablation/`
+  - `ablation_tau/`
+  - `image_ablation_tau/`
+  - `PIC/`
+  - `exp/`
+
+The shared reusable multimodal logic is mostly concentrated under:
+
+- `General/multimodal/text_conflict/`
+- `General/multimodal/image_conflict/`
+- `General/multimodal/dataset_adapters.py`
+
+## Benchmarks in the Paper
+
+The paper covers both text-only and multimodal medical QA settings:
+
+- **ConflictMedQA**
+- **PubMedQA**
+- **VQA-RAD**
+- **SLAKE**
+- **Heal-MedVQA**
+
+These map to the repository as follows:
+
+- `conflictmedqa/` for ConflictMedQA
+- `pubmedqa/` and `pubmedqa_before/` for PubMedQA
+- `VQA_RAD/` for VQA-RAD
+- `Slake_vqa/` for SLAKE
+- `heal-medvqa/` plus shared image-conflict modules for Heal-MedVQA-related experiments
+
+## Models in the Paper
+
+The paper reports experiments across the following models:
+
+- **Qwen3-4B**
+- **Llama3.2-3B**
+- **Hulu-Med 4B**
+- **Hulu-Med 7B**
+- **Hulu-Med 7B**
+- **InternVL3.5-4B**
+- **Qwen3-VL-8B**
+
+## Core Workflow
+
+Although each benchmark has its own scripts, the recurring CRAFT pipeline is:
+
+1. Prepare or filter a clean/conflict/degraded split.
+2. Run a **head scan** or layer scan.
+3. Select intervention targets.
+4. Run **head ablation / excision**.
+5. Trace layer-wise behavior.
+6. Optionally run probe and Tuned Lens analyses.
+
+### Text-only workflow
+
+Representative paths:
+
+- `conflictmedqa/Qwen3-4B_exp/`
+- `pubmedqa/`
+
+Typical steps:
 
 ```bash
-cd /root/logit_lens
-conda create -n logit_lens python=3.10
-conda activate logit_lens
-```
-
-Then install the packages required by the subproject you want to run. In practice, most experiments rely on a standard `torch + transformers + pandas + matplotlib` stack.
-
-### Text Workflow: PubMedQA / ConflictMedQA
-
-Typical text-side pipeline:
-
-```bash
-# 1. Filter / prepare data
+# PubMedQA example
 python /root/logit_lens/pubmedqa/filter_data.py
-
-# 2. Split train/val if needed
 python /root/logit_lens/pubmedqa/split_train_val.py
-
-# 3. Run head scan
 python /root/logit_lens/pubmedqa/head_scan_on_pubmed.py
-
-# 4. Select heads
 python /root/logit_lens/pubmedqa/select_heads.py
-
-# 5. Run ablation
 python /root/logit_lens/pubmedqa/ablate_selected_heads.py
-
-# 6. Trace layer-wise behavior
 python /root/logit_lens/pubmedqa/layer_trace_on_pubmed.py
 ```
 
-For the original ConflictMedQA path, the parallel workflow lives under:
+ConflictMedQA uses a parallel structure under:
 
 ```bash
 /root/logit_lens/conflictmedqa/Qwen3-4B_exp
 ```
 
-with core scripts such as:
+Important scripts there include:
 
-- `head_scan.py` / `head_scan_inf.py`
+- `head_scan.py`
+- `head_scan_inf.py`
 - `select_heads.py`
-- `ablate_head.py` / `ablate_head_inf.py`
+- `ablate_head.py`
+- `ablate_head_inf.py`
 - `layer_trace.py`
 
-### Multimodal Workflow: VQA_RAD / SLAKE
+### Multimodal arbitration workflow
 
-Representative multimodal pipelines live in:
+Representative paths:
 
-- `/root/logit_lens/VQA_RAD/Hulu-med`
-- `/root/logit_lens/VQA_RAD/text_conflict`
-- `/root/logit_lens/VQA_RAD/qwen3-VL`
-- `/root/logit_lens/Slake_vqa/text_conflict`
-- `/root/logit_lens/Slake_vqa/image_conflict`
+- `VQA_RAD/text_conflict/`
+- `VQA_RAD/Hulu-med/`
+- `VQA_RAD/qwen3-VL/`
+- `Slake_vqa/text_conflict/`
+- `General/multimodal/text_conflict/`
 
-Typical workflow:
+Typical steps:
 
 ```bash
-# 1. Filter or prepare benchmark subset
 python /root/logit_lens/VQA_RAD/text_conflict/filter_fine_grained.py
-
-# 2. Run head scan
 python /root/logit_lens/VQA_RAD/text_conflict/head_scan_vqarad_mm_fastcache.py
-
-# 3. Select heads
 python /root/logit_lens/VQA_RAD/text_conflict/select_heads_merged_unique_layers.py
-
-# 4. Run ablation
 python /root/logit_lens/VQA_RAD/text_conflict/ablate_head.py
-
-# 5. Run layer trace
 python /root/logit_lens/VQA_RAD/text_conflict/layer_trace_vqarad_mm_current_fixed_fastcache.py
 ```
 
-For image-conflict experiments on SLAKE, use the corresponding scripts under:
+### Multimodal brake-failure workflow
+
+Representative paths:
+
+- `Slake_vqa/image_conflict/`
+- `General/multimodal/image_conflict/`
+- `heal-medvqa/`
+
+Typical steps:
 
 ```bash
-/root/logit_lens/Slake_vqa/image_conflict
+python /root/logit_lens/Slake_vqa/image_conflict/filter_visual_dependent_subset.py
+python /root/logit_lens/Slake_vqa/image_conflict/head_scan_slake_mm_fastcache.py
+python /root/logit_lens/Slake_vqa/image_conflict/select_heads.py
+python /root/logit_lens/Slake_vqa/image_conflict/ablate_head.py
+python /root/logit_lens/Slake_vqa/image_conflict/layer_trace_slake_mm_current_fixed_fastcache.py
 ```
 
-## Extended Analyses
+For the more reusable shared code path, see:
 
-### Threshold Sweep
+- `General/multimodal/image_conflict/scripts/`
+- `General/multimodal/image_conflict/probe/`
+- `General/multimodal/image_conflict/tuned_lens/`
 
-The repository contains external threshold-sweep utilities for generating alternative selected-head sets while constraining them not to outperform the current main configuration.
+## Probe and Tuned Lens Analysis
 
-Text / text-conflict:
+The paper validates the selected circuits with linear probes and Tuned Lens trajectory analysis. Relevant code is available in:
+
+- `pubmedqa/probe/`
+- `pubmedqa/tuned_lens/`
+- `General/multimodal/text_conflict/probe/`
+- `General/multimodal/text_conflict/tuned_lens/`
+- `General/multimodal/image_conflict/probe/`
+- `General/multimodal/image_conflict/tuned_lens/`
+
+These modules are generally run **after** the main scan and ablation outputs have been generated.
+
+## Additional Analysis Modules
+
+### Threshold sweeps
+
+- `ablation_tau/`
+- `image_ablation_tau/`
+
+Examples:
 
 ```bash
 python /root/logit_lens/ablation_tau/run_threshold_sweep.py --target qwen_conflictmedqa_before_question_val
-python /root/logit_lens/ablation_tau/run_threshold_sweep.py --target hulumed_before_question_val --run-ablation --limit 3
-```
-
-Image-conflict:
-
-```bash
 python /root/logit_lens/image_ablation_tau/run_threshold_sweep.py --target hulumed4b_image_conflict_val
-python /root/logit_lens/image_ablation_tau/run_threshold_sweep.py --target internvl35_4b_image_conflict_val --run-ablation --limit 3
 ```
 
-### Selection-Criteria Ablation
+### Selection-criteria ablation
 
-This module compares different head-selection criteria such as `cer-only`, `bcp-only`, and existing dual criteria, while reusing the original evaluation scripts rather than duplicating model logic.
+This module compares different head-selection rules such as CER-only, BCP-only, and the dual-criterion setting used by CRAFT.
 
 ```bash
 python /root/logit_lens/selection_criteria_ablation/run_selection_criteria_ablation.py \
@@ -128,19 +229,7 @@ python /root/logit_lens/selection_criteria_ablation/run_selection_criteria_ablat
   --python python
 ```
 
-To run the actual evaluations:
-
-```bash
-python /root/logit_lens/selection_criteria_ablation/run_selection_criteria_ablation.py \
-  --models all \
-  --run \
-  --output_root /root/logit_lens/selection_criteria_ablation/results \
-  --python python
-```
-
-### Patch / Trace Validation
-
-The `PIC/patch_validate` module wraps existing `layer_trace` implementations and adds manifest generation, metric aggregation, and appendix-style comparisons:
+### Patch / trace validation
 
 ```bash
 python /root/logit_lens/PIC/patch_validate/generate_run_manifest.py
@@ -148,29 +237,18 @@ python /root/logit_lens/PIC/patch_validate/compute_patch_metrics.py
 python /root/logit_lens/PIC/patch_validate/plot_patch_comparison.py
 ```
 
-## Probe and Tuned Lens
-
-Several subprojects include probe training / scoring and tuned-lens trajectory analysis for studying intermediate representations before and after head ablation. Representative locations include:
-
-- `/root/logit_lens/pubmedqa/tuned_lens`
-- `/root/logit_lens/General/multimodal/text_conflict/probe`
-- `/root/logit_lens/General/multimodal/text_conflict/tuned_lens`
-- `/root/logit_lens/General/multimodal/image_conflict/probe`
-- `/root/logit_lens/General/multimodal/image_conflict/tuned_lens`
-
-These modules are typically used after core ablation outputs have already been generated.
-
 ## Figure Reproduction
 
-Figure and panel scripts are organized under `/root/logit_lens/PIC`, including:
+Paper plotting and summary scripts are mainly under `PIC/`:
 
-- `fig1`: conflict-follow rate summary
-- `fig4`: layer-trace summary panels
-- `fig5`: BCP/CER scatter analysis
-- `fig6`: attention heatmaps
-- `fig8`: probe and tuned-lens plots
-- `text_layer_head` / `image_layer_head`: layer-head heatmaps
-- `image_layer_trace`: hallucination-relief bubble plots
+- `PIC/fig1/` for conflict-follow summaries
+- `PIC/fig4/` for layer-trace summaries
+- `PIC/fig5/` for CER/BCP selection plots
+- `PIC/fig6/` for downstream attention heatmaps
+- `PIC/fig8/` for probe and Tuned Lens summaries
+- `PIC/text_layer_head/` for text head-layout visualizations
+- `PIC/image_layer_head/` for image head-layout visualizations
+- `PIC/tuned_lens/` for tuned-lens paper plots
 
 Examples:
 
@@ -179,55 +257,73 @@ python /root/logit_lens/PIC/fig4/draw_fig4_layer_trace.py
 python /root/logit_lens/PIC/fig5/draw_fig5_bcp_cer.py
 python /root/logit_lens/PIC/fig6/plot_fig6_attention_heatmap.py
 python /root/logit_lens/PIC/fig8/plot_fig8.py
-python /root/logit_lens/PIC/text_layer_head/plot_text_layer_head_from_headscan.py
-python /root/logit_lens/PIC/image_layer_head/plot_image_layer_head_from_headscan.py
 ```
 
-## Supported Models and Benchmarks
+## Environment and Dependencies
 
-Representative models already wired in different submodules include:
+This repository does **not** currently provide a single clean root-level `requirements.txt` for every experiment branch. In practice, most scripts assume:
 
-- Qwen3-4B
-- Llama-3.2-3B
-- Hulu-med-4B
-- InternVL3.5-4B
-- Qwen3-VL variants
+- Python 3.10+
+- PyTorch with CUDA
+- `transformers`
+- `accelerate`
+- `numpy`
+- `pandas`
+- `matplotlib`
+- `scikit-learn`
 
-Representative benchmarks include:
+You will also need:
 
-- ConflictMedQA
-- PubMedQA
-- VQA_RAD
-- SLAKE
-- Heal-MedVQA
+- local access to the corresponding model checkpoints
+- local dataset files for the target benchmark
+- a GPU inference environment suitable for multi-billion-parameter models
 
-Because this is a research repository accumulated across several experiment tracks, model-path configuration is sometimes handled through script arguments and sometimes through local constants or environment variables. Please check the target subdirectory before launching large runs.
+A minimal starting point is:
+
+```bash
+cd /root/logit_lens
+conda create -n craft python=3.10
+conda activate craft
+```
+
+Then install the packages required by the subproject you want to run.
 
 ## Project Structure
 
 ```text
 logit_lens/
-├── conflictmedqa/               # text-only conflict analysis on ConflictMedQA
-├── pubmedqa/                    # text-only pipeline for PubMedQA
-├── VQA_RAD/                     # multimodal and text-conflict experiments on VQA_RAD
-├── Slake_vqa/                   # multimodal text-conflict and image-conflict on SLAKE
-├── heal-medvqa/                 # additional medical VQA experiments
-├── General/multimodal/          # shared multimodal probe / tuned-lens analysis
-├── ablation_tau/                # threshold-sweep utilities for text settings
-├── image_ablation_tau/          # threshold-sweep utilities for image-conflict
-├── selection_criteria_ablation/ # CER-only vs BCP-only vs dual selection analysis
-├── PIC/                         # figure-generation and visualization scripts
-├── observational_reranking/     # observational comparison utilities
-├── attention_heatmap/           # attention visualization assets / scripts
-└── readme/                      # reference README drafts
+├── conflictmedqa/               # text-only conflict analysis
+├── pubmedqa/                    # text-only PubMedQA pipeline
+├── pubmedqa_before/             # older PubMedQA branch
+├── VQA_RAD/                     # VQA-RAD multimodal experiments
+├── Slake_vqa/                   # SLAKE multimodal experiments
+├── heal-medvqa/                 # Heal-MedVQA related utilities
+├── General/multimodal/          # shared multimodal code
+├── ablation_tau/                # threshold sweeps for text settings
+├── image_ablation_tau/          # threshold sweeps for image conflict
+├── selection_criteria_ablation/ # CER/BCP ablation studies
+├── exp/                         # extra experiments and transfer analyses
+├── PIC/                         # paper figure generation
+├── attention_heatmap/           # additional visualization assets
+└── readme/                      # paper source and README drafts
 ```
 
 ## Notes
 
-- Many scripts expect local dataset files and model checkpoints that are not distributed with the repository.
-- Some directories contain historical or backup variants such as `*_before`, which preserve earlier experiment branches.
-- Result files, manifests, cached outputs, and generated figures are intentionally kept inside the repository because they are part of the analysis workflow.
+- Many scripts rely on local absolute paths and research-environment assumptions.
+- Some branches are historical or preserve earlier settings, for example `*_before`.
+- Several result files and generated artifacts are intentionally retained in the repository because they support figure reproduction and appendix analysis.
+- The paper's full model list is broader than the repository's cleanly exposed runnable directories; this is especially relevant for **Hulu-Med 7B**.
 
-## License
+## Citation
 
-This repository is intended for research use. Add your preferred license here if you plan to release it publicly.
+If you use this codebase, please cite the paper:
+
+```bibtex
+@article{craft_medvlm,
+  title={CRAFT: Causal Responsibility and Failure Tracing in Medical Vision Language Models},
+  author={Anonymous Authors},
+  journal={NeurIPS 2026 submission},
+  year={2026}
+}
+```
